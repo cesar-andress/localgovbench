@@ -1,0 +1,926 @@
+{
+  "corpus_version": "1.0",
+  "synthetic": true,
+  "generated_on": "2026-06-04",
+  "generator": "localgovbench.synthetic.municipality_corpus",
+  "seed": 42,
+  "municipality_count": 50,
+  "document_types": [
+    "governance_policy",
+    "ai_strategy",
+    "oversight_procedure",
+    "risk_register",
+    "procurement_note",
+    "architecture_note"
+  ],
+  "maturity_tier_distribution": {
+    "low": 16,
+    "emerging": 15,
+    "managed": 19
+  },
+  "output_path": "/home/cesar/papers/giq2026/localgovbench/data/synthetic/municipality_corpus",
+  "assumptions_doc": "docs/synthetic_municipality_corpus.md",
+  "municipalities": [
+    {
+      "municipality_id": "mun_001_bridgeport",
+      "display_name": "Municipality of Bridgeport",
+      "slug": "bridgeport",
+      "region": "Northern Arc Region",
+      "population_band": "41k–120k",
+      "maturity_tier": "emerging",
+      "primary_use_case": "procurement specification review",
+      "service_owner_role": "Deputy Mayor for Digital Transformation",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_002_ashford_vale",
+      "display_name": "Municipality of Ashford Vale",
+      "slug": "ashford_vale",
+      "region": "Central Estuary Belt",
+      "population_band": "15k–40k",
+      "maturity_tier": "low",
+      "primary_use_case": "multilingual intranet search",
+      "service_owner_role": "Head of Innovation and Smart City",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_003_estuarywick",
+      "display_name": "Municipality of Estuarywick",
+      "slug": "estuarywick",
+      "region": "Southern Coastal Alliance",
+      "population_band": "251k–450k",
+      "maturity_tier": "managed",
+      "primary_use_case": "meeting minute summarisation",
+      "service_owner_role": "Chief Information Officer",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_004_lowfield",
+      "display_name": "Municipality of Lowfield",
+      "slug": "lowfield",
+      "region": "Central Estuary Belt",
+      "population_band": "41k–120k",
+      "maturity_tier": "emerging",
+      "primary_use_case": "multilingual intranet search",
+      "service_owner_role": "Head of Innovation and Smart City",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_005_eastbarrow",
+      "display_name": "Municipality of Eastbarrow",
+      "slug": "eastbarrow",
+      "region": "Inland Metropolitan Ring",
+      "population_band": "251k–450k",
+      "maturity_tier": "managed",
+      "primary_use_case": "meeting minute summarisation",
+      "service_owner_role": "Head of Innovation and Smart City",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_006_westholm",
+      "display_name": "Municipality of Westholm",
+      "slug": "westholm",
+      "region": "Inland Metropolitan Ring",
+      "population_band": "41k–120k",
+      "maturity_tier": "managed",
+      "primary_use_case": "meeting minute summarisation",
+      "service_owner_role": "Director of Digital Services",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_007_silverbrook",
+      "display_name": "Municipality of Silverbrook",
+      "slug": "silverbrook",
+      "region": "Central Estuary Belt",
+      "population_band": "15k–40k",
+      "maturity_tier": "emerging",
+      "primary_use_case": "citizen enquiry triage (advisory only)",
+      "service_owner_role": "Deputy Mayor for Digital Transformation",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_008_greenwich_bay",
+      "display_name": "Municipality of Greenwich Bay",
+      "slug": "greenwich_bay",
+      "region": "Southern Coastal Alliance",
+      "population_band": "15k–40k",
+      "maturity_tier": "managed",
+      "primary_use_case": "meeting minute summarisation",
+      "service_owner_role": "Deputy Mayor for Digital Transformation",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_009_hillcrest",
+      "display_name": "Municipality of Hillcrest",
+      "slug": "hillcrest",
+      "region": "Inland Metropolitan Ring",
+      "population_band": "121k–250k",
+      "maturity_tier": "low",
+      "primary_use_case": "internal policy drafting",
+      "service_owner_role": "Director of Digital Services",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_010_stonehaven",
+      "display_name": "Municipality of Stonehaven",
+      "slug": "stonehaven",
+      "region": "Western Uplands",
+      "population_band": "121k–250k",
+      "maturity_tier": "managed",
+      "primary_use_case": "internal policy drafting",
+      "service_owner_role": "Head of Innovation and Smart City",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_011_borderwick",
+      "display_name": "Municipality of Borderwick",
+      "slug": "borderwick",
+      "region": "Southern Coastal Alliance",
+      "population_band": "41k–120k",
+      "maturity_tier": "low",
+      "primary_use_case": "internal policy drafting",
+      "service_owner_role": "Head of Innovation and Smart City",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_012_springvale",
+      "display_name": "Municipality of Springvale",
+      "slug": "springvale",
+      "region": "Inland Metropolitan Ring",
+      "population_band": "41k–120k",
+      "maturity_tier": "low",
+      "primary_use_case": "internal policy drafting",
+      "service_owner_role": "Head of Innovation and Smart City",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_013_montelake",
+      "display_name": "Municipality of Montelake",
+      "slug": "montelake",
+      "region": "Central Estuary Belt",
+      "population_band": "41k–120k",
+      "maturity_tier": "managed",
+      "primary_use_case": "procurement specification review",
+      "service_owner_role": "Chief Information Officer",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_014_library_bay",
+      "display_name": "Municipality of Library Bay",
+      "slug": "library_bay",
+      "region": "Inland Metropolitan Ring",
+      "population_band": "15k–40k",
+      "maturity_tier": "low",
+      "primary_use_case": "procurement specification review",
+      "service_owner_role": "Deputy Mayor for Digital Transformation",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_015_registry_ford",
+      "display_name": "Municipality of Registry Ford",
+      "slug": "registry_ford",
+      "region": "Western Uplands",
+      "population_band": "15k–40k",
+      "maturity_tier": "emerging",
+      "primary_use_case": "procurement specification review",
+      "service_owner_role": "Chief Information Officer",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_016_briarcliff",
+      "display_name": "Municipality of Briarcliff",
+      "slug": "briarcliff",
+      "region": "Inland Metropolitan Ring",
+      "population_band": "41k–120k",
+      "maturity_tier": "low",
+      "primary_use_case": "internal policy drafting",
+      "service_owner_role": "Director of Digital Services",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_017_guildmere",
+      "display_name": "Municipality of Guildmere",
+      "slug": "guildmere",
+      "region": "Northern Arc Region",
+      "population_band": "251k–450k",
+      "maturity_tier": "low",
+      "primary_use_case": "multilingual intranet search",
+      "service_owner_role": "Chief Information Officer",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_018_centralia",
+      "display_name": "Municipality of Centralia",
+      "slug": "centralia",
+      "region": "Inland Metropolitan Ring",
+      "population_band": "251k–450k",
+      "maturity_tier": "low",
+      "primary_use_case": "citizen enquiry triage (advisory only)",
+      "service_owner_role": "Head of Innovation and Smart City",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_019_coastmere",
+      "display_name": "Municipality of Coastmere",
+      "slug": "coastmere",
+      "region": "Central Estuary Belt",
+      "population_band": "251k–450k",
+      "maturity_tier": "emerging",
+      "primary_use_case": "multilingual intranet search",
+      "service_owner_role": "Chief Information Officer",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_020_scholarsgate",
+      "display_name": "Municipality of Scholarsgate",
+      "slug": "scholarsgate",
+      "region": "Southern Coastal Alliance",
+      "population_band": "121k–250k",
+      "maturity_tier": "emerging",
+      "primary_use_case": "procurement specification review",
+      "service_owner_role": "Deputy Mayor for Digital Transformation",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_021_dockside",
+      "display_name": "Municipality of Dockside",
+      "slug": "dockside",
+      "region": "Northern Arc Region",
+      "population_band": "251k–450k",
+      "maturity_tier": "emerging",
+      "primary_use_case": "citizen enquiry triage (advisory only)",
+      "service_owner_role": "Chief Information Officer",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_022_redcliff",
+      "display_name": "Municipality of Redcliff",
+      "slug": "redcliff",
+      "region": "Northern Arc Region",
+      "population_band": "121k–250k",
+      "maturity_tier": "managed",
+      "primary_use_case": "multilingual intranet search",
+      "service_owner_role": "Chief Information Officer",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_023_meadowgate",
+      "display_name": "Municipality of Meadowgate",
+      "slug": "meadowgate",
+      "region": "Northern Arc Region",
+      "population_band": "41k–120k",
+      "maturity_tier": "emerging",
+      "primary_use_case": "internal policy drafting",
+      "service_owner_role": "Director of Digital Services",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_024_winterford",
+      "display_name": "Municipality of Winterford",
+      "slug": "winterford",
+      "region": "Northern Arc Region",
+      "population_band": "15k–40k",
+      "maturity_tier": "low",
+      "primary_use_case": "procurement specification review",
+      "service_owner_role": "Director of Digital Services",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_025_northgate",
+      "display_name": "Municipality of Northgate",
+      "slug": "northgate",
+      "region": "Western Uplands",
+      "population_band": "41k–120k",
+      "maturity_tier": "emerging",
+      "primary_use_case": "meeting minute summarisation",
+      "service_owner_role": "Chief Information Officer",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_026_harbourton",
+      "display_name": "Municipality of Harbourton",
+      "slug": "harbourton",
+      "region": "Inland Metropolitan Ring",
+      "population_band": "41k–120k",
+      "maturity_tier": "emerging",
+      "primary_use_case": "multilingual intranet search",
+      "service_owner_role": "Deputy Mayor for Digital Transformation",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_027_archive_vale",
+      "display_name": "Municipality of Archive Vale",
+      "slug": "archive_vale",
+      "region": "Southern Coastal Alliance",
+      "population_band": "251k–450k",
+      "maturity_tier": "low",
+      "primary_use_case": "citizen enquiry triage (advisory only)",
+      "service_owner_role": "Director of Digital Services",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_028_lakeshore",
+      "display_name": "Municipality of Lakeshore",
+      "slug": "lakeshore",
+      "region": "Western Uplands",
+      "population_band": "251k–450k",
+      "maturity_tier": "managed",
+      "primary_use_case": "meeting minute summarisation",
+      "service_owner_role": "Deputy Mayor for Digital Transformation",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_029_clearwater",
+      "display_name": "Municipality of Clearwater",
+      "slug": "clearwater",
+      "region": "Northern Arc Region",
+      "population_band": "15k–40k",
+      "maturity_tier": "emerging",
+      "primary_use_case": "internal policy drafting",
+      "service_owner_role": "Deputy Mayor for Digital Transformation",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_030_marketford",
+      "display_name": "Municipality of Marketford",
+      "slug": "marketford",
+      "region": "Northern Arc Region",
+      "population_band": "121k–250k",
+      "maturity_tier": "managed",
+      "primary_use_case": "citizen enquiry triage (advisory only)",
+      "service_owner_role": "Chief Information Officer",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_031_nordvale",
+      "display_name": "Municipality of Nordvale",
+      "slug": "nordvale",
+      "region": "Central Estuary Belt",
+      "population_band": "251k–450k",
+      "maturity_tier": "managed",
+      "primary_use_case": "meeting minute summarisation",
+      "service_owner_role": "Chief Information Officer",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_032_valleyview",
+      "display_name": "Municipality of Valleyview",
+      "slug": "valleyview",
+      "region": "Central Estuary Belt",
+      "population_band": "251k–450k",
+      "maturity_tier": "managed",
+      "primary_use_case": "internal policy drafting",
+      "service_owner_role": "Deputy Mayor for Digital Transformation",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_033_goldmere",
+      "display_name": "Municipality of Goldmere",
+      "slug": "goldmere",
+      "region": "Northern Arc Region",
+      "population_band": "15k–40k",
+      "maturity_tier": "low",
+      "primary_use_case": "multilingual intranet search",
+      "service_owner_role": "Director of Digital Services",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_034_windmere",
+      "display_name": "Municipality of Windmere",
+      "slug": "windmere",
+      "region": "Central Estuary Belt",
+      "population_band": "41k–120k",
+      "maturity_tier": "managed",
+      "primary_use_case": "meeting minute summarisation",
+      "service_owner_role": "Deputy Mayor for Digital Transformation",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_035_crossfield",
+      "display_name": "Municipality of Crossfield",
+      "slug": "crossfield",
+      "region": "Southern Coastal Alliance",
+      "population_band": "41k–120k",
+      "maturity_tier": "managed",
+      "primary_use_case": "internal policy drafting",
+      "service_owner_role": "Chief Information Officer",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_036_milltown",
+      "display_name": "Municipality of Milltown",
+      "slug": "milltown",
+      "region": "Southern Coastal Alliance",
+      "population_band": "15k–40k",
+      "maturity_tier": "low",
+      "primary_use_case": "procurement specification review",
+      "service_owner_role": "Deputy Mayor for Digital Transformation",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_037_riverford",
+      "display_name": "Municipality of Riverford",
+      "slug": "riverford",
+      "region": "Inland Metropolitan Ring",
+      "population_band": "251k–450k",
+      "maturity_tier": "managed",
+      "primary_use_case": "meeting minute summarisation",
+      "service_owner_role": "Chief Information Officer",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_038_fairmont",
+      "display_name": "Municipality of Fairmont",
+      "slug": "fairmont",
+      "region": "Central Estuary Belt",
+      "population_band": "121k–250k",
+      "maturity_tier": "managed",
+      "primary_use_case": "internal policy drafting",
+      "service_owner_role": "Director of Digital Services",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_039_pinehurst",
+      "display_name": "Municipality of Pinehurst",
+      "slug": "pinehurst",
+      "region": "Northern Arc Region",
+      "population_band": "121k–250k",
+      "maturity_tier": "low",
+      "primary_use_case": "internal policy drafting",
+      "service_owner_role": "Deputy Mayor for Digital Transformation",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_040_southwick",
+      "display_name": "Municipality of Southwick",
+      "slug": "southwick",
+      "region": "Northern Arc Region",
+      "population_band": "41k–120k",
+      "maturity_tier": "low",
+      "primary_use_case": "multilingual intranet search",
+      "service_owner_role": "Director of Digital Services",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_041_summit_dale",
+      "display_name": "Municipality of Summit Dale",
+      "slug": "summit_dale",
+      "region": "Inland Metropolitan Ring",
+      "population_band": "15k–40k",
+      "maturity_tier": "emerging",
+      "primary_use_case": "internal policy drafting",
+      "service_owner_role": "Chief Information Officer",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_042_autumn_bay",
+      "display_name": "Municipality of Autumn Bay",
+      "slug": "autumn_bay",
+      "region": "Inland Metropolitan Ring",
+      "population_band": "15k–40k",
+      "maturity_tier": "emerging",
+      "primary_use_case": "citizen enquiry triage (advisory only)",
+      "service_owner_role": "Director of Digital Services",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_043_cedarford",
+      "display_name": "Municipality of Cedarford",
+      "slug": "cedarford",
+      "region": "Southern Coastal Alliance",
+      "population_band": "15k–40k",
+      "maturity_tier": "emerging",
+      "primary_use_case": "multilingual intranet search",
+      "service_owner_role": "Head of Innovation and Smart City",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_044_blackwood",
+      "display_name": "Municipality of Blackwood",
+      "slug": "blackwood",
+      "region": "Western Uplands",
+      "population_band": "41k–120k",
+      "maturity_tier": "managed",
+      "primary_use_case": "citizen enquiry triage (advisory only)",
+      "service_owner_role": "Head of Innovation and Smart City",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_045_crafton",
+      "display_name": "Municipality of Crafton",
+      "slug": "crafton",
+      "region": "Western Uplands",
+      "population_band": "41k–120k",
+      "maturity_tier": "managed",
+      "primary_use_case": "meeting minute summarisation",
+      "service_owner_role": "Head of Innovation and Smart City",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_046_highmere",
+      "display_name": "Municipality of Highmere",
+      "slug": "highmere",
+      "region": "Southern Coastal Alliance",
+      "population_band": "15k–40k",
+      "maturity_tier": "managed",
+      "primary_use_case": "multilingual intranet search",
+      "service_owner_role": "Director of Digital Services",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_047_oakridge",
+      "display_name": "Municipality of Oakridge",
+      "slug": "oakridge",
+      "region": "Inland Metropolitan Ring",
+      "population_band": "41k–120k",
+      "maturity_tier": "low",
+      "primary_use_case": "procurement specification review",
+      "service_owner_role": "Chief Information Officer",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_048_ironwood",
+      "display_name": "Municipality of Ironwood",
+      "slug": "ironwood",
+      "region": "Central Estuary Belt",
+      "population_band": "15k–40k",
+      "maturity_tier": "managed",
+      "primary_use_case": "procurement specification review",
+      "service_owner_role": "Head of Innovation and Smart City",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_049_bluehaven",
+      "display_name": "Municipality of Bluehaven",
+      "slug": "bluehaven",
+      "region": "Inland Metropolitan Ring",
+      "population_band": "251k–450k",
+      "maturity_tier": "emerging",
+      "primary_use_case": "procurement specification review",
+      "service_owner_role": "Director of Digital Services",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    },
+    {
+      "municipality_id": "mun_050_whitecliff",
+      "display_name": "Municipality of Whitecliff",
+      "slug": "whitecliff",
+      "region": "Northern Arc Region",
+      "population_band": "121k–250k",
+      "maturity_tier": "low",
+      "primary_use_case": "citizen enquiry triage (advisory only)",
+      "service_owner_role": "Head of Innovation and Smart City",
+      "documents": [
+        "governance_policy",
+        "ai_strategy",
+        "oversight_procedure",
+        "risk_register",
+        "procurement_note",
+        "architecture_note"
+      ]
+    }
+  ],
+  "disclaimer": "Fictional municipalities for workflow and evidence-extraction experiments only. Not empirical field data; no real persons or organizations."
+}
