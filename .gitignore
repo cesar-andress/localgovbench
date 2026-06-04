@@ -58,6 +58,7 @@ data/processed/*
 !results/sensitivity_analysis.csv
 !results/grb_sensitivity_analysis.csv
 !results/inter_rater_reliability.csv
+!results/weighting_robustness.csv
 results/model_benchmark.csv
 !results/model_benchmark_mock.csv
 !results/model_benchmark_live.csv
