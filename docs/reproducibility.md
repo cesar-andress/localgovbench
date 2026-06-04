@@ -156,6 +156,22 @@ python scripts/run_ollama_evidence_extraction.py
 
 See `prompts/evidence_extraction.md`. The prototype proposes **candidate evidence only** — humans assign scores.
 
+## 12. Benchmark local LLM models (optional)
+
+Compare Ollama models on gold-labelled synthetic evidence extraction tasks:
+
+```bash
+ollama serve
+ollama pull llama3.1:8b
+ollama pull qwen2.5:7b
+# ... mistral:7b, gemma2:9b, phi3
+python scripts/run_llm_model_benchmark.py
+```
+
+**Outputs:** `results/model_benchmark.csv`, `reports/model_benchmark.md`
+
+Deterministic mock run (no Ollama): `python scripts/run_llm_model_benchmark.py --mock`
+
 ---
 
 ## Verification summary
@@ -166,6 +182,7 @@ See `prompts/evidence_extraction.md`. The prototype proposes **candidate evidenc
 | Structure | `python scripts/validate_repository.py` | Exit code 0 |
 | GRB sensitivity | `python scripts/run_grb_sensitivity_analysis.py` | CSV and MD created |
 | GRB IRR | `python scripts/run_inter_rater_reliability.py` | CSV and MD created |
+| LLM benchmark (mock) | `python scripts/run_llm_model_benchmark.py --mock` | CSV and MD created |
 
 ---
 

@@ -16,6 +16,7 @@ All notable changes to this project are documented here. The format follows [Kee
 ### Added (post-checklist)
 
 - Construct traceability package: literature mapping for 25 v0.1 criteria, CSV, validation script
+- **LLM model benchmark** — Compare Ollama models on gold-labelled evidence extraction tasks (`scripts/run_llm_model_benchmark.py`)
 
 ### Documentation
 

@@ -1,0 +1,126 @@
+{
+  "version": "0.1",
+  "description": "Synthetic gold-labelled tasks for LocalGovBench Ollama evidence extraction benchmark. Documents are fictional.",
+  "tasks": [
+    {
+      "task_id": "gov_sample_d2_oversight",
+      "document": "data/synthetic/governance_policy_sample.md",
+      "indicator_id": "d2_oversight_design_01",
+      "gold_has_evidence": true,
+      "gold_keywords": ["policy officer", "named policy officer"],
+      "gold_expect_insufficient": false
+    },
+    {
+      "task_id": "gov_sample_d4_sovereignty",
+      "document": "data/synthetic/governance_policy_sample.md",
+      "indicator_id": "d4_data_sovereignty_01",
+      "gold_has_evidence": true,
+      "gold_keywords": ["borough-owned", "egress"],
+      "gold_expect_insufficient": false
+    },
+    {
+      "task_id": "gov_sample_d6_vendor",
+      "document": "data/synthetic/governance_policy_sample.md",
+      "indicator_id": "d6_vendor_independence_01",
+      "gold_has_evidence": true,
+      "gold_keywords": ["vendor contracts", "migration test"],
+      "gold_expect_insufficient": false
+    },
+    {
+      "task_id": "gov_sample_d5_incidents",
+      "document": "data/synthetic/governance_policy_sample.md",
+      "indicator_id": "d5_monitoring_incidents_01",
+      "gold_has_evidence": true,
+      "gold_keywords": ["incidents", "hallucinations"],
+      "gold_expect_insufficient": false
+    },
+    {
+      "task_id": "procurement_d2_miss",
+      "document": "data/synthetic/workflow_demo/documents/procurement_note.md",
+      "indicator_id": "d2_oversight_design_01",
+      "gold_has_evidence": false,
+      "gold_keywords": [],
+      "gold_expect_insufficient": true
+    },
+    {
+      "task_id": "procurement_d6_vendor",
+      "document": "data/synthetic/workflow_demo/documents/procurement_note.md",
+      "indicator_id": "d6_vendor_independence_01",
+      "gold_has_evidence": true,
+      "gold_keywords": ["vendor independence", "exit clause"],
+      "gold_expect_insufficient": false
+    },
+    {
+      "task_id": "tech_d6_infra",
+      "document": "data/synthetic/workflow_demo/documents/technical_architecture.md",
+      "indicator_id": "d6_infrastructure_01",
+      "gold_has_evidence": true,
+      "gold_keywords": ["data centre", "municipal data centre"],
+      "gold_expect_insufficient": false
+    },
+    {
+      "task_id": "tech_d2_miss",
+      "document": "data/synthetic/workflow_demo/documents/technical_architecture.md",
+      "indicator_id": "d2_intervention_01",
+      "gold_has_evidence": false,
+      "gold_keywords": [],
+      "gold_expect_insufficient": true
+    },
+    {
+      "task_id": "incident_d5_monitor",
+      "document": "data/synthetic/workflow_demo/documents/incident_response.md",
+      "indicator_id": "d5_monitoring_incidents_01",
+      "gold_has_evidence": true,
+      "gold_keywords": ["post-incident", "harmful outputs"],
+      "gold_expect_insufficient": false
+    },
+    {
+      "task_id": "incident_d4_miss",
+      "document": "data/synthetic/workflow_demo/documents/incident_response.md",
+      "indicator_id": "d4_minimization_01",
+      "gold_has_evidence": false,
+      "gold_keywords": [],
+      "gold_expect_insufficient": true
+    },
+    {
+      "task_id": "data_gov_d4_lawful",
+      "document": "data/synthetic/workflow_demo/documents/data_governance.md",
+      "indicator_id": "d4_lawfulness_01",
+      "gold_has_evidence": true,
+      "gold_keywords": ["lawful basis", "ROPA"],
+      "gold_expect_insufficient": false
+    },
+    {
+      "task_id": "data_gov_d3_miss",
+      "document": "data/synthetic/workflow_demo/documents/data_governance.md",
+      "indicator_id": "d3_external_transparency_01",
+      "gold_has_evidence": false,
+      "gold_keywords": [],
+      "gold_expect_insufficient": true
+    },
+    {
+      "task_id": "demo_gov_d1_mandate",
+      "document": "data/synthetic/workflow_demo/documents/governance_policy.md",
+      "indicator_id": "d1_mandate_01",
+      "gold_has_evidence": true,
+      "gold_keywords": ["policy officer", "advisory"],
+      "gold_expect_insufficient": false
+    },
+    {
+      "task_id": "demo_gov_d2_trace",
+      "document": "data/synthetic/workflow_demo/documents/governance_policy.md",
+      "indicator_id": "d2_traceability_01",
+      "gold_has_evidence": true,
+      "gold_keywords": ["override", "logged"],
+      "gold_expect_insufficient": false
+    },
+    {
+      "task_id": "gov_sample_d1_accountability",
+      "document": "data/synthetic/governance_policy_sample.md",
+      "indicator_id": "d1_accountability_01",
+      "gold_has_evidence": true,
+      "gold_keywords": ["service owner", "accountable"],
+      "gold_expect_insufficient": false
+    }
+  ]
+}
