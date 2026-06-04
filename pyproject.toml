@@ -28,7 +28,7 @@ classifiers = [
 dependencies = []
 
 [project.optional-dependencies]
-dev = ["pytest>=8.0", "pyyaml>=6.0"]
+dev = ["pytest>=8.0", "pyyaml>=6.0", "matplotlib>=3.8"]
 
 [project.urls]
 Repository = "https://github.com/cesar-andress/localgovbench"
