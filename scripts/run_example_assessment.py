@@ -12,6 +12,7 @@ if str(ROOT) not in sys.path:
 
 from localgovbench.evaluation.rubric import describe_maturity
 from localgovbench.evaluation.validators import validate_assessment
+from localgovbench.framework.dimensions import FRAMEWORK_VERSION
 from localgovbench.framework.scoring import compute_maturity_score
 from localgovbench.utils.io import load_yaml
 
@@ -30,10 +31,13 @@ def main() -> int:
     responses = payload["responses"]
     result = compute_maturity_score(responses)
 
+    fw_version = payload["metadata"].get("framework_version", FRAMEWORK_VERSION)
     print("LocalGovBench — synthetic example assessment")
     print("=" * 48)
+    print(f"Framework version: {fw_version}")
     print(f"Source: {example_path.name}")
     print(f"Title: {payload['metadata'].get('title', 'N/A')}")
+    print(f"Deployment: {payload['metadata'].get('deployment_model', 'N/A')}")
     print(f"Synthetic: {payload['metadata'].get('synthetic')}")
     print()
     print(f"Overall maturity: {result.overall} ({describe_maturity(result.overall)})")

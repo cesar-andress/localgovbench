@@ -1,10 +1,15 @@
-"""Checklist items derived from governance dimensions."""
+"""Checklist generation from Local AI Governance Framework (v0.1) dimensions."""
 
 from __future__ import annotations
 
 from dataclasses import dataclass
 
-from localgovbench.framework.dimensions import GOVERNANCE_DIMENSIONS
+from localgovbench.framework.dimensions import (
+    FRAMEWORK_VERSION,
+    GOVERNANCE_DIMENSIONS,
+    GovernanceCriterion,
+    GovernanceDimension,
+)
 
 
 @dataclass(frozen=True, slots=True)
@@ -13,101 +18,46 @@ class ChecklistItem:
 
     id: str
     dimension_id: str
+    criterion_id: str
     prompt: str
     guidance: str
-
-
-# Synthetic starter items — expand when empirical instrument is finalized.
-_CHECKLIST_SEED: tuple[tuple[str, str, str], ...] = (
-    (
-        "strategy",
-        "Documented local AI policy or roadmap exists.",
-        "Look for council resolutions, digital strategy annexes, or mayoral mandates.",
-    ),
-    (
-        "strategy",
-        "Executive or political sponsor is named for AI initiatives.",
-        "Identify a accountable role for portfolio oversight, not only IT ownership.",
-    ),
-    (
-        "risk",
-        "AI use cases are inventoried with risk classification.",
-        "Inventory should note affected populations and decision significance.",
-    ),
-    (
-        "risk",
-        "Escalation path exists for harmful or biased outcomes.",
-        "Include service desk, ethics board, or incident response linkages.",
-    ),
-    (
-        "data",
-        "Lawful basis and purpose are recorded for training/operational data.",
-        "Cross-check with records of processing and DPIA references.",
-    ),
-    (
-        "data",
-        "Data quality and lineage are reviewed before deployment.",
-        "Evidence may include data dictionaries or sampling protocols.",
-    ),
-    (
-        "transparency",
-        "Citizens can find information on significant AI-assisted services.",
-        "Check public websites, privacy notices, and service charters.",
-    ),
-    (
-        "transparency",
-        "Limitations of automated outputs are communicated.",
-        "Users should see when outputs are probabilistic or incomplete.",
-    ),
-    (
-        "accountability",
-        "Service owner is accountable for AI-supported decisions.",
-        "Named owners should map to service lines, not vendors alone.",
-    ),
-    (
-        "accountability",
-        "Human review is defined where impacts are significant.",
-        "Document triggers for manual review and appeal routes.",
-    ),
-    (
-        "procurement",
-        "Contracts address AI performance, monitoring, and exit.",
-        "Include SLAs, update notification, and model change clauses.",
-    ),
-    (
-        "procurement",
-        "Vendor sub-processors and model updates are tracked.",
-        "Maintain vendor register entries for AI components.",
-    ),
-    (
-        "skills",
-        "Staff receive role-appropriate AI literacy training.",
-        "Training should differ for frontline, legal, and technical staff.",
-    ),
-    (
-        "skills",
-        "Access to legal/ethical/DPO expertise is established for AI projects.",
-        "Early engagement reduces retrofitting of safeguards.",
-    ),
-)
+    risk_if_missing: str
 
 
 def build_checklist() -> tuple[ChecklistItem, ...]:
-    """Build the default checklist across all governance dimensions."""
-    valid_ids = {d.id for d in GOVERNANCE_DIMENSIONS}
+    """
+    Build the v0.1 checklist from framework criteria (one item per criterion).
+
+    Item ids follow ``{dimension_id}_{criterion_id}``.
+    """
     items: list[ChecklistItem] = []
-    counters: dict[str, int] = {}
-    for dimension_id, prompt, guidance in _CHECKLIST_SEED:
-        if dimension_id not in valid_ids:
-            raise ValueError(f"Checklist references unknown dimension: {dimension_id}")
-        counters[dimension_id] = counters.get(dimension_id, 0) + 1
-        item_id = f"{dimension_id}_{counters[dimension_id]:02d}"
-        items.append(
-            ChecklistItem(
-                id=item_id,
-                dimension_id=dimension_id,
-                prompt=prompt,
-                guidance=guidance,
-            )
-        )
+    for dimension in GOVERNANCE_DIMENSIONS:
+        items.extend(_items_for_dimension(dimension))
     return tuple(items)
+
+
+def _items_for_dimension(dimension: GovernanceDimension) -> list[ChecklistItem]:
+    result: list[ChecklistItem] = []
+    for criterion in dimension.criteria:
+        result.append(_criterion_to_item(dimension, criterion))
+    return result
+
+
+def _criterion_to_item(
+    dimension: GovernanceDimension,
+    criterion: GovernanceCriterion,
+) -> ChecklistItem:
+    item_id = f"{dimension.id}_{criterion.id}"
+    return ChecklistItem(
+        id=item_id,
+        dimension_id=dimension.id,
+        criterion_id=criterion.id,
+        prompt=criterion.statement,
+        guidance=criterion.suggested_evidence,
+        risk_if_missing=criterion.risk_if_missing,
+    )
+
+
+def checklist_framework_version() -> str:
+    """Return the framework version associated with generated checklists."""
+    return FRAMEWORK_VERSION

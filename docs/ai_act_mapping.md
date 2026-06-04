@@ -6,15 +6,13 @@ LocalGovBench dimensions are **indicatively** related to themes in Regulation (E
 
 ## High-level mapping
 
-| LocalGovBench dimension | AI Act themes (indicative) |
-|-------------------------|----------------------------|
-| `strategy` | Governance structures, national/EU coordination |
-| `risk` | Risk management for high-risk AI, post-market monitoring |
-| `data` | Data governance, training/validation data quality |
-| `transparency` | Transparency obligations, instructions for use |
-| `accountability` | Human oversight, record-keeping |
-| `procurement` | Obligations along supply chain, deployer duties |
-| `skills` | AI literacy, competent personnel |
+| LocalGovBench dimension (v0.1) | AI Act themes (indicative) |
+|--------------------------------|----------------------------|
+| `legal_regulatory` | Classification documentation, deployer duties, data governance |
+| `technical_security` | Technical documentation, logging, change control |
+| `organizational` | Governance, human oversight assignments, risk management |
+| `operational` | Monitoring, serious incidents, post-deployment practices |
+| `strategic_sovereignty` | Supply chain transparency, independence from providers |
 
 ## Public sector relevance
 

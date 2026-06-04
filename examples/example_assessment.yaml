@@ -1,22 +1,45 @@
 # SYNTHETIC EXAMPLE — NOT EMPIRICAL DATA
+# Local AI Governance Framework v0.1 — fictional regional administration
 metadata:
-  title: "Fictional Municipality Alpha — AI chatbot for citizen inquiries"
-  organization_type: municipality
-  country: "EU (fictional)"
+  title: "Regional Administration Nordvega — on-premise LLM for internal policy drafting"
+  organization_type: regional_administration
+  country: "EU Member State (fictional)"
+  deployment_model: on_premise
+  use_case: "Internal assistant for policy drafting and summarization; no citizen-facing automation"
+  framework_version: "0.1"
   synthetic: true
   version: "0.1.0"
+  notes: >
+    Illustrative self-assessment for a mid-maturity pilot: strong technical logging,
+    partial legal documentation, early sovereignty planning. Scores are fabricated.
 responses:
-  strategy_01: 2
-  strategy_02: 1
-  risk_01: 2
-  risk_02: 1
-  data_01: 3
-  data_02: 2
-  transparency_01: 2
-  transparency_02: 1
-  accountability_01: 2
-  accountability_02: 2
-  procurement_01: 1
-  procurement_02: 1
-  skills_01: 2
-  skills_02: 1
+  # Legal and Regulatory Compliance
+  legal_regulatory_gdpr_readiness: 3
+  legal_regulatory_ai_act_alignment: 2
+  legal_regulatory_data_retention: 2
+  legal_regulatory_lawful_basis: 3
+  legal_regulatory_cross_border_avoidance: 4
+  # Technical and Security Readiness
+  technical_security_local_architecture: 3
+  technical_security_access_control: 3
+  technical_security_logging: 4
+  technical_security_auditability: 3
+  technical_security_model_updates: 2
+  # Organizational Governance
+  organizational_accountability: 2
+  organizational_ownership: 3
+  organizational_role_definition: 2
+  organizational_procurement_governance: 2
+  organizational_risk_ownership: 2
+  # Operational Management
+  operational_monitoring: 3
+  operational_incident_response: 2
+  operational_human_oversight: 3
+  operational_documentation: 2
+  operational_lifecycle_management: 2
+  # Strategic Sovereignty
+  strategic_sovereignty_vendor_independence: 2
+  strategic_sovereignty_data_sovereignty: 4
+  strategic_sovereignty_infrastructure_control: 3
+  strategic_sovereignty_portability: 1
+  strategic_sovereignty_maintainability: 2

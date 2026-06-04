@@ -1,51 +1,103 @@
-# Governance Dimensions
+# Governance Dimensions (v0.1)
 
-LocalGovBench organizes local AI governance into **seven dimensions**. Each dimension contains checklist items used for maturity scoring.
+The Local AI Governance Framework **version 0.1** comprises **five dimensions**, each with **five criteria** (25 assessable items in total). Criteria are implemented in `localgovbench/framework/dimensions.py` and exposed via `build_checklist()`.
 
-## Dimension overview
+> This instrument is a research scaffold. It has **not** been empirically validated in v0.1.
+
+## Overview
 
 | ID | Name | Focus |
 |----|------|-------|
-| `strategy` | Strategy & leadership | Political mandate, AI strategy, executive accountability |
-| `risk` | Risk management | Impact assessment, risk registers, escalation |
-| `data` | Data governance | Quality, lineage, lawful basis, minimization |
-| `transparency` | Transparency & explainability | Citizen-facing disclosure, documentation of logic |
-| `accountability` | Accountability & oversight | Roles, audit trails, human oversight |
-| `procurement` | Procurement & vendor management | Contractual AI requirements, vendor due diligence |
-| `skills` | Skills & capacity | Training, interdisciplinary teams, external expertise |
+| `legal_regulatory` | Legal and Regulatory Compliance | GDPR, AI Act themes, retention, lawful basis, transfer avoidance |
+| `technical_security` | Technical and Security Readiness | On-prem architecture, access, logging, audit, model updates |
+| `organizational` | Organizational Governance | Accountability, ownership, roles, procurement, risk ownership |
+| `operational` | Operational Management | Monitoring, incidents, oversight, documentation, lifecycle |
+| `strategic_sovereignty` | Strategic Sovereignty | Vendor independence, data/hosting control, portability, maintainability |
 
-## Dimension details
+## 1. Legal and Regulatory Compliance (`legal_regulatory`)
 
-### Strategy & leadership (`strategy`)
+**Description:** Regulatory and data-protection alignment for on-premise LLM processing in European public bodies.
 
-Ensures AI initiatives align with democratic mandates and organizational priorities.
+| Criterion ID | Topic |
+|--------------|-------|
+| `gdpr_readiness` | GDPR readiness |
+| `ai_act_alignment` | EU AI Act alignment (deployer-oriented documentation) |
+| `data_retention` | Data retention and deletion |
+| `lawful_basis` | Lawful basis and purpose limitation |
+| `cross_border_avoidance` | Cross-border transfer avoidance |
 
-### Risk management (`risk`)
+**Suggested evidence (examples):** records of processing, DPIA materials, retention schedules, architecture egress controls.
 
-Covers identification and treatment of harms from AI in public services, including high-impact use cases.
+**Indicative risks if weak:** accountability gaps, unlawful processing exposure, unintended international transfers.
 
-### Data governance (`data`)
+## 2. Technical and Security Readiness (`technical_security`)
 
-Addresses lawful, secure, and purpose-limited use of data feeding AI systems.
+**Description:** Security and operability of local LLM stacks.
 
-### Transparency & explainability (`transparency`)
+| Criterion ID | Topic |
+|--------------|-------|
+| `local_architecture` | Local deployment architecture |
+| `access_control` | Access control |
+| `logging` | Logging |
+| `auditability` | Auditability |
+| `model_updates` | Model update management |
 
-Supports understandable communication about automated or AI-assisted decisions affecting the public.
+**Suggested evidence:** architecture diagrams, IAM matrices, logging policies, change-management records.
 
-### Accountability & oversight (`accountability`)
+**Indicative risks if weak:** forensic gaps, privilege abuse, uncontrolled model drift.
 
-Defines who is responsible for outcomes and how interventions are logged and reviewed.
+## 3. Organizational Governance (`organizational`)
 
-### Procurement & vendor management (`procurement`)
+**Description:** Institutional accountability for AI-supported public services.
 
-Extends governance to third-party models, platforms, and implementation partners.
+| Criterion ID | Topic |
+|--------------|-------|
+| `accountability` | Accountability |
+| `ownership` | Ownership |
+| `role_definition` | Role definition |
+| `procurement_governance` | Procurement governance |
+| `risk_ownership` | Risk ownership |
 
-### Skills & capacity (`skills`)
+**Suggested evidence:** governance charters, RACI matrices, contracts, risk registers.
 
-Captures organizational ability to govern, deploy, and monitor AI responsibly.
+**Indicative risks if weak:** diffused responsibility, vendor-dominated decisions, untracked AI risks.
 
-## Implementation
+## 4. Operational Management (`operational`)
 
-Dimension definitions live in `localgovbench/framework/dimensions.py`. Checklist items are generated in `localgovbench/framework/checklist.py`.
+**Description:** Day-to-day running of local LLM services.
 
-Weights are uniform (`1.0`) in this release; weighted scoring may be introduced when empirical calibration data is available.
+| Criterion ID | Topic |
+|--------------|-------|
+| `monitoring` | Monitoring |
+| `incident_response` | Incident response |
+| `human_oversight` | Human oversight |
+| `documentation` | Documentation |
+| `lifecycle_management` | Lifecycle management |
+
+**Suggested evidence:** dashboards, IR plans, oversight procedures, operator handbooks, decommission checklists.
+
+**Indicative risks if weak:** undetected degradation, harmful outputs reaching users, orphaned pilots in production.
+
+## 5. Strategic Sovereignty (`strategic_sovereignty`)
+
+**Description:** Long-term control over data, infrastructure, and maintainability.
+
+| Criterion ID | Topic |
+|--------------|-------|
+| `vendor_independence` | Vendor independence |
+| `data_sovereignty` | Data sovereignty |
+| `infrastructure_control` | Infrastructure control |
+| `portability` | Portability |
+| `maintainability` | Long-term maintainability |
+
+**Suggested evidence:** supplier analysis, residency statements, DR design, migration tests, sustainment roadmap.
+
+**Indicative risks if weak:** lock-in, loss of data control, brittle unsupported services.
+
+## Implementation notes
+
+- Full criterion text, evidence hints, and per-criterion risks: `localgovbench/framework/dimensions.py`
+- Checklist item ids: `{dimension_id}_{criterion_id}` (e.g. `legal_regulatory_gdpr_readiness`)
+- Scoring: `localgovbench/framework/scoring.py` (0–4 scale, uniform dimension weights in v0.1)
+
+Weighted scoring and empirical calibration may be introduced in later versions after field studies.

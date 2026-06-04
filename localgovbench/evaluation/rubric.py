@@ -2,13 +2,7 @@
 
 from __future__ import annotations
 
-MATURITY_LABELS: dict[int, str] = {
-    0: "Absent",
-    1: "Initial",
-    2: "Defined",
-    3: "Managed",
-    4: "Optimized",
-}
+from localgovbench.framework.scoring import MATURITY_LABELS, describe_level
 
 
 def describe_maturity(score: float) -> str:
@@ -18,3 +12,6 @@ def describe_maturity(score: float) -> str:
     level = int(round(score))
     level = max(0, min(4, level))
     return MATURITY_LABELS[level]
+
+
+__all__ = ["MATURITY_LABELS", "describe_level", "describe_maturity"]

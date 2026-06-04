@@ -4,15 +4,13 @@
 
 ## High-level mapping
 
-| LocalGovBench dimension | GDPR themes (indicative) |
-|-------------------------|--------------------------|
-| `strategy` | Accountability principle, governance of processing |
-| `risk` | DPIA triggers, risk-based measures (Art. 32) |
-| `data` | Lawfulness, purpose limitation, data minimization, accuracy |
-| `transparency` | Information duties (Arts. 13–14), meaningful information about logic |
-| `accountability` | Records of processing, DPO involvement, processor agreements |
-| `procurement` | Processor due diligence, Art. 28 contracts |
-| `skills` | Organizational measures and staff training |
+| LocalGovBench dimension (v0.1) | GDPR themes (indicative) |
+|--------------------------------|--------------------------|
+| `legal_regulatory` | Lawfulness, retention, transfers, accountability, DPIA |
+| `technical_security` | Integrity and confidentiality (Art. 32), security of processing |
+| `organizational` | Accountability, roles, processor relationships |
+| `operational` | Transparency, oversight, incident handling |
+| `strategic_sovereignty` | Data minimization, residency, control over processors |
 
 ## Automated decision-making
 

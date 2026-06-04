@@ -2,8 +2,17 @@
 
 from __future__ import annotations
 
-from localgovbench.framework.checklist import build_checklist
+from localgovbench.framework.checklist import build_checklist, checklist_framework_version
 from localgovbench.framework.dimensions import GOVERNANCE_DIMENSIONS
+
+
+def test_checklist_framework_version() -> None:
+    assert checklist_framework_version() == "0.1"
+
+
+def test_checklist_item_count() -> None:
+    checklist = build_checklist()
+    assert len(checklist) == 25
 
 
 def test_checklist_covers_all_dimensions() -> None:
@@ -19,7 +28,10 @@ def test_checklist_item_ids_unique() -> None:
     assert len(ids) == len(set(ids))
 
 
-def test_checklist_item_id_prefix() -> None:
+def test_checklist_item_matches_criteria() -> None:
     checklist = build_checklist()
     for item in checklist:
-        assert item.id.startswith(f"{item.dimension_id}_")
+        assert item.id == f"{item.dimension_id}_{item.criterion_id}"
+        assert item.prompt
+        assert item.guidance
+        assert item.risk_if_missing
