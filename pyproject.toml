@@ -31,8 +31,8 @@ dependencies = []
 dev = ["pytest>=8.0", "pyyaml>=6.0"]
 
 [project.urls]
-Repository = "https://github.com/PLACEHOLDER/localgovbench"
-Documentation = "https://github.com/PLACEHOLDER/localgovbench/tree/main/docs"
+Repository = "https://github.com/cesar-andress/localgovbench"
+Documentation = "https://github.com/cesar-andress/localgovbench/tree/main/docs"
 
 [tool.setuptools.packages.find]
 where = ["."]

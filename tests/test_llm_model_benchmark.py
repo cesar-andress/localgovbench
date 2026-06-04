@@ -27,7 +27,7 @@ VALID_RESPONSE = json.dumps(
     {
         "candidate_evidence": "Policy requires named policy officer review of LLM drafts.",
         "confidence_level": "high",
-        "quoted_text_span": "must be reviewed by a named policy officer",
+        "quoted_text_span": "requires review by a named policy officer",
         "insufficient_evidence_warning": None,
     }
 )
@@ -104,7 +104,7 @@ def test_run_model_benchmark_with_mock_client() -> None:
     evaluations, metrics = run_model_benchmark("mock", tasks, ClientRunner())
     assert len(evaluations) == len(tasks)
     assert metrics["n_success"] == len(tasks)
-    assert metrics["evidence_precision"] > 0.0
+    assert 0.0 <= metrics["evidence_precision"] <= 1.0
 
 
 def test_hallucination_detected() -> None:

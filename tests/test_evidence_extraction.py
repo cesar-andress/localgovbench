@@ -20,7 +20,7 @@ VALID_RESPONSE = json.dumps(
     {
         "candidate_evidence": "Policy requires named policy officer review of LLM drafts.",
         "confidence_level": "high",
-        "quoted_text_span": "must be reviewed by a named policy officer",
+        "quoted_text_span": "requires review by a named policy officer",
         "insufficient_evidence_warning": None,
     }
 )

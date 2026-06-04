@@ -28,6 +28,6 @@ All notable changes to this project are documented here. The format follows [Kee
 
 - Instrument v0.1 and GRB specification are **frozen** for this release
 - Bundled scores are **synthetic**; empirical field validation is **pending**
-- Zenodo DOI placeholder: `10.5281/zenodo.TBD`
+- Zenodo DOI: [10.5281/zenodo.20543779](https://doi.org/10.5281/zenodo.20543779)
 
-[0.1.0]: https://github.com/PLACEHOLDER/localgovbench/releases/tag/v0.1.0
+[0.1.0]: https://github.com/cesar-andress/localgovbench/releases/tag/v0.1.0

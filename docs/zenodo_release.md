@@ -21,7 +21,7 @@ Use the summary below or the linked document before creating a Zenodo record. Ma
 
 - [ ] **README complete** — Purpose, scope, GIQ paper relation, reproducibility, disclaimers (see [README.md](../README.md))
 - [ ] **License selected** — MIT (`LICENSE` file matches Zenodo license field)
-- [x] **Citation file complete** — `CITATION.cff` author **César Andrés**, ORCID, affiliation, email (repository URL/DOI placeholders may remain until deposit)
+- [x] **Citation file complete** — `CITATION.cff` author **César Andrés**, ORCID, affiliation, email, Zenodo DOI `10.5281/zenodo.20543779`
 
 ### Version control and quality
 
@@ -38,7 +38,7 @@ Use the summary below or the linked document before creating a Zenodo record. Ma
 
 ### Archival deposit
 
-- [ ] **DOI created through Zenodo** — Record published; version DOI copied into `CITATION.cff` and README
+- [x] **DOI created through Zenodo** — https://doi.org/10.5281/zenodo.20543779 (v0.1.0; reflected in `CITATION.cff` and README)
 - [ ] **Archive checksum stored** — SHA-256 (or Zenodo file hash) recorded in release notes or a `RELEASE.md` / GitHub release body for verification
 
 ### Optional but recommended
@@ -57,13 +57,9 @@ Use the summary below or the linked document before creating a Zenodo record. Ma
 4. Push tag: `git push origin v0.1.0`.
 5. Create GitHub Release from tag with checksum of source archive (GitHub-generated zip/tar.gz).
 6. Trigger or confirm Zenodo-GitHub hook; review Zenodo metadata.
-7. Copy DOI to `CITATION.cff`:
+7. Copy DOI to `CITATION.cff` (v0.1.0: `10.5281/zenodo.20543779`).
 
-   ```yaml
-   doi: 10.5281/zenodo.XXXXXXX
-   ```
-
-8. Commit DOI update on `main` or document in README citation section.
+8. Commit DOI update on `main` and document in [citation.md](citation.md) and README.
 
 ## Recommended Zenodo metadata
 

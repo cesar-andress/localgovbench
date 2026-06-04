@@ -1,10 +1,19 @@
 # LocalGovBench
 
-**Version 0.1.0** — research preview (pre-release for GitHub and Zenodo)
+**Version 0.1.0** — archived research artifact ([Zenodo](https://doi.org/10.5281/zenodo.20543779))
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](CHANGELOG.md)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20543779.svg)](https://doi.org/10.5281/zenodo.20543779)
+
+## Citation
+
+**LocalGovBench v0.1.0** is archived on Zenodo.
+
+**DOI:** https://doi.org/10.5281/zenodo.20543779
+
+The Zenodo record is the **frozen research artifact** (instrument, synthetic validation tooling, reproducibility scripts) referenced by the companion GIQ manuscript. It is not a legal compliance certificate or a field-validated municipal benchmark. For APA and BibTeX formats, see [docs/citation.md](docs/citation.md) and [CITATION.cff](CITATION.cff).
 
 ## Project purpose
 
@@ -32,6 +41,7 @@ The artifact supports structured self-assessment, document coding, and empirical
 | [CHANGELOG.md](CHANGELOG.md) | Version history |
 | [docs/construct_traceability.md](docs/construct_traceability.md) | Literature traceability for 25 v0.1 criteria |
 | [docs/demo_walkthrough.md](docs/demo_walkthrough.md) | GRB end-to-end workflow demo (reproducible commands) |
+| [docs/citation.md](docs/citation.md) | APA and BibTeX citation (Zenodo DOI) |
 
 ## Relation to the GIQ paper
 
@@ -152,27 +162,7 @@ python scripts/run_example_assessment.py
 
 See [docs/zenodo_release.md](docs/zenodo_release.md) and [docs/release_v0_1_checklist.md](docs/release_v0_1_checklist.md) for publication steps.
 
-## Citation
-
-### Software (repository / Zenodo)
-
-When citing this artifact, use [CITATION.cff](CITATION.cff):
-
-```bibtex
-@software{localgovbench2026,
-  author    = {Andrés, César},
-  title     = {LocalGovBench},
-  year      = {2026},
-  version   = {0.1.0},
-  orcid     = {0009-0001-8968-3404},
-  doi       = {10.5281/zenodo.TBD},
-  url       = {https://github.com/PLACEHOLDER/localgovbench}
-}
-```
-
-Replace `10.5281/zenodo.TBD` and the repository URL after deposit and public GitHub release.
-
-### Companion paper (placeholder)
+## Companion paper (citation)
 
 ```bibtex
 @article{giq2026localai,
@@ -198,7 +188,7 @@ Researchers should cite the **exact Git tag (`v0.1.0`) and Zenodo version** used
 
 ## Status
 
-**v0.1.0 pre-release** — Instrument **frozen**; synthetic validation tooling complete; **empirical field validation pending**. Ready for public GitHub and Zenodo deposit following the release checklist.
+**v0.1.0** — Instrument **frozen** and archived on Zenodo ([DOI 10.5281/zenodo.20543779](https://doi.org/10.5281/zenodo.20543779)); synthetic validation tooling complete; **empirical field validation pending**.
 
 ## Contributing
 

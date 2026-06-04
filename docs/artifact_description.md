@@ -45,7 +45,7 @@ The artifact does **not** provide legal compliance certification.
 | Tests | `tests/` |
 | Prompts (research instruments) | `prompts/` |
 | Data placeholders | `data/raw/`, `data/processed/`, `data/templates/` |
-| Citation metadata | `CITATION.cff` |
+| Citation metadata | `CITATION.cff`, [citation.md](citation.md) (DOI [10.5281/zenodo.20543779](https://doi.org/10.5281/zenodo.20543779)) |
 
 Bundled assessment outputs under `results/` and `reports/` are **generated** from scripts unless otherwise noted.
 
@@ -118,6 +118,8 @@ python scripts/validate_repository.py
 Pre-release checklist: [release_v0_1_checklist.md](release_v0_1_checklist.md).
 
 Zenodo deposit guide: [zenodo_release.md](zenodo_release.md).
+
+**Archived release:** LocalGovBench v0.1.0 — https://doi.org/10.5281/zenodo.20543779
 
 ---
 

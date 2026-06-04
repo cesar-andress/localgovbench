@@ -9,7 +9,7 @@ Reproduce the computational artefact from a clean environment. Use the **Git tag
 ## 1. Install dependencies
 
 ```bash
-git clone https://github.com/PLACEHOLDER/localgovbench.git
+git clone https://github.com/cesar-andress/localgovbench.git
 cd localgovbench
 git checkout v0.1.0
 
@@ -188,7 +188,7 @@ Deterministic mock run (no Ollama): `python scripts/run_llm_model_benchmark.py -
 
 ## Citation and archive integrity
 
-1. Cite [CITATION.cff](../CITATION.cff) and the Zenodo DOI once deposited.
+1. Cite [CITATION.cff](../CITATION.cff) and Zenodo DOI [10.5281/zenodo.20543779](https://doi.org/10.5281/zenodo.20543779) (see [citation.md](citation.md)).
 2. Record the Git tag (`v0.1.0`) and archive SHA-256 from [release_v0_1_checklist.md](release_v0_1_checklist.md).
 
 ---

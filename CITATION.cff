@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use LocalGovBench, please cite this software artifact."
+message: "If you use LocalGovBench, please cite this research artifact."
 type: software
 title: LocalGovBench
 version: 0.1.0
@@ -31,16 +31,16 @@ authors:
       Science, Universidad Camilo José Cela, Madrid, Spain
     orcid: "https://orcid.org/0009-0001-8968-3404"
     email: cesar.andress@ucjc.edu
-repository-code: "https://github.com/PLACEHOLDER/localgovbench"
-url: "https://github.com/PLACEHOLDER/localgovbench"
-doi: 10.5281/zenodo.TBD
+repository-code: "https://github.com/cesar-andress/localgovbench"
+url: "https://github.com/cesar-andress/localgovbench"
+doi: 10.5281/zenodo.20543779
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.TBD"
-    description: "Zenodo archive DOI (placeholder — replace after deposit)"
+    value: "10.5281/zenodo.20543779"
+    description: "Zenodo archive DOI (v0.1.0)"
   - type: url
-    value: "https://github.com/PLACEHOLDER/localgovbench"
-    description: "Source code repository (placeholder URL)"
+    value: "https://github.com/cesar-andress/localgovbench"
+    description: "Source code repository"
 related-identifiers:
   - type: doi
     relation: cites

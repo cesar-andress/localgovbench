@@ -23,6 +23,7 @@ REQUIRED_PATHS = [
     "docs/ai_act_mapping.md",
     "docs/gdpr_mapping.md",
     "docs/zenodo_release.md",
+    "docs/citation.md",
     "docs/manuscript_positioning.md",
     "docs/validation_protocol.md",
     "localgovbench/__init__.py",
@@ -178,8 +179,11 @@ def main() -> int:
     if 'title: LocalGovBench' not in citation:
         print("CITATION.cff title should be LocalGovBench.")
         return 1
-    if "10.5281/zenodo.TBD" not in citation:
-        print("CITATION.cff should include placeholder DOI 10.5281/zenodo.TBD.")
+    if "10.5281/zenodo.20543779" not in citation:
+        print("CITATION.cff should include Zenodo DOI 10.5281/zenodo.20543779.")
+        return 1
+    if "zenodo.TBD" in citation or "zenodo.XXXXXXX" in citation:
+        print("CITATION.cff still contains a placeholder Zenodo DOI.")
         return 1
     if "family-names: Andrés" not in citation or "given-names: César" not in citation:
         print("CITATION.cff should list author César Andrés.")

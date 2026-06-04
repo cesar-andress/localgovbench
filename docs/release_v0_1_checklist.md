@@ -31,9 +31,9 @@ Related documents: [artifact_description.md](artifact_description.md), [reproduc
 
 - [ ] [CITATION.cff](../CITATION.cff) `title: LocalGovBench`
 - [ ] `version: 0.1.0` aligned with `pyproject.toml`
-- [ ] Citation message: *"If you use LocalGovBench, please cite this software artifact."*
-- [ ] Placeholder DOI `10.5281/zenodo.TBD` (replace after Zenodo deposit)
-- [ ] Placeholder repository URL updated to final GitHub URL before public launch
+- [x] Citation message: *"If you use LocalGovBench, please cite this research artifact."*
+- [x] Zenodo DOI `10.5281/zenodo.20543779` in `CITATION.cff` and README
+- [x] Repository URL `https://github.com/cesar-andress/localgovbench`
 - [x] Author identity standardized — **César Andrés**, ORCID `0009-0001-8968-3404`, `cesar.andress@ucjc.edu` (see [author_identity.md](author_identity.md))
 - [ ] Companion paper DOI added when published (optional `related-identifiers`)
 
@@ -147,9 +147,9 @@ git archive --format=tar.gz --prefix=localgovbench-0.1.0/ v0.1.0 \
 
 ## Post-deposit updates
 
-- [ ] Replace `10.5281/zenodo.TBD` in `CITATION.cff` with issued DOI
-- [ ] Update README citation block with final DOI
-- [ ] Add Zenodo badge or DOI link to README (optional)
+- [x] Replace placeholder DOI in `CITATION.cff` with `10.5281/zenodo.20543779`
+- [x] Update README citation section with Zenodo DOI and [citation.md](citation.md)
+- [x] Zenodo DOI badge in README
 
 ---
 

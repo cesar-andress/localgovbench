@@ -37,7 +37,7 @@ Do **not** use `Andrés Sánchez, C.` or `Sánchez, César Andrés`.
 
 ## Software citation (Zenodo / CITATION.cff)
 
-See [CITATION.cff](../CITATION.cff): `given-names: César`, `family-names: Andrés`.
+See [CITATION.cff](../CITATION.cff) and [citation.md](citation.md). Zenodo DOI: https://doi.org/10.5281/zenodo.20543779
 
 ---
 
