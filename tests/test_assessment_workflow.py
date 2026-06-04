@@ -134,5 +134,5 @@ def test_compute_requires_complete_scores(tmp_path: Path) -> None:
     )
     run_prepare_phase(config)
     scores_path = config.output_dir / "assessor_scoring_template.yaml"
-    with pytest.raises(ValueError, match="unscored"):
+    with pytest.raises(ValueError, match="template is for human entry only"):
         load_human_scores(scores_path)

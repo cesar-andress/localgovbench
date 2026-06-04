@@ -86,8 +86,22 @@ def load_human_scores(path: Path) -> dict[str, int]:
     responses = data["responses"]
     missing = [k for k, v in responses.items() if v is None]
     if missing:
+        completed_hint = path.parent / "assessor_scoring_completed.yaml"
+        hint = (
+            f"\n  For a synthetic walkthrough, run:\n"
+            f"    python scripts/fill_demo_scores.py "
+            f"--input {path} --output {completed_hint}\n"
+            f"  Then pass --scores {completed_hint} to --compute-score."
+        )
+        if path.name == SCORING_TEMPLATE_FILENAME:
+            raise ValueError(
+                f"{len(missing)} indicators still unscored (null) in {path.name}. "
+                f"The template is for human entry only — it cannot be used with --compute-score."
+                f"{hint}"
+            )
         raise ValueError(
             f"{len(missing)} indicators still unscored (null). Complete human scoring before compute."
+            f"{hint}"
         )
 
     return {k: validate_indicator_score(v) for k, v in responses.items()}
