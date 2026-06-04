@@ -41,3 +41,7 @@ include = ["localgovbench*"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["."]
+markers = [
+    "integration: tests requiring local external services such as Ollama",
+]
+addopts = "-m 'not integration'"

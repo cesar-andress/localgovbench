@@ -86,7 +86,7 @@ Related documents: [artifact_description.md](artifact_description.md), [reproduc
 ## Tests passing
 
 - [ ] `pip install -e ".[dev]"` succeeds
-- [ ] `pytest` — all tests pass
+- [ ] `pytest -m "not integration"` — all unit tests pass (no Ollama required)
 - [ ] `python scripts/validate_repository.py` — required paths OK
 - [ ] No changes to frozen scoring formulas, indicators, or validation metric implementations in this release prep commit
 

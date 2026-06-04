@@ -1,8 +1,9 @@
-"""Tests for Ollama evidence extraction (mocked HTTP)."""
+"""Unit tests for Ollama evidence extraction (mocked — no network or Ollama required)."""
 
 from __future__ import annotations
 
 import json
+from unittest.mock import MagicMock, patch
 
 import pytest
 
@@ -13,20 +14,7 @@ from localgovbench.llm.evidence_extraction import (
     get_grb_indicator,
     parse_extraction_response,
 )
-
-
-class MockOllamaClient(OllamaClient):
-    """Ollama client that returns a fixed response without network I/O."""
-
-    def __init__(self, response_text: str) -> None:
-        super().__init__(base_url="http://mock", model="mock-model")
-        self._response_text = response_text
-        self.last_prompt: str | None = None
-
-    def generate(self, prompt: str, *, json_format: bool = True) -> str:
-        self.last_prompt = prompt
-        return self._response_text
-
+from tests.conftest import MockOllamaClient
 
 VALID_RESPONSE = json.dumps(
     {
@@ -47,12 +35,10 @@ SCORING_RESPONSE = json.dumps(
     }
 )
 
-
 SAMPLE_DOC = (
     "Section 4.2 requires review by a named policy officer. "
     "Automated outputs are advisory."
 )
-
 
 def test_get_grb_indicator() -> None:
     ind = get_grb_indicator("d2_oversight_design_01")
@@ -89,17 +75,39 @@ def test_parse_rejects_scoring_fields() -> None:
         )
 
 
-def test_extract_evidence_with_mock_client() -> None:
-    client = MockOllamaClient(VALID_RESPONSE)
+def test_extract_evidence_with_mock_client(mock_ollama_client: MockOllamaClient) -> None:
     result = extract_evidence(
         SAMPLE_DOC,
         "d2_oversight_design_01",
-        client=client,
+        client=mock_ollama_client,
     )
     assert result.model == "mock-model"
-    assert client.last_prompt is not None
-    assert "candidate_evidence" in client.last_prompt
-    assert "d2_oversight_design_01" in client.last_prompt
+    assert mock_ollama_client.last_prompt is not None
+    assert "candidate_evidence" in mock_ollama_client.last_prompt
+    assert "d2_oversight_design_01" in mock_ollama_client.last_prompt
+
+
+def test_extract_evidence_requires_client_or_mock() -> None:
+    """Default OllamaClient must not be invoked in unit tests."""
+    client = MockOllamaClient(VALID_RESPONSE)
+    result = extract_evidence(SAMPLE_DOC, "d2_oversight_design_01", client=client)
+    assert result.candidate_evidence
+
+
+def test_ollama_client_generate_uses_mocked_http() -> None:
+    """HTTP layer is patched — no live Ollama server or model download."""
+    api_body = json.dumps({"response": VALID_RESPONSE}).encode("utf-8")
+    mock_response = MagicMock()
+    mock_response.read.return_value = api_body
+    mock_response.__enter__ = MagicMock(return_value=mock_response)
+    mock_response.__exit__ = MagicMock(return_value=False)
+
+    client = OllamaClient(base_url="http://127.0.0.1:11434", model="test-model", timeout_seconds=1.0)
+    with patch("localgovbench.llm.evidence_extraction.urllib.request.urlopen", return_value=mock_response):
+        text = client.generate("test prompt", json_format=True)
+
+    assert json.loads(text)["confidence_level"] == "high"
+    mock_response.read.assert_called_once()
 
 
 def test_low_confidence_without_quote_sets_warning() -> None:

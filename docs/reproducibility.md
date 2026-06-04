@@ -23,10 +23,19 @@ pip install -e ".[dev]"
 ## 2. Run tests
 
 ```bash
-pytest
+pytest -m "not integration"
 ```
 
-Expected: all tests pass with no failures.
+Or simply `pytest` (integration tests are excluded by default in `pyproject.toml`).
+
+Expected: all unit tests pass with **no Ollama server, network, or downloaded model** required.
+
+Optional live Ollama checks (local server + model):
+
+```bash
+ollama serve
+OLLAMA_INTEGRATION=1 pytest -m integration
+```
 
 ---
 

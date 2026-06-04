@@ -104,7 +104,7 @@ Requires Python 3.11 or newer. Full command list: [docs/reproducibility.md](docs
 python3 -m venv .venv
 source .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install -e ".[dev]"
-pytest
+pytest -m "not integration"
 python scripts/validate_repository.py
 python scripts/run_example_assessment.py
 ```
