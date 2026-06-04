@@ -99,11 +99,16 @@ python scripts/run_assessment_workflow.py \
   --output-dir outputs/demo_municipality \
   --generate-template
 
-# 2) After filling assessor_scoring_template.yaml with human scores (0–4)
+# 2) Fill SYNTHETIC demo scores (walkthrough only — not for real assessments)
+python scripts/fill_demo_scores.py \
+  --input outputs/demo_municipality/assessor_scoring_template.yaml \
+  --output outputs/demo_municipality/assessor_scoring_completed.yaml
+
+# 3) Compute readiness (use completed YAML from step 2, or a manually filled template)
 python scripts/run_assessment_workflow.py \
   --case-id demo_municipality \
   --documents data/synthetic/workflow_demo/documents \
-  --scores outputs/demo_municipality/assessor_scoring_template.yaml \
+  --scores outputs/demo_municipality/assessor_scoring_completed.yaml \
   --output-dir outputs/demo_municipality \
   --compute-score
 
@@ -117,7 +122,7 @@ python scripts/run_assessment_workflow.py \
   --model llama3.1:8b
 ```
 
-Outputs: `evidence_log.yaml`, `assessor_scoring_template.yaml`, `readiness_report.md`, `machine_readable_results.json`.
+Outputs: `evidence_log.yaml`, `assessor_scoring_template.yaml`, `assessor_scoring_completed.yaml` (demo helper), `readiness_report.md`, `machine_readable_results.json`.
 
 > **Warning:** All bundled assessment scores and metadata in `examples/` are **synthetic** unless a future release explicitly states otherwise.
 
