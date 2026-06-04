@@ -28,3 +28,18 @@ python scripts/run_llm_model_benchmark.py --mock
 **Mock results are for pipeline testing only** — do not cite them as empirical model comparisons.
 
 Do not use deprecated `results/model_benchmark.csv` or `reports/model_benchmark.md`; the CLI removes them when run.
+
+## Repeated benchmark (N runs per model)
+
+Randomizes task order on each repetition and aggregates mean, standard deviation, and 95% CI across runs:
+
+```bash
+python scripts/run_llm_model_benchmark_repeated.py --mock --repetitions 3
+python scripts/run_llm_model_benchmark_repeated.py --repetitions 10
+```
+
+| Output | Path |
+|--------|------|
+| Summary CSV | `results/model_benchmark_repeated.csv` |
+| Report | `reports/model_benchmark_repeated.md` |
+| Individual runs | `results/repeated_runs/<model>/run_XXX.json` |

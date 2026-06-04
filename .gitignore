@@ -61,6 +61,8 @@ data/processed/*
 results/model_benchmark.csv
 !results/model_benchmark_mock.csv
 !results/model_benchmark_live.csv
+!results/model_benchmark_repeated.csv
+results/repeated_runs/
 !data/traceability/indicator_mapping.csv
 
 # GRB generated reports (regenerate via scripts/run_grb_assessment.py)
@@ -71,6 +73,7 @@ reports/*_grb_report.md
 reports/model_benchmark.md
 !reports/model_benchmark_mock.md
 !reports/model_benchmark_live.md
+!reports/model_benchmark_repeated.md
 !reports/traceability_report.md
 
 # Workflow outputs (regenerate via scripts/run_assessment_workflow.py)

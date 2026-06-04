@@ -1,0 +1,6 @@
+model,n_repetitions,n_tasks_per_run,status,mean_evidence_precision,std_evidence_precision,ci95_evidence_precision_low,ci95_evidence_precision_high,mean_quote_validity_rate,std_quote_validity_rate,ci95_quote_validity_rate_low,ci95_quote_validity_rate_high,mean_hallucinated_evidence_rate,std_hallucinated_evidence_rate,ci95_hallucinated_evidence_rate_low,ci95_hallucinated_evidence_rate_high,mean_insufficient_evidence_detection_rate,std_insufficient_evidence_detection_rate,ci95_insufficient_evidence_detection_rate_low,ci95_insufficient_evidence_detection_rate_high,mean_mean_latency_seconds,std_mean_latency_seconds,ci95_mean_latency_seconds_low,ci95_mean_latency_seconds_high
+llama3.1:8b,2,15,ok,0.8,0.0,0.8,0.8,0.7273,0.0,0.7273,0.7273,0.2,0.0,0.2,0.2,1.0,0.0,1.0,1.0,0.074,0.0,0.074,0.074
+qwen2.5:7b,2,15,ok,1.0,0.0,1.0,1.0,1.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,1.0,0.071,0.0,0.071,0.071
+mistral:7b,2,15,ok,0.8667,0.0,0.8667,0.8667,0.8182,0.0,0.8182,0.8182,0.1333,0.0,0.1333,0.1333,1.0,0.0,1.0,1.0,0.079,0.0,0.079,0.079
+gemma2:9b,2,15,ok,1.0,0.0,1.0,1.0,1.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,1.0,0.08,0.0,0.08,0.08
+phi3,2,15,ok,1.0,0.0,1.0,1.0,1.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,1.0,0.082,0.0,0.082,0.082
