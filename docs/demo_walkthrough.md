@@ -1,23 +1,35 @@
-# End-to-end GRB workflow — reproducible demo walkthrough
+# LocalGovBench — reproducible end-to-end demo walkthrough
 
-This guide runs the **Governance Readiness Benchmark (GRB)** pipeline from synthetic municipality documents to a readiness report. All bundled inputs and the optional demo score filler are **synthetic** — they do **not** constitute empirical validation.
+Complete **GRB (Governance Readiness Benchmark)** workflow from synthetic municipality documents to a readiness report. Run all commands from the **repository root** (`localgovbench/`).
 
-**Prerequisites:** Python 3.11+, repository root as working directory.
+**Prerequisites**
 
 ```bash
+cd /path/to/localgovbench
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -e ".[dev]"
 ```
 
-Demo documents: `data/synthetic/workflow_demo/documents/`  
-Output folder: `outputs/demo_municipality/` (created by the scripts; listed in `.gitignore`).
+Demo inputs: `data/synthetic/workflow_demo/documents/`  
+Demo outputs: `outputs/demo_municipality/` (gitignored; safe to delete and regenerate).
 
 ---
 
-## 1. Generate the template (prepare phase)
+## 1. Clean previous outputs
 
-Creates `evidence_log.yaml` and `assessor_scoring_template.yaml` with **all 54 indicators** set to `null`. No Ollama required.
+Remove stale artifacts so this run is reproducible from a clean state.
+
+```bash
+rm -rf outputs/demo_municipality
+mkdir -p outputs/demo_municipality
+```
+
+---
+
+## 2. Generate assessment template (prepare phase)
+
+Builds the evidence log and human scoring template. **No Ollama required.**
 
 ```bash
 python scripts/run_assessment_workflow.py \
@@ -27,21 +39,39 @@ python scripts/run_assessment_workflow.py \
   --generate-template
 ```
 
-**Expected outputs:**
+Creates:
 
-| File | Purpose |
-|------|---------|
-| `outputs/demo_municipality/evidence_log.yaml` | Candidate evidence entries (indexed from documents) |
-| `outputs/demo_municipality/assessor_scoring_template.yaml` | Human scoring template — **scores are null** |
-| `outputs/demo_municipality/machine_readable_results.json` | Machine-readable prepare-phase metadata |
-
-Do **not** pass `assessor_scoring_template.yaml` to `--compute-score` until every indicator has a score.
+- `outputs/demo_municipality/evidence_log.yaml`
+- `outputs/demo_municipality/assessor_scoring_template.yaml`
+- `outputs/demo_municipality/machine_readable_results.json`
 
 ---
 
-## 2. Fill synthetic demo scores (walkthrough helper only)
+## 3. Inspect `evidence_log.yaml` and `assessor_scoring_template.yaml`
 
-Deterministic placeholder scores (~level 3 per dimension) for pipeline testing.
+Confirm structure before scoring. The template must have **54 indicators** with `null` scores; the evidence log lists **candidate evidence** (not maturity scores).
+
+```bash
+head -n 30 outputs/demo_municipality/evidence_log.yaml
+grep -c "entries:" outputs/demo_municipality/evidence_log.yaml
+head -n 25 outputs/demo_municipality/assessor_scoring_template.yaml
+grep -c ": null" outputs/demo_municipality/assessor_scoring_template.yaml
+```
+
+Optional full view:
+
+```bash
+less outputs/demo_municipality/evidence_log.yaml
+less outputs/demo_municipality/assessor_scoring_template.yaml
+```
+
+Do **not** use `assessor_scoring_template.yaml` with `--compute-score` while scores are `null`.
+
+---
+
+## 4. Fill synthetic demo scores
+
+**SYNTHETIC DEMO ONLY** — deterministic placeholders for pipeline walkthrough, not real human assessment.
 
 ```bash
 python scripts/fill_demo_scores.py \
@@ -49,15 +79,20 @@ python scripts/fill_demo_scores.py \
   --output outputs/demo_municipality/assessor_scoring_completed.yaml
 ```
 
-**Expected output:** `outputs/demo_municipality/assessor_scoring_completed.yaml`
+Verify scores are filled:
 
-For a **real** assessment, skip this step and edit the template manually (integer scores 0–4 per indicator), then save under a new filename (e.g. `assessor_scoring_completed.yaml`).
+```bash
+grep -c ": null" outputs/demo_municipality/assessor_scoring_completed.yaml || true
+head -n 20 outputs/demo_municipality/assessor_scoring_completed.yaml
+```
+
+For a **real** municipality study, skip this script and edit the template manually (0–4 per indicator), then save as `assessor_scoring_completed.yaml`.
 
 ---
 
-## 3. Compute readiness
+## 5. Compute readiness
 
-Uses **human or demo-completed** scores plus `evidence_log.yaml` from step 1.
+Uses completed scores and the evidence log from step 2.
 
 ```bash
 python scripts/run_assessment_workflow.py \
@@ -68,31 +103,55 @@ python scripts/run_assessment_workflow.py \
   --compute-score
 ```
 
-**Expected outputs:**
+Updates:
 
-| File | Purpose |
-|------|---------|
-| `outputs/demo_municipality/readiness_report.md` | Report separating candidate evidence, human/demo scores, and computed readiness |
-| `outputs/demo_municipality/machine_readable_results.json` | Updated JSON with readiness metrics |
+- `outputs/demo_municipality/readiness_report.md`
+- `outputs/demo_municipality/machine_readable_results.json`
 
-Example console line: `Readiness (final): … — …`
+Expect a line similar to: `Readiness (final): 75.0 — Advanced readiness` (exact value depends on demo scores).
 
 ---
 
-## 4. Optional: Ollama candidate evidence extraction
+## 6. Open `readiness_report.md`
 
-Requires a **local** [Ollama](https://ollama.com) server and a pulled model. Ollama proposes **candidate evidence only** — it **never** assigns maturity scores (0–4).
+Review the report: it separates **candidate evidence**, **human/demo-assigned scores**, and **computed readiness**.
 
-Start Ollama (separate terminal):
+```bash
+less outputs/demo_municipality/readiness_report.md
+```
+
+On Linux desktop (if available):
+
+```bash
+xdg-open outputs/demo_municipality/readiness_report.md
+```
+
+On macOS:
+
+```bash
+open outputs/demo_municipality/readiness_report.md
+```
+
+---
+
+## 7. Optional: Ollama evidence extraction
+
+Ollama extracts **candidate evidence only** — it **never** assigns maturity scores (0–4).
+
+Terminal 1 — start Ollama:
 
 ```bash
 ollama serve
-ollama pull llama3.1:8b
 ```
 
-Re-run the **prepare** phase with `--use-ollama` (replace or refresh outputs in the same folder):
+Terminal 2 — pull model and re-run prepare (after step 1 clean, or on a fresh output dir):
 
 ```bash
+ollama pull llama3.1:8b
+
+rm -rf outputs/demo_municipality
+mkdir -p outputs/demo_municipality
+
 python scripts/run_assessment_workflow.py \
   --case-id demo_municipality \
   --documents data/synthetic/workflow_demo/documents \
@@ -102,9 +161,11 @@ python scripts/run_assessment_workflow.py \
   --model llama3.1:8b
 ```
 
-If Ollama is unavailable, the workflow prints a **warning** and continues without LLM extraction.
+If Ollama is down, the workflow prints a **warning** and continues without LLM extraction.
 
-Standalone extraction prototype (single indicator experiment):
+Then repeat steps **4** and **5** (demo scores or manual scoring, then compute).
+
+Standalone single-indicator prototype:
 
 ```bash
 python scripts/run_ollama_evidence_extraction.py
@@ -112,29 +173,26 @@ python scripts/run_ollama_evidence_extraction.py
 
 See `prompts/evidence_extraction.md`.
 
-After Ollama prepare, continue from **step 2** (demo scores or manual scoring) and **step 3** (compute).
+---
+
+## 8. Demo scores are synthetic — not empirical validation
+
+| This walkthrough demonstrates | This walkthrough does **not** provide |
+|------------------------------|---------------------------------------|
+| CLI path: documents → evidence log → scores → readiness | Field-validated municipal benchmark scores |
+| Frozen GRB scoring on synthetic inputs | Content validity, inter-rater reliability, or legal compliance |
+| `fill_demo_scores.py` as a teaching aid | Evidence suitable for publication tables |
+
+**Important:**
+
+- `data/synthetic/workflow_demo/documents/` — fictional municipality text.
+- `fill_demo_scores.py` — prints **SYNTHETIC DEMO ONLY**; never cite its output as study data.
+- `assessor_scoring_template.yaml` — for real human coders; all `null` until completed.
+- Empirical validation protocols: [validation_protocol.md](validation_protocol.md).
 
 ---
 
-## 5. Synthetic demo scores are not validation evidence
-
-| What the demo provides | What it does **not** prove |
-|------------------------|----------------------------|
-| Reproducible CLI path from documents → evidence log → scores → readiness | Municipal governance quality in the field |
-| Frozen GRB scoring engine behaviour on synthetic inputs | Content validity, inter-rater agreement, or legal compliance |
-| `fill_demo_scores.py` deterministic placeholders for walkthroughs | Expert-assessed or empirically validated benchmark scores |
-
-**Rules:**
-
-- `assessor_scoring_template.yaml` — empty template for **real** human coders only.
-- `fill_demo_scores.py` — **SYNTHETIC DEMO ONLY**; do not cite outputs as study results.
-- Published claims require field data, validation protocols in [validation_protocol.md](validation_protocol.md), and explicit `synthetic: false` metadata only when genuinely applicable.
-
-Bundled workflow documents under `data/synthetic/workflow_demo/` are fictional municipalities.
-
----
-
-## Quick verification
+## Verify the repository
 
 ```bash
 pytest -m "not integration"
@@ -143,12 +201,42 @@ python scripts/validate_repository.py
 
 ---
 
-## Related documentation
+## One-shot command block (copy-paste)
 
-- [reproducibility.md](reproducibility.md) — full install and script index
-- [artifact_description.md](artifact_description.md) — scope and validation status
-- [data/synthetic/workflow_demo/README.md](../data/synthetic/workflow_demo/README.md) — demo document index
+After `pip install -e ".[dev]"` from the repo root:
+
+```bash
+rm -rf outputs/demo_municipality
+mkdir -p outputs/demo_municipality
+
+python scripts/run_assessment_workflow.py \
+  --case-id demo_municipality \
+  --documents data/synthetic/workflow_demo/documents \
+  --output-dir outputs/demo_municipality \
+  --generate-template
+
+python scripts/fill_demo_scores.py \
+  --input outputs/demo_municipality/assessor_scoring_template.yaml \
+  --output outputs/demo_municipality/assessor_scoring_completed.yaml
+
+python scripts/run_assessment_workflow.py \
+  --case-id demo_municipality \
+  --documents data/synthetic/workflow_demo/documents \
+  --scores outputs/demo_municipality/assessor_scoring_completed.yaml \
+  --output-dir outputs/demo_municipality \
+  --compute-score
+
+less outputs/demo_municipality/readiness_report.md
+```
 
 ---
 
-*LocalGovBench GRB workflow demo — research artifact v0.1.0*
+## Related links
+
+- [reproducibility.md](reproducibility.md)
+- [artifact_description.md](artifact_description.md)
+- [data/synthetic/workflow_demo/README.md](../data/synthetic/workflow_demo/README.md)
+
+---
+
+*LocalGovBench v0.1.0 — GRB workflow demo*

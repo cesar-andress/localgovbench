@@ -90,11 +90,13 @@ GRB specification, indicators, scoring formula, and safeguards are **not modifie
 
 ### End-to-end workflow demo
 
-Step-by-step commands (template → demo scores → readiness → optional Ollama): **[docs/demo_walkthrough.md](docs/demo_walkthrough.md)**.
+Full reproducible walkthrough (clean outputs, inspect YAML, compute, open report, optional Ollama): **[docs/demo_walkthrough.md](docs/demo_walkthrough.md)**.
 
-Quick start after `pip install -e ".[dev]"`:
+Quick start after `pip install -e ".[dev]"` from the repository root:
 
 ```bash
+rm -rf outputs/demo_municipality && mkdir -p outputs/demo_municipality
+
 python scripts/run_assessment_workflow.py \
   --case-id demo_municipality \
   --documents data/synthetic/workflow_demo/documents \
