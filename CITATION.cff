@@ -1,33 +1,54 @@
 cff-version: 1.2.0
-title: "LocalGovBench: A Research Framework for Local AI Governance in European Public Sector Organizations"
 message: "If you use this software, please cite it as below."
 type: software
-authors:
-  - family-names: "LocalGovBench"
-    given-names: "Contributors"
-license: MIT
-repository-code: "https://github.com/PLACEHOLDER/localgovbench"
-url: "https://github.com/PLACEHOLDER/localgovbench"
+title: "LocalGovBench: A Research Framework for Local AI Governance in European Public Sector Organizations"
 version: 0.1.0
-date-released: 2026-06-04
+date-released: "2026-06-04"
+license: MIT
+abstract: >-
+  Open research artifact (v0.1) providing a structured framework, checklist,
+  and maturity scoring for assessing governance of local and on-premise large
+  language model deployments in European public sector organizations. Includes
+  indicative EU AI Act and GDPR theme mappings for research purposes.
+  Empirical validation and field datasets are planned for future releases.
 keywords:
   - artificial intelligence
+  - large language models
   - governance
   - public sector
   - European Union
   - AI Act
   - GDPR
+  - on-premise
   - benchmark
-abstract: >-
-  Early-stage research artifact providing a lightweight framework and benchmark
-  scaffolding for assessing local AI governance maturity in European public
-  sector organizations. Empirical datasets and field evaluation results are
-  planned for future releases.
+  - reproducibility
+authors:
+  - given-names: "[Given name]"
+    family-names: "[Family name]"
+    affiliation: "[Affiliation — edit before Zenodo release]"
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+  # Add further authors as needed; remove placeholder ORCID before release.
+repository-code: "https://github.com/PLACEHOLDER/localgovbench"
+url: "https://github.com/PLACEHOLDER/localgovbench"
+# doi: 10.5281/zenodo.XXXXXXX
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.XXXXXXX"
+    description: "Zenodo archive DOI (placeholder — replace after deposit)"
+  - type: url
+    value: "https://github.com/PLACEHOLDER/localgovbench"
+    description: "Source code repository (placeholder URL)"
+related-identifiers:
+  - type: doi
+    relation: cites
+    value: "10.XXXX/XXXXXXX"
+    description: "Companion GIQ paper DOI (placeholder — add when published)"
 preferred-citation:
   type: article
   title: "Towards a Local AI Governance Framework for European Public Sector Organizations"
   authors:
-    - family-names: "Authors"
-      given-names: "TBD"
+    - given-names: "[Given name]"
+      family-names: "[Family name]"
   year: 2026
-  notes: "Manuscript in preparation; update this entry when published."
+  journal: "[Journal or proceedings — edit when known]"
+  notes: "Manuscript in preparation for GIQ 2026; not included in this repository."

@@ -3,25 +3,52 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 
-**LocalGovBench** is an early-stage, open research artifact supporting work on local AI governance for European public sector organizations. It provides a lightweight framework, scoring utilities, and benchmark scaffolding aligned with the paper *Towards a Local AI Governance Framework for European Public Sector Organizations*.
+## Project purpose
 
-> **Status:** This repository is a **research preview**. APIs, dimensions, and sample data may change before a formal Zenodo release. Empirical datasets and evaluation results will be added in later releases.
+**LocalGovBench** is an open research artifact for studying **local and on-premise large language model (LLM) governance** in European public sector organizations. It provides:
+
+- A version **0.1** governance framework (five dimensions, 25 criteria)
+- Maturity scoring utilities (0–4 scale)
+- Indicative mappings to EU AI Act and GDPR **themes** (not legal compliance assessments)
+- Documentation and tooling intended for a future **Zenodo** archival release
+
+The artifact supports structured self-assessment, document coding, and planned case study research. It does **not** certify legal conformity.
+
+## Relation to the GIQ paper
+
+This repository accompanies work submitted to the **GIQ 2026** track, tentatively titled:
+
+*Towards a Local AI Governance Framework for European Public Sector Organizations*
+
+The paper may describe motivation, related work, and research design. **This repository holds the instrument and reproducibility materials**; it does not include the manuscript. When the paper is published, update [CITATION.cff](CITATION.cff) and the citation section below with the official DOI.
+
+## Repository scope
+
+| In scope | Out of scope (v0.1) |
+|----------|---------------------|
+| Framework definitions and checklist generation | Empirically validated benchmark scores |
+| Synthetic example assessments | Real organizational or citizen data |
+| Policy theme mappings (indicative) | Legal advice or conformity assessment |
+| Tests and validation scripts | Production system integrations |
+| Zenodo-oriented release documentation | Manuscript drafts and reviewer materials |
 
 ## What is included
 
-- A **governance framework** with dimensions, checklists, and scoring helpers (`localgovbench/framework`)
-- **Evaluation** rubrics and validators (`localgovbench.evaluation`)
-- **Documentation** on methodology, governance dimensions, and regulatory mappings (`docs/`)
-- **Prompt templates** for structured assessments (`prompts/`)
-- **Synthetic example** assessments and data placeholders (`examples/`, `data/`)
+- **Framework (v0.1):** `localgovbench/framework/` — dimensions, criteria, checklist, scoring
+- **Evaluation helpers:** `localgovbench/evaluation/` — rubric labels, assessment validators
+- **Documentation:** `docs/` — framework, methodology, governance dimensions, AI Act/GDPR mappings, Zenodo guide
+- **Prompt templates:** `prompts/` — structured assessment prompts (research instruments)
+- **Synthetic example:** `examples/example_assessment.yaml`
+- **Data placeholders:** `data/raw/`, `data/processed/`, `data/templates/`
 
-## What is not included (yet)
+> **Warning:** All bundled assessment scores and metadata in `examples/` are **synthetic** unless a future release explicitly states otherwise.
 
-- Real organizational or citizen data
-- Peer-reviewed benchmark scores from field studies
-- Production integrations with case management or procurement systems
+## What is not included
 
-All sample files in `examples/` and placeholder paths under `data/` are **synthetic** unless explicitly labeled otherwise in file headers or release notes.
+- Field study datasets or inter-rater agreement results
+- Peer-reviewed proof that the framework measures legal compliance
+- Unpublished paper PDFs, reviewer correspondence, or private notes
+- Credentials, `.env` files, or identifiable public sector records
 
 ## Quick start
 
@@ -31,8 +58,8 @@ Requires Python 3.11 or newer.
 python -m venv .venv
 source .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install -e ".[dev]"
-python scripts/run_example_assessment.py
 python scripts/validate_repository.py
+python scripts/run_example_assessment.py
 pytest
 ```
 
@@ -41,18 +68,65 @@ pytest
 | Path | Purpose |
 |------|---------|
 | `localgovbench/` | Core Python package |
-| `docs/` | Framework and methodology documentation |
-| `data/` | Data placeholders (raw, processed, templates) |
+| `docs/` | Framework, methodology, regulatory mappings, Zenodo guide |
+| `data/` | Data placeholders for future empirical releases |
 | `prompts/` | Assessment prompt templates |
-| `examples/` | Runnable synthetic examples |
+| `examples/` | Synthetic runnable examples |
 | `tests/` | Unit tests |
-| `scripts/` | Utility scripts |
+| `scripts/` | Validation and demonstration scripts |
 
-See [docs/zenodo_release.md](docs/zenodo_release.md) for publication and versioning guidance.
+See [docs/zenodo_release.md](docs/zenodo_release.md) for the publication checklist.
 
 ## Citation
 
-If you use this artifact, please cite the repository (see [CITATION.cff](CITATION.cff)). A Zenodo DOI will be added when the first release is published.
+### Software (repository / Zenodo)
+
+When citing this artifact, use [CITATION.cff](CITATION.cff). After Zenodo deposit, replace the placeholder DOI:
+
+```bibtex
+@software{localgovbench2026,
+  author    = {[Author names to be added]},
+  title     = {LocalGovBench: A Research Framework for Local AI Governance in European Public Sector Organizations},
+  year      = {2026},
+  version   = {0.1.0},
+  doi       = {10.5281/zenodo.XXXXXXX},
+  url       = {https://github.com/PLACEHOLDER/localgovbench}
+}
+```
+
+### Companion paper (placeholder)
+
+```bibtex
+@article{giq2026localai,
+  author  = {[Authors to be added]},
+  title   = {Towards a Local AI Governance Framework for European Public Sector Organizations},
+  journal = {[Venue to be added]},
+  year    = {2026},
+  note    = {Manuscript in preparation}
+}
+```
+
+## Reproducibility statement
+
+Researchers should cite the **exact Git tag and Zenodo version** used in analysis. For the computational instrument:
+
+1. Install with `pip install -e ".[dev]"` from the tagged commit.
+2. Run `pytest` and `python scripts/validate_repository.py`.
+3. Record the Zenodo archive checksum listed in the release notes (see [docs/zenodo_release.md](docs/zenodo_release.md)).
+
+Empirical protocols (document analysis, expert validation, case studies, inter-rater agreement) are described in [docs/methodology.md](docs/methodology.md). Those steps are outside the automated tests in this repository.
+
+## Ethical and legal disclaimer
+
+- This project provides a **research instrument** for describing governance practices around on-premise LLMs in public institutions.
+- Regulatory mappings in `docs/ai_act_mapping.md` and `docs/gdpr_mapping.md` are **indicative** and **not legal advice**.
+- Maturity scores **do not** indicate GDPR or AI Act compliance.
+- Do not commit personal data, identifiable case materials, or confidential procurement documents to this repository.
+- Empirical studies require appropriate ethics approval, lawful basis for processing, and organizational authorization.
+
+## Status
+
+**Research preview (v0.1)** — APIs, criteria, and mappings may change before the first Zenodo release. The framework has **not** been empirically validated in this version.
 
 ## Contributing
 
@@ -60,4 +134,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.
 
 ## License
 
-This project is released under the [MIT License](LICENSE).
+Released under the [MIT License](LICENSE).

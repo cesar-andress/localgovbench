@@ -55,6 +55,12 @@ def main() -> int:
     if "LocalGovBench" not in citation:
         print("CITATION.cff does not mention LocalGovBench.")
         return 1
+    if "cff-version:" not in citation:
+        print("CITATION.cff missing cff-version field.")
+        return 1
+    if "type: software" not in citation:
+        print("CITATION.cff should declare type: software.")
+        return 1
 
     example = (ROOT / "examples" / "example_assessment.yaml").read_text(encoding="utf-8")
     if "synthetic: true" not in example:

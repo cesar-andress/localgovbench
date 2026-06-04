@@ -1,45 +1,98 @@
 # Zenodo Release Guide
 
-This document describes how to publish LocalGovBench as a citable research artifact on [Zenodo](https://zenodo.org), typically via GitHub integration.
+This document describes how to publish LocalGovBench as a **citable, reproducible research artifact** on [Zenodo](https://zenodo.org), typically via GitHub integration.
 
 ## Prerequisites
 
 - Public GitHub repository (update URLs in `README.md`, `pyproject.toml`, and `CITATION.cff`)
-- MIT License present (`LICENSE`)
-- `CITATION.cff` metadata complete for software artifact
-- All committed sample data clearly marked as **synthetic**
+- [MIT License](../LICENSE) present in repository root
+- `CITATION.cff` complete enough for software citation (authors, version, abstract)
+- All sample data clearly marked **synthetic** where applicable
+
+---
 
 ## Release checklist
 
-1. **Version** — Bump `version` in `pyproject.toml` and `CITATION.cff`.
-2. **Changelog** — Summarize changes since last tag in GitHub release notes.
-3. **Tests** — Run `pytest` and `python scripts/validate_repository.py`.
-4. **Tag** — Create an annotated Git tag, e.g. `v0.1.0`.
-5. **GitHub release** — Publish release from tag; enable Zenodo-GitHub integration if configured.
-6. **Zenodo record** — Verify metadata, upload archive, and copy DOI into `CITATION.cff` (`doi:` field) and `README.md`.
+Use this checklist before creating a Zenodo record. Mark each item when complete.
+
+### Documentation and metadata
+
+- [ ] **README complete** — Purpose, scope, GIQ paper relation, reproducibility, disclaimers (see [README.md](../README.md))
+- [ ] **License selected** — MIT (`LICENSE` file matches Zenodo license field)
+- [ ] **Citation file complete** — `CITATION.cff` authors, version, `date-released`, abstract; placeholders replaced where possible
+
+### Version control and quality
+
+- [ ] **Version tag created** — Annotated Git tag (e.g. `v0.1.0`) matching `pyproject.toml` and `CITATION.cff`
+- [ ] **Tests passing** — `pytest` succeeds on tagged commit
+- [ ] **Structure validation** — `python scripts/validate_repository.py` succeeds
+
+### Data and content hygiene
+
+- [ ] **Synthetic/sample data clearly marked** — `metadata.synthetic: true` in examples; warnings in `data/README.md` and `examples/README.md`
+- [ ] **No private data** — No personal data, credentials, or organizational identifiers in the archive
+- [ ] **No manuscript drafts** — No paper PDFs, LaTeX sources, or internal drafts in the repository
+- [ ] **No reviewer correspondence** — No peer-review files, rebuttals, or editorial comments
+
+### Archival deposit
+
+- [ ] **DOI created through Zenodo** — Record published; version DOI copied into `CITATION.cff` and README
+- [ ] **Archive checksum stored** — SHA-256 (or Zenodo file hash) recorded in release notes or a `RELEASE.md` / GitHub release body for verification
+
+### Optional but recommended
+
+- [ ] Changelog or GitHub release notes summarizing changes since prior tag
+- [ ] Related identifier for companion paper DOI (when available)
+- [ ] Zenodo keywords aligned with `CITATION.cff`
+
+---
+
+## Step-by-step publication
+
+1. Complete the checklist above on a clean working tree.
+2. Bump `version` in `pyproject.toml` and `CITATION.cff`; set `date-released` to publication date.
+3. Commit and push; create annotated tag: `git tag -a v0.1.0 -m "v0.1.0"`.
+4. Push tag: `git push origin v0.1.0`.
+5. Create GitHub Release from tag with checksum of source archive (GitHub-generated zip/tar.gz).
+6. Trigger or confirm Zenodo-GitHub hook; review Zenodo metadata.
+7. Copy DOI to `CITATION.cff`:
+
+   ```yaml
+   doi: 10.5281/zenodo.XXXXXXX
+   ```
+
+8. Commit DOI update on `main` or document in README citation section.
 
 ## Recommended Zenodo metadata
 
 | Field | Suggested value |
 |-------|-----------------|
 | Upload type | Software |
-| Title | LocalGovBench: … (match `CITATION.cff`) |
+| Title | Match `CITATION.cff` title |
 | License | MIT |
-| Keywords | AI governance, public sector, EU, benchmark |
-| Related identifiers | Link to paper DOI when available |
+| Keywords | AI governance, public sector, EU, on-premise LLM, benchmark |
+| Related identifiers | GIQ paper DOI (when published) |
 
-## What not to publish
+## What must not appear in the Zenodo archive
 
-- Private notes, drafts, or reviewer comments
-- Non-anonymized field data without consent
-- Credentials or environment files
+- Private notes and lab notebooks with identifiable cases
+- Non-anonymized field transcripts or exports
+- `.env`, API keys, or infrastructure secrets
+- Manuscript drafts and reviewer correspondence
 
 ## Archival integrity
 
-- Use Zenodo's versioned DOI for each release.
-- Keep `date-released` in `CITATION.cff` aligned with the Zenodo publication date.
-- Document in release notes whether empirical datasets are included or still placeholders.
+- Prefer Zenodo **versioned DOI** for each release; cite the specific version in papers.
+- Store checksum, for example:
 
-## Post-release
+  ```bash
+  sha256sum localgovbench-v0.1.0.zip
+  ```
 
-Update the preferred citation block in `CITATION.cff` when the companion paper is published, and add the paper DOI as a `related_identifiers` entry in Zenodo.
+- Record checksum in GitHub release notes and/or institutional data catalogue entry.
+
+## Post-release maintenance
+
+- Update `preferred-citation` in `CITATION.cff` when the companion GIQ paper is published.
+- Add paper DOI as `related_identifiers` in Zenodo and cross-link from README.
+- For new empirical data releases, publish a separate Zenodo dataset with its own DOI if required by policy.
