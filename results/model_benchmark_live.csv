@@ -1,6 +1,6 @@
 model,n_tasks,n_success,evidence_precision,quote_validity_rate,hallucinated_evidence_rate,insufficient_evidence_detection_rate,mean_latency_seconds,p95_latency_seconds,memory_footprint_mb,status,mode
-llama3.1:8b,15,15,0.2667,0.6667,0.3333,0.0,1.554,1.856,5211.5,ok,live
-qwen2.5:7b,15,15,0.2667,0.3333,0.5333,0.75,1.57,1.675,4696.1,ok,live
-mistral:7b,15,14,0.1333,0.3571,0.6,0.75,1.242,1.758,4905.5,partial,live
-gemma2:9b,15,15,0.3333,0.8,0.2,0.0,3.056,3.949,7036.2,ok,live
-phi3,15,15,0.1333,0.4,0.6,0.0,0.968,1.195,3813.8,ok,live
+llama3.1:8b,15,15,0.1333,0.8,0.2,0.25,1.62,2.007,5211.5,ok,live
+qwen2.5:7b,15,15,0.2667,0.2308,0.6667,0.75,1.661,2.114,4696.1,ok,live
+mistral:7b,15,15,0.2,0.2667,0.7333,0.5,1.226,1.624,4905.5,ok,live
+gemma2:9b,15,15,0.4,0.7857,0.2,0.25,3.274,4.414,7036.2,ok,live
+phi3,15,15,0.0667,0.3333,0.6667,0.5,0.975,1.47,3813.8,ok,live
