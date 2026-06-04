@@ -42,7 +42,7 @@ The paper may describe motivation, related work, and research design. **This rep
 - **Prompt templates:** `prompts/` — structured assessment prompts (research instruments)
 - **Synthetic example:** `examples/example_assessment.yaml`
 - **Validation package:** `validation/` — content validity, expert review, inter-rater study, reliability metrics
-- **GRB experiment (54 indicators):** `localgovbench/grb/`, `examples/grb/` — extended sensitivity / IRR pilot
+- **GRB experiment (54 indicators):** `localgovbench/grb/`, `examples/grb/` — sensitivity analysis and inter-rater reliability pilot
 - **Data placeholders:** `data/raw/`, `data/processed/`, `data/templates/`
 
 ### Empirical validation (v0.1 instrument frozen)
@@ -57,6 +57,17 @@ The paper may describe motivation, related work, and research design. **This rep
 | Package index | [validation/README.md](validation/README.md) |
 
 Bundled cases under `validation/benchmark_cases/` and `validation/ratings/` are **synthetic** — replace with field data before publication claims.
+
+### GRB validation (frozen 54-indicator experiment)
+
+| Step | Command / path |
+|------|----------------|
+| Sensitivity analysis | `python scripts/run_grb_sensitivity_analysis.py` |
+| Inter-rater reliability | `python scripts/run_inter_rater_reliability.py` |
+| IRR protocol | [docs/inter_rater_reliability_protocol.md](docs/inter_rater_reliability_protocol.md) |
+| Pilot cases & ratings | `examples/grb/inter_rater/` |
+
+GRB specification, indicators, scoring formula, and safeguards are **not modified** in these scripts.
 
 > **Warning:** All bundled assessment scores and metadata in `examples/` are **synthetic** unless a future release explicitly states otherwise.
 

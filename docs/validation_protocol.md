@@ -138,7 +138,34 @@ python scripts/run_grb_sensitivity_analysis.py
 
 ---
 
-## 6. Optional: Ollama evidence extraction
+## 6. GRB inter-rater reliability (frozen 54-indicator experiment)
+
+| Resource | Path |
+|----------|------|
+| Protocol | [inter_rater_reliability_protocol.md](inter_rater_reliability_protocol.md) |
+| Evidence packs & assessor YAML | `examples/grb/inter_rater/` |
+| Metrics (κ, Fleiss, disagreement tables) | `localgovbench/grb/reliability.py` |
+| Runner | `scripts/run_inter_rater_reliability.py` |
+| Outputs | `results/inter_rater_reliability.csv`, `reports/inter_rater_reliability.md` |
+| Tests | `tests/test_grb_reliability.py` |
+
+### Procedure
+
+1. Train assessors using the protocol (unit = case × indicator; scale 0–4; evidence rules E2/E3).
+2. Independent coding of `case_alpha`, `case_beta`, `case_gamma` evidence packs.
+3. Run `python scripts/run_inter_rater_reliability.py`.
+4. Adjudicate indicators with |Δ| ≥ 2; document in adjudication template.
+
+### Metrics reported
+
+- Percent agreement (unanimous units)
+- Cohen's κ (pairwise, two raters)
+- Fleiss' κ (three or more raters)
+- Disagreement table by indicator and dimension
+
+---
+
+## 7. Optional: Ollama evidence extraction
 
 LLM proposes **candidate evidence only** — humans assign scores.
 
@@ -152,7 +179,7 @@ See `prompts/evidence_extraction.md`.
 
 ---
 
-## 7. Reporting and ethics
+## 8. Reporting and ethics
 
 - Generate integrated report: `python scripts/generate_validation_report.py`
 - Do not publish municipality league tables without consent.
@@ -160,7 +187,7 @@ See `prompts/evidence_extraction.md`.
 
 ---
 
-## 8. What this protocol does not claim
+## 9. What this protocol does not claim
 
 - Legal certification or AI Act conformity
 - Validated predictive power

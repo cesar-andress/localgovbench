@@ -106,6 +106,18 @@ REQUIRED_PATHS = [
     "tests/test_grb_sensitivity_analysis.py",
     "results/grb_sensitivity_analysis.csv",
     "reports/grb_sensitivity_analysis.md",
+    "docs/inter_rater_reliability_protocol.md",
+    "examples/grb/inter_rater/case_alpha_evidence_pack.md",
+    "examples/grb/inter_rater/case_beta_evidence_pack.md",
+    "examples/grb/inter_rater/case_gamma_evidence_pack.md",
+    "examples/grb/inter_rater/assessor_1_scores.yaml",
+    "examples/grb/inter_rater/assessor_2_scores.yaml",
+    "examples/grb/inter_rater/assessor_3_scores.yaml",
+    "localgovbench/grb/reliability.py",
+    "scripts/run_inter_rater_reliability.py",
+    "tests/test_grb_reliability.py",
+    "results/inter_rater_reliability.csv",
+    "reports/inter_rater_reliability.md",
 ]
 
 
