@@ -39,6 +39,8 @@ The v0.1 framework targets deployments where:
 
 See [governance_dimensions.md](governance_dimensions.md) for criteria and indicative risks.
 
+The full academic benchmark specification (assessment questions, evidence tables, scoring protocol) is in [benchmark_specification.md](benchmark_specification.md).
+
 ## Maturity model
 
 Each checklist item is scored on an integer **0–4** scale:

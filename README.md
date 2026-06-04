@@ -36,7 +36,7 @@ The paper may describe motivation, related work, and research design. **This rep
 
 - **Framework (v0.1):** `localgovbench/framework/` — dimensions, criteria, checklist, scoring
 - **Evaluation helpers:** `localgovbench/evaluation/` — rubric labels, assessment validators
-- **Documentation:** `docs/` — framework, methodology, governance dimensions, AI Act/GDPR mappings, Zenodo guide
+- **Documentation:** `docs/` — framework, [benchmark specification](docs/benchmark_specification.md), methodology, governance dimensions, AI Act/GDPR mappings, Zenodo guide
 - **Prompt templates:** `prompts/` — structured assessment prompts (research instruments)
 - **Synthetic example:** `examples/example_assessment.yaml`
 - **Data placeholders:** `data/raw/`, `data/processed/`, `data/templates/`

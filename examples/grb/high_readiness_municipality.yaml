@@ -1,0 +1,247 @@
+{
+  "metadata": {
+    "municipality": "High Ridge Municipality",
+    "profile": "high_readiness_municipality",
+    "grb_version": "0.1-experiment",
+    "synthetic": true,
+    "deployment_model": "on_premise"
+  },
+  "responses": {
+    "d1_mandate_01": 3,
+    "d1_mandate_02": 3,
+    "d1_mandate_03": 3,
+    "d1_ownership_01": 3,
+    "d1_ownership_02": 3,
+    "d1_ownership_03": 3,
+    "d1_accountability_01": 3,
+    "d1_accountability_02": 3,
+    "d1_accountability_03": 3,
+    "d2_oversight_design_01": 4,
+    "d2_oversight_design_02": 4,
+    "d2_oversight_design_03": 4,
+    "d2_intervention_01": 4,
+    "d2_intervention_02": 4,
+    "d2_intervention_03": 4,
+    "d2_traceability_01": 4,
+    "d2_traceability_02": 4,
+    "d2_traceability_03": 4,
+    "d3_internal_transparency_01": 3,
+    "d3_internal_transparency_02": 3,
+    "d3_internal_transparency_03": 3,
+    "d3_external_transparency_01": 3,
+    "d3_external_transparency_02": 3,
+    "d3_external_transparency_03": 3,
+    "d3_justification_01": 3,
+    "d3_justification_02": 3,
+    "d3_justification_03": 3,
+    "d4_lawfulness_01": 4,
+    "d4_lawfulness_02": 4,
+    "d4_lawfulness_03": 4,
+    "d4_minimization_01": 4,
+    "d4_minimization_02": 4,
+    "d4_minimization_03": 4,
+    "d4_data_sovereignty_01": 4,
+    "d4_data_sovereignty_02": 4,
+    "d4_data_sovereignty_03": 4,
+    "d5_risk_identification_01": 3,
+    "d5_risk_identification_02": 3,
+    "d5_risk_identification_03": 3,
+    "d5_security_change_01": 3,
+    "d5_security_change_02": 3,
+    "d5_security_change_03": 3,
+    "d5_monitoring_incidents_01": 3,
+    "d5_monitoring_incidents_02": 3,
+    "d5_monitoring_incidents_03": 3,
+    "d6_infrastructure_01": 3,
+    "d6_infrastructure_02": 3,
+    "d6_infrastructure_03": 3,
+    "d6_vendor_independence_01": 3,
+    "d6_vendor_independence_02": 3,
+    "d6_vendor_independence_03": 3,
+    "d6_capacity_01": 3,
+    "d6_capacity_02": 3,
+    "d6_capacity_03": 3
+  },
+  "evidence": {
+    "d1_mandate_01": [
+      "DOC-D1_MANDATE_01-A"
+    ],
+    "d1_mandate_02": [
+      "DOC-D1_MANDATE_02-A"
+    ],
+    "d1_mandate_03": [
+      "DOC-D1_MANDATE_03-A"
+    ],
+    "d1_ownership_01": [
+      "DOC-D1_OWNERSHIP_01-A"
+    ],
+    "d1_ownership_02": [
+      "DOC-D1_OWNERSHIP_02-A"
+    ],
+    "d1_ownership_03": [
+      "DOC-D1_OWNERSHIP_03-A"
+    ],
+    "d1_accountability_01": [
+      "DOC-D1_ACCOUNTABILITY_01-A"
+    ],
+    "d1_accountability_02": [
+      "DOC-D1_ACCOUNTABILITY_02-A"
+    ],
+    "d1_accountability_03": [
+      "DOC-D1_ACCOUNTABILITY_03-A"
+    ],
+    "d2_oversight_design_01": [
+      "DOC-D2_OVERSIGHT_DESIGN_01-A",
+      "DOC-D2_OVERSIGHT_DESIGN_01-B"
+    ],
+    "d2_oversight_design_02": [
+      "DOC-D2_OVERSIGHT_DESIGN_02-A",
+      "DOC-D2_OVERSIGHT_DESIGN_02-B"
+    ],
+    "d2_oversight_design_03": [
+      "DOC-D2_OVERSIGHT_DESIGN_03-A",
+      "DOC-D2_OVERSIGHT_DESIGN_03-B"
+    ],
+    "d2_intervention_01": [
+      "DOC-D2_INTERVENTION_01-A",
+      "DOC-D2_INTERVENTION_01-B"
+    ],
+    "d2_intervention_02": [
+      "DOC-D2_INTERVENTION_02-A",
+      "DOC-D2_INTERVENTION_02-B"
+    ],
+    "d2_intervention_03": [
+      "DOC-D2_INTERVENTION_03-A",
+      "DOC-D2_INTERVENTION_03-B"
+    ],
+    "d2_traceability_01": [
+      "DOC-D2_TRACEABILITY_01-A",
+      "DOC-D2_TRACEABILITY_01-B"
+    ],
+    "d2_traceability_02": [
+      "DOC-D2_TRACEABILITY_02-A",
+      "DOC-D2_TRACEABILITY_02-B"
+    ],
+    "d2_traceability_03": [
+      "DOC-D2_TRACEABILITY_03-A",
+      "DOC-D2_TRACEABILITY_03-B"
+    ],
+    "d3_internal_transparency_01": [
+      "DOC-D3_INTERNAL_TRANSPARENCY_01-A"
+    ],
+    "d3_internal_transparency_02": [
+      "DOC-D3_INTERNAL_TRANSPARENCY_02-A"
+    ],
+    "d3_internal_transparency_03": [
+      "DOC-D3_INTERNAL_TRANSPARENCY_03-A"
+    ],
+    "d3_external_transparency_01": [
+      "DOC-D3_EXTERNAL_TRANSPARENCY_01-A"
+    ],
+    "d3_external_transparency_02": [
+      "DOC-D3_EXTERNAL_TRANSPARENCY_02-A"
+    ],
+    "d3_external_transparency_03": [
+      "DOC-D3_EXTERNAL_TRANSPARENCY_03-A"
+    ],
+    "d3_justification_01": [
+      "DOC-D3_JUSTIFICATION_01-A"
+    ],
+    "d3_justification_02": [
+      "DOC-D3_JUSTIFICATION_02-A"
+    ],
+    "d3_justification_03": [
+      "DOC-D3_JUSTIFICATION_03-A"
+    ],
+    "d4_lawfulness_01": [
+      "DOC-D4_LAWFULNESS_01-A",
+      "DOC-D4_LAWFULNESS_01-B"
+    ],
+    "d4_lawfulness_02": [
+      "DOC-D4_LAWFULNESS_02-A",
+      "DOC-D4_LAWFULNESS_02-B"
+    ],
+    "d4_lawfulness_03": [
+      "DOC-D4_LAWFULNESS_03-A",
+      "DOC-D4_LAWFULNESS_03-B"
+    ],
+    "d4_minimization_01": [
+      "DOC-D4_MINIMIZATION_01-A",
+      "DOC-D4_MINIMIZATION_01-B"
+    ],
+    "d4_minimization_02": [
+      "DOC-D4_MINIMIZATION_02-A",
+      "DOC-D4_MINIMIZATION_02-B"
+    ],
+    "d4_minimization_03": [
+      "DOC-D4_MINIMIZATION_03-A",
+      "DOC-D4_MINIMIZATION_03-B"
+    ],
+    "d4_data_sovereignty_01": [
+      "DOC-D4_DATA_SOVEREIGNTY_01-A",
+      "DOC-D4_DATA_SOVEREIGNTY_01-B"
+    ],
+    "d4_data_sovereignty_02": [
+      "DOC-D4_DATA_SOVEREIGNTY_02-A",
+      "DOC-D4_DATA_SOVEREIGNTY_02-B"
+    ],
+    "d4_data_sovereignty_03": [
+      "DOC-D4_DATA_SOVEREIGNTY_03-A",
+      "DOC-D4_DATA_SOVEREIGNTY_03-B"
+    ],
+    "d5_risk_identification_01": [
+      "DOC-D5_RISK_IDENTIFICATION_01-A"
+    ],
+    "d5_risk_identification_02": [
+      "DOC-D5_RISK_IDENTIFICATION_02-A"
+    ],
+    "d5_risk_identification_03": [
+      "DOC-D5_RISK_IDENTIFICATION_03-A"
+    ],
+    "d5_security_change_01": [
+      "DOC-D5_SECURITY_CHANGE_01-A"
+    ],
+    "d5_security_change_02": [
+      "DOC-D5_SECURITY_CHANGE_02-A"
+    ],
+    "d5_security_change_03": [
+      "DOC-D5_SECURITY_CHANGE_03-A"
+    ],
+    "d5_monitoring_incidents_01": [
+      "DOC-D5_MONITORING_INCIDENTS_01-A"
+    ],
+    "d5_monitoring_incidents_02": [
+      "DOC-D5_MONITORING_INCIDENTS_02-A"
+    ],
+    "d5_monitoring_incidents_03": [
+      "DOC-D5_MONITORING_INCIDENTS_03-A"
+    ],
+    "d6_infrastructure_01": [
+      "DOC-D6_INFRASTRUCTURE_01-A"
+    ],
+    "d6_infrastructure_02": [
+      "DOC-D6_INFRASTRUCTURE_02-A"
+    ],
+    "d6_infrastructure_03": [
+      "DOC-D6_INFRASTRUCTURE_03-A"
+    ],
+    "d6_vendor_independence_01": [
+      "DOC-D6_VENDOR_INDEPENDENCE_01-A"
+    ],
+    "d6_vendor_independence_02": [
+      "DOC-D6_VENDOR_INDEPENDENCE_02-A"
+    ],
+    "d6_vendor_independence_03": [
+      "DOC-D6_VENDOR_INDEPENDENCE_03-A"
+    ],
+    "d6_capacity_01": [
+      "DOC-D6_CAPACITY_01-A"
+    ],
+    "d6_capacity_02": [
+      "DOC-D6_CAPACITY_02-A"
+    ],
+    "d6_capacity_03": [
+      "DOC-D6_CAPACITY_03-A"
+    ]
+  }
+}
