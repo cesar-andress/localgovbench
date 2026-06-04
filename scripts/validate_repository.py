@@ -23,6 +23,7 @@ REQUIRED_PATHS = [
     "docs/ai_act_mapping.md",
     "docs/gdpr_mapping.md",
     "docs/zenodo_release.md",
+    "docs/manuscript_positioning.md",
     "localgovbench/__init__.py",
     "localgovbench/framework/dimensions.py",
     "localgovbench/framework/scoring.py",
