@@ -1,0 +1,33 @@
+{
+  "study_id": "irr-pilot-synthetic",
+  "instrument_id": "localgovbench-v0.1",
+  "overall": {
+    "cohens_kappa": 0.7944,
+    "krippendorff_alpha": 0.9733,
+    "kappa_label": "Substantial agreement",
+    "alpha_label": "Strong agreement"
+  },
+  "cases": [
+    {
+      "case_id": "case_01_nordvega_internal_llm",
+      "disagreement_count": 2,
+      "n_criteria": 25,
+      "cohens_kappa": 0.8768,
+      "krippendorff_alpha": 0.92
+    },
+    {
+      "case_id": "case_02_bayridge_service_bot",
+      "disagreement_count": 3,
+      "n_criteria": 25,
+      "cohens_kappa": 0.8148,
+      "krippendorff_alpha": 0.92
+    },
+    {
+      "case_id": "case_03_highland_onprem_scale",
+      "disagreement_count": 5,
+      "n_criteria": 25,
+      "cohens_kappa": 0.6914,
+      "krippendorff_alpha": 0.92
+    }
+  ]
+}

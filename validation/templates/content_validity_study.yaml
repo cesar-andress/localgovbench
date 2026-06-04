@@ -1,0 +1,239 @@
+{
+  "study": {
+    "title": "LocalGovBench v0.1 Content Validity Study",
+    "instrument": "localgovbench-v0.1",
+    "version": "0.1",
+    "status": "template",
+    "synthetic": true,
+    "target_experts": 8,
+    "scale": "1=strongly disagree, 5=strongly agree"
+  },
+  "panel": [],
+  "criterion_reviews": [
+    {
+      "criterion_id": "legal_regulatory_gdpr_readiness",
+      "dimension_id": "legal_regulatory",
+      "clarity_score": null,
+      "relevance_score": null,
+      "relevance_to_sovereign_llm": null,
+      "suggested_revision": "",
+      "expert_id": ""
+    },
+    {
+      "criterion_id": "legal_regulatory_ai_act_alignment",
+      "dimension_id": "legal_regulatory",
+      "clarity_score": null,
+      "relevance_score": null,
+      "relevance_to_sovereign_llm": null,
+      "suggested_revision": "",
+      "expert_id": ""
+    },
+    {
+      "criterion_id": "legal_regulatory_data_retention",
+      "dimension_id": "legal_regulatory",
+      "clarity_score": null,
+      "relevance_score": null,
+      "relevance_to_sovereign_llm": null,
+      "suggested_revision": "",
+      "expert_id": ""
+    },
+    {
+      "criterion_id": "legal_regulatory_lawful_basis",
+      "dimension_id": "legal_regulatory",
+      "clarity_score": null,
+      "relevance_score": null,
+      "relevance_to_sovereign_llm": null,
+      "suggested_revision": "",
+      "expert_id": ""
+    },
+    {
+      "criterion_id": "legal_regulatory_cross_border_avoidance",
+      "dimension_id": "legal_regulatory",
+      "clarity_score": null,
+      "relevance_score": null,
+      "relevance_to_sovereign_llm": null,
+      "suggested_revision": "",
+      "expert_id": ""
+    },
+    {
+      "criterion_id": "technical_security_local_architecture",
+      "dimension_id": "technical_security",
+      "clarity_score": null,
+      "relevance_score": null,
+      "relevance_to_sovereign_llm": null,
+      "suggested_revision": "",
+      "expert_id": ""
+    },
+    {
+      "criterion_id": "technical_security_access_control",
+      "dimension_id": "technical_security",
+      "clarity_score": null,
+      "relevance_score": null,
+      "relevance_to_sovereign_llm": null,
+      "suggested_revision": "",
+      "expert_id": ""
+    },
+    {
+      "criterion_id": "technical_security_logging",
+      "dimension_id": "technical_security",
+      "clarity_score": null,
+      "relevance_score": null,
+      "relevance_to_sovereign_llm": null,
+      "suggested_revision": "",
+      "expert_id": ""
+    },
+    {
+      "criterion_id": "technical_security_auditability",
+      "dimension_id": "technical_security",
+      "clarity_score": null,
+      "relevance_score": null,
+      "relevance_to_sovereign_llm": null,
+      "suggested_revision": "",
+      "expert_id": ""
+    },
+    {
+      "criterion_id": "technical_security_model_updates",
+      "dimension_id": "technical_security",
+      "clarity_score": null,
+      "relevance_score": null,
+      "relevance_to_sovereign_llm": null,
+      "suggested_revision": "",
+      "expert_id": ""
+    },
+    {
+      "criterion_id": "organizational_accountability",
+      "dimension_id": "organizational",
+      "clarity_score": null,
+      "relevance_score": null,
+      "relevance_to_sovereign_llm": null,
+      "suggested_revision": "",
+      "expert_id": ""
+    },
+    {
+      "criterion_id": "organizational_ownership",
+      "dimension_id": "organizational",
+      "clarity_score": null,
+      "relevance_score": null,
+      "relevance_to_sovereign_llm": null,
+      "suggested_revision": "",
+      "expert_id": ""
+    },
+    {
+      "criterion_id": "organizational_role_definition",
+      "dimension_id": "organizational",
+      "clarity_score": null,
+      "relevance_score": null,
+      "relevance_to_sovereign_llm": null,
+      "suggested_revision": "",
+      "expert_id": ""
+    },
+    {
+      "criterion_id": "organizational_procurement_governance",
+      "dimension_id": "organizational",
+      "clarity_score": null,
+      "relevance_score": null,
+      "relevance_to_sovereign_llm": null,
+      "suggested_revision": "",
+      "expert_id": ""
+    },
+    {
+      "criterion_id": "organizational_risk_ownership",
+      "dimension_id": "organizational",
+      "clarity_score": null,
+      "relevance_score": null,
+      "relevance_to_sovereign_llm": null,
+      "suggested_revision": "",
+      "expert_id": ""
+    },
+    {
+      "criterion_id": "operational_monitoring",
+      "dimension_id": "operational",
+      "clarity_score": null,
+      "relevance_score": null,
+      "relevance_to_sovereign_llm": null,
+      "suggested_revision": "",
+      "expert_id": ""
+    },
+    {
+      "criterion_id": "operational_incident_response",
+      "dimension_id": "operational",
+      "clarity_score": null,
+      "relevance_score": null,
+      "relevance_to_sovereign_llm": null,
+      "suggested_revision": "",
+      "expert_id": ""
+    },
+    {
+      "criterion_id": "operational_human_oversight",
+      "dimension_id": "operational",
+      "clarity_score": null,
+      "relevance_score": null,
+      "relevance_to_sovereign_llm": null,
+      "suggested_revision": "",
+      "expert_id": ""
+    },
+    {
+      "criterion_id": "operational_documentation",
+      "dimension_id": "operational",
+      "clarity_score": null,
+      "relevance_score": null,
+      "relevance_to_sovereign_llm": null,
+      "suggested_revision": "",
+      "expert_id": ""
+    },
+    {
+      "criterion_id": "operational_lifecycle_management",
+      "dimension_id": "operational",
+      "clarity_score": null,
+      "relevance_score": null,
+      "relevance_to_sovereign_llm": null,
+      "suggested_revision": "",
+      "expert_id": ""
+    },
+    {
+      "criterion_id": "strategic_sovereignty_vendor_independence",
+      "dimension_id": "strategic_sovereignty",
+      "clarity_score": null,
+      "relevance_score": null,
+      "relevance_to_sovereign_llm": null,
+      "suggested_revision": "",
+      "expert_id": ""
+    },
+    {
+      "criterion_id": "strategic_sovereignty_data_sovereignty",
+      "dimension_id": "strategic_sovereignty",
+      "clarity_score": null,
+      "relevance_score": null,
+      "relevance_to_sovereign_llm": null,
+      "suggested_revision": "",
+      "expert_id": ""
+    },
+    {
+      "criterion_id": "strategic_sovereignty_infrastructure_control",
+      "dimension_id": "strategic_sovereignty",
+      "clarity_score": null,
+      "relevance_score": null,
+      "relevance_to_sovereign_llm": null,
+      "suggested_revision": "",
+      "expert_id": ""
+    },
+    {
+      "criterion_id": "strategic_sovereignty_portability",
+      "dimension_id": "strategic_sovereignty",
+      "clarity_score": null,
+      "relevance_score": null,
+      "relevance_to_sovereign_llm": null,
+      "suggested_revision": "",
+      "expert_id": ""
+    },
+    {
+      "criterion_id": "strategic_sovereignty_maintainability",
+      "dimension_id": "strategic_sovereignty",
+      "clarity_score": null,
+      "relevance_score": null,
+      "relevance_to_sovereign_llm": null,
+      "suggested_revision": "",
+      "expert_id": ""
+    }
+  ]
+}

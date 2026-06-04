@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "case_id": "case_02_bayridge_service_bot",
+    "title": "Bayridge Service Bot Pilot",
+    "instrument": "localgovbench-v0.1",
+    "synthetic": true,
+    "profile": "moderate_disagreement",
+    "deployment_model": "on_premise",
+    "description": "Synthetic benchmark case for IRR validation experiments."
+  },
+  "document_bundle": [
+    "data/synthetic/governance_policy_sample.md"
+  ]
+}

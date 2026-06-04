@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "case_id": "case_03_highland_onprem_scale",
+    "title": "Highland On-Prem Scale-Up",
+    "instrument": "localgovbench-v0.1",
+    "synthetic": true,
+    "profile": "moderate_disagreement",
+    "deployment_model": "on_premise",
+    "description": "Synthetic benchmark case for IRR validation experiments."
+  },
+  "document_bundle": [
+    "data/synthetic/governance_policy_sample.md"
+  ]
+}

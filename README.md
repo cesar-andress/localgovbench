@@ -11,8 +11,9 @@
 - Maturity scoring utilities (0–4 scale)
 - Indicative mappings to EU AI Act and GDPR **themes** (not legal compliance assessments)
 - Documentation and tooling intended for a future **Zenodo** archival release
+- A **scientific validation package** (content validity templates, IRR, κ/α metrics)
 
-The artifact supports structured self-assessment, document coding, and planned case study research. It does **not** certify legal conformity.
+The artifact supports structured self-assessment, document coding, and empirical validation studies. It does **not** certify legal conformity.
 
 ## Relation to the GIQ paper
 
@@ -26,7 +27,8 @@ The paper may describe motivation, related work, and research design. **This rep
 
 | In scope | Out of scope (v0.1) |
 |----------|---------------------|
-| Framework definitions and checklist generation | Empirically validated benchmark scores |
+| Framework definitions and checklist generation | Published field-study benchmark scores |
+| Scientific validation package (templates, IRR tools) | Completed multi-site empirical validation |
 | Synthetic example assessments | Real organizational or citizen data |
 | Policy theme mappings (indicative) | Legal advice or conformity assessment |
 | Tests and validation scripts | Production system integrations |
@@ -39,14 +41,26 @@ The paper may describe motivation, related work, and research design. **This rep
 - **Documentation:** `docs/` — framework, [benchmark specification](docs/benchmark_specification.md), methodology, governance dimensions, AI Act/GDPR mappings, Zenodo guide
 - **Prompt templates:** `prompts/` — structured assessment prompts (research instruments)
 - **Synthetic example:** `examples/example_assessment.yaml`
+- **Validation package:** `validation/` — content validity, expert review, inter-rater study, reliability metrics
+- **GRB experiment (54 indicators):** `localgovbench/grb/`, `examples/grb/` — extended sensitivity / IRR pilot
 - **Data placeholders:** `data/raw/`, `data/processed/`, `data/templates/`
+
+### Scientific validation
+
+| Step | Command / path |
+|------|----------------|
+| Inter-rater analysis (κ, α) | `python scripts/run_inter_rater_analysis.py` |
+| Validation benchmark report | `python scripts/generate_validation_report.py` |
+| Protocol | [validation/docs/validation_protocol.md](validation/docs/validation_protocol.md) |
+
+Bundled `validation/ratings/` are **synthetic** pilot data for reproducible IRR pipelines — replace with field ratings before publication claims.
 
 > **Warning:** All bundled assessment scores and metadata in `examples/` are **synthetic** unless a future release explicitly states otherwise.
 
 ## What is not included
 
-- Field study datasets or inter-rater agreement results
-- Peer-reviewed proof that the framework measures legal compliance
+- Completed field-study content validity results (templates only)
+- Peer-reviewed confirmation of psychometric validity
 - Unpublished paper PDFs, reviewer correspondence, or private notes
 - Credentials, `.env` files, or identifiable public sector records
 
@@ -60,6 +74,8 @@ source .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install -e ".[dev]"
 python scripts/validate_repository.py
 python scripts/run_example_assessment.py
+python scripts/run_inter_rater_analysis.py
+python scripts/generate_validation_report.py
 pytest
 ```
 
@@ -73,7 +89,8 @@ pytest
 | `prompts/` | Assessment prompt templates |
 | `examples/` | Synthetic runnable examples |
 | `tests/` | Unit tests |
-| `scripts/` | Validation and demonstration scripts |
+| `validation/` | Scientific validation study templates and synthetic IRR cases |
+| `scripts/` | Assessment, validation, and analysis scripts |
 
 See [docs/zenodo_release.md](docs/zenodo_release.md) for the publication checklist.
 
@@ -126,7 +143,7 @@ Empirical protocols (document analysis, expert validation, case studies, inter-r
 
 ## Status
 
-**Research preview (v0.1)** — APIs, criteria, and mappings may change before the first Zenodo release. The framework has **not** been empirically validated in this version.
+**Research preview (v0.1)** — Instrument and validation package ready for empirical field studies. Bundled IRR metrics use **synthetic** ratings; content validity templates await expert panel completion. Not yet a published, empirically validated benchmark.
 
 ## Contributing
 

@@ -1,0 +1,25 @@
+# Inter-rater assessment codebook — LocalGovBench v0.1
+codebook:
+  instrument: localgovbench-v0.1
+  version: "0.1"
+  maturity_scale:
+    0: "Absent — no observable practice or documentation"
+    1: "Ad hoc — informal practice, fragmented evidence"
+    2: "Partially defined — documented, uneven application"
+    3: "Managed — assigned owner, periodic review, coherent evidence"
+    4: "Optimized — continuous improvement with process metrics"
+  evidence_rules:
+    score_0_2: "Assessor notes sufficient; artefacts optional"
+    score_3: "At least one primary artefact required"
+    score_4: "Two artefacts including one reviewed within 12 months"
+  independence:
+    - "Raters code independently before adjudication"
+    - "Do not discuss scores until reconciliation session"
+  adjudication:
+    threshold: "Absolute difference >= 2 points triggers mandatory adjudication"
+    log_template: validation/templates/adjudication_record.yaml
+  prohibited:
+    - "Do not use LLM outputs as sole evidence without human verification"
+    - "Do not convert readiness index into legal compliance claims"
+
+rating_sheet_template: validation/templates/inter_rater_rating_sheet.yaml

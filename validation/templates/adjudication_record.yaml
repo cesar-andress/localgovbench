@@ -1,0 +1,15 @@
+# Adjudication record for inter-rater discrepancies
+metadata:
+  study_id: ""
+  case_id: ""
+  criterion_id: ""
+  rater_a_score: null
+  rater_b_score: null
+  difference: null
+  adjudication_date: ""
+  lead_adjudicator: ""
+resolution:
+  final_score: null
+  rationale: ""
+  evidence_consulted: []
+  revised_codebook: false

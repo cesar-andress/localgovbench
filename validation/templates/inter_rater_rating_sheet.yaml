@@ -1,0 +1,11 @@
+# Inter-rater rating sheet (copy per rater × case)
+metadata:
+  study_id: ""
+  case_id: ""
+  rater_id: ""
+  instrument: localgovbench-v0.1
+  coding_date: ""
+  synthetic: false
+responses: {}  # Populate all 25 criterion ids — see localgovbench.framework.build_checklist()
+evidence_log: {}  # criterion_id: ["ARTEFACT-001", ...]
+notes: ""

@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "case_id": "case_01_nordvega_internal_llm",
+    "title": "Nordvega Internal LLM Pilot",
+    "instrument": "localgovbench-v0.1",
+    "synthetic": true,
+    "profile": "low_disagreement",
+    "deployment_model": "on_premise",
+    "description": "Synthetic benchmark case for IRR validation experiments."
+  },
+  "document_bundle": [
+    "data/synthetic/governance_policy_sample.md"
+  ]
+}

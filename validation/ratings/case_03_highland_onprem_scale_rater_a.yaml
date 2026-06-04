@@ -1,0 +1,36 @@
+{
+  "metadata": {
+    "study_id": "irr-pilot-synthetic",
+    "case_id": "case_03_highland_onprem_scale",
+    "rater_id": "rater_a",
+    "instrument": "localgovbench-v0.1",
+    "synthetic": true
+  },
+  "responses": {
+    "legal_regulatory_gdpr_readiness": 3,
+    "legal_regulatory_ai_act_alignment": 2,
+    "legal_regulatory_data_retention": 2,
+    "legal_regulatory_lawful_basis": 3,
+    "legal_regulatory_cross_border_avoidance": 4,
+    "technical_security_local_architecture": 3,
+    "technical_security_access_control": 3,
+    "technical_security_logging": 4,
+    "technical_security_auditability": 3,
+    "technical_security_model_updates": 2,
+    "organizational_accountability": 2,
+    "organizational_ownership": 3,
+    "organizational_role_definition": 2,
+    "organizational_procurement_governance": 2,
+    "organizational_risk_ownership": 2,
+    "operational_monitoring": 3,
+    "operational_incident_response": 2,
+    "operational_human_oversight": 3,
+    "operational_documentation": 2,
+    "operational_lifecycle_management": 2,
+    "strategic_sovereignty_vendor_independence": 2,
+    "strategic_sovereignty_data_sovereignty": 4,
+    "strategic_sovereignty_infrastructure_control": 3,
+    "strategic_sovereignty_portability": 1,
+    "strategic_sovereignty_maintainability": 2
+  }
+}

@@ -1,0 +1,38 @@
+# Expert review questionnaire — LocalGovBench v0.1 (template)
+study:
+  title: "LocalGovBench Expert Panel Review"
+  instrument: localgovbench-v0.1
+  version: "0.1"
+  status: template
+  synthetic: true
+  fields:
+    clarity_scale: "1 (very unclear) to 5 (very clear)"
+    relevance_scale: "1 (not relevant) to 5 (highly relevant)"
+    overlap_scale: "1 (no overlap) to 5 (substantial overlap with another criterion)"
+
+panel_member:
+  expert_id: ""
+  name: ""
+  affiliation: ""
+  domain: ""  # e.g. public_administration, law_dpo, it_security, ai_ethics
+  date: ""
+
+instrument_review:
+  overall_clarity: null
+  overall_relevance: null
+  missing_dimensions_comment: ""
+  sovereign_llm_fit_comment: ""
+  regulatory_mapping_comment: ""
+
+criterion_reviews: []  # Copy structure from content_validity_study.yaml per session
+
+summary_questions:
+  - id: Q1
+    prompt: "Is the five-dimension structure appropriate for municipal on-premise LLM governance?"
+    response: ""
+  - id: Q2
+    prompt: "Are maturity levels 0–4 operable with documentary evidence gates?"
+    response: ""
+  - id: Q3
+    prompt: "What criteria should be revised or merged before field deployment?"
+    response: ""
