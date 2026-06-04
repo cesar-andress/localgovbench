@@ -31,6 +31,7 @@ The artifact supports structured self-assessment, document coding, and empirical
 | [docs/release_v0_1_checklist.md](docs/release_v0_1_checklist.md) | Pre-release checklist for GitHub and Zenodo |
 | [CHANGELOG.md](CHANGELOG.md) | Version history |
 | [docs/construct_traceability.md](docs/construct_traceability.md) | Literature traceability for 25 v0.1 criteria |
+| [docs/demo_walkthrough.md](docs/demo_walkthrough.md) | GRB end-to-end workflow demo (reproducible commands) |
 
 ## Relation to the GIQ paper
 
@@ -89,42 +90,30 @@ GRB specification, indicators, scoring formula, and safeguards are **not modifie
 
 ### End-to-end workflow demo
 
-Assess a municipality from **documents → candidate evidence → human YAML scores → readiness report**:
+Step-by-step commands (template → demo scores → readiness → optional Ollama): **[docs/demo_walkthrough.md](docs/demo_walkthrough.md)**.
+
+Quick start after `pip install -e ".[dev]"`:
 
 ```bash
-# 1) Prepare evidence log and empty scoring template (no Ollama required)
 python scripts/run_assessment_workflow.py \
   --case-id demo_municipality \
   --documents data/synthetic/workflow_demo/documents \
   --output-dir outputs/demo_municipality \
   --generate-template
 
-# 2) Fill SYNTHETIC demo scores (walkthrough only — not for real assessments)
 python scripts/fill_demo_scores.py \
   --input outputs/demo_municipality/assessor_scoring_template.yaml \
   --output outputs/demo_municipality/assessor_scoring_completed.yaml
 
-# 3) Compute readiness (use completed YAML from step 2, or a manually filled template)
 python scripts/run_assessment_workflow.py \
   --case-id demo_municipality \
   --documents data/synthetic/workflow_demo/documents \
   --scores outputs/demo_municipality/assessor_scoring_completed.yaml \
   --output-dir outputs/demo_municipality \
   --compute-score
-
-# Optional: candidate evidence via local Ollama (never assigns maturity scores)
-python scripts/run_assessment_workflow.py \
-  --case-id demo_municipality \
-  --documents data/synthetic/workflow_demo/documents \
-  --output-dir outputs/demo_municipality \
-  --generate-template \
-  --use-ollama \
-  --model llama3.1:8b
 ```
 
-Outputs: `evidence_log.yaml`, `assessor_scoring_template.yaml`, `assessor_scoring_completed.yaml` (demo helper), `readiness_report.md`, `machine_readable_results.json`.
-
-> **Warning:** All bundled assessment scores and metadata in `examples/` are **synthetic** unless a future release explicitly states otherwise.
+> **Warning:** Demo scores from `fill_demo_scores.py` are **synthetic walkthrough placeholders**, not validation evidence. All bundled examples remain **synthetic** unless stated otherwise.
 
 ## What is not included
 

@@ -124,6 +124,7 @@ REQUIRED_PATHS = [
     "docs/release_v0_1_checklist.md",
     "docs/construct_traceability.md",
     "docs/author_identity.md",
+    "docs/demo_walkthrough.md",
     "data/traceability/indicator_mapping.csv",
     "data/traceability/README.md",
     "localgovbench/traceability.py",
