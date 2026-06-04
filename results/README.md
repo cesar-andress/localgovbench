@@ -8,5 +8,6 @@
 | `weighting_robustness.csv` | `scripts/run_weighting_robustness.py` |
 | `grb_monte_carlo.csv` | `scripts/run_grb_monte_carlo.py` |
 | `grb_ablation.csv` | `scripts/run_grb_ablation.py` |
+| `extraction_stability.csv` | `scripts/run_extraction_stability.py` |
 
 Results are generated from **synthetic** profiles for structural sensitivity testing.
