@@ -1,0 +1,22 @@
+# SYNTHETIC EXAMPLE — NOT EMPIRICAL DATA
+metadata:
+  title: "Fictional Municipality Alpha — AI chatbot for citizen inquiries"
+  organization_type: municipality
+  country: "EU (fictional)"
+  synthetic: true
+  version: "0.1.0"
+responses:
+  strategy_01: 2
+  strategy_02: 1
+  risk_01: 2
+  risk_02: 1
+  data_01: 3
+  data_02: 2
+  transparency_01: 2
+  transparency_02: 1
+  accountability_01: 2
+  accountability_02: 2
+  procurement_01: 1
+  procurement_02: 1
+  skills_01: 2
+  skills_02: 1

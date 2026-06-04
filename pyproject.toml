@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "localgovbench"
+version = "0.1.0"
+description = "Research framework and benchmark scaffolding for local AI governance in European public sector organizations"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+authors = [{ name = "LocalGovBench Contributors" }]
+keywords = [
+    "ai-governance",
+    "public-sector",
+    "benchmark",
+    "european-union",
+]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.urls]
+Repository = "https://github.com/PLACEHOLDER/localgovbench"
+Documentation = "https://github.com/PLACEHOLDER/localgovbench/tree/main/docs"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["localgovbench*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

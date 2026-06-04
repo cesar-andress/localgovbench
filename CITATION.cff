@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+title: "LocalGovBench: A Research Framework for Local AI Governance in European Public Sector Organizations"
+message: "If you use this software, please cite it as below."
+type: software
+authors:
+  - family-names: "LocalGovBench"
+    given-names: "Contributors"
+license: MIT
+repository-code: "https://github.com/PLACEHOLDER/localgovbench"
+url: "https://github.com/PLACEHOLDER/localgovbench"
+version: 0.1.0
+date-released: 2026-06-04
+keywords:
+  - artificial intelligence
+  - governance
+  - public sector
+  - European Union
+  - AI Act
+  - GDPR
+  - benchmark
+abstract: >-
+  Early-stage research artifact providing a lightweight framework and benchmark
+  scaffolding for assessing local AI governance maturity in European public
+  sector organizations. Empirical datasets and field evaluation results are
+  planned for future releases.
+preferred-citation:
+  type: article
+  title: "Towards a Local AI Governance Framework for European Public Sector Organizations"
+  authors:
+    - family-names: "Authors"
+      given-names: "TBD"
+  year: 2026
+  notes: "Manuscript in preparation; update this entry when published."
