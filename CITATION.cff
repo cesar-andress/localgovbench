@@ -24,10 +24,13 @@ keywords:
   - benchmark
   - reproducibility
 authors:
-  - given-names: "[Given name]"
-    family-names: "[Family name]"
-    affiliation: "[Affiliation — edit before Zenodo release]"
-    orcid: "https://orcid.org/0000-0000-0000-0000"
+  - given-names: César
+    family-names: Andrés
+    affiliation: >-
+      CRIA-BDHS Research Group, Higher Polytechnic School of Technology and
+      Science, Universidad Camilo José Cela, Madrid, Spain
+    orcid: "https://orcid.org/0009-0001-8968-3404"
+    email: cesar.andress@ucjc.edu
 repository-code: "https://github.com/PLACEHOLDER/localgovbench"
 url: "https://github.com/PLACEHOLDER/localgovbench"
 doi: 10.5281/zenodo.TBD
@@ -47,8 +50,8 @@ preferred-citation:
   type: article
   title: "Towards a Local AI Governance Framework for European Public Sector Organizations"
   authors:
-    - given-names: "[Given name]"
-      family-names: "[Family name]"
+    - given-names: César
+      family-names: Andrés
   year: 2026
   journal: "[Journal or proceedings — edit when known]"
   notes: "Manuscript in preparation for GIQ 2026; not included in this repository."

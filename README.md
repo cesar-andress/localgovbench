@@ -164,10 +164,11 @@ When citing this artifact, use [CITATION.cff](CITATION.cff):
 
 ```bibtex
 @software{localgovbench2026,
-  author    = {[Author names to be added]},
+  author    = {Andrés, César},
   title     = {LocalGovBench},
   year      = {2026},
   version   = {0.1.0},
+  orcid     = {0009-0001-8968-3404},
   doi       = {10.5281/zenodo.TBD},
   url       = {https://github.com/PLACEHOLDER/localgovbench}
 }
@@ -179,7 +180,7 @@ Replace `10.5281/zenodo.TBD` and the repository URL after deposit and public Git
 
 ```bibtex
 @article{giq2026localai,
-  author  = {[Authors to be added]},
+  author  = {Andrés, César},
   title   = {Towards a Local AI Governance Framework for European Public Sector Organizations},
   journal = {[Venue to be added]},
   year    = {2026},

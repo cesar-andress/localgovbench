@@ -34,7 +34,7 @@ Related documents: [artifact_description.md](artifact_description.md), [reproduc
 - [ ] Citation message: *"If you use LocalGovBench, please cite this software artifact."*
 - [ ] Placeholder DOI `10.5281/zenodo.TBD` (replace after Zenodo deposit)
 - [ ] Placeholder repository URL updated to final GitHub URL before public launch
-- [ ] Author names and ORCID placeholders replaced before formal release
+- [x] Author identity standardized — **César Andrés**, ORCID `0009-0001-8968-3404`, `cesar.andress@ucjc.edu` (see [author_identity.md](author_identity.md))
 - [ ] Companion paper DOI added when published (optional `related-identifiers`)
 
 ---

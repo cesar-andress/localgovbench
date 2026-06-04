@@ -9,7 +9,7 @@ description = "Research framework and benchmark scaffolding for local AI governa
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.11"
-authors = [{ name = "LocalGovBench Contributors" }]
+authors = [{ name = "César Andrés", email = "cesar.andress@ucjc.edu" }]
 keywords = [
     "ai-governance",
     "public-sector",

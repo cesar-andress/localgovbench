@@ -123,6 +123,7 @@ REQUIRED_PATHS = [
     "docs/reproducibility.md",
     "docs/release_v0_1_checklist.md",
     "docs/construct_traceability.md",
+    "docs/author_identity.md",
     "data/traceability/indicator_mapping.csv",
     "data/traceability/README.md",
     "localgovbench/traceability.py",
@@ -167,6 +168,12 @@ def main() -> int:
         return 1
     if "10.5281/zenodo.TBD" not in citation:
         print("CITATION.cff should include placeholder DOI 10.5281/zenodo.TBD.")
+        return 1
+    if "family-names: Andrés" not in citation or "given-names: César" not in citation:
+        print("CITATION.cff should list author César Andrés.")
+        return 1
+    if "0009-0001-8968-3404" not in citation:
+        print("CITATION.cff should include ORCID 0009-0001-8968-3404.")
         return 1
 
     example = (ROOT / "examples" / "example_assessment.yaml").read_text(encoding="utf-8")

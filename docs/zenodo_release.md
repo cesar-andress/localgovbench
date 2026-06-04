@@ -21,7 +21,7 @@ Use the summary below or the linked document before creating a Zenodo record. Ma
 
 - [ ] **README complete** — Purpose, scope, GIQ paper relation, reproducibility, disclaimers (see [README.md](../README.md))
 - [ ] **License selected** — MIT (`LICENSE` file matches Zenodo license field)
-- [ ] **Citation file complete** — `CITATION.cff` authors, version, `date-released`, abstract; placeholders replaced where possible
+- [x] **Citation file complete** — `CITATION.cff` author **César Andrés**, ORCID, affiliation, email (repository URL/DOI placeholders may remain until deposit)
 
 ### Version control and quality
 
