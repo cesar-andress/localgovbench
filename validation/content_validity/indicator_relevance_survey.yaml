@@ -1,0 +1,13 @@
+# Indicator relevance survey — one row per criterion (25)
+# Experts rate relevance to municipal sovereign LLM governance readiness.
+instrument: localgovbench-v0.1
+scale:
+  relevance: "1=not relevant, 5=highly relevant"
+  essential_lawshe: "1=not essential, 4=essential"
+
+instructions: |
+  Rate each criterion for relevance to assessing governance readiness
+  for on-premise LLM deployments in European municipalities.
+  Do not assign maturity scores for a municipality.
+
+criterion_ids: []  # Filled from instrument; see indicator_relevance_survey_results.example.yaml

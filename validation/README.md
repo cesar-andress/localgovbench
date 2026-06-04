@@ -1,50 +1,43 @@
-# LocalGovBench Scientific Validation Package
+# LocalGovBench Empirical Validation Package (v0.1)
 
-Research-grade materials to move LocalGovBench v0.1 from a **conceptual instrument** to an **empirically validated** benchmark.
+**Instrument frozen** — empirical studies validate the existing 25-criterion instrument without modifying dimensions, scales, or definitions.
 
-> Bundled inter-rater files under `ratings/` are **synthetic** for pipeline testing. Replace with field data for publication.
-
-## Components
+## Package map
 
 | # | Component | Location |
 |---|-----------|----------|
-| 1 | Content validity study templates | `templates/content_validity_study.yaml` |
-| 2 | Expert review questionnaires | `templates/expert_review_questionnaire.yaml` |
-| 3 | Inter-rater package (codebook, rating sheets, adjudication) | `templates/inter_rater_*.yaml` |
-| 4 | Synthetic benchmark cases | `cases/` |
-| 5 | Reliability metrics (κ, α) | `localgovbench/validation/reliability.py` |
-| 6 | Benchmark reports | `reports/` (generated) |
+| 1 | **Content validity** | `content_validity/` |
+| 2 | **Inter-rater reliability** | `inter_rater/`, `ratings/`, `localgovbench/validation/reliability.py` |
+| 3 | **Synthetic benchmark cases** | `benchmark_cases/` |
+| 4 | **Discriminant validity** | `scripts/run_discriminant_validity.py` |
+| 5 | **Reports** | `reports/` |
 
-## Workflow
-
-### Content validity
-
-1. Recruit expert panel (see `docs/content_validity_guide.md`).
-2. Complete `templates/content_validity_study.yaml` (one row per criterion).
-3. Aggregate scores; revise instrument; version bump.
-
-### Inter-rater reliability
-
-1. Select cases from `cases/`.
-2. Two independent raters complete copies of `inter_rater_rating_sheet.yaml` per case.
-3. Run analysis:
+## Quick commands
 
 ```bash
+# Content validity (I-CVI, CVR)
+python scripts/run_content_validity_analysis.py \
+  --input validation/content_validity/indicator_relevance_survey_results.example.yaml
+
+# Inter-rater reliability (κ, α)
 python scripts/run_inter_rater_analysis.py
+
+# Discriminant validity (synthetic cases)
+python scripts/run_discriminant_validity.py
+
+# Integrated validation report
 python scripts/generate_validation_report.py
 ```
 
-### Full validation report
+## Protocol
 
-```bash
-python scripts/generate_validation_report.py
-# → validation/reports/validation_benchmark_report.md
-```
+Authoritative document: **[docs/validation_protocol.md](../docs/validation_protocol.md)**
 
-## Instrument
+## Legacy paths
 
-- **ID:** `localgovbench-v0.1`
-- **Criteria:** 25 (five dimensions — unchanged)
-- **No automated scoring** from LLMs in validation workflow
+- `validation/cases/` + `validation/ratings/` — IRR training (3 cases, 2 raters)
+- `validation/templates/` — earlier templates (superseded by `content_validity/` and `inter_rater/` where duplicated)
 
-See [docs/validation_protocol.md](docs/validation_protocol.md).
+## Synthetic data warning
+
+All bundled scores and expert examples are **synthetic** until field studies replace them.

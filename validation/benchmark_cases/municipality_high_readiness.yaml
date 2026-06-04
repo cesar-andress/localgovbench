@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "case_id": "municipality_high_readiness",
+    "instrument": "localgovbench-v0.1",
+    "framework_version": "0.1",
+    "synthetic": true,
+    "profile_type": "high"
+  },
+  "governance_evidence": {
+    "summary": "Approved AI governance charter.",
+    "artefacts": [
+      {
+        "id": "DOC-municipality_high_readiness-001",
+        "description": "Operational monitoring in place."
+      }
+    ]
+  },
+  "responses": {
+    "legal_regulatory_gdpr_readiness": 3,
+    "legal_regulatory_ai_act_alignment": 4,
+    "legal_regulatory_data_retention": 4,
+    "legal_regulatory_lawful_basis": 3,
+    "legal_regulatory_cross_border_avoidance": 4,
+    "technical_security_local_architecture": 4,
+    "technical_security_access_control": 3,
+    "technical_security_logging": 4,
+    "technical_security_auditability": 4,
+    "technical_security_model_updates": 4,
+    "organizational_accountability": 4,
+    "organizational_ownership": 4,
+    "organizational_role_definition": 4,
+    "organizational_procurement_governance": 4,
+    "organizational_risk_ownership": 3,
+    "operational_monitoring": 3,
+    "operational_incident_response": 4,
+    "operational_human_oversight": 3,
+    "operational_documentation": 4,
+    "operational_lifecycle_management": 3,
+    "strategic_sovereignty_vendor_independence": 4,
+    "strategic_sovereignty_data_sovereignty": 4,
+    "strategic_sovereignty_infrastructure_control": 4,
+    "strategic_sovereignty_portability": 3,
+    "strategic_sovereignty_maintainability": 3
+  },
+  "expected_outcome": {
+    "overall_maturity": 3.64,
+    "readiness_index": 91.0,
+    "readiness_band": "Advanced readiness"
+  }
+}

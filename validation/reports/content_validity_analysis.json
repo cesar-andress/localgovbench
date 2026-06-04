@@ -1,0 +1,93 @@
+{
+  "instrument": "localgovbench-v0.1",
+  "icvi_threshold": 0.78,
+  "s_cvi_ave": 0.9,
+  "items_below_icvi_threshold": [
+    "strategic_sovereignty_portability"
+  ],
+  "item_cvi": [
+    {
+      "criterion_id": "legal_regulatory_ai_act_alignment",
+      "i_cvi": 1.0,
+      "n_experts": 2,
+      "passes": true
+    },
+    {
+      "criterion_id": "legal_regulatory_gdpr_readiness",
+      "i_cvi": 1.0,
+      "n_experts": 4,
+      "passes": true
+    },
+    {
+      "criterion_id": "legal_regulatory_lawful_basis",
+      "i_cvi": 1.0,
+      "n_experts": 1,
+      "passes": true
+    },
+    {
+      "criterion_id": "operational_human_oversight",
+      "i_cvi": 1.0,
+      "n_experts": 5,
+      "passes": true
+    },
+    {
+      "criterion_id": "organizational_accountability",
+      "i_cvi": 1.0,
+      "n_experts": 1,
+      "passes": true
+    },
+    {
+      "criterion_id": "organizational_procurement_governance",
+      "i_cvi": 1.0,
+      "n_experts": 1,
+      "passes": true
+    },
+    {
+      "criterion_id": "strategic_sovereignty_data_sovereignty",
+      "i_cvi": 1.0,
+      "n_experts": 2,
+      "passes": true
+    },
+    {
+      "criterion_id": "strategic_sovereignty_portability",
+      "i_cvi": 0.0,
+      "n_experts": 1,
+      "passes": false
+    },
+    {
+      "criterion_id": "technical_security_access_control",
+      "i_cvi": 1.0,
+      "n_experts": 1,
+      "passes": true
+    },
+    {
+      "criterion_id": "technical_security_logging",
+      "i_cvi": 1.0,
+      "n_experts": 1,
+      "passes": true
+    }
+  ],
+  "lawshe_cvr": [
+    {
+      "criterion_id": "legal_regulatory_gdpr_readiness",
+      "cvr": 0.8333,
+      "n_essential": 5,
+      "n_experts": 6,
+      "passes_minimum": false
+    },
+    {
+      "criterion_id": "operational_human_oversight",
+      "cvr": 1.0,
+      "n_essential": 6,
+      "n_experts": 6,
+      "passes_minimum": true
+    },
+    {
+      "criterion_id": "strategic_sovereignty_portability",
+      "cvr": 0.3333,
+      "n_essential": 2,
+      "n_experts": 6,
+      "passes_minimum": false
+    }
+  ]
+}

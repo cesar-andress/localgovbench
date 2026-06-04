@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "case_id": "municipality_sovereign_ready",
+    "instrument": "localgovbench-v0.1",
+    "framework_version": "0.1",
+    "synthetic": true,
+    "profile_type": "sovereign_ready"
+  },
+  "governance_evidence": {
+    "summary": "EU on-prem hosting mandate.",
+    "artefacts": [
+      {
+        "id": "DOC-municipality_sovereign_ready-001",
+        "description": "Tested vendor exit and DR."
+      }
+    ]
+  },
+  "responses": {
+    "legal_regulatory_gdpr_readiness": 4,
+    "legal_regulatory_ai_act_alignment": 4,
+    "legal_regulatory_data_retention": 4,
+    "legal_regulatory_lawful_basis": 4,
+    "legal_regulatory_cross_border_avoidance": 4,
+    "technical_security_local_architecture": 4,
+    "technical_security_access_control": 4,
+    "technical_security_logging": 4,
+    "technical_security_auditability": 4,
+    "technical_security_model_updates": 4,
+    "organizational_accountability": 4,
+    "organizational_ownership": 4,
+    "organizational_role_definition": 4,
+    "organizational_procurement_governance": 4,
+    "organizational_risk_ownership": 4,
+    "operational_monitoring": 4,
+    "operational_incident_response": 3,
+    "operational_human_oversight": 4,
+    "operational_documentation": 3,
+    "operational_lifecycle_management": 3,
+    "strategic_sovereignty_vendor_independence": 4,
+    "strategic_sovereignty_data_sovereignty": 4,
+    "strategic_sovereignty_infrastructure_control": 4,
+    "strategic_sovereignty_portability": 4,
+    "strategic_sovereignty_maintainability": 4
+  },
+  "expected_outcome": {
+    "overall_maturity": 3.88,
+    "readiness_index": 97.0,
+    "readiness_band": "Advanced readiness"
+  }
+}

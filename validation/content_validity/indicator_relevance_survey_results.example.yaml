@@ -1,0 +1,82 @@
+# EXAMPLE — synthetic expert panel for pipeline testing only
+instrument: localgovbench-v0.1
+synthetic: true
+n_experts: 6
+
+expert_ratings:
+  - expert_id: E01
+    criterion_ratings:
+      - criterion_id: legal_regulatory_gdpr_readiness
+        relevance_score: 5
+      - criterion_id: legal_regulatory_ai_act_alignment
+        relevance_score: 5
+      - criterion_id: operational_human_oversight
+        relevance_score: 5
+      - criterion_id: strategic_sovereignty_data_sovereignty
+        relevance_score: 5
+  - expert_id: E02
+    criterion_ratings:
+      - criterion_id: legal_regulatory_gdpr_readiness
+        relevance_score: 4
+      - criterion_id: technical_security_logging
+        relevance_score: 5
+      - criterion_id: operational_human_oversight
+        relevance_score: 4
+  - expert_id: E03
+    criterion_ratings:
+      - criterion_id: legal_regulatory_gdpr_readiness
+        relevance_score: 5
+      - criterion_id: organizational_accountability
+        relevance_score: 4
+      - criterion_id: strategic_sovereignty_portability
+        relevance_score: 3
+  - expert_id: E04
+    criterion_ratings:
+      - criterion_id: legal_regulatory_lawful_basis
+        relevance_score: 5
+      - criterion_id: operational_human_oversight
+        relevance_score: 5
+      - criterion_id: technical_security_access_control
+        relevance_score: 4
+  - expert_id: E05
+    criterion_ratings:
+      - criterion_id: legal_regulatory_gdpr_readiness
+        relevance_score: 4
+      - criterion_id: operational_human_oversight
+        relevance_score: 5
+      - criterion_id: strategic_sovereignty_data_sovereignty
+        relevance_score: 5
+  - expert_id: E06
+    criterion_ratings:
+      - criterion_id: legal_regulatory_ai_act_alignment
+        relevance_score: 4
+      - criterion_id: operational_human_oversight
+        relevance_score: 4
+      - criterion_id: organizational_procurement_governance
+        relevance_score: 4
+
+essential_ratings:
+  - criterion_id: legal_regulatory_gdpr_readiness
+    essential_flags:
+      - true
+      - true
+      - true
+      - true
+      - true
+      - false
+  - criterion_id: operational_human_oversight
+    essential_flags:
+      - true
+      - true
+      - true
+      - true
+      - true
+      - true
+  - criterion_id: strategic_sovereignty_portability
+    essential_flags:
+      - false
+      - true
+      - false
+      - true
+      - false
+      - false

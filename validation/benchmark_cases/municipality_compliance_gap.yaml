@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "case_id": "municipality_compliance_gap",
+    "instrument": "localgovbench-v0.1",
+    "framework_version": "0.1",
+    "synthetic": true,
+    "profile_type": "compliance_gap"
+  },
+  "governance_evidence": {
+    "summary": "Strong GDPR files and logging.",
+    "artefacts": [
+      {
+        "id": "DOC-municipality_compliance_gap-001",
+        "description": "No effective oversight workflow."
+      }
+    ]
+  },
+  "responses": {
+    "legal_regulatory_gdpr_readiness": 4,
+    "legal_regulatory_ai_act_alignment": 4,
+    "legal_regulatory_data_retention": 4,
+    "legal_regulatory_lawful_basis": 4,
+    "legal_regulatory_cross_border_avoidance": 4,
+    "technical_security_local_architecture": 4,
+    "technical_security_access_control": 4,
+    "technical_security_logging": 4,
+    "technical_security_auditability": 4,
+    "technical_security_model_updates": 4,
+    "organizational_accountability": 1,
+    "organizational_ownership": 1,
+    "organizational_role_definition": 1,
+    "organizational_procurement_governance": 1,
+    "organizational_risk_ownership": 1,
+    "operational_monitoring": 2,
+    "operational_incident_response": 2,
+    "operational_human_oversight": 1,
+    "operational_documentation": 2,
+    "operational_lifecycle_management": 2,
+    "strategic_sovereignty_vendor_independence": 2,
+    "strategic_sovereignty_data_sovereignty": 2,
+    "strategic_sovereignty_infrastructure_control": 2,
+    "strategic_sovereignty_portability": 2,
+    "strategic_sovereignty_maintainability": 2
+  },
+  "expected_outcome": {
+    "overall_maturity": 2.56,
+    "readiness_index": 64.0,
+    "readiness_band": "Substantially ready"
+  }
+}

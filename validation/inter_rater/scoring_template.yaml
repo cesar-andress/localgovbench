@@ -1,0 +1,46 @@
+# Inter-rater scoring template — copy per (case_id, rater_id)
+metadata:
+  study_id: ""
+  case_id: ""
+  rater_id: ""
+  instrument: localgovbench-v0.1
+  framework_version: "0.1"
+  coding_date: ""
+  synthetic: false
+
+governance_evidence_reviewed: []  # artefact ids
+
+responses:
+  # Legal and Regulatory Compliance
+  legal_regulatory_gdpr_readiness: null
+  legal_regulatory_ai_act_alignment: null
+  legal_regulatory_data_retention: null
+  legal_regulatory_lawful_basis: null
+  legal_regulatory_cross_border_avoidance: null
+  # Technical and Security Readiness
+  technical_security_local_architecture: null
+  technical_security_access_control: null
+  technical_security_logging: null
+  technical_security_auditability: null
+  technical_security_model_updates: null
+  # Organizational Governance
+  organizational_accountability: null
+  organizational_ownership: null
+  organizational_role_definition: null
+  organizational_procurement_governance: null
+  organizational_risk_ownership: null
+  # Operational Management
+  operational_monitoring: null
+  operational_incident_response: null
+  operational_human_oversight: null
+  operational_documentation: null
+  operational_lifecycle_management: null
+  # Strategic Sovereignty
+  strategic_sovereignty_vendor_independence: null
+  strategic_sovereignty_data_sovereignty: null
+  strategic_sovereignty_infrastructure_control: null
+  strategic_sovereignty_portability: null
+  strategic_sovereignty_maintainability: null
+
+evidence_log: {}
+notes: ""

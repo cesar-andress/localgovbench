@@ -45,22 +45,25 @@ The paper may describe motivation, related work, and research design. **This rep
 - **GRB experiment (54 indicators):** `localgovbench/grb/`, `examples/grb/` — extended sensitivity / IRR pilot
 - **Data placeholders:** `data/raw/`, `data/processed/`, `data/templates/`
 
-### Scientific validation
+### Empirical validation (v0.1 instrument frozen)
 
 | Step | Command / path |
 |------|----------------|
-| Inter-rater analysis (κ, α) | `python scripts/run_inter_rater_analysis.py` |
+| **Protocol** | [docs/validation_protocol.md](docs/validation_protocol.md) |
+| Content validity (I-CVI, CVR) | `python scripts/run_content_validity_analysis.py` |
+| Inter-rater reliability (κ, α) | `python scripts/run_inter_rater_analysis.py` |
+| Discriminant validity | `python scripts/run_discriminant_validity.py` |
 | Validation benchmark report | `python scripts/generate_validation_report.py` |
-| Protocol | [validation/docs/validation_protocol.md](validation/docs/validation_protocol.md) |
+| Package index | [validation/README.md](validation/README.md) |
 
-Bundled `validation/ratings/` are **synthetic** pilot data for reproducible IRR pipelines — replace with field ratings before publication claims.
+Bundled cases under `validation/benchmark_cases/` and `validation/ratings/` are **synthetic** — replace with field data before publication claims.
 
 > **Warning:** All bundled assessment scores and metadata in `examples/` are **synthetic** unless a future release explicitly states otherwise.
 
 ## What is not included
 
-- Completed field-study content validity results (templates only)
-- Peer-reviewed confirmation of psychometric validity
+- Completed field-study expert panel results (templates and analysis scripts only)
+- Peer-reviewed confirmation of psychometric validity in a published study
 - Unpublished paper PDFs, reviewer correspondence, or private notes
 - Credentials, `.env` files, or identifiable public sector records
 
@@ -74,7 +77,10 @@ source .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install -e ".[dev]"
 python scripts/validate_repository.py
 python scripts/run_example_assessment.py
+python scripts/run_content_validity_analysis.py \
+  --input validation/content_validity/indicator_relevance_survey_results.example.yaml
 python scripts/run_inter_rater_analysis.py
+python scripts/run_discriminant_validity.py
 python scripts/generate_validation_report.py
 pytest
 ```
@@ -143,7 +149,7 @@ Empirical protocols (document analysis, expert validation, case studies, inter-r
 
 ## Status
 
-**Research preview (v0.1)** — Instrument and validation package ready for empirical field studies. Bundled IRR metrics use **synthetic** ratings; content validity templates await expert panel completion. Not yet a published, empirically validated benchmark.
+**Research preview (v0.1)** — Instrument **frozen**; full empirical validation package (content validity, IRR, discriminant cases, κ/α) ready for field studies. Bundled outputs are **synthetic** until expert and municipal data are collected.
 
 ## Contributing
 

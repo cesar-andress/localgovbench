@@ -1,0 +1,38 @@
+# Expert review questionnaire — LocalGovBench v0.1 (empirical validation)
+instrument: localgovbench-v0.1
+framework_version: "0.1"
+status: template
+synthetic: false
+
+panel_member:
+  expert_id: ""
+  name: ""
+  affiliation: ""
+  domain: ""  # public_administration | law_dpo | it_security | ai_ethics | other
+  review_date: ""
+
+instrument_level:
+  overall_clarity_1_5: null
+  overall_relevance_1_5: null
+  sovereign_llm_municipal_fit_1_5: null
+  overlap_between_criteria: ""  # free text
+  missing_topics: ""
+  regulatory_mapping_adequacy: ""
+
+criterion_review_template:
+  criterion_id: ""
+  clarity_1_5: null
+  relevance_1_5: null
+  sovereign_llm_fit_1_5: null
+  suggested_revision: ""
+
+summary_questions:
+  - id: Q1
+    text: "Is the five-dimension structure appropriate for municipal on-premise LLM governance?"
+    response: ""
+  - id: Q2
+    text: "Are maturity levels 0–4 operable with the evidence-gated scoring rubric?"
+    response: ""
+  - id: Q3
+    text: "Which criteria should be revised before field deployment?"
+    response: ""

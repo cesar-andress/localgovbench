@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "case_id": "municipality_low_readiness",
+    "instrument": "localgovbench-v0.1",
+    "framework_version": "0.1",
+    "synthetic": true,
+    "profile_type": "low"
+  },
+  "governance_evidence": {
+    "summary": "No formal AI governance policy on file.",
+    "artefacts": [
+      {
+        "id": "DOC-municipality_low_readiness-001",
+        "description": "Undocumented pilot LLM."
+      }
+    ]
+  },
+  "responses": {
+    "legal_regulatory_gdpr_readiness": 0,
+    "legal_regulatory_ai_act_alignment": 0,
+    "legal_regulatory_data_retention": 0,
+    "legal_regulatory_lawful_basis": 0,
+    "legal_regulatory_cross_border_avoidance": 1,
+    "technical_security_local_architecture": 1,
+    "technical_security_access_control": 0,
+    "technical_security_logging": 0,
+    "technical_security_auditability": 0,
+    "technical_security_model_updates": 1,
+    "organizational_accountability": 0,
+    "organizational_ownership": 0,
+    "organizational_role_definition": 0,
+    "organizational_procurement_governance": 0,
+    "organizational_risk_ownership": 0,
+    "operational_monitoring": 0,
+    "operational_incident_response": 0,
+    "operational_human_oversight": 0,
+    "operational_documentation": 0,
+    "operational_lifecycle_management": 0,
+    "strategic_sovereignty_vendor_independence": 0,
+    "strategic_sovereignty_data_sovereignty": 0,
+    "strategic_sovereignty_infrastructure_control": 1,
+    "strategic_sovereignty_portability": 0,
+    "strategic_sovereignty_maintainability": 1
+  },
+  "expected_outcome": {
+    "overall_maturity": 0.2,
+    "readiness_index": 5.0,
+    "readiness_band": "Not ready"
+  }
+}

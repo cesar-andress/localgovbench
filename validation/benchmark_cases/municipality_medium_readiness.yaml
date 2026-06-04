@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "case_id": "municipality_medium_readiness",
+    "instrument": "localgovbench-v0.1",
+    "framework_version": "0.1",
+    "synthetic": true,
+    "profile_type": "medium"
+  },
+  "governance_evidence": {
+    "summary": "Draft AI policy v0.2.",
+    "artefacts": [
+      {
+        "id": "DOC-municipality_medium_readiness-001",
+        "description": "Partial RoPA and architecture notes."
+      }
+    ]
+  },
+  "responses": {
+    "legal_regulatory_gdpr_readiness": 2,
+    "legal_regulatory_ai_act_alignment": 2,
+    "legal_regulatory_data_retention": 2,
+    "legal_regulatory_lawful_basis": 2,
+    "legal_regulatory_cross_border_avoidance": 2,
+    "technical_security_local_architecture": 2,
+    "technical_security_access_control": 2,
+    "technical_security_logging": 2,
+    "technical_security_auditability": 2,
+    "technical_security_model_updates": 2,
+    "organizational_accountability": 2,
+    "organizational_ownership": 2,
+    "organizational_role_definition": 2,
+    "organizational_procurement_governance": 2,
+    "organizational_risk_ownership": 2,
+    "operational_monitoring": 2,
+    "operational_incident_response": 2,
+    "operational_human_oversight": 2,
+    "operational_documentation": 2,
+    "operational_lifecycle_management": 2,
+    "strategic_sovereignty_vendor_independence": 2,
+    "strategic_sovereignty_data_sovereignty": 2,
+    "strategic_sovereignty_infrastructure_control": 2,
+    "strategic_sovereignty_portability": 2,
+    "strategic_sovereignty_maintainability": 2
+  },
+  "expected_outcome": {
+    "overall_maturity": 2.0,
+    "readiness_index": 50.0,
+    "readiness_band": "Substantially ready"
+  }
+}
