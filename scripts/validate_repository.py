@@ -30,6 +30,11 @@ REQUIRED_PATHS = [
     "localgovbench/evaluation/rubric.py",
     "localgovbench/evaluation/validators.py",
     "localgovbench/utils/io.py",
+    "localgovbench/llm/evidence_extraction.py",
+    "prompts/evidence_extraction.md",
+    "data/synthetic/governance_policy_sample.md",
+    "data/synthetic/README.md",
+    "scripts/run_ollama_evidence_extraction.py",
     "data/README.md",
     "data/raw/.gitkeep",
     "data/processed/.gitkeep",
@@ -46,6 +51,7 @@ REQUIRED_PATHS = [
     "tests/test_dimensions.py",
     "tests/test_scoring.py",
     "tests/test_checklist.py",
+    "tests/test_evidence_extraction.py",
     "scripts/run_example_assessment.py",
 ]
 

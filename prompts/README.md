@@ -9,6 +9,7 @@ Markdown prompts for structured governance assessments using LLM-assisted workfl
 | `governance_assessment.md` | General local AI governance self-assessment |
 | `ai_act_compliance.md` | AI Act-oriented review prompts (indicative) |
 | `public_sector_use_cases.md` | Scenario framing for municipal/regional services |
+| `evidence_extraction.md` | Local Ollama evidence extraction (no scoring) |
 
 ## Usage notes
 
