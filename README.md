@@ -109,6 +109,8 @@ python scripts/run_llm_model_benchmark.py --mock   # testing → results/model_b
 
 > **Warning:** Files under `results/model_benchmark_mock.*` and `reports/model_benchmark_mock.md` are **deterministic test outputs only**. They must **not** be reported as empirical model comparison results. Use `model_benchmark_live.*` after running Ollama with pulled models.
 
+> **Deprecated paths:** Do **not** use legacy generic files `results/model_benchmark.csv` or `reports/model_benchmark.md`. The benchmark CLI writes only mode-specific outputs and removes legacy files when run.
+
 See [data/benchmark/README.md](data/benchmark/README.md).
 
 ### End-to-end workflow demo

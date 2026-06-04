@@ -58,6 +58,7 @@ data/processed/*
 !results/sensitivity_analysis.csv
 !results/grb_sensitivity_analysis.csv
 !results/inter_rater_reliability.csv
+results/model_benchmark.csv
 !results/model_benchmark_mock.csv
 !results/model_benchmark_live.csv
 !data/traceability/indicator_mapping.csv
@@ -67,6 +68,7 @@ reports/*_grb_report.md
 !reports/sensitivity_analysis.md
 !reports/grb_sensitivity_analysis.md
 !reports/inter_rater_reliability.md
+reports/model_benchmark.md
 !reports/model_benchmark_mock.md
 !reports/model_benchmark_live.md
 !reports/traceability_report.md

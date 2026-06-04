@@ -26,3 +26,5 @@ python scripts/run_llm_model_benchmark.py --mock
 | Live (Ollama) | `results/model_benchmark_live.csv` | `reports/model_benchmark_live.md` |
 
 **Mock results are for pipeline testing only** — do not cite them as empirical model comparisons.
+
+Do not use deprecated `results/model_benchmark.csv` or `reports/model_benchmark.md`; the CLI removes them when run.

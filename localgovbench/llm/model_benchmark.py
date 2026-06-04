@@ -42,6 +42,27 @@ MOCK_CSV_NAME = "model_benchmark_mock.csv"
 MOCK_REPORT_NAME = "model_benchmark_mock.md"
 LIVE_CSV_NAME = "model_benchmark_live.csv"
 LIVE_REPORT_NAME = "model_benchmark_live.md"
+LEGACY_CSV_NAME = "model_benchmark.csv"
+LEGACY_REPORT_NAME = "model_benchmark.md"
+
+
+def legacy_benchmark_output_paths(repo_root: Path | None = None) -> tuple[Path, Path]:
+    """Deprecated generic paths — must not be written by the benchmark CLI."""
+    root = repo_root or REPO_ROOT
+    return (
+        root / "results" / LEGACY_CSV_NAME,
+        root / "reports" / LEGACY_REPORT_NAME,
+    )
+
+
+def remove_legacy_benchmark_outputs(repo_root: Path | None = None) -> list[Path]:
+    """Remove legacy generic benchmark files if present (avoid manuscript confusion)."""
+    removed: list[Path] = []
+    for path in legacy_benchmark_output_paths(repo_root):
+        if path.is_file():
+            path.unlink()
+            removed.append(path)
+    return removed
 
 
 def benchmark_output_paths(*, mock: bool, repo_root: Path | None = None) -> tuple[Path, Path]:
@@ -451,8 +472,19 @@ def write_benchmark_outputs(
     tasks_path: Path,
     repo_root: Path | None = None,
 ) -> tuple[Path, Path]:
-    """Write CSV and Markdown report to mode-specific paths."""
-    csv_path, report_path = benchmark_output_paths(mock=mock, repo_root=repo_root)
+    """Write CSV and Markdown report to mode-specific paths only."""
+    root = repo_root or REPO_ROOT
+    remove_legacy_benchmark_outputs(root)
+
+    csv_path, report_path = benchmark_output_paths(mock=mock, repo_root=root)
+    legacy_csv, legacy_report = legacy_benchmark_output_paths(root)
+    if csv_path.name in (LEGACY_CSV_NAME, LEGACY_REPORT_NAME) or report_path.name in (
+        LEGACY_CSV_NAME,
+        LEGACY_REPORT_NAME,
+    ):
+        raise ValueError("Benchmark must not write legacy generic output filenames.")
+    assert csv_path != legacy_csv and report_path != legacy_report
+
     csv_path.parent.mkdir(parents=True, exist_ok=True)
     report_path.parent.mkdir(parents=True, exist_ok=True)
 

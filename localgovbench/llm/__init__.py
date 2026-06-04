@@ -10,6 +10,8 @@ from localgovbench.llm.evidence_extraction import (
 from localgovbench.llm.model_benchmark import (
     BENCHMARK_MODELS,
     benchmark_output_paths,
+    legacy_benchmark_output_paths,
+    remove_legacy_benchmark_outputs,
     run_full_benchmark,
     write_benchmark_outputs,
 )
@@ -17,6 +19,8 @@ from localgovbench.llm.model_benchmark import (
 __all__ = [
     "BENCHMARK_MODELS",
     "benchmark_output_paths",
+    "legacy_benchmark_output_paths",
+    "remove_legacy_benchmark_outputs",
     "EvidenceExtractionResult",
     "OllamaClient",
     "extract_evidence",

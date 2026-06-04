@@ -16,12 +16,15 @@ from localgovbench.llm.evidence_extraction import (
 )
 from localgovbench.llm.model_benchmark import (
     BENCHMARK_MODELS,
+    LEGACY_CSV_NAME,
+    LEGACY_REPORT_NAME,
     LIVE_CSV_NAME,
     LIVE_REPORT_NAME,
     MOCK_CSV_NAME,
     MOCK_REPORT_NAME,
     MockExtractionRunner,
     benchmark_output_paths,
+    legacy_benchmark_output_paths,
     load_benchmark_tasks,
     render_model_benchmark_report,
     run_full_benchmark,
@@ -91,6 +94,18 @@ def test_benchmark_output_paths_distinct() -> None:
     assert "live" in live_csv.name and "mock" not in live_csv.name
 
 
+def test_live_mode_output_path_names() -> None:
+    live_csv, live_report = benchmark_output_paths(mock=False, repo_root=REPO_ROOT)
+    assert live_csv.name == LIVE_CSV_NAME
+    assert live_report.name == LIVE_REPORT_NAME
+
+
+def test_mock_mode_output_path_names() -> None:
+    mock_csv, mock_report = benchmark_output_paths(mock=True, repo_root=REPO_ROOT)
+    assert mock_csv.name == MOCK_CSV_NAME
+    assert mock_report.name == MOCK_REPORT_NAME
+
+
 def test_write_benchmark_outputs_uses_mode_specific_paths(tmp_path: Path) -> None:
     rows = run_full_benchmark(
         models=("llama3.1:8b",),
@@ -115,6 +130,38 @@ def test_write_benchmark_outputs_uses_mode_specific_paths(tmp_path: Path) -> Non
     live_csv, live_report = benchmark_output_paths(mock=False, repo_root=tmp_path)
     assert not live_csv.exists()
     assert not live_report.exists()
+
+    legacy_csv, legacy_report = legacy_benchmark_output_paths(tmp_path)
+    assert not legacy_csv.exists()
+    assert not legacy_report.exists()
+
+
+def test_write_benchmark_outputs_does_not_create_legacy_files(tmp_path: Path) -> None:
+    legacy_csv, legacy_report = legacy_benchmark_output_paths(tmp_path)
+    legacy_csv.parent.mkdir(parents=True, exist_ok=True)
+    legacy_report.parent.mkdir(parents=True, exist_ok=True)
+    legacy_csv.write_text("stale", encoding="utf-8")
+    legacy_report.write_text("# stale", encoding="utf-8")
+
+    rows = run_full_benchmark(
+        models=("phi3",),
+        tasks_path=TASKS_PATH,
+        repo_root=REPO_ROOT,
+        mock=True,
+    )
+    write_benchmark_outputs(
+        rows,
+        mock=True,
+        tasks_path=Path("data/benchmark/evidence_extraction_tasks.json"),
+        repo_root=tmp_path,
+    )
+
+    assert not legacy_csv.exists()
+    assert not legacy_report.exists()
+    assert (tmp_path / "results" / MOCK_CSV_NAME).is_file()
+    assert (tmp_path / "reports" / MOCK_REPORT_NAME).is_file()
+    assert LEGACY_CSV_NAME not in {p.name for p in (tmp_path / "results").iterdir()}
+    assert LEGACY_REPORT_NAME not in {p.name for p in (tmp_path / "reports").iterdir()}
 
 
 def test_render_report_live_mode_banner() -> None:
