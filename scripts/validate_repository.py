@@ -42,6 +42,7 @@ REQUIRED_PATHS = [
     "examples/grb/high_readiness_municipality.yaml",
     "examples/grb/README.md",
     "reports/README.md",
+    "results/README.md",
     "tests/test_dimensions.py",
     "tests/test_scoring.py",
     "tests/test_checklist.py",
