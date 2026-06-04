@@ -60,6 +60,7 @@ data/processed/*
 !results/inter_rater_reliability.csv
 !results/weighting_robustness.csv
 !results/grb_monte_carlo.csv
+!results/grb_ablation.csv
 results/model_benchmark.csv
 !results/model_benchmark_mock.csv
 !results/model_benchmark_live.csv
@@ -73,6 +74,7 @@ reports/*_grb_report.md
 !reports/grb_sensitivity_analysis.md
 !reports/inter_rater_reliability.md
 !reports/grb_monte_carlo.md
+!reports/grb_ablation.md
 reports/model_benchmark.md
 !reports/model_benchmark_mock.md
 !reports/model_benchmark_live.md
