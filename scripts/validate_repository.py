@@ -122,6 +122,13 @@ REQUIRED_PATHS = [
     "docs/artifact_description.md",
     "docs/reproducibility.md",
     "docs/release_v0_1_checklist.md",
+    "docs/construct_traceability.md",
+    "data/traceability/indicator_mapping.csv",
+    "data/traceability/README.md",
+    "localgovbench/traceability.py",
+    "scripts/validate_traceability.py",
+    "reports/traceability_report.md",
+    "tests/test_traceability.py",
 ]
 
 

@@ -38,6 +38,14 @@ python scripts/validate_repository.py
 
 Expected: `Repository structure validation passed.`
 
+### Construct traceability
+
+```bash
+python scripts/validate_traceability.py
+```
+
+Expected: `Status: PASS` and updated `data/traceability/indicator_mapping.csv`, `reports/traceability_report.md`.
+
 ---
 
 ## 4. Run LocalGovBench v0.1 example assessment

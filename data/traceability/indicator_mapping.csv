@@ -1,0 +1,87 @@
+indicator_id,dimension,governance_requirement,source_framework,source_concept,rationale
+legal_regulatory_gdpr_readiness,Legal and Regulatory Compliance,Demonstrate processing accountability,ART,Accountability,"GDPR accountability principle requires demonstrable compliance for training, inference, and logs."
+legal_regulatory_gdpr_readiness,Legal and Regulatory Compliance,Lawful and fair processing,EU Trustworthy AI,Privacy and data governance,HLEG trustworthy AI list emphasises data governance alongside fundamental rights.
+legal_regulatory_gdpr_readiness,Legal and Regulatory Compliance,Records and DPIA documentation,AI Act,Risk management and documentation,Deployer documentation duties intersect with governance records for data-intensive LLM systems.
+legal_regulatory_gdpr_readiness,Legal and Regulatory Compliance,Prevent opaque data use,Mittelstadt et al.,Inconclusive risk,Undocumented flows obscure harms analogous to informational inconclusiveness in socio-technical systems.
+legal_regulatory_ai_act_alignment,Legal and Regulatory Compliance,Align deployer obligations with use case,ART,Responsibility,Assigns institutional responsibility for classifying and governing municipal LLM deployments.
+legal_regulatory_ai_act_alignment,Legal and Regulatory Compliance,Trustworthy design and deployment,EU Trustworthy AI,Technical robustness and safety,ALTAI prompts assessment of safety and robustness before operational reliance.
+legal_regulatory_ai_act_alignment,Legal and Regulatory Compliance,Risk-based governance,AI Act,Risk management,AI Act risk management expectations inform internal classification and monitoring design.
+legal_regulatory_data_retention,Legal and Regulatory Compliance,Limit storage of prompts and logs,ART,Accountability,Retention rules make processing demonstrable and bounded over time.
+legal_regulatory_data_retention,Legal and Regulatory Compliance,Data minimisation,EU Trustworthy AI,Privacy and data governance,Trustworthy AI requires proportionate data use across the lifecycle.
+legal_regulatory_data_retention,Legal and Regulatory Compliance,Storage limitation,AI Act,Data governance,Governance of logs and embeddings supports post-market monitoring without excess retention.
+legal_regulatory_data_retention,Legal and Regulatory Compliance,Reduce harm from stale personal data,Mittelstadt et al.,Unfair outcomes,Excessive retention increases risk of discriminatory or harmful reuse of interaction data.
+legal_regulatory_lawful_basis,Legal and Regulatory Compliance,Document purpose and legal basis,ART,Accountability,Purpose limitation and lawful basis are core accountability artefacts under GDPR.
+legal_regulatory_lawful_basis,Legal and Regulatory Compliance,Lawful processing,EU Trustworthy AI,Privacy and data governance,HLEG links lawful processing to trustworthy municipal AI.
+legal_regulatory_lawful_basis,Legal and Regulatory Compliance,Lawfulness of training and inference data,AI Act,Data governance,Deployer governance must trace datasets used in local LLM operations.
+legal_regulatory_cross_border_avoidance,Legal and Regulatory Compliance,Control data location and egress,ART,Responsibility,Institutional responsibility for sovereignty claims over on-premise workloads.
+legal_regulatory_cross_border_avoidance,Legal and Regulatory Compliance,Resilience and control,EU Trustworthy AI,Technical robustness and safety,Operational control supports resilience when external dependencies are limited.
+legal_regulatory_cross_border_avoidance,Legal and Regulatory Compliance,Sovereign hosting,AI Act,Data governance,Data governance for deployers includes knowing where inference and logs reside.
+legal_regulatory_cross_border_avoidance,Legal and Regulatory Compliance,Avoid hidden external agency,Mittelstadt et al.,Misguided agency,Covert cloud egress can misattribute decisions to local authority control.
+technical_security_local_architecture,Technical and Security Readiness,Document end-to-end deployment,ART,Transparency,Architecture transparency enables oversight of local LLM components.
+technical_security_local_architecture,Technical and Security Readiness,Technical robustness,EU Trustworthy AI,Technical robustness and safety,HLEG robustness requirement applies to system design documentation.
+technical_security_local_architecture,Technical and Security Readiness,Technical documentation,AI Act,Documentation and record-keeping,Deployer technical documentation theme for traceable system descriptions.
+technical_security_local_architecture,Technical and Security Readiness,Reduce opaque dependencies,Mittelstadt et al.,Inconclusive risk,Opaque stacks create inconclusive risk assessment for citizens and auditors.
+technical_security_access_control,Technical and Security Readiness,Enforce least privilege,ART,Responsibility,Assigns responsibility for access decisions affecting model and data misuse.
+technical_security_access_control,Technical and Security Readiness,Security and control,EU Trustworthy AI,Technical robustness and safety,Access control is a baseline trustworthy AI security practice.
+technical_security_access_control,Technical and Security Readiness,Cybersecurity governance,AI Act,Risk management,Security measures form part of deployer risk management for AI systems.
+technical_security_logging,Technical and Security Readiness,Security and accountability logging,ART,Accountability,Logs support ex-post accountability without unnecessary personal data.
+technical_security_logging,Technical and Security Readiness,Traceability of operations,EU Trustworthy AI,Transparency,Operational transparency for auditors and oversight bodies.
+technical_security_logging,Technical and Security Readiness,Monitoring and logging,AI Act,Post-market monitoring,Logging practices underpin monitoring of system behaviour over time.
+technical_security_auditability,Technical and Security Readiness,Immutable audit trails,ART,Transparency,Auditability makes configuration and inference changes visible.
+technical_security_auditability,Technical and Security Readiness,Traceability,EU Trustworthy AI,Transparency,Trustworthy AI transparency includes traceable changes.
+technical_security_auditability,Technical and Security Readiness,Record-keeping,AI Act,Documentation and record-keeping,Supports reconstructing deployer actions after incidents.
+technical_security_model_updates,Technical and Security Readiness,Controlled model change,ART,Responsibility,Named approval paths for updates assign responsibility for model risk.
+technical_security_model_updates,Technical and Security Readiness,Robustness over lifecycle,EU Trustworthy AI,Technical robustness and safety,Lifecycle testing aligns with HLEG safety expectations.
+technical_security_model_updates,Technical and Security Readiness,Risk management of changes,AI Act,Risk management,Model updates trigger reassessment under deployer risk management.
+technical_security_model_updates,Technical and Security Readiness,Prevent unreviewed capability shifts,Mittelstadt et al.,Inconclusive risk,Sudden model changes without review recreate inconclusive risk for users.
+organizational_accountability,Organizational Governance,Link AI outcomes to public duties,ART,Accountability,Core ART construct operationalised for municipal LLM programmes.
+organizational_accountability,Organizational Governance,Organisational governance,EU Trustworthy AI,Human agency and oversight,Institutional governance enables human agency at organisational level.
+organizational_accountability,Organizational Governance,Governance structure,AI Act,Risk management,Accountability structures support AI Act governance of deployer duties.
+organizational_ownership,Organizational Governance,Sustained service ownership,ART,Responsibility,Ownership assigns ongoing responsibility beyond project phases.
+organizational_ownership,Organizational Governance,Clear roles,EU Trustworthy AI,Human agency and oversight,Ownership clarifies who exercises oversight on behalf of the public.
+organizational_ownership,Organizational Governance,Governance roles,AI Act,Risk management,Risk owners identified for deployer obligations.
+organizational_role_definition,Organizational Governance,Interdisciplinary roles,ART,Responsibility,"Defines who is responsible for legal, technical, and operational safeguards."
+organizational_role_definition,Organizational Governance,Competence and training,EU Trustworthy AI,Human agency and oversight,Role clarity supports meaningful staff agency in AI operations.
+organizational_role_definition,Organizational Governance,Organisational measures,AI Act,Risk management,Human resources measures in risk management systems.
+organizational_procurement_governance,Organizational Governance,Contractual governance of vendors,ART,Responsibility,Procurement assigns responsibility for vendor performance and exit.
+organizational_procurement_governance,Organizational Governance,Diversity and fairness in supply chain,EU Trustworthy AI,"Diversity, non-discrimination and fairness",Fair procurement reduces biased or opaque vendor dependencies.
+organizational_procurement_governance,Organizational Governance,Supply chain governance,AI Act,Risk management,Governance of third-party components in deployer risk programmes.
+organizational_procurement_governance,Organizational Governance,Avoid lock-in harms,Mittelstadt et al.,Unfair outcomes,Lock-in can unfairly limit future municipal choices and public value.
+organizational_risk_ownership,Organizational Governance,Institutional risk register,ART,Accountability,Risk ownership makes AI risks accountable to governance bodies.
+organizational_risk_ownership,Organizational Governance,Risk-based approach,EU Trustworthy AI,Technical robustness and safety,HLEG expects proportionate risk identification and mitigation.
+organizational_risk_ownership,Organizational Governance,Risk management system,AI Act,Risk management,Direct mapping to AI Act risk management theme.
+organizational_risk_ownership,Organizational Governance,Surface structural harms,Mittelstadt et al.,Inconclusive risk,Unowned risks remain inconclusive for affected communities.
+operational_monitoring,Operational Management,Operational performance and safety monitoring,ART,Accountability,Monitoring enables accountable response to degradation or misuse.
+operational_monitoring,Operational Management,Reliability monitoring,EU Trustworthy AI,Technical robustness and safety,Continuous monitoring supports robustness claims.
+operational_monitoring,Operational Management,Post-market monitoring,AI Act,Post-market monitoring,Operational metrics feed deployer monitoring duties.
+operational_incident_response,Operational Management,Respond to harmful outputs and outages,ART,Responsibility,Incident response assigns responsibility for remediation.
+operational_incident_response,Operational Management,Serious incident handling,EU Trustworthy AI,Technical robustness and safety,Preparedness aligns with safety and robustness expectations.
+operational_incident_response,Operational Management,Serious incidents,AI Act,Post-market monitoring,Reporting and response linked to post-market monitoring themes.
+operational_incident_response,Operational Management,Mitigate unfair harm,Mittelstadt et al.,Unfair outcomes,Slow response can allow unfair harms to citizens to accumulate.
+operational_human_oversight,Operational Management,Human review of consequential outputs,ART,Responsibility,Oversight assigns humans responsibility for consequential decisions.
+operational_human_oversight,Operational Management,Meaningful human intervention,Meaningful Human Control,Human-in-the-loop / on-the-loop,Criterion operationalises meaningful human control for local LLM outputs.
+operational_human_oversight,Operational Management,Human oversight,EU Trustworthy AI,Human agency and oversight,Direct HLEG requirement for human agency and oversight.
+operational_human_oversight,Operational Management,Human oversight measures,AI Act,Human oversight,Maps to AI Act human oversight obligations for deployers.
+operational_human_oversight,Operational Management,Counter automation bias,Mittelstadt et al.,Misguided agency,Absent oversight risks misguided agency where users over-trust automation.
+operational_documentation,Operational Management,Maintain prompts and limitations,ART,Transparency,Documentation makes system behaviour transparent to operators.
+operational_documentation,Operational Management,Explainability and communication,EU Trustworthy AI,Transparency,Internal transparency supports trustworthy communication.
+operational_documentation,Operational Management,Instructions for use,AI Act,Transparency,Operator documentation parallels transparency to deployers and staff.
+operational_lifecycle_management,Operational Management,Stage-gate pilot to decommission,ART,Accountability,Lifecycle gates maintain accountability as systems mature.
+operational_lifecycle_management,Operational Management,Lifecycle governance,EU Trustworthy AI,Technical robustness and safety,Controlled transitions reduce safety gaps.
+operational_lifecycle_management,Operational Management,Lifecycle risk management,AI Act,Risk management,Risk reassessment across lifecycle stages.
+strategic_sovereignty_vendor_independence,Strategic Sovereignty,Reduce single-vendor dependence,ART,Responsibility,Strategic responsibility for long-term optionality.
+strategic_sovereignty_vendor_independence,Strategic Sovereignty,Diversity of supply,EU Trustworthy AI,"Diversity, non-discrimination and fairness",Vendor diversity mitigates structural dependency risks.
+strategic_sovereignty_vendor_independence,Strategic Sovereignty,Supply chain resilience,AI Act,Risk management,Third-party risk in deployer governance.
+strategic_sovereignty_vendor_independence,Strategic Sovereignty,Avoid coercive lock-in,Mittelstadt et al.,Unfair outcomes,Dependency can produce unfair bargaining outcomes for municipalities.
+strategic_sovereignty_data_sovereignty,Strategic Sovereignty,Institutional control of data and models,ART,Accountability,Sovereignty claims require demonstrable control over data assets.
+strategic_sovereignty_data_sovereignty,Strategic Sovereignty,Privacy and data governance,EU Trustworthy AI,Privacy and data governance,Data sovereignty supports privacy-by-design for local LLMs.
+strategic_sovereignty_data_sovereignty,Strategic Sovereignty,Data governance,AI Act,Data governance,Aligns with deployer data governance expectations.
+strategic_sovereignty_infrastructure_control,Strategic Sovereignty,Own hosting and capacity,ART,Responsibility,Infrastructure control is a strategic responsibility for continuity.
+strategic_sovereignty_infrastructure_control,Strategic Sovereignty,Resilience,EU Trustworthy AI,Technical robustness and safety,Resilient infrastructure underpins trustworthy operation.
+strategic_sovereignty_infrastructure_control,Strategic Sovereignty,Operational resilience,AI Act,Risk management,Business continuity in risk management programmes.
+strategic_sovereignty_portability,Strategic Sovereignty,Migrate models and prompts,ART,Transparency,Portability makes technical commitments auditable and reversible.
+strategic_sovereignty_portability,Strategic Sovereignty,Reversibility and contestability,EU Trustworthy AI,Human agency and oversight,Portability supports contestability when systems fail citizens.
+strategic_sovereignty_portability,Strategic Sovereignty,Interoperability,AI Act,Risk management,Reduces dependency risk in technical governance.
+strategic_sovereignty_maintainability,Strategic Sovereignty,Sustain staffing and upgrades,ART,Responsibility,"Long-term maintainability is a governance responsibility, not only IT."
+strategic_sovereignty_maintainability,Strategic Sovereignty,Long-term societal wellbeing,EU Trustworthy AI,Societal and environmental wellbeing,Sustainable operation aligns with HLEG societal wellbeing dimension.
+strategic_sovereignty_maintainability,Strategic Sovereignty,Lifecycle resource planning,AI Act,Risk management,Resource planning for ongoing compliance and monitoring.

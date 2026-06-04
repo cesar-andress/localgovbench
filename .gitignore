@@ -58,12 +58,14 @@ data/processed/*
 !results/sensitivity_analysis.csv
 !results/grb_sensitivity_analysis.csv
 !results/inter_rater_reliability.csv
+!data/traceability/indicator_mapping.csv
 
 # GRB generated reports (regenerate via scripts/run_grb_assessment.py)
 reports/*_grb_report.md
 !reports/sensitivity_analysis.md
 !reports/grb_sensitivity_analysis.md
 !reports/inter_rater_reliability.md
+!reports/traceability_report.md
 
 # Local env
 .env

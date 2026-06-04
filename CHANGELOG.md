@@ -13,9 +13,14 @@ All notable changes to this project are documented here. The format follows [Kee
 - **Validation package** — Content validity templates, inter-rater study materials, discriminant validity cases, Cohen's κ and Krippendorff's α for v0.1; GRB Fleiss' κ and disagreement tables
 - **Ollama evidence extraction prototype** — Candidate evidence proposals only (no automated scoring)
 
+### Added (post-checklist)
+
+- Construct traceability package: literature mapping for 25 v0.1 criteria, CSV, validation script
+
 ### Documentation
 
 - Pre-release package: artifact description, reproducibility guide, v0.1.0 release checklist
+- Construct traceability guide (`docs/construct_traceability.md`)
 - Empirical validation protocol, GRB inter-rater reliability protocol, Zenodo release guide
 
 ### Notes

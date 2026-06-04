@@ -30,6 +30,7 @@ The artifact supports structured self-assessment, document coding, and empirical
 | [docs/reproducibility.md](docs/reproducibility.md) | Exact commands to install, test, and rerun analyses |
 | [docs/release_v0_1_checklist.md](docs/release_v0_1_checklist.md) | Pre-release checklist for GitHub and Zenodo |
 | [CHANGELOG.md](CHANGELOG.md) | Version history |
+| [docs/construct_traceability.md](docs/construct_traceability.md) | Literature traceability for 25 v0.1 criteria |
 
 ## Relation to the GIQ paper
 
