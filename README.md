@@ -1,19 +1,35 @@
 # LocalGovBench
 
+**Version 0.1.0** — research preview (pre-release for GitHub and Zenodo)
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
+[![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](CHANGELOG.md)
 
 ## Project purpose
 
 **LocalGovBench** is an open research artifact for studying **local and on-premise large language model (LLM) governance** in European public sector organizations. It provides:
 
-- A version **0.1** governance framework (five dimensions, 25 criteria)
+- A version **0.1.0** governance framework (five dimensions, 25 criteria)
 - Maturity scoring utilities (0–4 scale)
 - Indicative mappings to EU AI Act and GDPR **themes** (not legal compliance assessments)
-- Documentation and tooling intended for a future **Zenodo** archival release
+- Documentation and tooling for **Zenodo** archival release
 - A **scientific validation package** (content validity templates, IRR, κ/α metrics)
+- A **GRB experiment** (54 indicators): synthetic validation, sensitivity analysis, inter-rater reliability pilot
+- An **Ollama evidence extraction prototype** (candidate evidence only — no auto-scoring)
 
 The artifact supports structured self-assessment, document coding, and empirical validation studies. It does **not** certify legal conformity.
+
+> **Empirical validation is pending.** v0.1.0 ships synthetic examples, templates, and analysis scripts. Do not treat bundled scores as field-study benchmarks.
+
+### Release documentation
+
+| Document | Description |
+|----------|-------------|
+| [docs/artifact_description.md](docs/artifact_description.md) | Purpose, scope, included/excluded materials, validation status |
+| [docs/reproducibility.md](docs/reproducibility.md) | Exact commands to install, test, and rerun analyses |
+| [docs/release_v0_1_checklist.md](docs/release_v0_1_checklist.md) | Pre-release checklist for GitHub and Zenodo |
+| [CHANGELOG.md](CHANGELOG.md) | Version history |
 
 ## Relation to the GIQ paper
 
@@ -25,8 +41,8 @@ The paper may describe motivation, related work, and research design. **This rep
 
 ## Repository scope
 
-| In scope | Out of scope (v0.1) |
-|----------|---------------------|
+| In scope | Out of scope (v0.1.0) |
+|----------|------------------------|
 | Framework definitions and checklist generation | Published field-study benchmark scores |
 | Scientific validation package (templates, IRR tools) | Completed multi-site empirical validation |
 | Synthetic example assessments | Real organizational or citizen data |
@@ -43,9 +59,10 @@ The paper may describe motivation, related work, and research design. **This rep
 - **Synthetic example:** `examples/example_assessment.yaml`
 - **Validation package:** `validation/` — content validity, expert review, inter-rater study, reliability metrics
 - **GRB experiment (54 indicators):** `localgovbench/grb/`, `examples/grb/` — sensitivity analysis and inter-rater reliability pilot
+- **Ollama prototype:** `localgovbench/llm/evidence_extraction.py`, `scripts/run_ollama_evidence_extraction.py`
 - **Data placeholders:** `data/raw/`, `data/processed/`, `data/templates/`
 
-### Empirical validation (v0.1 instrument frozen)
+### Empirical validation (v0.1 instrument frozen — field work pending)
 
 | Step | Command / path |
 |------|----------------|
@@ -58,7 +75,7 @@ The paper may describe motivation, related work, and research design. **This rep
 
 Bundled cases under `validation/benchmark_cases/` and `validation/ratings/` are **synthetic** — replace with field data before publication claims.
 
-### GRB validation (frozen 54-indicator experiment)
+### GRB validation (frozen 54-indicator experiment — synthetic pilots complete)
 
 | Step | Command / path |
 |------|----------------|
@@ -80,20 +97,15 @@ GRB specification, indicators, scoring formula, and safeguards are **not modifie
 
 ## Quick start
 
-Requires Python 3.11 or newer.
+Requires Python 3.11 or newer. Full command list: [docs/reproducibility.md](docs/reproducibility.md).
 
 ```bash
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install -e ".[dev]"
+pytest
 python scripts/validate_repository.py
 python scripts/run_example_assessment.py
-python scripts/run_content_validity_analysis.py \
-  --input validation/content_validity/indicator_relevance_survey_results.example.yaml
-python scripts/run_inter_rater_analysis.py
-python scripts/run_discriminant_validity.py
-python scripts/generate_validation_report.py
-pytest
 ```
 
 ## Repository layout
@@ -101,7 +113,7 @@ pytest
 | Path | Purpose |
 |------|---------|
 | `localgovbench/` | Core Python package |
-| `docs/` | Framework, methodology, regulatory mappings, Zenodo guide |
+| `docs/` | Framework, methodology, regulatory mappings, release guides |
 | `data/` | Data placeholders for future empirical releases |
 | `prompts/` | Assessment prompt templates |
 | `examples/` | Synthetic runnable examples |
@@ -109,24 +121,26 @@ pytest
 | `validation/` | Scientific validation study templates and synthetic IRR cases |
 | `scripts/` | Assessment, validation, and analysis scripts |
 
-See [docs/zenodo_release.md](docs/zenodo_release.md) for the publication checklist.
+See [docs/zenodo_release.md](docs/zenodo_release.md) and [docs/release_v0_1_checklist.md](docs/release_v0_1_checklist.md) for publication steps.
 
 ## Citation
 
 ### Software (repository / Zenodo)
 
-When citing this artifact, use [CITATION.cff](CITATION.cff). After Zenodo deposit, replace the placeholder DOI:
+When citing this artifact, use [CITATION.cff](CITATION.cff):
 
 ```bibtex
 @software{localgovbench2026,
   author    = {[Author names to be added]},
-  title     = {LocalGovBench: A Research Framework for Local AI Governance in European Public Sector Organizations},
+  title     = {LocalGovBench},
   year      = {2026},
   version   = {0.1.0},
-  doi       = {10.5281/zenodo.XXXXXXX},
+  doi       = {10.5281/zenodo.TBD},
   url       = {https://github.com/PLACEHOLDER/localgovbench}
 }
 ```
+
+Replace `10.5281/zenodo.TBD` and the repository URL after deposit and public GitHub release.
 
 ### Companion paper (placeholder)
 
@@ -142,13 +156,7 @@ When citing this artifact, use [CITATION.cff](CITATION.cff). After Zenodo deposi
 
 ## Reproducibility statement
 
-Researchers should cite the **exact Git tag and Zenodo version** used in analysis. For the computational instrument:
-
-1. Install with `pip install -e ".[dev]"` from the tagged commit.
-2. Run `pytest` and `python scripts/validate_repository.py`.
-3. Record the Zenodo archive checksum listed in the release notes (see [docs/zenodo_release.md](docs/zenodo_release.md)).
-
-Empirical protocols (document analysis, expert validation, case studies, inter-rater agreement) are described in [docs/methodology.md](docs/methodology.md). Those steps are outside the automated tests in this repository.
+Researchers should cite the **exact Git tag (`v0.1.0`) and Zenodo version** used in analysis. See [docs/reproducibility.md](docs/reproducibility.md) for install and script commands, and [docs/release_v0_1_checklist.md](docs/release_v0_1_checklist.md) for archive checksum recording.
 
 ## Ethical and legal disclaimer
 
@@ -160,7 +168,7 @@ Empirical protocols (document analysis, expert validation, case studies, inter-r
 
 ## Status
 
-**Research preview (v0.1)** — Instrument **frozen**; full empirical validation package (content validity, IRR, discriminant cases, κ/α) ready for field studies. Bundled outputs are **synthetic** until expert and municipal data are collected.
+**v0.1.0 pre-release** — Instrument **frozen**; synthetic validation tooling complete; **empirical field validation pending**. Ready for public GitHub and Zenodo deposit following the release checklist.
 
 ## Contributing
 

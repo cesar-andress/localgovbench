@@ -13,7 +13,9 @@ This document describes how to publish LocalGovBench as a **citable, reproducibl
 
 ## Release checklist
 
-Use this checklist before creating a Zenodo record. Mark each item when complete.
+**Primary checklist:** [release_v0_1_checklist.md](release_v0_1_checklist.md) (GitHub + Zenodo pre-release for v0.1.0).
+
+Use the summary below or the linked document before creating a Zenodo record. Mark each item when complete.
 
 ### Documentation and metadata
 

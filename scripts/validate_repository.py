@@ -118,6 +118,10 @@ REQUIRED_PATHS = [
     "tests/test_grb_reliability.py",
     "results/inter_rater_reliability.csv",
     "reports/inter_rater_reliability.md",
+    "CHANGELOG.md",
+    "docs/artifact_description.md",
+    "docs/reproducibility.md",
+    "docs/release_v0_1_checklist.md",
 ]
 
 
@@ -138,6 +142,12 @@ def main() -> int:
         return 1
     if "type: software" not in citation:
         print("CITATION.cff should declare type: software.")
+        return 1
+    if 'title: LocalGovBench' not in citation:
+        print("CITATION.cff title should be LocalGovBench.")
+        return 1
+    if "10.5281/zenodo.TBD" not in citation:
+        print("CITATION.cff should include placeholder DOI 10.5281/zenodo.TBD.")
         return 1
 
     example = (ROOT / "examples" / "example_assessment.yaml").read_text(encoding="utf-8")

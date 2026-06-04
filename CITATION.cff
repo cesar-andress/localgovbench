@@ -1,16 +1,17 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite it as below."
+message: "If you use LocalGovBench, please cite this software artifact."
 type: software
-title: "LocalGovBench: A Research Framework for Local AI Governance in European Public Sector Organizations"
+title: LocalGovBench
 version: 0.1.0
 date-released: "2026-06-04"
 license: MIT
 abstract: >-
-  Open research artifact (v0.1) providing a structured framework, checklist,
+  Open research artifact (v0.1.0) providing a structured framework, checklist,
   and maturity scoring for assessing governance of local and on-premise large
   language model deployments in European public sector organizations. Includes
-  indicative EU AI Act and GDPR theme mappings for research purposes.
-  Empirical validation and field datasets are planned for future releases.
+  indicative EU AI Act and GDPR theme mappings, a Governance Readiness
+  Benchmark (GRB) experiment, synthetic validation tooling, and reproducibility
+  scripts. Empirical field validation is pending.
 keywords:
   - artificial intelligence
   - large language models
@@ -27,13 +28,12 @@ authors:
     family-names: "[Family name]"
     affiliation: "[Affiliation — edit before Zenodo release]"
     orcid: "https://orcid.org/0000-0000-0000-0000"
-  # Add further authors as needed; remove placeholder ORCID before release.
 repository-code: "https://github.com/PLACEHOLDER/localgovbench"
 url: "https://github.com/PLACEHOLDER/localgovbench"
-# doi: 10.5281/zenodo.XXXXXXX
+doi: 10.5281/zenodo.TBD
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.XXXXXXX"
+    value: "10.5281/zenodo.TBD"
     description: "Zenodo archive DOI (placeholder — replace after deposit)"
   - type: url
     value: "https://github.com/PLACEHOLDER/localgovbench"
