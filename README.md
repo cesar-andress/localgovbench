@@ -41,6 +41,7 @@ The artifact supports structured self-assessment, document coding, and empirical
 | [CHANGELOG.md](CHANGELOG.md) | Version history |
 | [docs/construct_traceability.md](docs/construct_traceability.md) | Literature traceability for 25 v0.1 criteria |
 | [docs/demo_walkthrough.md](docs/demo_walkthrough.md) | GRB end-to-end workflow demo (reproducible commands) |
+| [docs/llm_benchmark_experiment.md](docs/llm_benchmark_experiment.md) | Exploratory live LLM evidence extraction benchmark (synthetic tasks, n=15) |
 | [docs/citation.md](docs/citation.md) | APA and BibTeX citation (Zenodo DOI) |
 
 ## Relation to the GIQ paper
@@ -111,7 +112,7 @@ python scripts/run_llm_model_benchmark.py --mock   # testing → results/model_b
 
 > **Deprecated paths:** Do **not** use legacy generic files `results/model_benchmark.csv` or `reports/model_benchmark.md`. The benchmark CLI writes only mode-specific outputs and removes legacy files when run.
 
-See [data/benchmark/README.md](data/benchmark/README.md).
+See [data/benchmark/README.md](data/benchmark/README.md) and the experiment write-up [docs/llm_benchmark_experiment.md](docs/llm_benchmark_experiment.md) (live results, limitations, interpretation).
 
 ### End-to-end workflow demo
 

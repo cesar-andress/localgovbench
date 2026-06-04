@@ -168,7 +168,8 @@ ollama pull qwen2.5:7b
 python scripts/run_llm_model_benchmark.py
 ```
 
-**Outputs (live):** `results/model_benchmark_live.csv`, `reports/model_benchmark_live.md`
+**Outputs (live):** `results/model_benchmark_live.csv`, `reports/model_benchmark_live.md`  
+**Experiment note:** [llm_benchmark_experiment.md](llm_benchmark_experiment.md) (exploratory; synthetic gold tasks; n=15 per model)
 
 Deterministic mock run (testing only, no Ollama): `python scripts/run_llm_model_benchmark.py --mock`  
 → `results/model_benchmark_mock.csv`, `reports/model_benchmark_mock.md` (not for empirical reporting)
