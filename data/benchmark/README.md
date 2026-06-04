@@ -20,4 +20,9 @@ Deterministic mock run (no Ollama):
 python scripts/run_llm_model_benchmark.py --mock
 ```
 
-Outputs: `results/model_benchmark.csv`, `reports/model_benchmark.md`.
+| Mode | CSV | Report |
+|------|-----|--------|
+| Mock (`--mock`) | `results/model_benchmark_mock.csv` | `reports/model_benchmark_mock.md` |
+| Live (Ollama) | `results/model_benchmark_live.csv` | `reports/model_benchmark_live.md` |
+
+**Mock results are for pipeline testing only** — do not cite them as empirical model comparisons.

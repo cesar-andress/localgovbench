@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import csv
 import hashlib
 import json
 import time
@@ -33,9 +34,28 @@ BENCHMARK_MODELS = (
     "phi3",
 )
 
-DEFAULT_TASKS_PATH = (
-    Path(__file__).resolve().parents[2] / "data" / "benchmark" / "evidence_extraction_tasks.json"
-)
+REPO_ROOT = Path(__file__).resolve().parents[2]
+
+DEFAULT_TASKS_PATH = REPO_ROOT / "data" / "benchmark" / "evidence_extraction_tasks.json"
+
+MOCK_CSV_NAME = "model_benchmark_mock.csv"
+MOCK_REPORT_NAME = "model_benchmark_mock.md"
+LIVE_CSV_NAME = "model_benchmark_live.csv"
+LIVE_REPORT_NAME = "model_benchmark_live.md"
+
+
+def benchmark_output_paths(*, mock: bool, repo_root: Path | None = None) -> tuple[Path, Path]:
+    """Return (csv_path, report_path) for mock or live benchmark runs."""
+    root = repo_root or REPO_ROOT
+    if mock:
+        return (
+            root / "results" / MOCK_CSV_NAME,
+            root / "reports" / MOCK_REPORT_NAME,
+        )
+    return (
+        root / "results" / LIVE_CSV_NAME,
+        root / "reports" / LIVE_REPORT_NAME,
+    )
 
 CSV_FIELDNAMES = (
     "model",
@@ -339,14 +359,38 @@ def run_full_benchmark(
     return rows
 
 
-def render_model_benchmark_report(rows: list[dict[str, Any]], *, tasks_path: Path) -> str:
-    mode = rows[0]["mode"] if rows else "unknown"
+def render_model_benchmark_report(
+    rows: list[dict[str, Any]],
+    *,
+    tasks_path: Path,
+    mock: bool,
+    csv_path: Path | None = None,
+    report_path: Path | None = None,
+) -> str:
+    mode = "mock" if mock else "live"
+    csv_path = csv_path or benchmark_output_paths(mock=mock)[0]
+    report_path = report_path or benchmark_output_paths(mock=mock)[1]
+
+    if mock:
+        mode_banner = (
+            "> **GENERATION MODE: MOCK (testing only)** — Deterministic pseudo-extractions "
+            "without Ollama. **Do not report these metrics as empirical model comparison results.**"
+        )
+    else:
+        mode_banner = (
+            "> **GENERATION MODE: LIVE** — Metrics from local Ollama inference on gold-labelled "
+            "synthetic tasks. Suitable for reporting when models were actually run."
+        )
+
     lines = [
         "# LocalGovBench LLM evidence extraction benchmark",
         "",
+        mode_banner,
+        "",
         "> Compares local **Ollama** models on GRB evidence extraction tasks with synthetic gold labels.",
         "",
-        f"**Mode:** `{mode}`",
+        f"**Generation mode:** `{mode}` (this file: `{report_path.name}`)",
+        f"**Results CSV:** `{csv_path}`",
         f"**Tasks:** `{tasks_path}`",
         "",
         "## Models",
@@ -379,14 +423,61 @@ def render_model_benchmark_report(rows: list[dict[str, Any]], *, tasks_path: Pat
             "",
             "## Reproduce",
             "",
+            "Live (Ollama required):",
+            "",
             "```bash",
             "ollama serve",
             "ollama pull llama3.1:8b",
             "python scripts/run_llm_model_benchmark.py",
+            "# writes results/model_benchmark_live.csv and reports/model_benchmark_live.md",
             "```",
             "",
-            "Mock (no Ollama): `python scripts/run_llm_model_benchmark.py --mock`",
+            "Mock (testing only, no Ollama):",
+            "",
+            "```bash",
+            "python scripts/run_llm_model_benchmark.py --mock",
+            "# writes results/model_benchmark_mock.csv and reports/model_benchmark_mock.md",
+            "```",
             "",
         ]
     )
     return "\n".join(lines)
+
+
+def write_benchmark_outputs(
+    rows: list[dict[str, Any]],
+    *,
+    mock: bool,
+    tasks_path: Path,
+    repo_root: Path | None = None,
+) -> tuple[Path, Path]:
+    """Write CSV and Markdown report to mode-specific paths."""
+    csv_path, report_path = benchmark_output_paths(mock=mock, repo_root=repo_root)
+    csv_path.parent.mkdir(parents=True, exist_ok=True)
+    report_path.parent.mkdir(parents=True, exist_ok=True)
+
+    with csv_path.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=list(CSV_FIELDNAMES))
+        writer.writeheader()
+        for row in rows:
+            writer.writerow({key: row.get(key, "") for key in CSV_FIELDNAMES})
+
+    root = repo_root or REPO_ROOT
+    try:
+        csv_display = csv_path.relative_to(root)
+        report_display = report_path.relative_to(root)
+    except ValueError:
+        csv_display = csv_path
+        report_display = report_path
+
+    report_path.write_text(
+        render_model_benchmark_report(
+            rows,
+            tasks_path=tasks_path,
+            mock=mock,
+            csv_path=csv_display,
+            report_path=report_display,
+        ),
+        encoding="utf-8",
+    )
+    return csv_path, report_path

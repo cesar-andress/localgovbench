@@ -4,7 +4,6 @@
 from __future__ import annotations
 
 import argparse
-import csv
 import sys
 from pathlib import Path
 
@@ -14,23 +13,11 @@ if str(ROOT) not in sys.path:
 
 from localgovbench.llm.model_benchmark import (
     BENCHMARK_MODELS,
-    CSV_FIELDNAMES,
     DEFAULT_TASKS_PATH,
-    render_model_benchmark_report,
+    benchmark_output_paths,
     run_full_benchmark,
+    write_benchmark_outputs,
 )
-
-CSV_PATH = ROOT / "results" / "model_benchmark.csv"
-REPORT_PATH = ROOT / "reports" / "model_benchmark.md"
-
-
-def write_csv(path: Path, rows: list[dict[str, object]]) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(CSV_FIELDNAMES))
-        writer.writeheader()
-        for row in rows:
-            writer.writerow({key: row.get(key, "") for key in CSV_FIELDNAMES})
 
 
 def main() -> int:
@@ -57,7 +44,7 @@ def main() -> int:
     parser.add_argument(
         "--mock",
         action="store_true",
-        help="Deterministic mock extractions (no Ollama required)",
+        help="Deterministic mock extractions (no Ollama); writes *_mock.* outputs only",
     )
     parser.add_argument(
         "--fail-on-skip",
@@ -74,19 +61,21 @@ def main() -> int:
         mock=args.mock,
         skip_unavailable=not args.fail_on_skip,
     )
-    write_csv(CSV_PATH, rows)
-    REPORT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    REPORT_PATH.write_text(
-        render_model_benchmark_report(rows, tasks_path=args.tasks.relative_to(ROOT)),
-        encoding="utf-8",
+    csv_path, report_path = write_benchmark_outputs(
+        rows,
+        mock=args.mock,
+        tasks_path=args.tasks.relative_to(ROOT),
+        repo_root=ROOT,
     )
 
     print("LocalGovBench LLM model benchmark")
     print("=" * 40)
     print(f"Mode: {'mock' if args.mock else 'live'}")
+    if args.mock:
+        print("WARNING: Mock outputs are for testing only — not empirical model results.")
     print(f"Tasks: {rows[0]['n_tasks'] if rows else 0} per model")
-    print(f"CSV: {CSV_PATH}")
-    print(f"Report: {REPORT_PATH}")
+    print(f"CSV: {csv_path}")
+    print(f"Report: {report_path}")
     for row in rows:
         print(
             f"  {row['model']}: precision={row['evidence_precision']:.4f} "

@@ -7,14 +7,21 @@ from localgovbench.llm.evidence_extraction import (
     get_grb_indicator,
     load_prompt_template,
 )
-from localgovbench.llm.model_benchmark import BENCHMARK_MODELS, run_full_benchmark
+from localgovbench.llm.model_benchmark import (
+    BENCHMARK_MODELS,
+    benchmark_output_paths,
+    run_full_benchmark,
+    write_benchmark_outputs,
+)
 
 __all__ = [
     "BENCHMARK_MODELS",
+    "benchmark_output_paths",
     "EvidenceExtractionResult",
     "OllamaClient",
     "extract_evidence",
     "get_grb_indicator",
     "load_prompt_template",
     "run_full_benchmark",
+    "write_benchmark_outputs",
 ]

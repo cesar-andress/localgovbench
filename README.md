@@ -98,6 +98,19 @@ Bundled cases under `validation/benchmark_cases/` and `validation/ratings/` are 
 
 GRB specification, indicators, scoring formula, and safeguards are **not modified** in these scripts.
 
+### LLM model benchmark (Ollama)
+
+Compare local models on gold-labelled evidence extraction tasks:
+
+```bash
+python scripts/run_llm_model_benchmark.py          # live → results/model_benchmark_live.csv
+python scripts/run_llm_model_benchmark.py --mock   # testing → results/model_benchmark_mock.csv
+```
+
+> **Warning:** Files under `results/model_benchmark_mock.*` and `reports/model_benchmark_mock.md` are **deterministic test outputs only**. They must **not** be reported as empirical model comparison results. Use `model_benchmark_live.*` after running Ollama with pulled models.
+
+See [data/benchmark/README.md](data/benchmark/README.md).
+
 ### End-to-end workflow demo
 
 Full reproducible walkthrough (clean outputs, inspect YAML, compute, open report, optional Ollama): **[docs/demo_walkthrough.md](docs/demo_walkthrough.md)**.

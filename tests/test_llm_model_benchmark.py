@@ -16,10 +16,17 @@ from localgovbench.llm.evidence_extraction import (
 )
 from localgovbench.llm.model_benchmark import (
     BENCHMARK_MODELS,
+    LIVE_CSV_NAME,
+    LIVE_REPORT_NAME,
+    MOCK_CSV_NAME,
+    MOCK_REPORT_NAME,
     MockExtractionRunner,
+    benchmark_output_paths,
     load_benchmark_tasks,
+    render_model_benchmark_report,
     run_full_benchmark,
     run_model_benchmark,
+    write_benchmark_outputs,
 )
 from tests.conftest import MockOllamaClient
 
@@ -69,6 +76,55 @@ def test_load_benchmark_tasks() -> None:
     tasks = load_benchmark_tasks(TASKS_PATH, repo_root=REPO_ROOT)
     assert len(tasks) >= 10
     assert tasks[0].document_text
+
+
+def test_benchmark_output_paths_distinct() -> None:
+    mock_csv, mock_report = benchmark_output_paths(mock=True, repo_root=REPO_ROOT)
+    live_csv, live_report = benchmark_output_paths(mock=False, repo_root=REPO_ROOT)
+    assert mock_csv.name == MOCK_CSV_NAME
+    assert mock_report.name == MOCK_REPORT_NAME
+    assert live_csv.name == LIVE_CSV_NAME
+    assert live_report.name == LIVE_REPORT_NAME
+    assert mock_csv != live_csv
+    assert mock_report != live_report
+    assert "mock" in mock_csv.name and "live" not in mock_csv.name
+    assert "live" in live_csv.name and "mock" not in live_csv.name
+
+
+def test_write_benchmark_outputs_uses_mode_specific_paths(tmp_path: Path) -> None:
+    rows = run_full_benchmark(
+        models=("llama3.1:8b",),
+        tasks_path=TASKS_PATH,
+        repo_root=REPO_ROOT,
+        mock=True,
+    )
+    csv_path, report_path = write_benchmark_outputs(
+        rows,
+        mock=True,
+        tasks_path=Path("data/benchmark/evidence_extraction_tasks.json"),
+        repo_root=tmp_path,
+    )
+    assert csv_path == tmp_path / "results" / MOCK_CSV_NAME
+    assert report_path == tmp_path / "reports" / MOCK_REPORT_NAME
+    assert csv_path.is_file()
+    assert report_path.is_file()
+    text = report_path.read_text(encoding="utf-8")
+    assert "MOCK (testing only)" in text
+    assert "mock" in text.lower()
+
+    live_csv, live_report = benchmark_output_paths(mock=False, repo_root=tmp_path)
+    assert not live_csv.exists()
+    assert not live_report.exists()
+
+
+def test_render_report_live_mode_banner() -> None:
+    rows = [{"model": "m", "mode": "live", "evidence_precision": 0.5, "quote_validity_rate": 1.0,
+             "hallucinated_evidence_rate": 0.0, "insufficient_evidence_detection_rate": 1.0,
+             "mean_latency_seconds": 1.0, "p95_latency_seconds": 1.0, "memory_footprint_mb": "",
+             "status": "ok"}]
+    text = render_model_benchmark_report(rows, tasks_path=Path("tasks.json"), mock=False)
+    assert "GENERATION MODE: LIVE" in text
+    assert "MOCK (testing only)" not in text
 
 
 def test_mock_benchmark_all_models() -> None:

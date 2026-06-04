@@ -168,9 +168,10 @@ ollama pull qwen2.5:7b
 python scripts/run_llm_model_benchmark.py
 ```
 
-**Outputs:** `results/model_benchmark.csv`, `reports/model_benchmark.md`
+**Outputs (live):** `results/model_benchmark_live.csv`, `reports/model_benchmark_live.md`
 
-Deterministic mock run (no Ollama): `python scripts/run_llm_model_benchmark.py --mock`
+Deterministic mock run (testing only, no Ollama): `python scripts/run_llm_model_benchmark.py --mock`  
+→ `results/model_benchmark_mock.csv`, `reports/model_benchmark_mock.md` (not for empirical reporting)
 
 ---
 
@@ -182,7 +183,7 @@ Deterministic mock run (no Ollama): `python scripts/run_llm_model_benchmark.py -
 | Structure | `python scripts/validate_repository.py` | Exit code 0 |
 | GRB sensitivity | `python scripts/run_grb_sensitivity_analysis.py` | CSV and MD created |
 | GRB IRR | `python scripts/run_inter_rater_reliability.py` | CSV and MD created |
-| LLM benchmark (mock) | `python scripts/run_llm_model_benchmark.py --mock` | CSV and MD created |
+| LLM benchmark (mock) | `python scripts/run_llm_model_benchmark.py --mock` | `*_mock.csv` / `*_mock.md` created |
 
 ---
 

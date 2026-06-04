@@ -1,8 +1,11 @@
 # LocalGovBench LLM evidence extraction benchmark
 
+> **GENERATION MODE: MOCK (testing only)** — Deterministic pseudo-extractions without Ollama. **Do not report these metrics as empirical model comparison results.**
+
 > Compares local **Ollama** models on GRB evidence extraction tasks with synthetic gold labels.
 
-**Mode:** `mock`
+**Generation mode:** `mock` (this file: `model_benchmark_mock.md`)
+**Results CSV:** `results/model_benchmark_mock.csv`
 **Tasks:** `data/benchmark/evidence_extraction_tasks.json`
 
 ## Models
@@ -28,10 +31,18 @@
 
 ## Reproduce
 
+Live (Ollama required):
+
 ```bash
 ollama serve
 ollama pull llama3.1:8b
 python scripts/run_llm_model_benchmark.py
+# writes results/model_benchmark_live.csv and reports/model_benchmark_live.md
 ```
 
-Mock (no Ollama): `python scripts/run_llm_model_benchmark.py --mock`
+Mock (testing only, no Ollama):
+
+```bash
+python scripts/run_llm_model_benchmark.py --mock
+# writes results/model_benchmark_mock.csv and reports/model_benchmark_mock.md
+```
