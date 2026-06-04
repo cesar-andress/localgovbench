@@ -129,6 +129,18 @@ REQUIRED_PATHS = [
     "scripts/validate_traceability.py",
     "reports/traceability_report.md",
     "tests/test_traceability.py",
+    "localgovbench/workflows/__init__.py",
+    "localgovbench/workflows/assessment_workflow.py",
+    "localgovbench/workflows/evidence_log.py",
+    "localgovbench/workflows/scoring_template.py",
+    "scripts/run_assessment_workflow.py",
+    "data/synthetic/workflow_demo/README.md",
+    "data/synthetic/workflow_demo/documents/governance_policy.md",
+    "data/synthetic/workflow_demo/documents/technical_architecture.md",
+    "data/synthetic/workflow_demo/documents/incident_response.md",
+    "data/synthetic/workflow_demo/documents/data_governance.md",
+    "data/synthetic/workflow_demo/documents/procurement_note.md",
+    "tests/test_assessment_workflow.py",
 ]
 
 

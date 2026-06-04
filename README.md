@@ -87,6 +87,38 @@ Bundled cases under `validation/benchmark_cases/` and `validation/ratings/` are 
 
 GRB specification, indicators, scoring formula, and safeguards are **not modified** in these scripts.
 
+### End-to-end workflow demo
+
+Assess a municipality from **documents → candidate evidence → human YAML scores → readiness report**:
+
+```bash
+# 1) Prepare evidence log and empty scoring template (no Ollama required)
+python scripts/run_assessment_workflow.py \
+  --case-id demo_municipality \
+  --documents data/synthetic/workflow_demo/documents \
+  --output-dir outputs/demo_municipality \
+  --generate-template
+
+# 2) After filling assessor_scoring_template.yaml with human scores (0–4)
+python scripts/run_assessment_workflow.py \
+  --case-id demo_municipality \
+  --documents data/synthetic/workflow_demo/documents \
+  --scores outputs/demo_municipality/assessor_scoring_template.yaml \
+  --output-dir outputs/demo_municipality \
+  --compute-score
+
+# Optional: candidate evidence via local Ollama (never assigns maturity scores)
+python scripts/run_assessment_workflow.py \
+  --case-id demo_municipality \
+  --documents data/synthetic/workflow_demo/documents \
+  --output-dir outputs/demo_municipality \
+  --generate-template \
+  --use-ollama \
+  --model llama3.1:8b
+```
+
+Outputs: `evidence_log.yaml`, `assessor_scoring_template.yaml`, `readiness_report.md`, `machine_readable_results.json`.
+
 > **Warning:** All bundled assessment scores and metadata in `examples/` are **synthetic** unless a future release explicitly states otherwise.
 
 ## What is not included

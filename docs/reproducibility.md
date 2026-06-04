@@ -140,7 +140,28 @@ python scripts/run_sensitivity_analysis.py
 
 ---
 
-## 10. Run Ollama evidence extraction locally (optional)
+## 10. Run end-to-end GRB assessment workflow
+
+```bash
+python scripts/run_assessment_workflow.py \
+  --case-id demo_municipality \
+  --documents data/synthetic/workflow_demo/documents \
+  --output-dir outputs/demo_municipality \
+  --generate-template
+```
+
+Complete human scores in `assessor_scoring_template.yaml`, then:
+
+```bash
+python scripts/run_assessment_workflow.py \
+  --case-id demo_municipality \
+  --documents data/synthetic/workflow_demo/documents \
+  --scores outputs/demo_municipality/assessor_scoring_template.yaml \
+  --output-dir outputs/demo_municipality \
+  --compute-score
+```
+
+## 11. Run Ollama evidence extraction locally (optional)
 
 Requires Ollama running with a pulled model (e.g. `llama3.1:8b`).
 

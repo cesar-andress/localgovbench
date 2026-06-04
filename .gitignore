@@ -67,6 +67,9 @@ reports/*_grb_report.md
 !reports/inter_rater_reliability.md
 !reports/traceability_report.md
 
+# Workflow outputs (regenerate via scripts/run_assessment_workflow.py)
+outputs/
+
 # Local env
 .env
 .env.*
