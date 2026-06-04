@@ -94,6 +94,18 @@ REQUIRED_PATHS = [
     "tests/test_reliability.py",
     "tests/test_validation_irr.py",
     "scripts/run_example_assessment.py",
+    "localgovbench/grb/specification.py",
+    "localgovbench/grb/scoring.py",
+    "localgovbench/grb/profiles.py",
+    "localgovbench/grb/sensitivity.py",
+    "scripts/run_grb_assessment.py",
+    "scripts/run_grb_sensitivity_analysis.py",
+    "scripts/run_sensitivity_analysis.py",
+    "tests/test_grb_scoring.py",
+    "tests/test_grb_sensitivity.py",
+    "tests/test_grb_sensitivity_analysis.py",
+    "results/grb_sensitivity_analysis.csv",
+    "reports/grb_sensitivity_analysis.md",
 ]
 
 

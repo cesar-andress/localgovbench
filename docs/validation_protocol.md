@@ -102,7 +102,43 @@ python scripts/run_discriminant_validity.py
 
 ---
 
-## 5. Optional: Ollama evidence extraction
+## 5. GRB structural sensitivity (frozen 54-indicator experiment)
+
+The **Governance Readiness Benchmark (GRB)** uses a separate six-dimension instrument. Its specification, indicators, and scoring formula are **frozen** for this experiment; sensitivity work varies **synthetic inputs only**.
+
+| Resource | Path |
+|----------|------|
+| Profile generator and aggregation | `localgovbench/grb/sensitivity.py` |
+| Runner | `scripts/run_grb_sensitivity_analysis.py` |
+| Results | `results/grb_sensitivity_analysis.csv` |
+| Report | `reports/grb_sensitivity_analysis.md` |
+| Tests | `tests/test_grb_sensitivity_analysis.py` |
+
+### Procedure
+
+1. Generate **≥150** deterministic profiles across groups: `baseline`, `low_d2`, `low_d4`, `high_d6`, `mixed`.
+2. Vary maturity inputs on **D2 Human Oversight**, **D4 Data Legitimacy and Processing**, and **D6 Strategic Sovereignty**; hold D1, D3, D5 at baseline unless noted in `mixed`.
+3. Run:
+
+```bash
+python scripts/run_grb_sensitivity_analysis.py
+```
+
+4. Review group means, safeguard **G1** activation (cap at 60 when D2 or D4 dimension score &lt; 2.0), and directional contrasts in the Markdown report.
+
+### What this phase claims
+
+- Structural responsiveness of the **frozen** GRB scoring model on synthetic profiles.
+- Reproducible CSV schema and deterministic profile IDs.
+
+### What this phase does not claim
+
+- Empirical municipal validation or weight calibration.
+- Modification of GRB indicators or readiness formula.
+
+---
+
+## 6. Optional: Ollama evidence extraction
 
 LLM proposes **candidate evidence only** — humans assign scores.
 
@@ -116,7 +152,7 @@ See `prompts/evidence_extraction.md`.
 
 ---
 
-## 6. Reporting and ethics
+## 7. Reporting and ethics
 
 - Generate integrated report: `python scripts/generate_validation_report.py`
 - Do not publish municipality league tables without consent.
@@ -124,7 +160,7 @@ See `prompts/evidence_extraction.md`.
 
 ---
 
-## 7. What this protocol does not claim
+## 8. What this protocol does not claim
 
 - Legal certification or AI Act conformity
 - Validated predictive power
