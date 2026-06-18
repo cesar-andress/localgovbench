@@ -1,0 +1,37 @@
+# Adjudication schema — resolve assessor disagreements on real dossier coding
+
+schema_version: "1.0"
+study_label: localgovbench_instrument_validation_redevelop
+instrument_version: v0.1.0
+
+programme_id: ""
+assessment_wave: 1
+adjudication_date: ""
+adjudicator_id: ""
+
+trigger_rules:
+  score_difference_gte: 2
+  observable_disagreement: true       # scored vs withheld_no_evidence
+
+pairs: []
+  # - criterion_id: operational_human_oversight
+  #   assessor_a_id: assessor_ext_a
+  #   assessor_b_id: assessor_ext_b
+  #   assessor_a_score: 3
+  #   assessor_b_score: 2
+  #   assessor_a_status: scored
+  #   assessor_b_status: scored
+  #   adjudicated_score: 2
+  #   adjudicated_status: scored
+  #   resolution_rule: conservative_lower | span_verification | split_difference
+  #   adjudication_note: ""
+  #   evidence_entry_ids: [ev_012, ev_013]
+
+summary:
+  n_discrepancies: 0
+  n_adjudicated: 0
+  irr_pair_id: ""
+
+export_policy:
+  destination: exports/validation/adjudicated_scores/
+  synthetic_allowed: false

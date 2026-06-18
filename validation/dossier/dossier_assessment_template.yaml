@@ -1,0 +1,62 @@
+# Dossier assessment template — LocalGovBench v0.1 (25 criteria)
+# Copy per programme_id + assessor_id to data/dossiers/{programme_id}/assessor_{id}_scores.yaml
+# Evidence-gated: score only with dossier artefact + quoted span.
+
+schema_version: "1.0"
+study_label: localgovbench_instrument_validation_redevelop
+instrument_version: v0.1.0
+instrument_id: localgovbench-v0.1
+
+metadata:
+  programme_id: ""
+  assessor_id: ""
+  assessment_wave: 1
+  coding_date: ""                   # ISO date
+  blind_to_partner: true
+  synthetic: false                  # must be false for publishable field validation
+
+programme_manifest_ref: programme_manifest.yaml
+evidence_log_ref: evidence_log.yaml
+
+instructions: |
+  Apply LocalGovBench v0.1 to the confidential programme dossier only.
+  Do not use public AI registers, transparency portals, or open-web corpora as evidence.
+  If no dossier artefact supports a criterion, set score to withheld_no_evidence.
+  Scores >= 3 require evidence_gate_status: pass with named artefact in span.
+
+responses:
+  legal_regulatory_gdpr_readiness: null
+  legal_regulatory_ai_act_alignment: null
+  legal_regulatory_data_retention: null
+  legal_regulatory_lawful_basis: null
+  legal_regulatory_cross_border_avoidance: null
+  technical_security_local_architecture: null
+  technical_security_access_control: null
+  technical_security_logging: null
+  technical_security_auditability: null
+  technical_security_model_updates: null
+  organizational_accountability: null
+  organizational_ownership: null
+  organizational_role_definition: null
+  organizational_procurement_governance: null
+  organizational_risk_ownership: null
+  operational_monitoring: null
+  operational_incident_response: null
+  operational_human_oversight: null
+  operational_documentation: null
+  operational_lifecycle_management: null
+  strategic_sovereignty_vendor_independence: null
+  strategic_sovereignty_data_sovereignty: null
+  strategic_sovereignty_infrastructure_control: null
+  strategic_sovereignty_portability: null
+  strategic_sovereignty_maintainability: null
+
+response_detail: []
+  # - criterion_id: organizational_accountability
+  #   score: 3
+  #   score_status: scored | withheld_no_evidence
+  #   evidence_gate_status: pass | fail | not_applicable
+  #   dossier_document: documents/governance_charter.pdf
+  #   quoted_span: ""
+  #   uncertainty_flag: false
+  #   assessor_note: ""

@@ -1,0 +1,137 @@
+# Machine-readable scope guards for LocalGovBench instrument-validation redevelopment.
+# Scanned by scripts/validate_redevelopment_scope.py — manuscript-facing layer only.
+
+study_label: localgovbench_instrument_validation_redevelop
+instrument_version: v0.1.0
+instrument_id: localgovbench-v0.1
+
+companion_submitted_paper:
+  title: "Vendor Stewardship in the Public Record"
+  topic: public_record_documentary_observability
+  note: >
+    Separate submitted work. Reproduction assets must not be moved or modified
+    by the redevelopment layer. Not primary evidence for this study.
+
+manuscript_facing_paths:
+  - docs/redevelopment_scope.md
+  - validation/redevelopment_scope.yaml
+  - validation/dossier
+  - validation/content_validity/delphi
+  - exports/validation
+  - docs/partner
+
+ignored_by_scope_scanner:
+  - paper/data/open_pilot
+  - paper/results/open_document_pilot_coverage.csv
+  - paper/scripts/run_open_document_pilot.py
+  - validation/ratings
+  - validation/cases
+  - validation/benchmark_cases
+  - validation/reports
+  - results
+  - reports
+  - data/synthetic
+  - examples
+  - outputs
+  - tests
+  - internal
+  - archived
+  - data/vignettes
+
+primary_study_design:
+  type: instrument_development_and_validation
+  unit_of_analysis: confidential_programme_dossier
+  assessors: independent_external
+  allowed_primary_outcomes:
+    - content_validity_icvi_cvr
+    - delphi_consensus
+    - dossier_evidence_gated_maturity
+    - field_inter_rater_reliability
+    - gate_ablation
+    - readiness_index_sensitivity
+  forbidden_primary_outcomes:
+    - public_document_observability
+    - public_ai_register_corpus_analysis
+    - transparency_portal_corpus_analysis
+    - document_genre_taxonomy_as_main_findings
+    - d4_procurement_vendor_stewardship_as_main_outcome
+    - documentary_accountability_architecture
+    - synthetic_irr_as_field_validation
+    - open_pilot_as_validation_evidence
+
+forbidden_primary_evidence_patterns:
+  - id: public_document_observability
+    patterns:
+      - "public-document observability"
+      - "public document observability"
+      - "documentary observability as primary"
+      - "primary evidence.*public document"
+      - "observability rate.*primary"
+  - id: public_registers_portals
+    patterns:
+      - "primary.*ai register"
+      - "primary.*transparency portal"
+      - "validation evidence.*open_pilot"
+      - "open_pilot.*validation evidence"
+      - "open_pilot.*primary"
+  - id: document_genres
+    patterns:
+      - "document genre.*primary"
+      - "primary.*document genre"
+      - "genre analysis.*main (finding|outcome|contribution)"
+  - id: d4_vendor_stewardship
+    patterns:
+      - "d4.*main outcome"
+      - "vendor stewardship.*main (outcome|contribution|finding)"
+      - "procurement observability.*primary"
+      - "primary.*vendor stewardship"
+  - id: documentary_accountability_architecture
+    patterns:
+      - "documentary accountability architecture.*(contribution|primary|main)"
+      - "primary.*documentary accountability architecture"
+  - id: synthetic_irr_field
+    patterns:
+      - "synthetic irr.*field validation"
+      - "field validation.*synthetic irr"
+      - "synthetic.*inter-rater.*field"
+      - "grb-irr-pilot-synthetic.*field"
+      - "irr-pilot-synthetic.*field validation"
+  - id: open_pilot_validation
+    patterns:
+      - "open_pilot.*field validation"
+      - "open.document pilot.*validation study"
+      - "primary validation.*open.document"
+
+allowed_negation_phrases:
+  - "not primary"
+  - "not for validation"
+  - "not validation evidence"
+  - "must not use"
+  - "must not be presented"
+  - "separate submitted"
+  - "reproducibility only"
+  - "forbidden as primary"
+  - "forbidden as primary evidence"
+  - "forbidden_primary"
+  - "forbidden in exports"
+  - "forbidden_evidence"
+  - "never be presented"
+  - "remain in the repo only"
+  - "training only"
+  - "assessor training"
+  - "not_primary_evidence"
+  - "never"
+  - "not authorise"
+  - "not authorize"
+  - "not as primary"
+  - "not field validation"
+
+required_templates:
+  - validation/dossier/programme_manifest_template.yaml
+  - validation/dossier/dossier_assessment_template.yaml
+  - validation/dossier/evidence_log_schema.yaml
+  - validation/dossier/assessor_scoring_schema.yaml
+  - validation/dossier/adjudication_schema.yaml
+  - validation/dossier/assessor_guide_dossier.md
+  - validation/content_validity/delphi/delphi_round1_instrument.yaml
+  - validation/content_validity/delphi/criteria_revision_log.yaml

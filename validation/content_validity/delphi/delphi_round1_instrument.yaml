@@ -1,0 +1,112 @@
+# Delphi Round 1 — content validity for LocalGovBench v0.1 (25 criteria)
+# Expert panel rates relevance, clarity, and Lawshe essentiality.
+# NOT a public-document observability study.
+
+schema_version: "1.0"
+study_label: localgovbench_instrument_validation_redevelop
+instrument_version: v0.1.0
+instrument_id: localgovbench-v0.1
+round: 1
+
+validation_scope_guard:
+  study_type: instrument_content_validity
+  unit_of_evaluation: criterion_definitions
+  not_primary_evidence:
+    - public_document_observability
+    - public_ai_registers
+    - open_pilot
+
+instructions: |
+  Rate each criterion for assessing governance readiness of municipal LLM/AI programmes
+  using confidential programme dossiers and evidence-gated assessor review.
+  Do not rate public-register observability or transparency-portal coverage.
+  Do not assign maturity scores for any municipality.
+
+scales:
+  relevance:
+    range: [1, 5]
+    labels:
+      1: not relevant
+      2: somewhat relevant
+      3: moderately relevant
+      4: relevant
+      5: highly relevant
+  clarity:
+    range: [1, 5]
+    labels:
+      1: very unclear
+      5: very clear
+  essential_lawshe:
+    type: boolean
+    note: Lawshe essentiality for programme-level dossier assessment construct
+
+criteria:
+  - criterion_id: legal_regulatory_gdpr_readiness
+    dimension_id: legal_regulatory
+  - criterion_id: legal_regulatory_ai_act_alignment
+    dimension_id: legal_regulatory
+  - criterion_id: legal_regulatory_data_retention
+    dimension_id: legal_regulatory
+  - criterion_id: legal_regulatory_lawful_basis
+    dimension_id: legal_regulatory
+  - criterion_id: legal_regulatory_cross_border_avoidance
+    dimension_id: legal_regulatory
+  - criterion_id: technical_security_local_architecture
+    dimension_id: technical_security
+  - criterion_id: technical_security_access_control
+    dimension_id: technical_security
+  - criterion_id: technical_security_logging
+    dimension_id: technical_security
+  - criterion_id: technical_security_auditability
+    dimension_id: technical_security
+  - criterion_id: technical_security_model_updates
+    dimension_id: technical_security
+  - criterion_id: organizational_accountability
+    dimension_id: organizational
+  - criterion_id: organizational_ownership
+    dimension_id: organizational
+  - criterion_id: organizational_role_definition
+    dimension_id: organizational
+  - criterion_id: organizational_procurement_governance
+    dimension_id: organizational
+  - criterion_id: organizational_risk_ownership
+    dimension_id: organizational
+  - criterion_id: operational_monitoring
+    dimension_id: operational
+  - criterion_id: operational_incident_response
+    dimension_id: operational
+  - criterion_id: operational_human_oversight
+    dimension_id: operational
+  - criterion_id: operational_documentation
+    dimension_id: operational
+  - criterion_id: operational_lifecycle_management
+    dimension_id: operational
+  - criterion_id: strategic_sovereignty_vendor_independence
+    dimension_id: strategic_sovereignty
+  - criterion_id: strategic_sovereignty_data_sovereignty
+    dimension_id: strategic_sovereignty
+  - criterion_id: strategic_sovereignty_infrastructure_control
+    dimension_id: strategic_sovereignty
+  - criterion_id: strategic_sovereignty_portability
+    dimension_id: strategic_sovereignty
+  - criterion_id: strategic_sovereignty_maintainability
+    dimension_id: strategic_sovereignty
+
+expert_response_template:
+  expert_id: ""
+  round: 1
+  timestamp: ""
+  ratings: []
+    # - criterion_id: legal_regulatory_gdpr_readiness
+    #   relevance: null
+    #   clarity: null
+    #   essential_lawshe: null
+    #   comment: ""
+
+analysis_thresholds:
+  icvi_minimum: 0.78
+  target_s_cvi_ave: 0.90
+
+response_storage:
+  path: validation/content_validity/delphi/responses/
+  gitignore: true

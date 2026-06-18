@@ -1,0 +1,45 @@
+# Evidence log schema — dossier-based LocalGovBench v0.1 assessment
+# One log per programme_id (shared reference) or per assessor if blind coding requires separation.
+
+schema_version: "1.0"
+study_label: localgovbench_instrument_validation_redevelop
+instrument_version: v0.1.0
+
+programme_id: ""
+assessment_wave: 1
+assessor_id: ""                       # optional if shared log
+coding_date: ""
+
+validation_scope_guard:
+  evidence_source: programme_dossier_only
+  forbidden_evidence_sources:
+    - public_ai_register
+    - transparency_portal
+    - open_pilot_corpus
+    - public_web_scrape
+
+entries: []
+  # - entry_id: ev_001
+  #   criterion_id: organizational_accountability
+  #   dimension_id: organizational
+  #   dossier_document: documents/governance_charter.pdf
+  #   document_sha256: ""
+  #   page_or_section: ""
+  #   quoted_span: ""                   # verbatim, <= 150 words
+  #   artefact_type: governance_charter | dpia_extract | architecture_note | ...
+  #   evidence_present: true
+  #   provisional_score: 3              # 0-4 or null if withheld
+  #   score_status: scored | withheld_no_evidence
+  #   evidence_gate_status: pass | fail | not_applicable
+  #   public_observability: not_applicable  # dossier study; do not use public-layer metric
+  #   uncertainty_flag: false
+  #   uncertainty_reason: ""
+  #   assessor_note: ""
+
+field_definitions:
+  entry_id: Unique id within programme log
+  criterion_id: One of 25 stable v0.1 ids ({dimension_id}_{criterion_suffix})
+  dossier_document: Path relative to programme dossier root
+  quoted_span: Verbatim excerpt from confidential dossier artefact
+  evidence_gate_status: pass required for provisional_score >= 3
+  score_status: withheld_no_evidence when no dossier span exists

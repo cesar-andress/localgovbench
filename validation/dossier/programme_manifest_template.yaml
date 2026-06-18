@@ -1,0 +1,43 @@
+# Programme manifest template — confidential municipal LLM/AI programme dossier
+# Copy to: data/dossiers/{programme_id}/programme_manifest.yaml
+# Scope: instrument-validation redevelopment (dossier-based), NOT public-record observability.
+
+schema_version: "1.0"
+study_label: localgovbench_instrument_validation_redevelop
+instrument_version: v0.1.0
+instrument_id: localgovbench-v0.1
+
+programme_id: ""                    # e.g. prog_001_anon
+municipality_id: ""                 # pseudonymised; no real name in git
+country: ""                         # ISO 3166-1 alpha-2
+population_band: ""                 # <100k | 100-500k | 500k-1M | >1M
+
+programme_boundary:
+  boundary_label: ""
+  in_scope: []
+  out_of_scope: []
+  deployment_model: ""                # on_premise | hybrid | vendor_hosted
+  programme_phase: ""               # pilot | early_production | production | decommissioning
+
+access_and_ethics:
+  access_tier: confidential_research
+  dpa_reference: ""
+  anonymisation_note: ""
+  assessment_wave: 1                  # integer wave for action-research repeats
+
+assessors:
+  primary_external: []                # assessor_id list
+  secondary_external: []
+  adjudicator: ""
+
+dossier_inventory:
+  documents_dir: documents/
+  document_manifest: []               # list of {filename, artefact_type, sha256}
+
+validation_scope_guard:
+  evidence_source: programme_dossier_only
+  not_primary_evidence:
+    - public_document_observability
+    - public_ai_registers
+    - transparency_portals
+    - open_pilot

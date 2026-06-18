@@ -1,0 +1,43 @@
+# Assessor scoring schema — completed dossier assessment export
+# Publishable exports must come from real dossiers (synthetic: false).
+
+schema_version: "1.0"
+study_label: localgovbench_instrument_validation_redevelop
+instrument_version: v0.1.0
+instrument_id: localgovbench-v0.1
+
+metadata:
+  programme_id: ""
+  assessor_id: ""
+  assessment_wave: 1
+  coding_date: ""
+  synthetic: false                    # must be false in exports/validation/
+  evidence_source: programme_dossier
+
+readiness:
+  readiness_index_R: null             # computed only if coverage threshold met
+  coverage_rate: null                 # share of criteria with score_status: scored
+  coverage_threshold: 0.70
+  dimension_scores: {}                  # dimension_id -> mean maturity
+
+scores: []
+  # - criterion_id: operational_human_oversight
+  #   dimension_id: operational
+  #   score: 3
+  #   score_status: scored | withheld_no_evidence
+  #   evidence_gate_status: pass | fail | not_applicable
+  #   evidence_entry_id: ev_012
+  #   dossier_document: documents/oversight_procedure.pdf
+  #   uncertainty_flag: false
+
+irr_metadata:
+  paired_with_assessor: ""            # for dual coding
+  blind_coding: true
+  adjudication_required: false
+
+export_policy:
+  allowed_destination: exports/validation/
+  forbidden_claims:
+    - public_document_observability
+    - open_pilot_validation
+    - synthetic_irr_as_field_validation

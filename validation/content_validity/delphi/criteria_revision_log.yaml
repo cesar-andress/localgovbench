@@ -1,0 +1,26 @@
+# Criteria revision log — Delphi-driven changes to LocalGovBench v0.1 criterion wording
+# Append-only during instrument-validation redevelopment.
+
+schema_version: "1.0"
+study_label: localgovbench_instrument_validation_redevelop
+instrument_version: v0.1.0
+instrument_frozen: false              # set true after final Delphi round
+
+revisions: []
+  # - revision_id: rev_001
+  #   criterion_id: operational_human_oversight
+  #   delphi_round: 1
+  #   trigger: icvi_below_threshold
+  #   icvi_before: 0.67
+  #   change_type: wording_clarification | split | merge | none
+  #   previous_statement: ""
+  #   revised_statement: ""
+  #   expert_comments_summary: ""
+  #   approved_date: ""
+
+freeze_record:
+  frozen: false
+  frozen_date: null
+  panel_size: null
+  rounds_completed: 0
+  note: Instrument freeze applies to dossier validation study only; GRB extension remains separate.
