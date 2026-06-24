@@ -31,3 +31,8 @@ FIG_SHORTFALL_HEATMAP = FIGURES / "evidence_shortfall_gradient_heatmap.png"
 FIG_SENSITIVITY = FIGURES / "sensitivity_public_satisfiability.png"
 FIG_MIN_INTERNAL = FIGURES / "minimum_internal_evidence_set_by_dimension.png"
 FIG_CROSS_JURIS = FIGURES / "cross_jurisdiction_ceiling_comparison.png"
+
+DETECTOR_SUMMARY = OUTPUTS / "detector_reliability_summary.csv"
+DETECTOR_BY_SOURCE = OUTPUTS / "detector_reliability_by_source.csv"
+DETECTOR_REPORT = OUTPUTS / "detector_reliability_report.md"
+FIG_DETECTOR = FIGURES / "detector_reliability_by_source.png"

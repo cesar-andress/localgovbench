@@ -99,3 +99,28 @@
 | partition_robustness_gte_80pct | yes |
 | gate_unreachable_100pct_all_scenarios | yes |
 | paper2_boundary_documented | yes |
+
+## Detector Reliability
+
+Hide-field / recover-field evaluation on native structured fields across all five sources (7,434 programme records total; 29 field tests; CA-GC-AI-REG n=412, EU-PSTW n=1794, NL-ALGO-REG n=1484, UK-ATRS n=133, US-OMB-2025 n=3611). 29 field tests). See `outputs/detector_reliability_report.md`.
+
+| Source | Mean F1 | Weighted F1 | Mean field coverage % |
+|--------|--------:|------------:|----------------------:|
+| CA-GC-AI-REG | 0.481 | 0.4637 | 79.6 |
+| EU-PSTW | 0.5601 | 0.4201 | 80.0 |
+| NL-ALGO-REG | 0.3555 | 0.3612 | 91.7 |
+| UK-ATRS | 0.5254 | 0.3503 | 100.0 |
+| US-OMB-2025 | 0.3216 | 0.2494 | 65.6 |
+
+- **Overall mean F1 (non-empty fields):** 0.414 (min field F1: 0.007)
+- **Overall mean precision:** 1.000 (false-positive extractions rare)
+
+### Can extraction errors plausibly explain the public-evidence ceiling finding?
+
+**No.** Hide-field recovery achieves near-perfect precision: text-based detectors do not hallucinate structured values that could fake gate-level evidence. Inventory-specific metadata (lifecycle stage, status, impact flags) is not recoverable from remaining prose, confirming that public-satisfiability mapping correctly uses native schema columns.
+
+### Does the main finding survive realistic detector error?
+
+**Yes.** Realistic errors are false negatives on narrative fields (under-estimation), not false positives on gate artefacts. Detector noise cannot raise shortfall to level 4; combined with sensitivity analysis (gate unreachable in all scenarios), the public-evidence ceiling conclusion is robust.
+
+![Detector reliability by source](figures/detector_reliability_by_source.png)

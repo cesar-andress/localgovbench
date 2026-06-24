@@ -478,6 +478,7 @@ def main() -> int:
     run_step("validate_partition_robustness.py")
     run_step("analyze_sensitivity.py")
     run_step("derive_minimum_internal_evidence.py")
+    run_step("evaluate_detector_reliability.py")
 
     criteria = load_criteria()
     coverage = load_csv(FIELD_COVERAGE_MATRIX)
