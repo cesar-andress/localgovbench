@@ -1,0 +1,426 @@
+# Generated from localgovbench/framework/dimensions.py
+# Regenerate: python3.12 scripts/generate_localgovbench_criteria_config.py
+
+schema_version: '1.0'
+instrument_version: v0.1.0
+framework_version: '0.1'
+study_framing:
+  claim: public_satisfiability_of_evidence_requirements
+  not_measured:
+  - readiness_scores
+  - municipality_rankings
+  - legal_compliance
+  paper2_firewall:
+  - no_paper2_corpus
+  - no_documentary_observability_analysis
+  - no_vendor_stewardship_central_claim
+  - no_document_genre_comparison
+  - no_documentary_accountability_architecture
+criteria:
+- criterion_id: legal_regulatory_gdpr_readiness
+  dimension_id: legal_regulatory
+  dimension_name: Legal and Regulatory Compliance
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following
+    criterion relevant and clearly worded for programme-level governance readiness
+    assessment? Criterion: GDPR readiness for training, inference, and logging data
+    flows.'
+  criterion_statement: GDPR readiness for training, inference, and logging data flows.
+  evidence_hint: Records of processing, privacy notices, DPIA where applicable, and
+    DPO consultation notes.
+  expected_artifact_type: RoPA/DPIA/DPO consultation records
+  preliminary_public_satisfiability_class: structurally_internal
+  rationale_for_classification: GDPR accountability artefacts are internal compliance
+    records rarely published in AI inventories.
+  evidence_gate_score_3_requires: ≥1 primary named artefact per LocalGovBench v0.1
+    scoring rubric
+- criterion_id: legal_regulatory_ai_act_alignment
+  dimension_id: legal_regulatory
+  dimension_name: Legal and Regulatory Compliance
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following
+    criterion relevant and clearly worded for programme-level governance readiness
+    assessment? Criterion: EU AI Act alignment documented for the deployer role and
+    use case.'
+  criterion_statement: EU AI Act alignment documented for the deployer role and use
+    case.
+  evidence_hint: Use-case classification memo, risk management notes, human oversight
+    description, and technical documentation references.
+  expected_artifact_type: Use-case classification / impact memo
+  preliminary_public_satisfiability_class: partially_public_satisfiable
+  rationale_for_classification: Inventories may disclose high-impact flags and risk
+    narratives but seldom publish formal classification memos.
+  evidence_gate_score_3_requires: ≥1 primary named artefact per LocalGovBench v0.1
+    scoring rubric
+- criterion_id: legal_regulatory_data_retention
+  dimension_id: legal_regulatory
+  dimension_name: Legal and Regulatory Compliance
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following
+    criterion relevant and clearly worded for programme-level governance readiness
+    assessment? Criterion: Data retention and deletion rules defined for prompts,
+    logs, and embeddings.'
+  criterion_statement: Data retention and deletion rules defined for prompts, logs,
+    and embeddings.
+  evidence_hint: Retention schedule, automated deletion configuration, and backup
+    handling procedures.
+  expected_artifact_type: Retention schedule and deletion configuration
+  preliminary_public_satisfiability_class: structurally_internal
+  rationale_for_classification: Retention rules and backup handling are operational
+    policies not typically inventory fields.
+  evidence_gate_score_3_requires: ≥1 primary named artefact per LocalGovBench v0.1
+    scoring rubric
+- criterion_id: legal_regulatory_lawful_basis
+  dimension_id: legal_regulatory
+  dimension_name: Legal and Regulatory Compliance
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following
+    criterion relevant and clearly worded for programme-level governance readiness
+    assessment? Criterion: Lawful basis and purpose limitation recorded for each data
+    category used.'
+  criterion_statement: Lawful basis and purpose limitation recorded for each data
+    category used.
+  evidence_hint: Lawful basis register entries, purpose statements in system design
+    documents, and data minimization checklist.
+  expected_artifact_type: Lawful basis register entries
+  preliminary_public_satisfiability_class: structurally_internal
+  rationale_for_classification: Purpose limitation registers are internal legal records.
+  evidence_gate_score_3_requires: ≥1 primary named artefact per LocalGovBench v0.1
+    scoring rubric
+- criterion_id: legal_regulatory_cross_border_avoidance
+  dimension_id: legal_regulatory
+  dimension_name: Legal and Regulatory Compliance
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following
+    criterion relevant and clearly worded for programme-level governance readiness
+    assessment? Criterion: Cross-border data transfer avoidance for on-premise workloads.'
+  criterion_statement: Cross-border data transfer avoidance for on-premise workloads.
+  evidence_hint: Architecture diagram showing EU hosting, egress controls, vendor
+    sub-processor list, and network policy excerpts.
+  expected_artifact_type: Architecture diagram and egress controls
+  preliminary_public_satisfiability_class: structurally_internal
+  rationale_for_classification: Hosting/egress evidence requires technical architecture
+    documentation.
+  evidence_gate_score_3_requires: ≥1 primary named artefact per LocalGovBench v0.1
+    scoring rubric
+- criterion_id: technical_security_local_architecture
+  dimension_id: technical_security
+  dimension_name: Technical and Security Readiness
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following
+    criterion relevant and clearly worded for programme-level governance readiness
+    assessment? Criterion: Local deployment architecture documented end-to-end.'
+  criterion_statement: Local deployment architecture documented end-to-end.
+  evidence_hint: Architecture diagrams, component inventory, segmentation model, and
+    secrets management approach.
+  expected_artifact_type: Architecture diagrams and component inventory
+  preliminary_public_satisfiability_class: structurally_internal
+  rationale_for_classification: End-to-end deployment architecture is internal technical
+    documentation.
+  evidence_gate_score_3_requires: ≥1 primary named artefact per LocalGovBench v0.1
+    scoring rubric
+- criterion_id: technical_security_access_control
+  dimension_id: technical_security
+  dimension_name: Technical and Security Readiness
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following
+    criterion relevant and clearly worded for programme-level governance readiness
+    assessment? Criterion: Access control enforces least privilege for operators and
+    end users.'
+  criterion_statement: Access control enforces least privilege for operators and end
+    users.
+  evidence_hint: IAM role matrix, authentication method description, and periodic
+    access review records.
+  expected_artifact_type: IAM role matrix and access review records
+  preliminary_public_satisfiability_class: structurally_internal
+  rationale_for_classification: Access control evidence is security operations documentation.
+  evidence_gate_score_3_requires: ≥1 primary named artefact per LocalGovBench v0.1
+    scoring rubric
+- criterion_id: technical_security_logging
+  dimension_id: technical_security
+  dimension_name: Technical and Security Readiness
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following
+    criterion relevant and clearly worded for programme-level governance readiness
+    assessment? Criterion: Logging captures security-relevant and operational events
+    without excess personal data.'
+  criterion_statement: Logging captures security-relevant and operational events without
+    excess personal data.
+  evidence_hint: Logging policy, sample log schemas, and redaction or pseudonymization
+    rules.
+  expected_artifact_type: Logging policy and log schemas
+  preliminary_public_satisfiability_class: structurally_internal
+  rationale_for_classification: Logging/redaction policies are internal security artefacts.
+  evidence_gate_score_3_requires: ≥1 primary named artefact per LocalGovBench v0.1
+    scoring rubric
+- criterion_id: technical_security_auditability
+  dimension_id: technical_security
+  dimension_name: Technical and Security Readiness
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following
+    criterion relevant and clearly worded for programme-level governance readiness
+    assessment? Criterion: Auditability supports traceability of configuration and
+    inference changes.'
+  criterion_statement: Auditability supports traceability of configuration and inference
+    changes.
+  evidence_hint: Audit trail configuration, change management tickets, and immutable
+    log store references.
+  expected_artifact_type: Audit trail configuration and change tickets
+  preliminary_public_satisfiability_class: structurally_internal
+  rationale_for_classification: Immutable audit trails are internal operational records.
+  evidence_gate_score_3_requires: ≥1 primary named artefact per LocalGovBench v0.1
+    scoring rubric
+- criterion_id: technical_security_model_updates
+  dimension_id: technical_security
+  dimension_name: Technical and Security Readiness
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following
+    criterion relevant and clearly worded for programme-level governance readiness
+    assessment? Criterion: Model update management defines testing, approval, and
+    rollback.'
+  criterion_statement: Model update management defines testing, approval, and rollback.
+  evidence_hint: Model change procedure, validation results, version registry, and
+    rollback runbook.
+  expected_artifact_type: Model change procedure and rollback runbook
+  preliminary_public_satisfiability_class: structurally_internal
+  rationale_for_classification: Model lifecycle change control is internal MLOps documentation.
+  evidence_gate_score_3_requires: ≥1 primary named artefact per LocalGovBench v0.1
+    scoring rubric
+- criterion_id: organizational_accountability
+  dimension_id: organizational
+  dimension_name: Organizational Governance
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following
+    criterion relevant and clearly worded for programme-level governance readiness
+    assessment? Criterion: Accountability structures link AI outcomes to public service
+    responsibilities.'
+  criterion_statement: Accountability structures link AI outcomes to public service
+    responsibilities.
+  evidence_hint: Governance charter excerpt, committee terms of reference, and service
+    owner nomination.
+  expected_artifact_type: Governance charter / committee terms
+  preliminary_public_satisfiability_class: partially_public_satisfiable
+  rationale_for_classification: Inventories may name agencies and impacts but rarely
+    publish governance charters.
+  evidence_gate_score_3_requires: ≥1 primary named artefact per LocalGovBench v0.1
+    scoring rubric
+- criterion_id: organizational_ownership
+  dimension_id: organizational
+  dimension_name: Organizational Governance
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following
+    criterion relevant and clearly worded for programme-level governance readiness
+    assessment? Criterion: Ownership assigns sustained stewardship for each on-premise
+    LLM system.'
+  criterion_statement: Ownership assigns sustained stewardship for each on-premise
+    LLM system.
+  evidence_hint: RACI or ownership matrix, service catalogue entries, and escalation
+    contacts.
+  expected_artifact_type: RACI / ownership matrix
+  preliminary_public_satisfiability_class: partially_public_satisfiable
+  rationale_for_classification: Contact or bureau fields are weak ownership proxies
+    only.
+  evidence_gate_score_3_requires: ≥1 primary named artefact per LocalGovBench v0.1
+    scoring rubric
+- criterion_id: organizational_role_definition
+  dimension_id: organizational
+  dimension_name: Organizational Governance
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following
+    criterion relevant and clearly worded for programme-level governance readiness
+    assessment? Criterion: Role definitions cover legal, technical, data, and operational
+    functions.'
+  criterion_statement: Role definitions cover legal, technical, data, and operational
+    functions.
+  evidence_hint: Role descriptions, training plans, and interdisciplinary workshop
+    minutes.
+  expected_artifact_type: Role descriptions and training plans
+  preliminary_public_satisfiability_class: structurally_internal
+  rationale_for_classification: Interdisciplinary role definitions are HR/organizational
+    internal documents.
+  evidence_gate_score_3_requires: ≥1 primary named artefact per LocalGovBench v0.1
+    scoring rubric
+- criterion_id: organizational_procurement_governance
+  dimension_id: organizational
+  dimension_name: Organizational Governance
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following
+    criterion relevant and clearly worded for programme-level governance readiness
+    assessment? Criterion: Procurement governance addresses AI components, support,
+    and exit.'
+  criterion_statement: Procurement governance addresses AI components, support, and
+    exit.
+  evidence_hint: Contract clauses on model updates, SLAs, audit rights, and transition
+    assistance.
+  expected_artifact_type: Contract clauses on AI support and exit
+  preliminary_public_satisfiability_class: partially_public_satisfiable
+  rationale_for_classification: Vendor/contracting fields indicate supplier presence,
+    not contract governance clauses.
+  evidence_gate_score_3_requires: ≥1 primary named artefact per LocalGovBench v0.1
+    scoring rubric
+- criterion_id: organizational_risk_ownership
+  dimension_id: organizational
+  dimension_name: Organizational Governance
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following
+    criterion relevant and clearly worded for programme-level governance readiness
+    assessment? Criterion: Risk ownership assigns identification, treatment, and reporting
+    of AI risks.'
+  criterion_statement: Risk ownership assigns identification, treatment, and reporting
+    of AI risks.
+  evidence_hint: Risk register entries, risk appetite statement, and periodic review
+    cadence.
+  expected_artifact_type: Risk register and risk appetite statement
+  preliminary_public_satisfiability_class: structurally_internal
+  rationale_for_classification: Institutional risk registers are internal governance
+    artefacts.
+  evidence_gate_score_3_requires: ≥1 primary named artefact per LocalGovBench v0.1
+    scoring rubric
+- criterion_id: operational_monitoring
+  dimension_id: operational
+  dimension_name: Operational Management
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following
+    criterion relevant and clearly worded for programme-level governance readiness
+    assessment? Criterion: Monitoring tracks performance, safety signals, and resource
+    use.'
+  criterion_statement: Monitoring tracks performance, safety signals, and resource
+    use.
+  evidence_hint: Monitoring dashboards, alert thresholds, and sample review reports.
+  expected_artifact_type: Monitoring dashboards and review reports
+  preliminary_public_satisfiability_class: partially_public_satisfiable
+  rationale_for_classification: Outputs/benefits fields describe intended monitoring
+    outcomes, not dashboards.
+  evidence_gate_score_3_requires: ≥1 primary named artefact per LocalGovBench v0.1
+    scoring rubric
+- criterion_id: operational_incident_response
+  dimension_id: operational
+  dimension_name: Operational Management
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following
+    criterion relevant and clearly worded for programme-level governance readiness
+    assessment? Criterion: Incident response covers harmful outputs, outages, and
+    security events.'
+  criterion_statement: Incident response covers harmful outputs, outages, and security
+    events.
+  evidence_hint: Incident response plan, tabletop exercise records, and post-incident
+    review template.
+  expected_artifact_type: Incident response plan and exercise records
+  preliminary_public_satisfiability_class: structurally_internal
+  rationale_for_classification: IR plans are internal operational security documents.
+  evidence_gate_score_3_requires: ≥1 primary named artefact per LocalGovBench v0.1
+    scoring rubric
+- criterion_id: operational_human_oversight
+  dimension_id: operational
+  dimension_name: Operational Management
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following
+    criterion relevant and clearly worded for programme-level governance readiness
+    assessment? Criterion: Human oversight is defined where outputs influence decisions
+    or communications.'
+  criterion_statement: Human oversight is defined where outputs influence decisions
+    or communications.
+  evidence_hint: Oversight procedures, sampling protocols, and appeal or correction
+    pathways.
+  expected_artifact_type: Human oversight procedures
+  preliminary_public_satisfiability_class: partially_public_satisfiable
+  rationale_for_classification: Some inventories include human-in-the-loop role descriptions
+    as narrative text.
+  evidence_gate_score_3_requires: ≥1 primary named artefact per LocalGovBench v0.1
+    scoring rubric
+- criterion_id: operational_documentation
+  dimension_id: operational
+  dimension_name: Operational Management
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following
+    criterion relevant and clearly worded for programme-level governance readiness
+    assessment? Criterion: Documentation covers prompts, configurations, known limitations,
+    and user guidance.'
+  criterion_statement: Documentation covers prompts, configurations, known limitations,
+    and user guidance.
+  evidence_hint: System documentation set, prompt registry, and operator handbook.
+  expected_artifact_type: Prompt registry and operator handbook
+  preliminary_public_satisfiability_class: structurally_internal
+  rationale_for_classification: System documentation sets are internal operator materials.
+  evidence_gate_score_3_requires: ≥1 primary named artefact per LocalGovBench v0.1
+    scoring rubric
+- criterion_id: operational_lifecycle_management
+  dimension_id: operational
+  dimension_name: Operational Management
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following
+    criterion relevant and clearly worded for programme-level governance readiness
+    assessment? Criterion: Lifecycle management covers pilot, production, scaling,
+    and decommissioning.'
+  criterion_statement: Lifecycle management covers pilot, production, scaling, and
+    decommissioning.
+  evidence_hint: Lifecycle stage gates, decommission checklist, and archival policy.
+  expected_artifact_type: Lifecycle stage gates / deployment status
+  preliminary_public_satisfiability_class: public_satisfiable
+  rationale_for_classification: Official inventories commonly publish development
+    or deployment stage metadata.
+  evidence_gate_score_3_requires: ≥1 primary named artefact per LocalGovBench v0.1
+    scoring rubric
+- criterion_id: strategic_sovereignty_vendor_independence
+  dimension_id: strategic_sovereignty
+  dimension_name: Strategic Sovereignty
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following
+    criterion relevant and clearly worded for programme-level governance readiness
+    assessment? Criterion: Vendor independence reduces reliance on single proprietary
+    stacks.'
+  criterion_statement: Vendor independence reduces reliance on single proprietary
+    stacks.
+  evidence_hint: Alternative supplier analysis, open standards usage, and contingency
+    planning.
+  expected_artifact_type: Supplier analysis and contingency plan
+  preliminary_public_satisfiability_class: partially_public_satisfiable
+  rationale_for_classification: Vendor fields support dependency description, not
+    independence analysis.
+  evidence_gate_score_3_requires: ≥1 primary named artefact per LocalGovBench v0.1
+    scoring rubric
+- criterion_id: strategic_sovereignty_data_sovereignty
+  dimension_id: strategic_sovereignty
+  dimension_name: Strategic Sovereignty
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following
+    criterion relevant and clearly worded for programme-level governance readiness
+    assessment? Criterion: Data sovereignty ensures primary data and models remain
+    under institutional control.'
+  criterion_statement: Data sovereignty ensures primary data and models remain under
+    institutional control.
+  evidence_hint: Data residency statement, on-prem storage design, and third-party
+    access restrictions.
+  expected_artifact_type: Data residency and storage design
+  preliminary_public_satisfiability_class: structurally_internal
+  rationale_for_classification: Data sovereignty requires technical/data architecture
+    evidence.
+  evidence_gate_score_3_requires: ≥1 primary named artefact per LocalGovBench v0.1
+    scoring rubric
+- criterion_id: strategic_sovereignty_infrastructure_control
+  dimension_id: strategic_sovereignty
+  dimension_name: Strategic Sovereignty
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following
+    criterion relevant and clearly worded for programme-level governance readiness
+    assessment? Criterion: Infrastructure control covers hosting, networking, and
+    capacity planning.'
+  criterion_statement: Infrastructure control covers hosting, networking, and capacity
+    planning.
+  evidence_hint: Infrastructure ownership model, capacity plan, and disaster recovery
+    design.
+  expected_artifact_type: Infrastructure ownership and DR design
+  preliminary_public_satisfiability_class: structurally_internal
+  rationale_for_classification: Hosting/capacity plans are internal infrastructure
+    documents.
+  evidence_gate_score_3_requires: ≥1 primary named artefact per LocalGovBench v0.1
+    scoring rubric
+- criterion_id: strategic_sovereignty_portability
+  dimension_id: strategic_sovereignty
+  dimension_name: Strategic Sovereignty
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following
+    criterion relevant and clearly worded for programme-level governance readiness
+    assessment? Criterion: Portability supports migration of models, prompts, and
+    evaluation assets.'
+  criterion_statement: Portability supports migration of models, prompts, and evaluation
+    assets.
+  evidence_hint: Export formats, container images, and migration test results.
+  expected_artifact_type: Migration test results and export formats
+  preliminary_public_satisfiability_class: structurally_internal
+  rationale_for_classification: Portability evidence requires migration testing records.
+  evidence_gate_score_3_requires: ≥1 primary named artefact per LocalGovBench v0.1
+    scoring rubric
+- criterion_id: strategic_sovereignty_maintainability
+  dimension_id: strategic_sovereignty
+  dimension_name: Strategic Sovereignty
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following
+    criterion relevant and clearly worded for programme-level governance readiness
+    assessment? Criterion: Long-term maintainability plans staffing, upgrades, and
+    technical debt management.'
+  criterion_statement: Long-term maintainability plans staffing, upgrades, and technical
+    debt management.
+  evidence_hint: Roadmap, budget lines, and skills development plan for sustaining
+    on-prem AI.
+  expected_artifact_type: Sustainment roadmap and budget lines
+  preliminary_public_satisfiability_class: structurally_internal
+  rationale_for_classification: Long-term staffing and upgrade plans are internal
+    financial/HR planning.
+  evidence_gate_score_3_requires: ≥1 primary named artefact per LocalGovBench v0.1
+    scoring rubric
