@@ -22,6 +22,7 @@ cd localgovbench
 python3.12 scripts/generate_localgovbench_criteria_config.py
 python3.12 scripts/run_validation_upgrade.py
 python3.12 scripts/evaluate_detector_reliability.py
+python3.12 scripts/analyze_unit_commensurability.py
 ```
 
 ## Outputs
@@ -37,6 +38,8 @@ python3.12 scripts/evaluate_detector_reliability.py
 | `outputs/minimum_internal_evidence_set.csv` | Non-public evidence requirements |
 | `outputs/detector_reliability_summary.csv` | Hide-field / recover-field metrics |
 | `outputs/detector_reliability_by_source.csv` | Source-level detector averages |
+| `outputs/unit_commensurability_summary.csv` | Granularity scenario summary |
+| `outputs/unit_commensurability_sensitivity.csv` | Per-criterion/dimension sensitivity |
 | `outputs/criterion_satisfiability_summary.csv` | Criterion-level metrics |
 | `outputs/dimension_satisfiability_summary.csv` | Dimension ceilings |
 | `outputs/gate_reachability_summary.csv` | Score ≥3 gate reachability |

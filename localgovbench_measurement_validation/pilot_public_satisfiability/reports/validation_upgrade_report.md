@@ -124,3 +124,33 @@ Hide-field / recover-field evaluation on native structured fields across all fiv
 **Yes.** Realistic errors are false negatives on narrative fields (under-estimation), not false positives on gate artefacts. Detector noise cannot raise shortfall to level 4; combined with sensitivity analysis (gate unreachable in all scenarios), the public-evidence ceiling conclusion is robust.
 
 ![Detector reliability by source](figures/detector_reliability_by_source.png)
+
+## Unit Commensurability Analysis
+
+Programme-record granularity sensitivity test (Scenarios A/B/C). See `reports/unit_commensurability_report.md`.
+
+| Scenario | Records | Internal % | Partial/public % | Gate unreachable % |
+|----------|--------:|-----------:|-----------------:|-------------------:|
+| A_all_records | 7434 | 60.0 | 40.0 | 100.0 |
+| B_min_information | 5204 | 60.0 | 40.0 | 100.0 |
+| C_exclude_high_complexity | 6685 | 60.0 | 40.0 | 100.0 |
+
+- **Gate unreachable range:** 0.0 pp across scenarios
+- **Partition internal % range:** 0.0 pp
+- **Max criterion partition changes (B/C vs A):** 0
+
+### Does varying programme granularity materially alter conclusions?
+
+**No.** Evidence gate ≥3 remains unreachable for all 25 criteria in every scenario.
+
+### Is the public-evidence ceiling robust to inventory heterogeneity?
+
+**Yes.** Shortfall gradient (levels 0–2) persists; excluding sparse or high-complexity proxy records does not create gate-level public evidence.
+
+### Can the paper defend a programme-level unit of analysis?
+
+**Yes.** Transparent metadata proxies for minimum information and maximum complexity bound inventory heterogeneity without reversing the ceiling finding.
+
+![Unit commensurability stability](figures/unit_commensurability_stability.png)
+
+![Partition comparison](figures/unit_commensurability_partition_comparison.png)

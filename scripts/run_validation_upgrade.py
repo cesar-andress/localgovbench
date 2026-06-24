@@ -479,6 +479,7 @@ def main() -> int:
     run_step("analyze_sensitivity.py")
     run_step("derive_minimum_internal_evidence.py")
     run_step("evaluate_detector_reliability.py")
+    run_step("analyze_unit_commensurability.py")
 
     criteria = load_criteria()
     coverage = load_csv(FIELD_COVERAGE_MATRIX)
