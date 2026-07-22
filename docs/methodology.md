@@ -1,3 +1,9 @@
+> **Status: LEGACY — v0.1.0**  
+> This document describes the historical Governance Readiness Benchmark / v0.1 instrument design.  
+> It is retained for provenance and is **not** the active analytical framework.  
+> **Active framework:** Disclosure Functions v1 — see [`localgovbench_measurement_validation/affordance/README.md`](../localgovbench_measurement_validation/affordance/README.md) and the root [`README.md`](../README.md).
+
+
 # Methodology
 
 This document describes how the Local AI Governance Framework (v0.1) may be used in **research studies** on local and on-premise LLM governance in European public sector organizations.

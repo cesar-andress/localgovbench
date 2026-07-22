@@ -1,3 +1,8 @@
+> **Status: LEGACY — v0.1.0**  
+> Synthetic GRB / assessment examples for the historical instrument.  
+> **Active framework:** [`../localgovbench_measurement_validation/affordance/README.md`](../localgovbench_measurement_validation/affordance/README.md).
+
+
 # Examples
 
 Runnable **synthetic** examples for LocalGovBench.

@@ -2,6 +2,57 @@
 
 All notable changes to this project are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [0.2.0] — Unreleased (documentation/metadata draft)
+
+Framework **transition** release preparation. Not a completed empirical-results release.  
+**Conceptual incompatibility with v0.1.0:** the active measurement target is schema disclosure affordance (Disclosure Functions v1), not governance readiness / GRB maturity scoring.
+
+### Added
+
+- Disclosure Functions v1 **specification layer** (`localgovbench_measurement_validation/affordance/`): corpus lock, schema inventory, function catalogue, candidate maps, applicability, realization rules, linkage types
+- Disclosure Functions v1 **schema coding layer**: codebook, coding template (55 units), pilot manifest, validation utilities, double-coding and adjudication protocols
+- Release preparation docs under `docs/releases/` (audit, Zenodo draft metadata, GitHub release notes draft, manifest, readiness)
+- Active-documentation claim checks (tests)
+
+### Changed
+
+- Root `README.md`, `CITATION.cff`, and `pyproject.toml` repositioned for Disclosure Functions v1
+- Package version provisional **0.2.0**
+- Keywords and abstracts remove readiness/maturity as the active claim
+
+### Deprecated
+
+- Treating GRB / 25-criterion readiness scoring as the active paper framework
+- Unqualified public claims that LocalGovBench currently measures governance readiness, maturity, sovereign LLM deployment readiness, shortfall scores, jurisdiction rankings, or compliance scores
+
+### Removed
+
+- Nothing deleted from the historical v0.1.0 archive surface; legacy docs labelled instead
+
+### Fixed
+
+- Public entrypoint no longer presents v0.1.0 GRB outputs as current primary outputs
+
+### Reproducibility
+
+```bash
+python3.12 scripts/build_affordance_specification.py
+python3.12 scripts/build_affordance_coding_layer.py
+python3.12 -m pytest localgovbench_measurement_validation/affordance/tests \
+  localgovbench_measurement_validation/affordance/coding/tests -q
+```
+
+### Documentation
+
+- LEGACY banners on v0.1.0 / GRB documentation
+- Active affordance README remains the SoT for DF v1
+
+### Known limitations
+
+- Human coding, IRR, realization rates, and gap analysis not completed
+- No Zenodo DOI for v0.2.0 yet (do not reuse 10.5281/zenodo.20543779 as current version DOI)
+- Formal Git tag / GitHub Release not created in this preparation step
+
 ## [0.1.0] — 2026-06-04
 
 ### Added
@@ -30,4 +81,5 @@ All notable changes to this project are documented here. The format follows [Kee
 - Bundled scores are **synthetic**; empirical field validation is **pending**
 - Zenodo DOI: [10.5281/zenodo.20543779](https://doi.org/10.5281/zenodo.20543779)
 
+[0.2.0]: https://github.com/cesar-andress/localgovbench/tree/main
 [0.1.0]: https://github.com/cesar-andress/localgovbench/releases/tag/v0.1.0

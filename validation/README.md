@@ -1,3 +1,9 @@
+> **Status: LEGACY — v0.1.0**  
+> Empirical validation package for the historical 25-criterion / GRB instruments.  
+> **Not** the active Disclosure Functions v1 schema-coding workflow.  
+> **Active framework:** [`../localgovbench_measurement_validation/affordance/README.md`](../localgovbench_measurement_validation/affordance/README.md) and [`../localgovbench_measurement_validation/affordance/coding/`](../localgovbench_measurement_validation/affordance/coding/).
+
+
 # LocalGovBench Empirical Validation Package (v0.1)
 
 **Instrument frozen** — empirical studies validate the existing 25-criterion instrument without modifying dimensions, scales, or definitions.

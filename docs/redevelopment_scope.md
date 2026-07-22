@@ -1,3 +1,8 @@
+> **Status: LEGACY — v0.1.0**  
+> Historical reproducibility / scope documentation for the v0.1 instrument.  
+> **Active framework:** [`../localgovbench_measurement_validation/affordance/README.md`](../localgovbench_measurement_validation/affordance/README.md) and root [`README.md`](../README.md). Commands for Disclosure Functions v1 are documented there.
+
+
 # LocalGovBench redevelopment scope
 
 ## Purpose

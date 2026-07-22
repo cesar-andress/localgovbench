@@ -1,3 +1,9 @@
+> **Status: LEGACY — v0.1.0**  
+> This document describes the historical Governance Readiness Benchmark / v0.1 instrument design.  
+> It is retained for provenance and is **not** the active analytical framework.  
+> **Active framework:** Disclosure Functions v1 — see [`localgovbench_measurement_validation/affordance/README.md`](../localgovbench_measurement_validation/affordance/README.md) and the root [`README.md`](../README.md).
+
+
 # Construct Traceability — LocalGovBench v0.1
 
 **Purpose:** Demonstrate that every **LocalGovBench v0.1 criterion** (25 checklist indicators) is traceable to established governance concepts in the literature and EU policy instruments.

@@ -1,3 +1,9 @@
+> **Status: LEGACY — v0.1.0**  
+> This document describes the historical Governance Readiness Benchmark / v0.1 instrument design.  
+> It is retained for provenance and is **not** the active analytical framework.  
+> **Active framework:** Disclosure Functions v1 — see [`localgovbench_measurement_validation/affordance/README.md`](../localgovbench_measurement_validation/affordance/README.md) and the root [`README.md`](../README.md).
+
+
 # Governance Dimensions (v0.1)
 
 The Local AI Governance Framework **version 0.1** comprises **five dimensions**, each with **five criteria** (25 assessable items in total). Criteria are implemented in `localgovbench/framework/dimensions.py` and exposed via `build_checklist()`.

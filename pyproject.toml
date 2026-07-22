@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "localgovbench"
-version = "0.1.0"
-description = "Research framework and benchmark scaffolding for local AI governance in European public sector organizations"
+version = "0.2.0"
+description = "Research software for schema disclosure affordance and coding of public AI and algorithm registers (Disclosure Functions v1)"
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.11"
@@ -13,11 +13,12 @@ authors = [{ name = "César Andrés", email = "cesar.andress@ucjc.edu" }]
 keywords = [
     "ai-governance",
     "public-sector",
-    "benchmark",
-    "european-union",
+    "algorithm-registers",
+    "disclosure-affordance",
+    "reproducibility",
 ]
 classifiers = [
-    "Development Status :: 2 - Pre-Alpha",
+    "Development Status :: 3 - Alpha",
     "Intended Audience :: Science/Research",
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
@@ -33,13 +34,18 @@ dev = ["pytest>=8.0", "pyyaml>=6.0", "matplotlib>=3.8"]
 [project.urls]
 Repository = "https://github.com/cesar-andress/localgovbench"
 Documentation = "https://github.com/cesar-andress/localgovbench/tree/main/docs"
+Affordance = "https://github.com/cesar-andress/localgovbench/tree/main/localgovbench_measurement_validation/affordance"
 
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["localgovbench*"]
 
 [tool.pytest.ini_options]
-testpaths = ["tests"]
+testpaths = [
+    "tests",
+    "localgovbench_measurement_validation/affordance/tests",
+    "localgovbench_measurement_validation/affordance/coding/tests",
+]
 pythonpath = ["."]
 markers = [
     "integration: tests requiring local external services such as Ollama",

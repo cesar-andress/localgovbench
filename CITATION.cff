@@ -1,28 +1,32 @@
 cff-version: 1.2.0
-message: "If you use LocalGovBench, please cite this research artifact."
+message: "If you use LocalGovBench, please cite this research software."
 type: software
-title: LocalGovBench
-version: 0.1.0
-date-released: "2026-06-04"
+title: "LocalGovBench: Disclosure Affordances in Public AI and Algorithm Registers"
+version: 0.2.0
+# date-released: set when the GitHub/Zenodo release is published
+# USER CONFIRMATION: leave date unset until formal release
 license: MIT
 abstract: >-
-  Open research artifact (v0.1.0) providing a structured framework, checklist,
-  and maturity scoring for assessing governance of local and on-premise large
-  language model deployments in European public sector organizations. Includes
-  indicative EU AI Act and GDPR theme mappings, a Governance Readiness
-  Benchmark (GRB) experiment, synthetic validation tooling, and reproducibility
-  scripts. Empirical field validation is pending.
+  Reproducible research repository for studying schema disclosure affordance
+  and planned record-level realization in public AI and algorithm registers,
+  using Disclosure Functions v1. Includes a frozen specification layer,
+  observed-field schema inventory tooling, and a human schema-coding system.
+  Does not provide governance readiness or maturity scores, shortfall scores,
+  compliance scores, composite indices, or jurisdiction rankings. Historical
+  LocalGovBench v0.1.0 (Governance Readiness Benchmark) remains available as a
+  provenance archive (DOI 10.5281/zenodo.20543779) and is not the active
+  analytical framework. Full realization analyses, IRR results, gap figures,
+  and manuscript outcomes are not claimed complete in this provisional metadata.
 keywords:
   - artificial intelligence
-  - large language models
-  - governance
   - public sector
-  - European Union
-  - AI Act
-  - GDPR
-  - on-premise
-  - benchmark
+  - algorithm registers
+  - AI inventories
+  - algorithmic transparency
+  - disclosure affordance
+  - schema coding
   - reproducibility
+  - European Union
 authors:
   - given-names: César
     family-names: Andrés
@@ -33,25 +37,23 @@ authors:
     email: cesar.andress@ucjc.edu
 repository-code: "https://github.com/cesar-andress/localgovbench"
 url: "https://github.com/cesar-andress/localgovbench"
-doi: 10.5281/zenodo.20543779
+# doi: set to the new Zenodo version DOI when minted for v0.2.0
+# Do not reuse 10.5281/zenodo.20543779 as the current version DOI.
 identifiers:
   - type: doi
     value: "10.5281/zenodo.20543779"
-    description: "Zenodo archive DOI (v0.1.0)"
+    description: "Historical Zenodo version DOI for LocalGovBench v0.1.0 only"
   - type: url
     value: "https://github.com/cesar-andress/localgovbench"
     description: "Source code repository"
 related-identifiers:
   - type: doi
-    relation: cites
-    value: "10.XXXX/XXXXXXX"
-    description: "Companion GIQ paper DOI (placeholder — add when published)"
-preferred-citation:
-  type: article
-  title: "Towards a Local AI Governance Framework for European Public Sector Organizations"
-  authors:
-    - given-names: César
-      family-names: Andrés
-  year: 2026
-  journal: "[Journal or proceedings — edit when known]"
-  notes: "Manuscript in preparation for GIQ 2026; not included in this repository."
+    relation: isNewVersionOf
+    value: "10.5281/zenodo.20543779"
+    description: "Previous version (v0.1.0 Governance Readiness Benchmark archive)"
+  - type: url
+    relation: isSupplementTo
+    value: "https://github.com/cesar-andress/localgovbench"
+    description: "GitHub repository"
+# preferred-citation: update when a peer-reviewed paper DOI exists
+# USER CONFIRMATION: companion manuscript DOI / venue not set (avoid inventing)

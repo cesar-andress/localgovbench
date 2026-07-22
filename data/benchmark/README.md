@@ -1,3 +1,9 @@
+> **Status: LEGACY — v0.1.0**  
+> Historical GRB / Ollama evidence-extraction benchmark materials.  
+> **Not** part of the active Disclosure Functions v1 analysis path.  
+> **Active framework:** [`../../localgovbench_measurement_validation/affordance/README.md`](../../localgovbench_measurement_validation/affordance/README.md).
+
+
 # Evidence extraction benchmark tasks
 
 Gold-labelled **synthetic** tasks for comparing local Ollama models on GRB evidence extraction.

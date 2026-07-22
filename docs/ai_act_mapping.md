@@ -1,3 +1,9 @@
+> **Status: LEGACY — v0.1.0**  
+> This document describes the historical Governance Readiness Benchmark / v0.1 instrument design.  
+> It is retained for provenance and is **not** the active analytical framework.  
+> **Active framework:** Disclosure Functions v1 — see [`localgovbench_measurement_validation/affordance/README.md`](../localgovbench_measurement_validation/affordance/README.md) and the root [`README.md`](../README.md).
+
+
 # EU AI Act Mapping (Indicative, v0.1)
 
 > **Disclaimer:** This document supports **research orientation and structured self-assessment**. It is **not legal advice** and does not determine legal classification, conformity, or compliance. Public authorities should consult qualified legal counsel and official guidance for binding interpretations of Regulation (EU) 2024/1689 (AI Act).
