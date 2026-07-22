@@ -190,7 +190,12 @@ def write_coder_packet(coder_slot: str, path: Path) -> Path:
     path.parent.mkdir(parents=True, exist_ok=True)
     fieldnames = packet_fieldnames()
     with path.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fieldnames, extrasaction="ignore")
+        writer = csv.DictWriter(
+            handle,
+            fieldnames=fieldnames,
+            extrasaction="ignore",
+            lineterminator="\n",
+        )
         writer.writeheader()
         writer.writerows(rows)
     return path
