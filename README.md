@@ -1,16 +1,18 @@
 # LocalGovBench
 
-**Provisional version 0.2.0** — documentation and metadata preparation for the Disclosure Functions framework transition  
-**Historical archive:** [v0.1.0 on Zenodo](https://doi.org/10.5281/zenodo.20543779)
+**Version v0.2.0** — Disclosure Affordance Framework for Public AI and Algorithm Registers  
+**Canonical DOI:** [10.5281/zenodo.21500899](https://doi.org/10.5281/zenodo.21500899)  
+**Historical archive (v0.1.0):** [10.5281/zenodo.20543779](https://doi.org/10.5281/zenodo.20543779)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
-[![Version](https://img.shields.io/badge/version-0.2.0--draft-orange.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-v0.2.0-blue.svg)](CHANGELOG.md)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21500899.svg)](https://doi.org/10.5281/zenodo.21500899)
 [![Historical DOI v0.1.0](https://zenodo.org/badge/DOI/10.5281/zenodo.20543779.svg)](https://doi.org/10.5281/zenodo.20543779)
 
 > **Historical notice.** v0.1.0 represented the original Governance Readiness Benchmark design. It is retained as a historical snapshot but is not the active analytical framework. Provenance archive: [DOI 10.5281/zenodo.20543779](https://doi.org/10.5281/zenodo.20543779).
 
-Frozen public positioning: [`docs/releases/public_positioning_v0.2.0.md`](docs/releases/public_positioning_v0.2.0.md).
+Public positioning: [`docs/releases/public_positioning_v0.2.0.md`](docs/releases/public_positioning_v0.2.0.md).
 
 ## 1. What LocalGovBench currently is
 
@@ -26,11 +28,11 @@ LocalGovBench is a **reproducible research repository** for studying:
 
 ## 2. What changed after v0.1.0
 
-| | v0.1.0 (historical) | v0.2.0 path (active) |
-|--|---------------------|----------------------|
+| | v0.1.0 (historical) | v0.2.0 (active) |
+|--|---------------------|-----------------|
 | Focus | Governance readiness / GRB for sovereign LLM programmes | Disclosure affordances of official register schemas |
 | Unit | Programme dossier / maturity criteria | Schema × disclosure function (+ planned record realization) |
-| Status | Frozen on Zenodo | Specification + coding layers implemented; empirical results not claimed complete |
+| Zenodo | [10.5281/zenodo.20543779](https://doi.org/10.5281/zenodo.20543779) | [10.5281/zenodo.21500899](https://doi.org/10.5281/zenodo.21500899) |
 
 ## 3. What Disclosure Functions v1 measures
 
@@ -53,7 +55,7 @@ localgovbench/                          # package (includes legacy framework/grb
 localgovbench_measurement_validation/
   affordance/                           # ACTIVE: DF v1 specification + coding
 scripts/build_affordance_*.py           # ACTIVE: regenerate artefacts
-docs/releases/                          # ACTIVE: v0.2.0 release preparation
+docs/releases/                          # ACTIVE: v0.2.0 release documentation
 docs/*.md, validation/, examples/       # LEGACY — v0.1.0 (labelled)
 ```
 
@@ -64,8 +66,6 @@ Implemented (milestone commit `aa8ea3d`):
 - Disclosure Functions v1 YAML catalogue  
 - Field normalization, candidates, applicability, realization rules, linkage types  
 - Corpus lock over **7,434** public inventory records + observed-field schema inventory  
-
-Reproduce:
 
 ```bash
 python3.12 scripts/build_affordance_specification.py
@@ -81,8 +81,6 @@ Implemented (milestone commit `ac2669c`):
 - Codebook, labels, coding template (**55** units), pilot manifest (**33** units)  
 - Validation utilities; double-coding and adjudication protocols  
 - IRR **plan** only (no calculated IRR results)
-
-Reproduce:
 
 ```bash
 python3.12 scripts/build_affordance_coding_layer.py
@@ -107,35 +105,36 @@ pytest -m "not integration"
 - IRR / adjudication outcomes not reported  
 - Record realization tables and gap figures not completed  
 - Companion manuscript not claimed finished  
-- Formal Git tag `v0.2.0`, GitHub Release, and Zenodo v0.2.0 **not** published yet  
 
 ## 10. Next research phases
 
 1. Human pilot coding → adjudication → IRR  
 2. Full schema coding where planned  
 3. Record-level realization and affordance–realization gap analysis  
-4. Manuscript finalisation and formal software release publish  
+4. Manuscript finalisation  
 
-## 11. Citation (before formal v0.2.0 release)
+## 11. How to cite
 
-Until a Zenodo version DOI for v0.2.0 is minted, cite the **Git commit** of this repository and, for the historical instrument only, the v0.1.0 archive:
+**Preferred software citation (active):**
 
-- **Historical v0.1.0 DOI:** https://doi.org/10.5281/zenodo.20543779  
-- **Software (current `main`):** cite commit hash + URL `https://github.com/cesar-andress/localgovbench`  
-- Metadata: [`CITATION.cff`](CITATION.cff)
+LocalGovBench v0.2.0: Disclosure Affordance Framework for Public AI and Algorithm Registers.  
+https://doi.org/10.5281/zenodo.21500899
+
+Zenodo record title: *LocalGovBench: Disclosure Affordances in Public AI and Algorithm Registers* (v0.2.0).
 
 ```bibtex
-@software{localgovbench_v020_draft,
+@software{localgovbench_v020,
   author  = {Andrés, César},
   title   = {{LocalGovBench}: Disclosure Affordances in Public AI and Algorithm Registers},
   year    = {2026},
-  version = {0.2.0-draft},
-  url     = {https://github.com/cesar-andress/localgovbench},
-  note    = {Provisional documentation for the Disclosure Functions v1 framework; not a completed empirical-results release}
+  version = {0.2.0},
+  doi     = {10.5281/zenodo.21500899},
+  url     = {https://doi.org/10.5281/zenodo.21500899},
+  note    = {Disclosure Affordance Framework; Disclosure Functions v1}
 }
 ```
 
-For the frozen v0.1.0 readiness instrument only:
+**Historical v0.1.0 only** (Governance Readiness Benchmark archive — not the active analytical framework):
 
 ```bibtex
 @software{localgovbench_v010,
@@ -148,6 +147,8 @@ For the frozen v0.1.0 readiness instrument only:
   note    = {Historical archive; not the active analytical framework}
 }
 ```
+
+Metadata: [`CITATION.cff`](CITATION.cff).
 
 ## 12. Historical and legacy material
 
@@ -175,10 +176,8 @@ pytest -m "not integration"
 
 ## Status
 
-**v0.2.0 (draft metadata)** — active framework = Disclosure Functions v1 (specification + schema coding).  
-**v0.1.0** — historical Governance Readiness Benchmark, archived at [10.5281/zenodo.20543779](https://doi.org/10.5281/zenodo.20543779).
-
-Release drafts: [`docs/releases/`](docs/releases/).
+**v0.2.0** — active framework = Disclosure Functions v1 ([DOI 10.5281/zenodo.21500899](https://doi.org/10.5281/zenodo.21500899)).  
+**v0.1.0** — historical Governance Readiness Benchmark ([DOI 10.5281/zenodo.20543779](https://doi.org/10.5281/zenodo.20543779)).
 
 ## Contributing / License
 

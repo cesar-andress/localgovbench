@@ -1,7 +1,7 @@
 {
   "title": "LocalGovBench: Disclosure Affordances in Public AI and Algorithm Registers",
   "upload_type": "software",
-  "description": "<p>LocalGovBench v0.2.0 is a reproducible research software deposit for studying schema disclosure affordance in public AI and algorithm registers using Disclosure Functions v1.</p><p>This version is a framework transition from the historical LocalGovBench v0.1.0 design (Governance Readiness Benchmark for sovereign LLM deployments; DOI 10.5281/zenodo.20543779). The v0.1.0 materials remain available for provenance and are not the active analytical framework of v0.2.0.</p><p>Canonical version DOI: 10.5281/zenodo.21500899.</p>",
+  "description": "<p>LocalGovBench v0.2.0: Disclosure Affordance Framework for Public AI and Algorithm Registers. Canonical DOI 10.5281/zenodo.21500899. Historical v0.1.0 DOI 10.5281/zenodo.20543779.</p>",
   "creators": [
     {
       "name": "Andrés, César",
@@ -13,14 +13,10 @@
   "publication_date": "2026-07-23",
   "access_right": "open",
   "license": "mit",
-  "language": "eng",
-  "doi": "10.5281/zenodo.21500899",
   "keywords": [
     "artificial intelligence",
     "public sector",
     "algorithm registers",
-    "AI inventories",
-    "algorithmic transparency",
     "disclosure affordance",
     "schema coding",
     "reproducibility"
@@ -36,6 +32,5 @@
       "relation": "isSupplementTo",
       "scheme": "url"
     }
-  ],
-  "notes": "Published metadata mirror for LocalGovBench v0.2.0. Historical v0.1.0 DOI 10.5281/zenodo.20543779 must not be reused as the current version DOI."
+  ]
 }

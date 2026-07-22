@@ -37,9 +37,10 @@ Do **not** use `Andrés Sánchez, C.` or `Sánchez, César Andrés`.
 
 ## Software citation (Zenodo / CITATION.cff)
 
-See [CITATION.cff](../CITATION.cff) and [citation.md](citation.md).  
+See [CITATION.cff](../CITATION.cff) and root [README.md](../README.md).  
+**Active Zenodo DOI (v0.2.0):** https://doi.org/10.5281/zenodo.21500899  
 **Historical Zenodo DOI (v0.1.0 only):** https://doi.org/10.5281/zenodo.20543779  
-**Active framework citation:** root [README.md](../README.md) (Disclosure Functions v1 / provisional v0.2.0).
+**Active release title:** LocalGovBench v0.2.0: Disclosure Affordance Framework for Public AI and Algorithm Registers.
 
 ---
 

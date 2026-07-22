@@ -1,8 +1,10 @@
 # Public positioning — LocalGovBench v0.2.0
 
 **Status:** ACTIVE (frozen for release preparation)  
-**Working title:** LocalGovBench v0.2.0: Disclosure Affordances in Public AI and Algorithm Registers  
-**Date frozen:** 2026-07-23
+**Release title:** LocalGovBench v0.2.0: Disclosure Affordance Framework for Public AI and Algorithm Registers  
+**Zenodo record title:** LocalGovBench: Disclosure Affordances in Public AI and Algorithm Registers  
+**Canonical DOI:** https://doi.org/10.5281/zenodo.21500899  
+**Date frozen / published:** 2026-07-23
 
 ## One-sentence description
 
@@ -51,7 +53,7 @@ v0.1.0 represented the original Governance Readiness Benchmark design. It is ret
 | Disclosure Functions v1 specification | Implemented (e.g. commit `aa8ea3d`) |
 | Schema coding layer | Implemented (e.g. commit `ac2669c`) |
 | Human coding / IRR / realization / gap | Not completed |
-| Formal Git tag `v0.2.0` / GitHub Release / Zenodo v0.2.0 | Not published in this preparation |
+| Formal Git tag `v0.2.0` / Zenodo v0.2.0 | Published (DOI 10.5281/zenodo.21500899) |
 
 ## Future work statement
 

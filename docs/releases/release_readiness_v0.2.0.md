@@ -24,8 +24,9 @@ Yes — benchmark specification, demo walkthrough, validation package, GRB-relat
 |------|--------|
 | `CITATION.cff` version 0.2.0 + DF abstract | Updated |
 | Historical DOI 10.5281/zenodo.20543779 | Preserved as v0.1.0 only |
-| New Zenodo version DOI | **Not set** (correct) |
-| `date-released` | **Unset** until publish |
+| Active DOI 10.5281/zenodo.21500899 | Set in CITATION.cff / README / .zenodo.json |
+| New Zenodo version DOI | **Published** |
+| `date-released` | **2026-07-23** |
 | Concept DOI | **USER CONFIRMATION** — not verified in-repo |
 | Companion paper DOI / venue | **USER CONFIRMATION** |
 | Communities on Zenodo | **USER CONFIRMATION** |

@@ -3,9 +3,9 @@ message: "If you use LocalGovBench, please cite this research software."
 type: software
 title: "LocalGovBench: Disclosure Affordances in Public AI and Algorithm Registers"
 version: 0.2.0
-# date-released: set when the GitHub/Zenodo release is published
-# USER CONFIRMATION: leave date unset until formal release
+date-released: "2026-07-23"
 license: MIT
+doi: "10.5281/zenodo.21500899"
 abstract: >-
   Reproducible research repository for studying schema disclosure affordance
   and planned record-level realization in public AI and algorithm registers,
@@ -15,8 +15,7 @@ abstract: >-
   compliance scores, composite indices, or jurisdiction rankings. Historical
   LocalGovBench v0.1.0 (Governance Readiness Benchmark) remains available as a
   provenance archive (DOI 10.5281/zenodo.20543779) and is not the active
-  analytical framework. Full realization analyses, IRR results, gap figures,
-  and manuscript outcomes are not claimed complete in this provisional metadata.
+  analytical framework.
 keywords:
   - artificial intelligence
   - public sector
@@ -36,17 +35,16 @@ authors:
     orcid: "https://orcid.org/0009-0001-8968-3404"
     email: cesar.andress@ucjc.edu
 repository-code: "https://github.com/cesar-andress/localgovbench"
-url: "https://github.com/cesar-andress/localgovbench"
-# doi: set to the new Zenodo version DOI when minted for v0.2.0
-# Do not reuse 10.5281/zenodo.20543779 as the current version DOI.
+url: "https://doi.org/10.5281/zenodo.21500899"
 identifiers:
+  - type: doi
+    value: "10.5281/zenodo.21500899"
+    description: "Zenodo version DOI for LocalGovBench v0.2.0 (canonical active citation)"
   - type: doi
     value: "10.5281/zenodo.20543779"
     description: "Historical Zenodo version DOI for LocalGovBench v0.1.0 only"
   - type: url
     value: "https://github.com/cesar-andress/localgovbench"
     description: "Source code repository"
-# Note: CFF 1.2.0 has no related-identifiers field. Zenodo isNewVersionOf /
-# isSupplementTo relations are drafted in docs/releases/zenodo_metadata_v0.2.0.md.
 # preferred-citation: update when a peer-reviewed paper DOI exists
 # USER CONFIRMATION: companion manuscript DOI / venue not set (avoid inventing)

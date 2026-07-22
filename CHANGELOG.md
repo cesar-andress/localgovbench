@@ -2,10 +2,13 @@
 
 All notable changes to this project are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
-## [0.2.0] — Unreleased (documentation/metadata draft)
+## [0.2.0] — 2026-07-23
 
-Framework **transition** release preparation. Not a completed empirical-results release.  
-**Conceptual incompatibility with v0.1.0:** the active measurement target is schema disclosure affordance (Disclosure Functions v1), not governance readiness / GRB maturity scoring.
+Framework **transition** release. Not a completed empirical-results release.  
+**Conceptual incompatibility with v0.1.0:** the active measurement target is schema disclosure affordance (Disclosure Functions v1), not governance readiness / GRB maturity scoring.  
+**Canonical DOI:** [10.5281/zenodo.21500899](https://doi.org/10.5281/zenodo.21500899)  
+**Zenodo record title:** LocalGovBench: Disclosure Affordances in Public AI and Algorithm Registers  
+**Release title:** LocalGovBench v0.2.0: Disclosure Affordance Framework for Public AI and Algorithm Registers
 
 ### Added
 
@@ -50,8 +53,7 @@ python3.12 -m pytest localgovbench_measurement_validation/affordance/tests \
 ### Known limitations
 
 - Human coding, IRR, realization rates, and gap analysis not completed
-- No Zenodo DOI for v0.2.0 yet (do not reuse 10.5281/zenodo.20543779 as current version DOI)
-- Formal Git tag / GitHub Release not created in this preparation step
+- Do not reuse historical DOI 10.5281/zenodo.20543779 as the current version DOI
 
 ## [0.1.0] — 2026-06-04
 
@@ -81,5 +83,5 @@ python3.12 -m pytest localgovbench_measurement_validation/affordance/tests \
 - Bundled scores are **synthetic**; empirical field validation is **pending**
 - Zenodo DOI: [10.5281/zenodo.20543779](https://doi.org/10.5281/zenodo.20543779)
 
-[0.2.0]: https://github.com/cesar-andress/localgovbench/tree/main
+[0.2.0]: https://doi.org/10.5281/zenodo.21500899
 [0.1.0]: https://github.com/cesar-andress/localgovbench/releases/tag/v0.1.0

@@ -243,7 +243,7 @@ python3.12 scripts/analyze_unit_commensurability.py
 - `outputs/minimum_internal_evidence_set.csv`  
 - `figures/` (publication figures per `paper_data_policy/figure_plan.md`)  
 
-**Zenodo archive.** A versioned deposit bundling the normalised corpus (or source download scripts where size limits apply), frozen CSV outputs, figure reproduction scripts, and the criteria configuration will be archived on Zenodo with the placeholder identifier **10.5281/zenodo.PLACEHOLDER** (to be replaced upon deposit). The repository DOI for LocalGovBench v0.1.2 instrument artefacts will be cited as a related identifier. Collection scripts re-fetch primary sources from official URLs documented in Table 1 (`source_registry_expanded.csv`) to support independent verification.
+**Zenodo archive.** A versioned deposit bundling the normalised corpus (or source download scripts where size limits apply), frozen CSV outputs, figure reproduction scripts, and the criteria configuration will be archived on Zenodo with the placeholder identifier **10.5281/zenodo.PLACEHOLDER** (to be replaced upon deposit of the study replication package). The active LocalGovBench software release is **v0.2.0** (DOI [10.5281/zenodo.21500899](https://doi.org/10.5281/zenodo.21500899)). The historical LocalGovBench v0.1.0 instrument archive remains at DOI [10.5281/zenodo.20543779](https://doi.org/10.5281/zenodo.20543779). Collection scripts re-fetch primary sources from official URLs documented in Table 1 (`source_registry_expanded.csv`) to support independent verification.
 
 ---
 

@@ -63,9 +63,8 @@ def _strip_historical_blocks(text: str) -> str:
         "\n\n",
         text,
     )
-    # Drop explicit "historical" / "legacy" / "not the active" sentences for scan noise reduction
     text = re.sub(
-        r"(?im)^.*\b(?:historical|legacy|v0\.1\.0|not the active analytical framework|previous version)\b.*$",
+        r"(?im)^.*\b(?:historical|legacy|v0\.1\.0|previous version)\b.*$",
         "",
         text,
     )
@@ -87,6 +86,7 @@ def test_readme_states_active_framework_is_disclosure_functions():
     assert "Disclosure Functions" in text
     assert "not the active analytical framework" in text
     assert "10.5281/zenodo.20543779" in text
+    assert "10.5281/zenodo.21500899" in text
     assert "7,434" in text or "7434" in text
     assert "aa8ea3d" in text
     assert "ac2669c" in text
@@ -106,8 +106,17 @@ def test_citation_cff_version_and_historical_doi():
     assert str(doc.get("version")).startswith("0.2")
     abstract = doc["abstract"].lower()
     assert "disclosure" in abstract
+    assert doc.get("doi") == "10.5281/zenodo.21500899"
     assert "10.5281/zenodo.20543779" in str(doc)
-    assert doc.get("doi") in (None, "")
+    assert "10.5281/zenodo.21500899" in str(doc)
+
+
+def test_readme_canonical_doi():
+    text = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
+    assert "10.5281/zenodo.21500899" in text
+    assert "Disclosure Affordance Framework" in text
+    assert "10.5281/zenodo.20543779" in text
+    assert "Historical" in text or "historical" in text
 
 
 def test_pyproject_version():
@@ -146,7 +155,13 @@ def test_zenodo_draft_json_parses():
     assert data["version"] == "0.2.0"
     assert "Governance Readiness Benchmark" not in data["title"]
     assert "Disclosure" in data["title"]
-    assert "7,434" in data["description"] or "7434" in data["description"]
+    assert data.get("doi") == "10.5281/zenodo.21500899"
+
+
+def test_root_zenodo_json_active_doi():
+    data = json.loads((REPO_ROOT / ".zenodo.json").read_text(encoding="utf-8"))
+    assert "21500899" in json.dumps(data)
+    assert data["version"] == "0.2.0"
 
 
 def test_github_release_notes_list_milestones():
@@ -156,3 +171,4 @@ def test_github_release_notes_list_milestones():
     assert "aa8ea3d" in text
     assert "ac2669c" in text
     assert "framework transition" in text.lower()
+    assert "10.5281/zenodo.21500899" in text

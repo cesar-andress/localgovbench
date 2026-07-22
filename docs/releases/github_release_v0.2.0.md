@@ -1,6 +1,6 @@
 # GitHub release notes draft — v0.2.0
 
-**Status:** draft — **do not create the GitHub Release or tag yet**
+**Status:** published tag `v0.2.0` — canonical DOI https://doi.org/10.5281/zenodo.21500899
 
 ## Summary
 
@@ -70,19 +70,19 @@ Retained for provenance: `localgovbench/framework`, `localgovbench/grb`, most of
 
 - Human coding not executed for publication  
 - Realization / gap analysis not completed  
-- No v0.2.0 Zenodo DOI yet  
 
 ## Citation instructions
 
-Until a Zenodo version DOI for v0.2.0 is minted, cite the Git tag/commit. Preserve historical DOI `10.5281/zenodo.20543779` for v0.1.0 only. See `CITATION.cff` and root `README.md`.
+Cite **LocalGovBench v0.2.0: Disclosure Affordance Framework for Public AI and Algorithm Registers** at https://doi.org/10.5281/zenodo.21500899.  
+Preserve historical DOI `10.5281/zenodo.20543779` for v0.1.0 only. See `CITATION.cff` and root `README.md`.
 
 ## Historical v0.1.0 DOI
 
 https://doi.org/10.5281/zenodo.20543779 — **version DOI for v0.1.0 only**. Do not reuse as the v0.2.0 DOI.
 
-## Future Zenodo version note
+## Zenodo
 
-Publish a **new version** linked as `isNewVersionOf` 10.5281/zenodo.20543779. See `docs/releases/zenodo_metadata_v0.2.0.md`. Concept DOI: user confirmation required if one exists.
+Published version DOI: https://doi.org/10.5281/zenodo.21500899 (`isNewVersionOf` 10.5281/zenodo.20543779).
 
 ## Full change summary since v0.1.0
 

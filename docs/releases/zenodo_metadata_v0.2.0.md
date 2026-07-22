@@ -1,18 +1,21 @@
 # Zenodo metadata draft — LocalGovBench v0.2.0
 
-**Status:** draft for user review — **do not publish yet**  
+**Status:** published  
+**Version DOI (v0.2.0):** `10.5281/zenodo.21500899`  
 **Previous version DOI (v0.1.0 only):** `10.5281/zenodo.20543779`  
-**Concept DOI:** **USER CONFIRMATION REQUIRED** — not verified from repository evidence; do not invent or guess.
+**Concept DOI:** **USER CONFIRMATION REQUIRED** if a distinct concept DOI should be listed separately.
 
 ## Proposed upload fields
 
 | Field | Proposed value |
 |-------|----------------|
 | upload_type | `software` |
-| title | LocalGovBench v0.2.0: Disclosure Affordances in Public AI and Algorithm Registers |
+| title (Zenodo record) | LocalGovBench: Disclosure Affordances in Public AI and Algorithm Registers |
+| release title (preferred prose) | LocalGovBench v0.2.0: Disclosure Affordance Framework for Public AI and Algorithm Registers |
 | creators | César Andrés (ORCID `0009-0001-8968-3404`); affiliation CRIA-BDHS Research Group, Higher Polytechnic School of Technology and Science, Universidad Camilo José Cela, Madrid, Spain; email `cesar.andress@ucjc.edu` |
 | version | `0.2.0` |
-| publication_date | `YYYY-MM-DD` — **placeholder; set on publish day** |
+| publication_date | `2026-07-23` |
+| version DOI | `10.5281/zenodo.21500899` |
 | license | MIT |
 | language | eng |
 | access_rights | open |
