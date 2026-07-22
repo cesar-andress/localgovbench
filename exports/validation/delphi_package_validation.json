@@ -1,0 +1,21 @@
+{
+  "validation": "delphi_round1_participant_package",
+  "validated_at_utc": "2026-06-18T09:21:09+00:00",
+  "package_dir": "exports/delphi_round1",
+  "status": "passed",
+  "criteria_count": 25,
+  "dimensions_count": 5,
+  "expected_criteria_count": 25,
+  "expected_dimensions_count": 5,
+  "pdf_present": true,
+  "errors": [],
+  "warnings": [],
+  "files_checked": [
+    "participant_questionnaire.md",
+    "criterion_catalog.csv",
+    "criterion_catalog.xlsx",
+    "participant_instructions.md",
+    "consent_information.md",
+    "participant_questionnaire.pdf"
+  ]
+}

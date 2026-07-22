@@ -1,0 +1,20 @@
+{
+  "instrument": "localgovbench-v0.1",
+  "round": 1,
+  "n_expert_files": 12,
+  "n_experts_with_ratings": 0,
+  "thresholds": {
+    "i_cvi": 0.78,
+    "s_cvi_ave": 0.9,
+    "lawshe_cvr_minimum": 0.62,
+    "agree_minimum_likert": 4
+  },
+  "s_cvi_ave_relevance": null,
+  "s_cvi_ave_clarity": null,
+  "passes_s_cvi_ave_relevance": null,
+  "passes_s_cvi_ave_clarity": null,
+  "per_dimension_i_cvi_average_relevance": {},
+  "per_dimension_i_cvi_average_clarity": {},
+  "items_failing_any_threshold": [],
+  "analysis_status": "awaiting_expert_responses"
+}

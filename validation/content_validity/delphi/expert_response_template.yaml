@@ -1,0 +1,32 @@
+# Expert response template — Delphi Round 1 (one file per pseudonymous expert)
+# Generated copies live in responses/ and are gitignored.
+# Regenerate blanks: python3.12 scripts/generate_expert_response_templates.py
+
+schema_version: "1.0"
+confidential: true
+gitignored: true
+synthetic: false
+expert_id: exp_XXX
+round: 1
+instrument_ref: delphi_round1_instrument.yaml
+instrument_version: v0.1.0
+submitted_at: null
+expert_domain_code: null  # public_administration | legal | technical | municipal_practice
+
+study_framing:
+  construct: Programme-Level Governance Readiness
+  evidence_layer: confidential programme dossier
+  forbidden_basis: public-document observability
+  instruction: >
+    Rate each criterion for assessing a bounded municipal AI/LLM programme dossier using
+    evidence-gated assessor review. Do not rate public AI registers, transparency portals,
+    or open-web documentary observability.
+
+responses:
+  - criterion_id: EXAMPLE_CRITERION_ID
+    dimension_id: EXAMPLE_DIMENSION
+    relevance_1_5: null       # 1–5 Likert; null until completed
+    clarity_1_5: null         # 1–5 Likert; null until completed
+    essential_yes_no: null    # true | false | null (Lawshe essentiality)
+    suggested_revision: null  # optional text; no PII
+    comment: null             # optional text; no PII

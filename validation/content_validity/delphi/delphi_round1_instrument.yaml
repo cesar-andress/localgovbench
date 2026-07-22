@@ -1,112 +1,860 @@
-# Delphi Round 1 — content validity for LocalGovBench v0.1 (25 criteria)
-# Expert panel rates relevance, clarity, and Lawshe essentiality.
+# Delphi Round 1 — generated from LocalGovBench v0.1 (25 criteria)
+# Regenerate: python3.12 scripts/generate_delphi_round1_instrument.py
 # NOT a public-document observability study.
 
-schema_version: "1.0"
+schema_version: '1.1'
+generated_by: scripts/generate_delphi_round1_instrument.py
+generated_on: '2026-06-18'
 study_label: localgovbench_instrument_validation_redevelop
 instrument_version: v0.1.0
 instrument_id: localgovbench-v0.1
+framework_version: '0.1'
 round: 1
-
+synthetic: false
+study_framing:
+  construct: Programme-Level Governance Readiness
+  evidence_layer: confidential programme dossier
+  forbidden_basis: public-document observability
+  instruction: Rate each criterion for assessing a bounded municipal AI/LLM programme dossier using evidence-gated
+    assessor review. Do not rate public AI registers, transparency portals, or open-web documentary observability.
+    Do not assign maturity scores for any municipality in Round 1.
 validation_scope_guard:
   study_type: instrument_content_validity
   unit_of_evaluation: criterion_definitions
-  not_primary_evidence:
-    - public_document_observability
-    - public_ai_registers
-    - open_pilot
-
-instructions: |
-  Rate each criterion for assessing governance readiness of municipal LLM/AI programmes
-  using confidential programme dossiers and evidence-gated assessor review.
-  Do not rate public-register observability or transparency-portal coverage.
-  Do not assign maturity scores for any municipality.
-
+  evidence_basis: confidential programme dossier
+  forbidden_primary_evidence:
+  - public_document_observability
+  - public_ai_registers
+  - transparency_portals
+  - open_pilot
 scales:
-  relevance:
-    range: [1, 5]
+  relevance_1_5:
+    range:
+    - 1
+    - 5
     labels:
       1: not relevant
       2: somewhat relevant
       3: moderately relevant
       4: relevant
       5: highly relevant
-  clarity:
-    range: [1, 5]
+  clarity_1_5:
+    range:
+    - 1
+    - 5
     labels:
       1: very unclear
       5: very clear
-  essential_lawshe:
+  essential_yes_no:
     type: boolean
-    note: Lawshe essentiality for programme-level dossier assessment construct
-
+    note: Lawshe essentiality for programme-level dossier assessment
+maturity_scale_reference:
+  '0':
+    label: Absent
+    description: No observable practice for the criterion.
+  '1':
+    label: Ad hoc
+    description: Practice exists informally without consistent documentation.
+  '2':
+    label: Partially defined
+    description: Documented practice applied inconsistently across teams or sites.
+  '3':
+    label: Managed
+    description: Practice is assigned, monitored, and reviewed on a defined cadence.
+  '4':
+    label: Optimized
+    description: Practice is evidence-informed with continuous improvement mechanisms.
 criteria:
-  - criterion_id: legal_regulatory_gdpr_readiness
-    dimension_id: legal_regulatory
-  - criterion_id: legal_regulatory_ai_act_alignment
-    dimension_id: legal_regulatory
-  - criterion_id: legal_regulatory_data_retention
-    dimension_id: legal_regulatory
-  - criterion_id: legal_regulatory_lawful_basis
-    dimension_id: legal_regulatory
-  - criterion_id: legal_regulatory_cross_border_avoidance
-    dimension_id: legal_regulatory
-  - criterion_id: technical_security_local_architecture
-    dimension_id: technical_security
-  - criterion_id: technical_security_access_control
-    dimension_id: technical_security
-  - criterion_id: technical_security_logging
-    dimension_id: technical_security
-  - criterion_id: technical_security_auditability
-    dimension_id: technical_security
-  - criterion_id: technical_security_model_updates
-    dimension_id: technical_security
-  - criterion_id: organizational_accountability
-    dimension_id: organizational
-  - criterion_id: organizational_ownership
-    dimension_id: organizational
-  - criterion_id: organizational_role_definition
-    dimension_id: organizational
-  - criterion_id: organizational_procurement_governance
-    dimension_id: organizational
-  - criterion_id: organizational_risk_ownership
-    dimension_id: organizational
-  - criterion_id: operational_monitoring
-    dimension_id: operational
-  - criterion_id: operational_incident_response
-    dimension_id: operational
-  - criterion_id: operational_human_oversight
-    dimension_id: operational
-  - criterion_id: operational_documentation
-    dimension_id: operational
-  - criterion_id: operational_lifecycle_management
-    dimension_id: operational
-  - criterion_id: strategic_sovereignty_vendor_independence
-    dimension_id: strategic_sovereignty
-  - criterion_id: strategic_sovereignty_data_sovereignty
-    dimension_id: strategic_sovereignty
-  - criterion_id: strategic_sovereignty_infrastructure_control
-    dimension_id: strategic_sovereignty
-  - criterion_id: strategic_sovereignty_portability
-    dimension_id: strategic_sovereignty
-  - criterion_id: strategic_sovereignty_maintainability
-    dimension_id: strategic_sovereignty
-
-expert_response_template:
-  expert_id: ""
-  round: 1
-  timestamp: ""
-  ratings: []
-    # - criterion_id: legal_regulatory_gdpr_readiness
-    #   relevance: null
-    #   clarity: null
-    #   essential_lawshe: null
-    #   comment: ""
-
+- criterion_id: legal_regulatory_gdpr_readiness
+  dimension_id: legal_regulatory
+  dimension_name: Legal and Regulatory Compliance
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following criterion relevant
+    and clearly worded for programme-level governance readiness assessment? Criterion: GDPR readiness
+    for training, inference, and logging data flows.'
+  criterion_statement: GDPR readiness for training, inference, and logging data flows.
+  documentation_hint: Records of processing, privacy notices, DPIA where applicable, and DPO consultation
+    notes.
+  risk_if_missing: Unlawful or undocumented processing; difficulty demonstrating accountability to supervisory
+    authorities.
+  traceability_references:
+  - governance_requirement: Demonstrate processing accountability
+    source_framework: ART
+    source_concept: Accountability
+    rationale: GDPR accountability principle requires demonstrable compliance for training, inference,
+      and logs.
+  - governance_requirement: Lawful and fair processing
+    source_framework: EU Trustworthy AI
+    source_concept: Privacy and data governance
+    rationale: HLEG trustworthy AI list emphasises data governance alongside fundamental rights.
+  - governance_requirement: Records and DPIA documentation
+    source_framework: AI Act
+    source_concept: Risk management and documentation
+    rationale: Deployer documentation duties intersect with governance records for data-intensive LLM
+      systems.
+  - governance_requirement: Prevent opaque data use
+    source_framework: Mittelstadt et al.
+    source_concept: Inconclusive risk
+    rationale: Undocumented flows obscure harms analogous to informational inconclusiveness in socio-technical
+      systems.
+  synthetic: false
+  response:
+    relevance_1_5: null
+    clarity_1_5: null
+    essential_yes_no: null
+    suggested_revision: null
+    comment: null
+- criterion_id: legal_regulatory_ai_act_alignment
+  dimension_id: legal_regulatory
+  dimension_name: Legal and Regulatory Compliance
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following criterion relevant
+    and clearly worded for programme-level governance readiness assessment? Criterion: EU AI Act alignment
+    documented for the deployer role and use case.'
+  criterion_statement: EU AI Act alignment documented for the deployer role and use case.
+  documentation_hint: Use-case classification memo, risk management notes, human oversight description,
+    and technical documentation references.
+  risk_if_missing: Gaps in deployer obligations and post-deployment monitoring may go unidentified until
+    external audit or incident.
+  traceability_references:
+  - governance_requirement: Align deployer obligations with use case
+    source_framework: ART
+    source_concept: Responsibility
+    rationale: Assigns institutional responsibility for classifying and governing municipal LLM deployments.
+  - governance_requirement: Trustworthy design and deployment
+    source_framework: EU Trustworthy AI
+    source_concept: Technical robustness and safety
+    rationale: ALTAI prompts assessment of safety and robustness before operational reliance.
+  - governance_requirement: Risk-based governance
+    source_framework: AI Act
+    source_concept: Risk management
+    rationale: AI Act risk management expectations inform internal classification and monitoring design.
+  synthetic: false
+  response:
+    relevance_1_5: null
+    clarity_1_5: null
+    essential_yes_no: null
+    suggested_revision: null
+    comment: null
+- criterion_id: legal_regulatory_data_retention
+  dimension_id: legal_regulatory
+  dimension_name: Legal and Regulatory Compliance
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following criterion relevant
+    and clearly worded for programme-level governance readiness assessment? Criterion: Data retention
+    and deletion rules defined for prompts, logs, and embeddings.'
+  criterion_statement: Data retention and deletion rules defined for prompts, logs, and embeddings.
+  documentation_hint: Retention schedule, automated deletion configuration, and backup handling procedures.
+  risk_if_missing: Excessive retention of prompts or logs increases exposure and complicates erasure requests.
+  traceability_references:
+  - governance_requirement: Limit storage of prompts and logs
+    source_framework: ART
+    source_concept: Accountability
+    rationale: Retention rules make processing demonstrable and bounded over time.
+  - governance_requirement: Data minimisation
+    source_framework: EU Trustworthy AI
+    source_concept: Privacy and data governance
+    rationale: Trustworthy AI requires proportionate data use across the lifecycle.
+  - governance_requirement: Storage limitation
+    source_framework: AI Act
+    source_concept: Data governance
+    rationale: Governance of logs and embeddings supports post-market monitoring without excess retention.
+  - governance_requirement: Reduce harm from stale personal data
+    source_framework: Mittelstadt et al.
+    source_concept: Unfair outcomes
+    rationale: Excessive retention increases risk of discriminatory or harmful reuse of interaction data.
+  synthetic: false
+  response:
+    relevance_1_5: null
+    clarity_1_5: null
+    essential_yes_no: null
+    suggested_revision: null
+    comment: null
+- criterion_id: legal_regulatory_lawful_basis
+  dimension_id: legal_regulatory
+  dimension_name: Legal and Regulatory Compliance
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following criterion relevant
+    and clearly worded for programme-level governance readiness assessment? Criterion: Lawful basis and
+    purpose limitation recorded for each data category used.'
+  criterion_statement: Lawful basis and purpose limitation recorded for each data category used.
+  documentation_hint: Lawful basis register entries, purpose statements in system design documents, and
+    data minimization checklist.
+  risk_if_missing: Processing may lack demonstrable legal grounding; harder to justify secondary use of
+    interaction data.
+  traceability_references:
+  - governance_requirement: Document purpose and legal basis
+    source_framework: ART
+    source_concept: Accountability
+    rationale: Purpose limitation and lawful basis are core accountability artefacts under GDPR.
+  - governance_requirement: Lawful processing
+    source_framework: EU Trustworthy AI
+    source_concept: Privacy and data governance
+    rationale: HLEG links lawful processing to trustworthy municipal AI.
+  - governance_requirement: Lawfulness of training and inference data
+    source_framework: AI Act
+    source_concept: Data governance
+    rationale: Deployer governance must trace datasets used in local LLM operations.
+  synthetic: false
+  response:
+    relevance_1_5: null
+    clarity_1_5: null
+    essential_yes_no: null
+    suggested_revision: null
+    comment: null
+- criterion_id: legal_regulatory_cross_border_avoidance
+  dimension_id: legal_regulatory
+  dimension_name: Legal and Regulatory Compliance
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following criterion relevant
+    and clearly worded for programme-level governance readiness assessment? Criterion: Cross-border data
+    transfer avoidance for on-premise workloads.'
+  criterion_statement: Cross-border data transfer avoidance for on-premise workloads.
+  documentation_hint: Architecture diagram showing EU hosting, egress controls, vendor sub-processor list,
+    and network policy excerpts.
+  risk_if_missing: Unintended transfers via APIs, telemetry, or cloud-backed components may undermine
+    sovereignty claims.
+  traceability_references:
+  - governance_requirement: Control data location and egress
+    source_framework: ART
+    source_concept: Responsibility
+    rationale: Institutional responsibility for sovereignty claims over on-premise workloads.
+  - governance_requirement: Resilience and control
+    source_framework: EU Trustworthy AI
+    source_concept: Technical robustness and safety
+    rationale: Operational control supports resilience when external dependencies are limited.
+  - governance_requirement: Sovereign hosting
+    source_framework: AI Act
+    source_concept: Data governance
+    rationale: Data governance for deployers includes knowing where inference and logs reside.
+  - governance_requirement: Avoid hidden external agency
+    source_framework: Mittelstadt et al.
+    source_concept: Misguided agency
+    rationale: Covert cloud egress can misattribute decisions to local authority control.
+  synthetic: false
+  response:
+    relevance_1_5: null
+    clarity_1_5: null
+    essential_yes_no: null
+    suggested_revision: null
+    comment: null
+- criterion_id: technical_security_local_architecture
+  dimension_id: technical_security
+  dimension_name: Technical and Security Readiness
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following criterion relevant
+    and clearly worded for programme-level governance readiness assessment? Criterion: Local deployment
+    architecture documented end-to-end.'
+  criterion_statement: Local deployment architecture documented end-to-end.
+  documentation_hint: Architecture diagrams, component inventory, segmentation model, and secrets management
+    approach.
+  risk_if_missing: Opaque dependencies complicate incident response and sovereignty review.
+  traceability_references:
+  - governance_requirement: Document end-to-end deployment
+    source_framework: ART
+    source_concept: Transparency
+    rationale: Architecture transparency enables oversight of local LLM components.
+  - governance_requirement: Technical robustness
+    source_framework: EU Trustworthy AI
+    source_concept: Technical robustness and safety
+    rationale: HLEG robustness requirement applies to system design documentation.
+  - governance_requirement: Technical documentation
+    source_framework: AI Act
+    source_concept: Documentation and record-keeping
+    rationale: Deployer technical documentation theme for traceable system descriptions.
+  - governance_requirement: Reduce opaque dependencies
+    source_framework: Mittelstadt et al.
+    source_concept: Inconclusive risk
+    rationale: Opaque stacks create inconclusive risk assessment for citizens and auditors.
+  synthetic: false
+  response:
+    relevance_1_5: null
+    clarity_1_5: null
+    essential_yes_no: null
+    suggested_revision: null
+    comment: null
+- criterion_id: technical_security_access_control
+  dimension_id: technical_security
+  dimension_name: Technical and Security Readiness
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following criterion relevant
+    and clearly worded for programme-level governance readiness assessment? Criterion: Access control
+    enforces least privilege for operators and end users.'
+  criterion_statement: Access control enforces least privilege for operators and end users.
+  documentation_hint: IAM role matrix, authentication method description, and periodic access review records.
+  risk_if_missing: Over-privileged accounts increase risk of data exfiltration or model misuse.
+  traceability_references:
+  - governance_requirement: Enforce least privilege
+    source_framework: ART
+    source_concept: Responsibility
+    rationale: Assigns responsibility for access decisions affecting model and data misuse.
+  - governance_requirement: Security and control
+    source_framework: EU Trustworthy AI
+    source_concept: Technical robustness and safety
+    rationale: Access control is a baseline trustworthy AI security practice.
+  - governance_requirement: Cybersecurity governance
+    source_framework: AI Act
+    source_concept: Risk management
+    rationale: Security measures form part of deployer risk management for AI systems.
+  synthetic: false
+  response:
+    relevance_1_5: null
+    clarity_1_5: null
+    essential_yes_no: null
+    suggested_revision: null
+    comment: null
+- criterion_id: technical_security_logging
+  dimension_id: technical_security
+  dimension_name: Technical and Security Readiness
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following criterion relevant
+    and clearly worded for programme-level governance readiness assessment? Criterion: Logging captures
+    security-relevant and operational events without excess personal data.'
+  criterion_statement: Logging captures security-relevant and operational events without excess personal
+    data.
+  documentation_hint: Logging policy, sample log schemas, and redaction or pseudonymization rules.
+  risk_if_missing: Forensics and accountability are weakened after security or safety incidents.
+  traceability_references:
+  - governance_requirement: Security and accountability logging
+    source_framework: ART
+    source_concept: Accountability
+    rationale: Logs support ex-post accountability without unnecessary personal data.
+  - governance_requirement: Traceability of operations
+    source_framework: EU Trustworthy AI
+    source_concept: Transparency
+    rationale: Operational transparency for auditors and oversight bodies.
+  - governance_requirement: Monitoring and logging
+    source_framework: AI Act
+    source_concept: Post-market monitoring
+    rationale: Logging practices underpin monitoring of system behaviour over time.
+  synthetic: false
+  response:
+    relevance_1_5: null
+    clarity_1_5: null
+    essential_yes_no: null
+    suggested_revision: null
+    comment: null
+- criterion_id: technical_security_auditability
+  dimension_id: technical_security
+  dimension_name: Technical and Security Readiness
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following criterion relevant
+    and clearly worded for programme-level governance readiness assessment? Criterion: Auditability supports
+    traceability of configuration and inference changes.'
+  criterion_statement: Auditability supports traceability of configuration and inference changes.
+  documentation_hint: Audit trail configuration, change management tickets, and immutable log store references.
+  risk_if_missing: Inability to reconstruct who changed models, prompts, or policies when investigating
+    harm.
+  traceability_references:
+  - governance_requirement: Immutable audit trails
+    source_framework: ART
+    source_concept: Transparency
+    rationale: Auditability makes configuration and inference changes visible.
+  - governance_requirement: Traceability
+    source_framework: EU Trustworthy AI
+    source_concept: Transparency
+    rationale: Trustworthy AI transparency includes traceable changes.
+  - governance_requirement: Record-keeping
+    source_framework: AI Act
+    source_concept: Documentation and record-keeping
+    rationale: Supports reconstructing deployer actions after incidents.
+  synthetic: false
+  response:
+    relevance_1_5: null
+    clarity_1_5: null
+    essential_yes_no: null
+    suggested_revision: null
+    comment: null
+- criterion_id: technical_security_model_updates
+  dimension_id: technical_security
+  dimension_name: Technical and Security Readiness
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following criterion relevant
+    and clearly worded for programme-level governance readiness assessment? Criterion: Model update management
+    defines testing, approval, and rollback.'
+  criterion_statement: Model update management defines testing, approval, and rollback.
+  documentation_hint: Model change procedure, validation results, version registry, and rollback runbook.
+  risk_if_missing: Uncontrolled updates may introduce drift, bias, or safety regressions without notice.
+  traceability_references:
+  - governance_requirement: Controlled model change
+    source_framework: ART
+    source_concept: Responsibility
+    rationale: Named approval paths for updates assign responsibility for model risk.
+  - governance_requirement: Robustness over lifecycle
+    source_framework: EU Trustworthy AI
+    source_concept: Technical robustness and safety
+    rationale: Lifecycle testing aligns with HLEG safety expectations.
+  - governance_requirement: Risk management of changes
+    source_framework: AI Act
+    source_concept: Risk management
+    rationale: Model updates trigger reassessment under deployer risk management.
+  - governance_requirement: Prevent unreviewed capability shifts
+    source_framework: Mittelstadt et al.
+    source_concept: Inconclusive risk
+    rationale: Sudden model changes without review recreate inconclusive risk for users.
+  synthetic: false
+  response:
+    relevance_1_5: null
+    clarity_1_5: null
+    essential_yes_no: null
+    suggested_revision: null
+    comment: null
+- criterion_id: organizational_accountability
+  dimension_id: organizational
+  dimension_name: Organizational Governance
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following criterion relevant
+    and clearly worded for programme-level governance readiness assessment? Criterion: Accountability
+    structures link AI outcomes to public service responsibilities.'
+  criterion_statement: Accountability structures link AI outcomes to public service responsibilities.
+  documentation_hint: Governance charter excerpt, committee terms of reference, and service owner nomination.
+  risk_if_missing: Responsibility may be diffused between IT vendors and line managers after failures.
+  traceability_references:
+  - governance_requirement: Link AI outcomes to public duties
+    source_framework: ART
+    source_concept: Accountability
+    rationale: Core ART construct operationalised for municipal LLM programmes.
+  - governance_requirement: Organisational governance
+    source_framework: EU Trustworthy AI
+    source_concept: Human agency and oversight
+    rationale: Institutional governance enables human agency at organisational level.
+  - governance_requirement: Governance structure
+    source_framework: AI Act
+    source_concept: Risk management
+    rationale: Accountability structures support AI Act governance of deployer duties.
+  synthetic: false
+  response:
+    relevance_1_5: null
+    clarity_1_5: null
+    essential_yes_no: null
+    suggested_revision: null
+    comment: null
+- criterion_id: organizational_ownership
+  dimension_id: organizational
+  dimension_name: Organizational Governance
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following criterion relevant
+    and clearly worded for programme-level governance readiness assessment? Criterion: Ownership assigns
+    sustained stewardship for each on-premise LLM system.'
+  criterion_statement: Ownership assigns sustained stewardship for each on-premise LLM system.
+  documentation_hint: RACI or ownership matrix, service catalogue entries, and escalation contacts.
+  risk_if_missing: Systems may become orphaned when staff rotate or projects end.
+  traceability_references:
+  - governance_requirement: Sustained service ownership
+    source_framework: ART
+    source_concept: Responsibility
+    rationale: Ownership assigns ongoing responsibility beyond project phases.
+  - governance_requirement: Clear roles
+    source_framework: EU Trustworthy AI
+    source_concept: Human agency and oversight
+    rationale: Ownership clarifies who exercises oversight on behalf of the public.
+  - governance_requirement: Governance roles
+    source_framework: AI Act
+    source_concept: Risk management
+    rationale: Risk owners identified for deployer obligations.
+  synthetic: false
+  response:
+    relevance_1_5: null
+    clarity_1_5: null
+    essential_yes_no: null
+    suggested_revision: null
+    comment: null
+- criterion_id: organizational_role_definition
+  dimension_id: organizational
+  dimension_name: Organizational Governance
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following criterion relevant
+    and clearly worded for programme-level governance readiness assessment? Criterion: Role definitions
+    cover legal, technical, data, and operational functions.'
+  criterion_statement: Role definitions cover legal, technical, data, and operational functions.
+  documentation_hint: Role descriptions, training plans, and interdisciplinary workshop minutes.
+  risk_if_missing: Critical safeguards may be assumed rather than assigned to named roles.
+  traceability_references:
+  - governance_requirement: Interdisciplinary roles
+    source_framework: ART
+    source_concept: Responsibility
+    rationale: Defines who is responsible for legal, technical, and operational safeguards.
+  - governance_requirement: Competence and training
+    source_framework: EU Trustworthy AI
+    source_concept: Human agency and oversight
+    rationale: Role clarity supports meaningful staff agency in AI operations.
+  - governance_requirement: Organisational measures
+    source_framework: AI Act
+    source_concept: Risk management
+    rationale: Human resources measures in risk management systems.
+  synthetic: false
+  response:
+    relevance_1_5: null
+    clarity_1_5: null
+    essential_yes_no: null
+    suggested_revision: null
+    comment: null
+- criterion_id: organizational_procurement_governance
+  dimension_id: organizational
+  dimension_name: Organizational Governance
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following criterion relevant
+    and clearly worded for programme-level governance readiness assessment? Criterion: Procurement governance
+    addresses AI components, support, and exit.'
+  criterion_statement: Procurement governance addresses AI components, support, and exit.
+  documentation_hint: Contract clauses on model updates, SLAs, audit rights, and transition assistance.
+  risk_if_missing: Vendor lock-in and unclear exit paths can constrain future sovereignty choices.
+  traceability_references:
+  - governance_requirement: Contractual governance of vendors
+    source_framework: ART
+    source_concept: Responsibility
+    rationale: Procurement assigns responsibility for vendor performance and exit.
+  - governance_requirement: Diversity and fairness in supply chain
+    source_framework: EU Trustworthy AI
+    source_concept: Diversity, non-discrimination and fairness
+    rationale: Fair procurement reduces biased or opaque vendor dependencies.
+  - governance_requirement: Supply chain governance
+    source_framework: AI Act
+    source_concept: Risk management
+    rationale: Governance of third-party components in deployer risk programmes.
+  - governance_requirement: Avoid lock-in harms
+    source_framework: Mittelstadt et al.
+    source_concept: Unfair outcomes
+    rationale: Lock-in can unfairly limit future municipal choices and public value.
+  synthetic: false
+  response:
+    relevance_1_5: null
+    clarity_1_5: null
+    essential_yes_no: null
+    suggested_revision: null
+    comment: null
+- criterion_id: organizational_risk_ownership
+  dimension_id: organizational
+  dimension_name: Organizational Governance
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following criterion relevant
+    and clearly worded for programme-level governance readiness assessment? Criterion: Risk ownership
+    assigns identification, treatment, and reporting of AI risks.'
+  criterion_statement: Risk ownership assigns identification, treatment, and reporting of AI risks.
+  documentation_hint: Risk register entries, risk appetite statement, and periodic review cadence.
+  risk_if_missing: Risks may be tracked only as technical issues without public-value framing.
+  traceability_references:
+  - governance_requirement: Institutional risk register
+    source_framework: ART
+    source_concept: Accountability
+    rationale: Risk ownership makes AI risks accountable to governance bodies.
+  - governance_requirement: Risk-based approach
+    source_framework: EU Trustworthy AI
+    source_concept: Technical robustness and safety
+    rationale: HLEG expects proportionate risk identification and mitigation.
+  - governance_requirement: Risk management system
+    source_framework: AI Act
+    source_concept: Risk management
+    rationale: Direct mapping to AI Act risk management theme.
+  - governance_requirement: Surface structural harms
+    source_framework: Mittelstadt et al.
+    source_concept: Inconclusive risk
+    rationale: Unowned risks remain inconclusive for affected communities.
+  synthetic: false
+  response:
+    relevance_1_5: null
+    clarity_1_5: null
+    essential_yes_no: null
+    suggested_revision: null
+    comment: null
+- criterion_id: operational_monitoring
+  dimension_id: operational
+  dimension_name: Operational Management
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following criterion relevant
+    and clearly worded for programme-level governance readiness assessment? Criterion: Monitoring tracks
+    performance, safety signals, and resource use.'
+  criterion_statement: Monitoring tracks performance, safety signals, and resource use.
+  documentation_hint: Monitoring dashboards, alert thresholds, and sample review reports.
+  risk_if_missing: Degradation, abuse, or cost overruns may persist without timely detection.
+  traceability_references:
+  - governance_requirement: Operational performance and safety monitoring
+    source_framework: ART
+    source_concept: Accountability
+    rationale: Monitoring enables accountable response to degradation or misuse.
+  - governance_requirement: Reliability monitoring
+    source_framework: EU Trustworthy AI
+    source_concept: Technical robustness and safety
+    rationale: Continuous monitoring supports robustness claims.
+  - governance_requirement: Post-market monitoring
+    source_framework: AI Act
+    source_concept: Post-market monitoring
+    rationale: Operational metrics feed deployer monitoring duties.
+  synthetic: false
+  response:
+    relevance_1_5: null
+    clarity_1_5: null
+    essential_yes_no: null
+    suggested_revision: null
+    comment: null
+- criterion_id: operational_incident_response
+  dimension_id: operational
+  dimension_name: Operational Management
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following criterion relevant
+    and clearly worded for programme-level governance readiness assessment? Criterion: Incident response
+    covers harmful outputs, outages, and security events.'
+  criterion_statement: Incident response covers harmful outputs, outages, and security events.
+  documentation_hint: Incident response plan, tabletop exercise records, and post-incident review template.
+  risk_if_missing: Slow or inconsistent response can amplify harm to citizens and staff.
+  traceability_references:
+  - governance_requirement: Respond to harmful outputs and outages
+    source_framework: ART
+    source_concept: Responsibility
+    rationale: Incident response assigns responsibility for remediation.
+  - governance_requirement: Serious incident handling
+    source_framework: EU Trustworthy AI
+    source_concept: Technical robustness and safety
+    rationale: Preparedness aligns with safety and robustness expectations.
+  - governance_requirement: Serious incidents
+    source_framework: AI Act
+    source_concept: Post-market monitoring
+    rationale: Reporting and response linked to post-market monitoring themes.
+  - governance_requirement: Mitigate unfair harm
+    source_framework: Mittelstadt et al.
+    source_concept: Unfair outcomes
+    rationale: Slow response can allow unfair harms to citizens to accumulate.
+  synthetic: false
+  response:
+    relevance_1_5: null
+    clarity_1_5: null
+    essential_yes_no: null
+    suggested_revision: null
+    comment: null
+- criterion_id: operational_human_oversight
+  dimension_id: operational
+  dimension_name: Operational Management
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following criterion relevant
+    and clearly worded for programme-level governance readiness assessment? Criterion: Human oversight
+    is defined where outputs influence decisions or communications.'
+  criterion_statement: Human oversight is defined where outputs influence decisions or communications.
+  documentation_hint: Oversight procedures, sampling protocols, and appeal or correction pathways.
+  risk_if_missing: Automation bias and unreviewed errors may reach citizens or caseworkers.
+  traceability_references:
+  - governance_requirement: Human review of consequential outputs
+    source_framework: ART
+    source_concept: Responsibility
+    rationale: Oversight assigns humans responsibility for consequential decisions.
+  - governance_requirement: Meaningful human intervention
+    source_framework: Meaningful Human Control
+    source_concept: Human-in-the-loop / on-the-loop
+    rationale: Criterion operationalises meaningful human control for local LLM outputs.
+  - governance_requirement: Human oversight
+    source_framework: EU Trustworthy AI
+    source_concept: Human agency and oversight
+    rationale: Direct HLEG requirement for human agency and oversight.
+  - governance_requirement: Human oversight measures
+    source_framework: AI Act
+    source_concept: Human oversight
+    rationale: Maps to AI Act human oversight obligations for deployers.
+  - governance_requirement: Counter automation bias
+    source_framework: Mittelstadt et al.
+    source_concept: Misguided agency
+    rationale: Absent oversight risks misguided agency where users over-trust automation.
+  synthetic: false
+  response:
+    relevance_1_5: null
+    clarity_1_5: null
+    essential_yes_no: null
+    suggested_revision: null
+    comment: null
+- criterion_id: operational_documentation
+  dimension_id: operational
+  dimension_name: Operational Management
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following criterion relevant
+    and clearly worded for programme-level governance readiness assessment? Criterion: Documentation covers
+    prompts, configurations, known limitations, and user guidance.'
+  criterion_statement: Documentation covers prompts, configurations, known limitations, and user guidance.
+  documentation_hint: System documentation set, prompt registry, and operator handbook.
+  risk_if_missing: Knowledge loss and inconsistent operation across shifts or sites.
+  traceability_references:
+  - governance_requirement: Maintain prompts and limitations
+    source_framework: ART
+    source_concept: Transparency
+    rationale: Documentation makes system behaviour transparent to operators.
+  - governance_requirement: Explainability and communication
+    source_framework: EU Trustworthy AI
+    source_concept: Transparency
+    rationale: Internal transparency supports trustworthy communication.
+  - governance_requirement: Instructions for use
+    source_framework: AI Act
+    source_concept: Transparency
+    rationale: Operator documentation parallels transparency to deployers and staff.
+  synthetic: false
+  response:
+    relevance_1_5: null
+    clarity_1_5: null
+    essential_yes_no: null
+    suggested_revision: null
+    comment: null
+- criterion_id: operational_lifecycle_management
+  dimension_id: operational
+  dimension_name: Operational Management
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following criterion relevant
+    and clearly worded for programme-level governance readiness assessment? Criterion: Lifecycle management
+    covers pilot, production, scaling, and decommissioning.'
+  criterion_statement: Lifecycle management covers pilot, production, scaling, and decommissioning.
+  documentation_hint: Lifecycle stage gates, decommission checklist, and archival policy.
+  risk_if_missing: Experimental systems may remain in de facto production without controls.
+  traceability_references:
+  - governance_requirement: Stage-gate pilot to decommission
+    source_framework: ART
+    source_concept: Accountability
+    rationale: Lifecycle gates maintain accountability as systems mature.
+  - governance_requirement: Lifecycle governance
+    source_framework: EU Trustworthy AI
+    source_concept: Technical robustness and safety
+    rationale: Controlled transitions reduce safety gaps.
+  - governance_requirement: Lifecycle risk management
+    source_framework: AI Act
+    source_concept: Risk management
+    rationale: Risk reassessment across lifecycle stages.
+  synthetic: false
+  response:
+    relevance_1_5: null
+    clarity_1_5: null
+    essential_yes_no: null
+    suggested_revision: null
+    comment: null
+- criterion_id: strategic_sovereignty_vendor_independence
+  dimension_id: strategic_sovereignty
+  dimension_name: Strategic Sovereignty
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following criterion relevant
+    and clearly worded for programme-level governance readiness assessment? Criterion: Vendor independence
+    reduces reliance on single proprietary stacks.'
+  criterion_statement: Vendor independence reduces reliance on single proprietary stacks.
+  documentation_hint: Alternative supplier analysis, open standards usage, and contingency planning.
+  risk_if_missing: Negotiating power and optionality decline as dependencies deepen.
+  traceability_references:
+  - governance_requirement: Reduce single-vendor dependence
+    source_framework: ART
+    source_concept: Responsibility
+    rationale: Strategic responsibility for long-term optionality.
+  - governance_requirement: Diversity of supply
+    source_framework: EU Trustworthy AI
+    source_concept: Diversity, non-discrimination and fairness
+    rationale: Vendor diversity mitigates structural dependency risks.
+  - governance_requirement: Supply chain resilience
+    source_framework: AI Act
+    source_concept: Risk management
+    rationale: Third-party risk in deployer governance.
+  - governance_requirement: Avoid coercive lock-in
+    source_framework: Mittelstadt et al.
+    source_concept: Unfair outcomes
+    rationale: Dependency can produce unfair bargaining outcomes for municipalities.
+  synthetic: false
+  response:
+    relevance_1_5: null
+    clarity_1_5: null
+    essential_yes_no: null
+    suggested_revision: null
+    comment: null
+- criterion_id: strategic_sovereignty_data_sovereignty
+  dimension_id: strategic_sovereignty
+  dimension_name: Strategic Sovereignty
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following criterion relevant
+    and clearly worded for programme-level governance readiness assessment? Criterion: Data sovereignty
+    ensures primary data and models remain under institutional control.'
+  criterion_statement: Data sovereignty ensures primary data and models remain under institutional control.
+  documentation_hint: Data residency statement, on-prem storage design, and third-party access restrictions.
+  risk_if_missing: Sensitive public sector data may be exposed to external inference or training pipelines.
+  traceability_references:
+  - governance_requirement: Institutional control of data and models
+    source_framework: ART
+    source_concept: Accountability
+    rationale: Sovereignty claims require demonstrable control over data assets.
+  - governance_requirement: Privacy and data governance
+    source_framework: EU Trustworthy AI
+    source_concept: Privacy and data governance
+    rationale: Data sovereignty supports privacy-by-design for local LLMs.
+  - governance_requirement: Data governance
+    source_framework: AI Act
+    source_concept: Data governance
+    rationale: Aligns with deployer data governance expectations.
+  synthetic: false
+  response:
+    relevance_1_5: null
+    clarity_1_5: null
+    essential_yes_no: null
+    suggested_revision: null
+    comment: null
+- criterion_id: strategic_sovereignty_infrastructure_control
+  dimension_id: strategic_sovereignty
+  dimension_name: Strategic Sovereignty
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following criterion relevant
+    and clearly worded for programme-level governance readiness assessment? Criterion: Infrastructure
+    control covers hosting, networking, and capacity planning.'
+  criterion_statement: Infrastructure control covers hosting, networking, and capacity planning.
+  documentation_hint: Infrastructure ownership model, capacity plan, and disaster recovery design.
+  risk_if_missing: Service continuity and security depend on opaque external platforms.
+  traceability_references:
+  - governance_requirement: Own hosting and capacity
+    source_framework: ART
+    source_concept: Responsibility
+    rationale: Infrastructure control is a strategic responsibility for continuity.
+  - governance_requirement: Resilience
+    source_framework: EU Trustworthy AI
+    source_concept: Technical robustness and safety
+    rationale: Resilient infrastructure underpins trustworthy operation.
+  - governance_requirement: Operational resilience
+    source_framework: AI Act
+    source_concept: Risk management
+    rationale: Business continuity in risk management programmes.
+  synthetic: false
+  response:
+    relevance_1_5: null
+    clarity_1_5: null
+    essential_yes_no: null
+    suggested_revision: null
+    comment: null
+- criterion_id: strategic_sovereignty_portability
+  dimension_id: strategic_sovereignty
+  dimension_name: Strategic Sovereignty
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following criterion relevant
+    and clearly worded for programme-level governance readiness assessment? Criterion: Portability supports
+    migration of models, prompts, and evaluation assets.'
+  criterion_statement: Portability supports migration of models, prompts, and evaluation assets.
+  documentation_hint: Export formats, container images, and migration test results.
+  risk_if_missing: Switching costs may block adoption of improved local models or policies.
+  traceability_references:
+  - governance_requirement: Migrate models and prompts
+    source_framework: ART
+    source_concept: Transparency
+    rationale: Portability makes technical commitments auditable and reversible.
+  - governance_requirement: Reversibility and contestability
+    source_framework: EU Trustworthy AI
+    source_concept: Human agency and oversight
+    rationale: Portability supports contestability when systems fail citizens.
+  - governance_requirement: Interoperability
+    source_framework: AI Act
+    source_concept: Risk management
+    rationale: Reduces dependency risk in technical governance.
+  synthetic: false
+  response:
+    relevance_1_5: null
+    clarity_1_5: null
+    essential_yes_no: null
+    suggested_revision: null
+    comment: null
+- criterion_id: strategic_sovereignty_maintainability
+  dimension_id: strategic_sovereignty
+  dimension_name: Strategic Sovereignty
+  assessment_question: 'For a bounded municipal AI/LLM programme dossier, is the following criterion relevant
+    and clearly worded for programme-level governance readiness assessment? Criterion: Long-term maintainability
+    plans staffing, upgrades, and technical debt management.'
+  criterion_statement: Long-term maintainability plans staffing, upgrades, and technical debt management.
+  documentation_hint: Roadmap, budget lines, and skills development plan for sustaining on-prem AI.
+  risk_if_missing: Systems may become unsupported while still handling citizen-facing workloads.
+  traceability_references:
+  - governance_requirement: Sustain staffing and upgrades
+    source_framework: ART
+    source_concept: Responsibility
+    rationale: Long-term maintainability is a governance responsibility, not only IT.
+  - governance_requirement: Long-term societal wellbeing
+    source_framework: EU Trustworthy AI
+    source_concept: Societal and environmental wellbeing
+    rationale: Sustainable operation aligns with HLEG societal wellbeing dimension.
+  - governance_requirement: Lifecycle resource planning
+    source_framework: AI Act
+    source_concept: Risk management
+    rationale: Resource planning for ongoing compliance and monitoring.
+  synthetic: false
+  response:
+    relevance_1_5: null
+    clarity_1_5: null
+    essential_yes_no: null
+    suggested_revision: null
+    comment: null
 analysis_thresholds:
   icvi_minimum: 0.78
-  target_s_cvi_ave: 0.90
-
+  target_s_cvi_ave: 0.9
 response_storage:
   path: validation/content_validity/delphi/responses/
   gitignore: true
+generation_report:
+  criteria_count: 25
+  dimensions_count: 5
+  missing_traceability_mappings: []

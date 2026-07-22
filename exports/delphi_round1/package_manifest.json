@@ -1,0 +1,26 @@
+{
+  "package": "delphi_round1_participant",
+  "generated_on": "2026-06-18",
+  "generated_at_utc": "2026-06-18T09:21:09+00:00",
+  "instrument_version": "v0.1.0",
+  "framework_version": "0.1",
+  "round": 1,
+  "criteria_count": 25,
+  "dimensions_count": 5,
+  "source_of_truth": [
+    "localgovbench/framework/dimensions.py",
+    "data/traceability/indicator_mapping.csv"
+  ],
+  "files": [
+    "participant_questionnaire.md",
+    "participant_questionnaire.pdf",
+    "criterion_catalog.csv",
+    "criterion_catalog.xlsx",
+    "participant_instructions.md",
+    "consent_information.md"
+  ],
+  "pdf_status": {
+    "written": true,
+    "note": "generated via wkhtmltopdf"
+  }
+}

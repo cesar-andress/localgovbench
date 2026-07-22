@@ -89,6 +89,10 @@ def _is_pattern_definition_line(line: str) -> bool:
         return True
     if stripped.startswith("patterns:"):
         return True
+    if re.match(r"^forbidden_basis:", stripped):
+        return True
+    if re.match(r"^forbidden_primary_evidence:", stripped):
+        return True
     return False
 
 

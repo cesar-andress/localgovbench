@@ -43,8 +43,8 @@ Collection date: 2026-06-24. PSTW filter: Primary Technology = Artificial Intell
 | Level | Label | Criteria count |
 |------:|-------|---------------:|
 | 0 | no_public_field | 7 |
-| 1 | weak_metadata_proxy | 10 |
-| 2 | partial_programme_level_signal | 8 |
+| 1 | weak_metadata_proxy | 14 |
+| 2 | partial_programme_level_signal | 4 |
 | 3 | named_public_artefact_possible | 0 |
 | 4 | full_evidence_gate_reachable | 0 |
 
@@ -76,9 +76,9 @@ Collection date: 2026-06-24. PSTW filter: Primary Technology = Artificial Intell
 
 | Scenario | Records | Retained % | Internal % | Gate unreachable % | Shortfall L0/L1/L2/L3/L4 |
 |----------|--------:|-----------:|-----------:|-------------------:|----------------------------|
-| A all records | 7,434 | 100.0 | 60.0 | 100.0 | 7 / 10 / 8 / 0 / 0 |
-| B min information | 5,204 | 70.0 | 60.0 | 100.0 | 7 / 10 / 8 / 0 / 0 |
-| C exclude high complexity | 6,685 | 89.9 | 60.0 | 100.0 | 7 / 10 / 8 / 0 / 0 |
+| A all records | 7,434 | 100.0 | 60.0 | 100.0 | 7 / 14 / 4 / 0 / 0 |
+| B min information | 5,204 | 70.0 | 60.0 | 100.0 | 7 / 14 / 4 / 0 / 0 |
+| C exclude high complexity | 6,685 | 89.9 | 60.0 | 100.0 | 7 / 14 / 4 / 0 / 0 |
 
 Partition changes vs A: **0 criteria**. Gate changes: **0**.
 
