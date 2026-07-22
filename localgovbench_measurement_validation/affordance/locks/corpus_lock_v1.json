@@ -18,8 +18,8 @@
   ],
   "corpus_filename": "pilot_programme_records.csv",
   "corpus_lock_version": "1.0.0",
-  "generation_timestamp_utc": "2026-07-22T23:39:32.256448+00:00",
-  "git_commit_hash_at_generation": "ff85e82c05ae48e2992736dcc21eb8124b9184d5",
+  "generation_timestamp_utc": "2026-07-22T23:11:30.807519+00:00",
+  "git_commit_hash_at_generation": "95f3de8f1a2da7da81f195dcfc1297ec8e8a2512",
   "notes": [
     "Observed schema fields must be derived only from raw_fields_json.",
     "SOURCE_SCHEMAS is not evidence of field existence.",
