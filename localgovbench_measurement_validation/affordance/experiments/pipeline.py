@@ -92,8 +92,14 @@ def run_affordance_experiment(
         expected_units=expected_units,
     )
 
+    if expected_units is None and not require_complete:
+        expected_units = {
+            f"{r.get('source_name')}__{r.get('disclosure_function_id')}"
+            for r in finalized
+        }
+
     matrix = build_schema_affordance_matrix(finalized, experiment_id=experiment_id)
-    matrix_errors = validate_matrix(matrix)
+    matrix_errors = validate_matrix(matrix, expected_units=expected_units)
     matrix_units = {f"{r['source_name']}__{r['disclosure_function_id']}" for r in matrix}
     matrix_errors.extend(validate_merge_log(merge_log, matrix_units))
 
@@ -194,6 +200,11 @@ def run_single_coder_matrix(
         if not row.get("adjudication_status"):
             row["adjudication_status"] = "not_required"
 
+    if expected_units is None and not require_complete:
+        expected_units = {
+            f"{r.get('source_name')}__{r.get('disclosure_function_id')}" for r in rows
+        }
+
     outputs = output_root or EXPERIMENT_OUTPUTS
     manifests = (output_root / "manifests") if output_root else EXPERIMENT_MANIFESTS
     provenance_dir = (
@@ -206,7 +217,7 @@ def run_single_coder_matrix(
         d.mkdir(parents=True, exist_ok=True)
 
     matrix = build_schema_affordance_matrix(rows, experiment_id=experiment_id)
-    errors = validate_matrix(matrix)
+    errors = validate_matrix(matrix, expected_units=expected_units)
     written = export_dataset(
         matrix, outputs / f"{experiment_id}_schema_affordance_matrix", columns=MATRIX_COLUMNS
     )

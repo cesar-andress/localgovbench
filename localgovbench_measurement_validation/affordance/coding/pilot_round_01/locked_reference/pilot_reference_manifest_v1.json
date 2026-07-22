@@ -1,0 +1,71 @@
+{
+  "coding_version": "1.0.0",
+  "corpus_lock_sha256": "12ea6282efcf338d362c8eb91a9beffe8dd7eae9f70aa2805723b386c9c8d693",
+  "files": [
+    {
+      "name": "codebook",
+      "path": "localgovbench_measurement_validation/affordance/coding/config/codebook_affordance_v1.md",
+      "sha256": "9ee17caec2fe4ee245f83108277c2bfe9c54ac7b07bc279f3e72314c17f8d277"
+    },
+    {
+      "name": "coder_instructions",
+      "path": "localgovbench_measurement_validation/affordance/coding/config/coder_instructions_v1.md",
+      "sha256": "1d2b23323d5f79abc396bc3dd131da4f6306769fe9762ae62565bcb59859ce5f"
+    },
+    {
+      "name": "worked_examples",
+      "path": "localgovbench_measurement_validation/affordance/coding/examples/worked_examples_v1.md",
+      "sha256": "20f94949bb3e96f762107bf681b5402e71e21670c9c59da79fd042ffd6c7b4b1"
+    },
+    {
+      "name": "coding_record_schema",
+      "path": "localgovbench_measurement_validation/affordance/coding/config/schema_coding_record_v1.schema.json",
+      "sha256": "af4048fd4d5eae5937707238386f82505d70bdc41c581d6bcedc180e686d06ad"
+    },
+    {
+      "name": "coding_labels",
+      "path": "localgovbench_measurement_validation/affordance/coding/config/coding_labels_v1.yaml",
+      "sha256": "1225cff1a213b5c285f615ce3979c68fe509a31a1ec547f87915bed7058f1300"
+    },
+    {
+      "name": "double_coding_protocol",
+      "path": "localgovbench_measurement_validation/affordance/coding/config/double_coding_protocol_v1.md",
+      "sha256": "3e4bedc23dc928dd334b6fbdff3e1d8af373804eac1cb67e839e052197f46a28"
+    },
+    {
+      "name": "adjudication_protocol",
+      "path": "localgovbench_measurement_validation/affordance/coding/adjudication/adjudication_protocol_v1.md",
+      "sha256": "32d24cf6280c46640464fece5a33eb33d6dff76cd2f2431a8ea9a09b7913688f"
+    },
+    {
+      "name": "irr_analysis_plan",
+      "path": "localgovbench_measurement_validation/affordance/coding/config/irr_analysis_plan_v1.md",
+      "sha256": "5f4bcbef672567323428a140c6df00728c87765a9d63b7beb35b7e3e2a045540"
+    },
+    {
+      "name": "pilot_manifest",
+      "path": "localgovbench_measurement_validation/affordance/coding/templates/pilot_coding_manifest_v1.csv",
+      "sha256": "ce3cba28ddffdef61f2f2708fb89602150ed03e5378693f1550be05e57166a39"
+    },
+    {
+      "name": "schema_coding_template",
+      "path": "localgovbench_measurement_validation/affordance/coding/templates/schema_coding_template_v1.csv",
+      "sha256": "4161cd63d01da2d26e3eee34ffbd420d96bf0b046a58aa8da7299e1e9ab7fe53"
+    },
+    {
+      "name": "corpus_lock",
+      "path": "localgovbench_measurement_validation/affordance/locks/corpus_lock_v1.json",
+      "sha256": "3e86e0bb7a8368102fe845d5f89f8be1a513f19f53a0126dc8cec638b77d9dc6"
+    },
+    {
+      "name": "disclosure_functions",
+      "path": "localgovbench_measurement_validation/affordance/config/disclosure_functions_v1.yaml",
+      "sha256": "e3114ffc3a851db91d1d05ec8bb3c08d2df1a86e373d600f7bb8801327f2c850"
+    }
+  ],
+  "generation_timestamp_utc": "2026-07-22T23:46:19+00:00",
+  "generator_command": "python3.12 -m localgovbench_measurement_validation.affordance.coding.pilot_launch generate",
+  "git_commit": "93b8efd5868c392f180334b31e892278ca2997d7",
+  "pilot_round_id": "pilot_round_01",
+  "specification_version": "1.0.0"
+}

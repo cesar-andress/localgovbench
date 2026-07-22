@@ -36,14 +36,18 @@ FORBIDDEN_RESULT_KEYS = {
 }
 
 
-def validate_matrix(rows: list[dict[str, Any]]) -> list[str]:
+def validate_matrix(
+    rows: list[dict[str, Any]],
+    *,
+    expected_units: set[str] | None = None,
+) -> list[str]:
     errors: list[str] = []
     if not rows:
         return ["matrix is empty"]
 
     lock = load_corpus_lock()
     functions = {f["id"] for f in load_functions()}
-    expected = set(expected_unit_ids())
+    expected = set(expected_units) if expected_units is not None else set(expected_unit_ids())
     seen: list[str] = []
 
     for i, row in enumerate(rows, start=1):

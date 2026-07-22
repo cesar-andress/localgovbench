@@ -23,7 +23,6 @@ from localgovbench_measurement_validation.affordance.paths import (
     FIELD_FUNCTION_CANDIDATES_CSV,
     FIELD_NORMALIZATION_YAML,
     OBJECT_LAYER_BY_SOURCE,
-    SCHEMA_INVENTORY_CSV,
 )
 from localgovbench_measurement_validation.affordance.schema_inventory import (
     build_schema_inventory,
@@ -219,11 +218,27 @@ def test_inventory_deterministic(corpus_lock, tmp_path):
     assert inv1 == inv2
 
 
-def test_write_lock_and_inventory_roundtrip(corpus_lock, inventory):
+def test_write_lock_and_inventory_roundtrip(corpus_lock, inventory, tmp_path, monkeypatch):
+    """Write roundtrip must not mutate frozen on-disk lock/inventory artefacts."""
+    import localgovbench_measurement_validation.affordance.corpus_lock as corpus_lock_mod
+    import localgovbench_measurement_validation.affordance.schema_inventory as inventory_mod
+
+    lock_json = tmp_path / "corpus_lock_v1.json"
+    lock_md = tmp_path / "corpus_lock_v1.md"
+    inv_csv = tmp_path / "schema_inventory_v1.csv"
+    inv_json = tmp_path / "schema_inventory_v1.json"
+
+    monkeypatch.setattr(corpus_lock_mod, "CORPUS_LOCK_JSON", lock_json)
+    monkeypatch.setattr(corpus_lock_mod, "CORPUS_LOCK_MD", lock_md)
+    monkeypatch.setattr(inventory_mod, "SCHEMA_INVENTORY_CSV", inv_csv)
+    monkeypatch.setattr(inventory_mod, "SCHEMA_INVENTORY_JSON", inv_json)
+
     write_corpus_lock(corpus_lock)
     write_schema_inventory(inventory)
-    assert SCHEMA_INVENTORY_CSV.is_file()
-    with SCHEMA_INVENTORY_CSV.open(encoding="utf-8", newline="") as handle:
+    assert lock_json.is_file()
+    assert lock_md.is_file()
+    assert inv_csv.is_file()
+    with inv_csv.open(encoding="utf-8", newline="") as handle:
         rows = list(csv.DictReader(handle))
     assert len(rows) == len(inventory)
     assert sum(int(r["source_record_count"]) for r in rows) >= 7434
