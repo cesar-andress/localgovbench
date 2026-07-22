@@ -34,6 +34,9 @@ LINKAGE_FIELD_TYPES_CSV = CONFIG_DIR / "linkage_field_types_v1.csv"
 SCHEMA_INVENTORY_VERSION = "1.0.0"
 CORPUS_LOCK_VERSION = "1.0.0"
 
+# Phase 2 coding layer (see affordance/coding/)
+CODING_ROOT = AFFORDANCE_ROOT / "coding"
+
 OBJECT_LAYER_BY_SOURCE: dict[str, str] = {
     "US-OMB-2025": "use_case_inventory",
     "CA-GC-AI-REG": "ai_system_register",

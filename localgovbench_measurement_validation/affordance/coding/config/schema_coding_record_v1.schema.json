@@ -1,0 +1,196 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema_coding_record_v1.schema.json",
+  "title": "Schema coding record v1",
+  "description": "One human judgment for schema_object × disclosure_function under Disclosure Functions v1.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "coding_record_id",
+    "coding_round_id",
+    "coder_id",
+    "coding_timestamp",
+    "specification_version",
+    "corpus_lock_reference",
+    "schema_inventory_reference",
+    "source_name",
+    "schema_object_id",
+    "schema_object_type",
+    "disclosure_function_id",
+    "applicability_label",
+    "support_level",
+    "encoding_type",
+    "documentary_linkage_layer",
+    "coder_confidence",
+    "adjudication_status"
+  ],
+  "properties": {
+    "coding_record_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Stable unique id for this completed coding row."
+    },
+    "coding_round_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "coder_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "coding_timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "specification_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "corpus_lock_reference": {
+      "type": "string",
+      "minLength": 64,
+      "maxLength": 64,
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "schema_inventory_reference": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_name": {
+      "type": "string",
+      "enum": [
+        "US-OMB-2025",
+        "CA-GC-AI-REG",
+        "NL-ALGO-REG",
+        "EU-PSTW",
+        "UK-ATRS"
+      ]
+    },
+    "schema_object_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Canonical object id; equals source_name in v1."
+    },
+    "schema_object_type": {
+      "type": "string",
+      "enum": [
+        "use_case_inventory",
+        "ai_system_register",
+        "algorithm_register",
+        "case_catalogue",
+        "search_api_slim"
+      ]
+    },
+    "disclosure_function_id": {
+      "type": "string",
+      "enum": [
+        "cf_system_identity",
+        "cf_purpose",
+        "cf_operational_status",
+        "cf_accountable_body",
+        "cf_data_involvement",
+        "om_human_oversight",
+        "om_risk_or_impact",
+        "om_legal_basis",
+        "om_supplier",
+        "om_technical_method",
+        "om_redress_pointer"
+      ]
+    },
+    "applicability_label": {
+      "type": "string",
+      "enum": [
+        "universal",
+        "conditional",
+        "jurisdiction_specific",
+        "object_specific",
+        "catalogue_inapplicable",
+        "unknown"
+      ]
+    },
+    "applicability_rationale": {
+      "type": ["string", "null"]
+    },
+    "support_level": {
+      "type": "string",
+      "enum": ["dedicated", "indirect", "absent"]
+    },
+    "encoding_type": {
+      "type": "string",
+      "enum": ["free_text", "structured", "mixed", "other", "not_applicable"]
+    },
+    "documentary_linkage_layer": {
+      "type": "string",
+      "enum": [
+        "generic_url",
+        "record_locator",
+        "function_specific",
+        "none",
+        "not_applicable"
+      ]
+    },
+    "function_specific_link_type": {
+      "type": ["string", "null"],
+      "enum": [
+        "impact_assessment",
+        "dataset_documentation",
+        "source_code",
+        "legal_or_policy_document",
+        "procurement_document",
+        "appeal_process",
+        null
+      ]
+    },
+    "candidate_fields_reviewed": {
+      "type": ["string", "null"],
+      "description": "Pipe-separated raw field names reviewed."
+    },
+    "primary_supporting_fields": {
+      "type": ["string", "null"],
+      "description": "Pipe-separated raw fields supporting dedicated coding."
+    },
+    "indirect_supporting_fields": {
+      "type": ["string", "null"],
+      "description": "Pipe-separated raw fields supporting indirect coding."
+    },
+    "rejected_fields_reviewed": {
+      "type": ["string", "null"]
+    },
+    "generic_narrative_used": {
+      "type": ["boolean", "null"]
+    },
+    "anti_overcredit_check": {
+      "type": ["string", "null"],
+      "description": "Coder attestation that anti-over-credit rules were applied."
+    },
+    "coder_confidence": {
+      "type": "string",
+      "enum": ["high", "medium", "low"]
+    },
+    "coder_rationale": {
+      "type": ["string", "null"]
+    },
+    "unresolved_issue": {
+      "type": ["string", "null"]
+    },
+    "adjudication_status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "not_required",
+        "resolved",
+        "escalated_specification_contradiction"
+      ]
+    },
+    "adjudicated_value": {
+      "type": ["string", "null"],
+      "description": "Must be null/empty before adjudication."
+    },
+    "adjudicator_id": {
+      "type": ["string", "null"]
+    },
+    "notes": {
+      "type": ["string", "null"]
+    }
+  }
+}

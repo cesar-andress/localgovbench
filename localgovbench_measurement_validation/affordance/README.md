@@ -1,93 +1,117 @@
-# Affordance specification layer (Disclosure Functions v1)
+# Affordance package (Disclosure Functions v1)
 
 ## Purpose
 
-This directory is the **canonical specification layer** for measuring
-**schema disclosure affordance** and preparing the
-**affordance–realization gap** analysis of official public AI inventories.
+Canonical artefacts for measuring **schema disclosure affordance** and preparing
+the **affordance–realization gap** analysis of official public AI inventories.
 
-It replaces the conceptual role previously played by
-`pilot_public_satisfiability/config/localgovbench_criteria_v0.yaml` for the
-inventory paper. LocalGovBench is **not** the analytical framework of this
-paper path.
+LocalGovBench is **not** the analytical framework of this paper path.
 
-This layer does **not** measure readiness, maturity, shortfall, compliance,
+This package does **not** measure readiness, maturity, shortfall, compliance,
 governance quality, or jurisdiction rankings.
+
+## Layers
+
+| Layer | Location | Status |
+|-------|----------|--------|
+| Specification (Phase 1) | `config/`, `locks/`, `outputs/` | Frozen |
+| Schema coding (Phase 2) | `coding/` | Active |
+| Realization / gap analysis | — | Later |
+| Manuscript | `paper/` repo | Out of scope here |
 
 ## Canonical input
 
-Frozen corpus:
+`pilot_public_satisfiability/data/pilot_programme_records.csv`  
+Observed fields only from `raw_fields_json`.
 
-`localgovbench_measurement_validation/pilot_public_satisfiability/data/pilot_programme_records.csv`
+## Phase 1 — specification artefacts
 
-Observed fields are derived **only** from `raw_fields_json`.
-`SOURCE_SCHEMAS` is not evidence of field existence.
-
-## Hand-authored artefacts (`config/`)
-
-| File | Role |
-|------|------|
-| `disclosure_functions_v1.yaml` | Normative function catalogue (v1.0.0) |
-| `field_normalization_rules_v1.yaml` | Explicit normalization rules |
-| `field_function_candidates_v1.csv` | PRIMARY/SECONDARY/INDIRECT/REJECTED maps |
-| `applicability_overrides_v1.yaml` | Applicability labels and predicates |
-| `realization_rules_v1.yaml` | Realization principles (no rates) |
-| `linkage_field_types_v1.csv` | Documentary linkage typing |
-
-## Generated artefacts
-
-| File | Role |
-|------|------|
-| `locks/corpus_lock_v1.json` | Corpus checksum and counts |
-| `locks/corpus_lock_v1.md` | Human-readable lock |
-| `outputs/schema_inventory_v1.csv` | Observed field inventory |
-| `outputs/schema_inventory_v1.json` | Same inventory as JSON |
-
-**Do not edit generated inventory or lock files by hand.** Regenerate them.
-
-## Regeneration
-
-From the `localgovbench` repository root:
+Hand-authored in `config/`; generated locks/inventory in `locks/` and `outputs/`.
 
 ```bash
 python3.12 scripts/build_affordance_specification.py
-```
-
-Validate hand-authored specs only:
-
-```bash
 python3.12 scripts/build_affordance_specification.py --validate-only
 ```
+
+**Do not edit generated inventory/lock files manually.**
+
+## Phase 2 — schema coding layer (`coding/`)
+
+### Purpose
+
+Human coding of each `schema_object × disclosure_function` using frozen
+support labels (`dedicated` | `indirect` | `absent`), with double-coding,
+validation, disagreement export, and adjudication — **without** producing
+study results, IRR numbers, or realization rates.
+
+### Key files
+
+| File | Role |
+|------|------|
+| `coding/config/codebook_affordance_v1.md` | Full operational codebook |
+| `coding/config/coder_instructions_v1.md` | Session checklist |
+| `coding/config/coding_labels_v1.yaml` | Frozen enumerations |
+| `coding/config/schema_coding_record_v1.schema.json` | Row schema |
+| `coding/config/double_coding_protocol_v1.md` | Double-coding rules |
+| `coding/config/irr_analysis_plan_v1.md` | IRR plan only (no calculations) |
+| `coding/examples/worked_examples_v1.md` | Worked examples |
+| `coding/templates/schema_coding_template_v1.csv` | Full blank template (55 units) |
+| `coding/templates/pilot_coding_manifest_v1.csv` | Pilot unit set |
+| `coding/adjudication/adjudication_protocol_v1.md` | Adjudication rules |
+| `coding/adjudication/adjudication_template_v1.csv` | Adjudication sheet |
+
+**Do not edit generated templates manually** — regenerate them.
+
+### Regeneration
+
+```bash
+python3.12 scripts/build_affordance_coding_layer.py
+```
+
+This regenerates the coding template, pilot manifest, and codebook from Phase 1.
+
+### Validation commands
+
+```bash
+python3.12 - <<'PY'
+from pathlib import Path
+from localgovbench_measurement_validation.affordance.coding.validate import validate_coding_csv
+print(validate_coding_csv(Path('path/to/coder_sheet.csv')))
+PY
+```
+
+### Double-coding workflow
+
+1. Train on codebook + worked examples.  
+2. Independently code pilot units.  
+3. Validate each sheet.  
+4. Export disagreements → adjudication input.  
+5. Adjudicate; escalate specification contradictions.  
+6. Only then consider full-template coding.
+
+### Adjudication workflow
+
+See `coding/adjudication/adjudication_protocol_v1.md`.  
+Specification contradictions must not be silently “fixed” by adjudication.
 
 ## Tests
 
 ```bash
-python3.12 -m pytest localgovbench_measurement_validation/affordance/tests -q
+python3.12 -m pytest localgovbench_measurement_validation/affordance/tests \
+  localgovbench_measurement_validation/affordance/coding/tests -q
 ```
 
-## Versioning
+## Distinctions
 
-- Specification artefacts use semantic versions starting at **1.0.0**.
-- Core disclosure functions are locked in 1.0.x.
-- Schema inventory and corpus lock reference the corpus SHA-256.
-- Changing the corpus requires regenerating lock + inventory and reviewing
-  candidate mappings.
+- **Specification:** what functions/fields/applicability mean (Phase 1).  
+- **Coding:** human schema support judgments (Phase 2).  
+- **Realization:** record population (later).  
+- **Analysis:** affordance–realization gap, figures (later).
 
-## Schema support vs record realization
+## Out of scope here
 
-- **Schema support / affordance** asks whether a schema provides fields capable
-  of hosting a disclosure function (coding layer; not implemented in this stage
-  beyond candidate maps).
-- **Record realization** asks how often those fields are populated in records
-  (rules frozen here; rates not computed in this stage).
-
-Population is never a composite score and must not be used to rank jurisdictions.
-
-## Out of scope for this stage
-
-- Human coding
-- Realization rate tables
-- Affordance–realization gap outputs
-- Figures / paper tables
-- Manuscript rewriting
-- Legacy file moves
+- Human coding execution  
+- IRR calculation  
+- Realization rates / gap outputs  
+- Figures / manuscript edits  
+- Legacy moves

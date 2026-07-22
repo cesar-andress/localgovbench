@@ -1,0 +1,60 @@
+# coding_labels_v1.yaml
+# Frozen human-coding enumerations for Disclosure Functions v1.
+# Do not invent new labels without a specification version bump.
+
+spec_id: coding_labels
+version: "1.0.0"
+status: normative
+specification_version: "1.0.0"
+
+support_level:
+  - dedicated
+  - indirect
+  - absent
+
+applicability_label:
+  - universal
+  - conditional
+  - jurisdiction_specific
+  - object_specific
+  - catalogue_inapplicable
+  - unknown
+
+encoding_type:
+  - free_text
+  - structured
+  - mixed
+  - other
+  - not_applicable
+
+documentary_linkage_layer:
+  - generic_url
+  - record_locator
+  - function_specific
+  - none
+  - not_applicable
+
+function_specific_link_type:
+  - impact_assessment
+  - dataset_documentation
+  - source_code
+  - legal_or_policy_document
+  - procurement_document
+  - appeal_process
+
+coder_confidence:
+  - high
+  - medium
+  - low
+  notes: >
+    Confidence is metadata only. It must never modify support_level.
+
+adjudication_status:
+  - pending
+  - not_required
+  - resolved
+  - escalated_specification_contradiction
+
+notes:
+  - catalogue_inapplicable units must use support_level absent or leave support empty until N/A policy applied; validation requires support absent or not coded with dedicated/indirect.
+  - encoding_type and documentary_linkage_layer use not_applicable when applicability is catalogue_inapplicable.
