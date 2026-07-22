@@ -177,12 +177,26 @@ def main() -> int:
     if "type: software" not in citation:
         print("CITATION.cff should declare type: software.")
         return 1
-    if 'title: LocalGovBench' not in citation:
-        print("CITATION.cff title should be LocalGovBench.")
+    if "title:" not in citation or "LocalGovBench" not in citation:
+        print("CITATION.cff title should include LocalGovBench.")
+        return 1
+    if "10.5281/zenodo.21500899" not in citation:
+        print("CITATION.cff should include active Zenodo DOI 10.5281/zenodo.21500899.")
         return 1
     if "10.5281/zenodo.20543779" not in citation:
-        print("CITATION.cff should include Zenodo DOI 10.5281/zenodo.20543779.")
+        print("CITATION.cff should retain historical Zenodo DOI 10.5281/zenodo.20543779.")
         return 1
+    if "doi: \"10.5281/zenodo.20543779\"" in citation or "doi: 10.5281/zenodo.20543779" in citation:
+        # Primary doi field must be the active version DOI, not the historical one.
+        # Historical DOI may appear only under identifiers.
+        primary = None
+        for line in citation.splitlines():
+            if line.startswith("doi:"):
+                primary = line
+                break
+        if primary and "20543779" in primary:
+            print("CITATION.cff primary doi must be 10.5281/zenodo.21500899 (v0.2.0), not the historical v0.1.0 DOI.")
+            return 1
     if "zenodo.TBD" in citation or "zenodo.XXXXXXX" in citation:
         print("CITATION.cff still contains a placeholder Zenodo DOI.")
         return 1
