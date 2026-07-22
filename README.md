@@ -99,6 +99,14 @@ python3.12 scripts/build_affordance_coding_layer.py
 pytest -m "not integration"
 ```
 
+## 8b. Supplementary materials (paper package)
+
+Publication-facing supplements **A–J** (corpus, inventory, Disclosure Functions v1, coding, validation, pipeline, reproducibility, structure, citation, versions) are indexed at:
+
+[`docs/supplements/README.md`](docs/supplements/README.md)
+
+They wrap existing frozen artefacts only and do **not** invent coding results, IRR, realization rates, or gaps.
+
 ## 9. Current limitations
 
 - Human pilot coding not executed for publication  

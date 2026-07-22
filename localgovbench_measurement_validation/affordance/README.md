@@ -5,6 +5,8 @@
 Canonical artefacts for measuring **schema disclosure affordance** and preparing
 the **affordance–realization gap** analysis of official public AI inventories.
 
+Paper supplementary index (A–J): [`docs/supplements/README.md`](../../../docs/supplements/README.md).
+
 LocalGovBench is **not** the analytical framework of this paper path.
 
 This package does **not** measure readiness, maturity, shortfall, compliance,
