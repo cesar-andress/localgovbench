@@ -1,0 +1,12 @@
+{
+  "table_id": "T10_coder_disagreements",
+  "title": "Coder disagreements (pilot)",
+  "status": "PLACEHOLDER \u2014 requires future study inputs (not Results)",
+  "caption": "Units with disagreement between independent coders prior to adjudication.",
+  "label": "tab:coder_disagreements",
+  "sources": [
+    "(pending completed coding / pipeline / realization stage)"
+  ],
+  "n_rows": 0,
+  "notes": "Requires export_disagreements on completed pilot sheets."
+}

@@ -1,0 +1,12 @@
+{
+  "table_id": "T07_coding_label_enumerations",
+  "title": "Coding label enumerations",
+  "status": "AUTO \u2014 methods (coding labels)",
+  "caption": "Frozen human-coding enumerations for Disclosure Functions v1.",
+  "label": "tab:coding_labels",
+  "sources": [
+    "localgovbench_measurement_validation/affordance/coding/config/coding_labels_v1.yaml"
+  ],
+  "n_rows": 19,
+  "notes": "From coding_labels_v1.yaml (principal dimensions). Full file remains authoritative."
+}

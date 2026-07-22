@@ -1,0 +1,119 @@
+# T08_field_function_candidate_summary: Field–function candidate mapping summary
+
+**Status:** AUTO — methods (candidate map)
+
+**Caption draft:** Summary counts of frozen field–function candidate mapping rows by source, function, and mapping label.
+
+**Source artefacts:**
+
+- `localgovbench_measurement_validation/affordance/config/field_function_candidates_v1.csv`
+
+| source_name | disclosure_function_id | mapping_label | n_candidate_rows |
+| --- | --- | --- | --- |
+| CA-GC-AI-REG | cf_accountable_body | PRIMARY | 1 |
+| CA-GC-AI-REG | cf_accountable_body | REJECTED | 2 |
+| CA-GC-AI-REG | cf_data_involvement | INDIRECT | 1 |
+| CA-GC-AI-REG | cf_data_involvement | PRIMARY | 1 |
+| CA-GC-AI-REG | cf_data_involvement | REJECTED | 1 |
+| CA-GC-AI-REG | cf_data_involvement | SECONDARY | 1 |
+| CA-GC-AI-REG | cf_operational_status | INDIRECT | 1 |
+| CA-GC-AI-REG | cf_operational_status | PRIMARY | 1 |
+| CA-GC-AI-REG | cf_operational_status | REJECTED | 1 |
+| CA-GC-AI-REG | cf_purpose | INDIRECT | 1 |
+| CA-GC-AI-REG | cf_purpose | PRIMARY | 1 |
+| CA-GC-AI-REG | cf_purpose | REJECTED | 1 |
+| CA-GC-AI-REG | cf_system_identity | INDIRECT | 1 |
+| CA-GC-AI-REG | cf_system_identity | PRIMARY | 1 |
+| CA-GC-AI-REG | cf_system_identity | SECONDARY | 1 |
+| CA-GC-AI-REG | om_human_oversight | INDIRECT | 1 |
+| CA-GC-AI-REG | om_redress_pointer | REJECTED | 1 |
+| CA-GC-AI-REG | om_risk_or_impact | INDIRECT | 1 |
+| CA-GC-AI-REG | om_supplier | PRIMARY | 1 |
+| CA-GC-AI-REG | om_supplier | SECONDARY | 1 |
+| CA-GC-AI-REG | om_technical_method | PRIMARY | 1 |
+| CA-GC-AI-REG | om_technical_method | REJECTED | 1 |
+| EU-PSTW | cf_accountable_body | PRIMARY | 1 |
+| EU-PSTW | cf_accountable_body | REJECTED | 1 |
+| EU-PSTW | cf_data_involvement | REJECTED | 1 |
+| EU-PSTW | cf_operational_status | PRIMARY | 1 |
+| EU-PSTW | cf_operational_status | REJECTED | 2 |
+| EU-PSTW | cf_purpose | PRIMARY | 1 |
+| EU-PSTW | cf_purpose | SECONDARY | 2 |
+| EU-PSTW | cf_system_identity | PRIMARY | 1 |
+| EU-PSTW | cf_system_identity | SECONDARY | 1 |
+| EU-PSTW | om_human_oversight | REJECTED | 1 |
+| EU-PSTW | om_risk_or_impact | REJECTED | 19 |
+| EU-PSTW | om_supplier | INDIRECT | 1 |
+| EU-PSTW | om_technical_method | PRIMARY | 1 |
+| EU-PSTW | om_technical_method | REJECTED | 1 |
+| EU-PSTW | om_technical_method | SECONDARY | 2 |
+| NL-ALGO-REG | cf_accountable_body | PRIMARY | 1 |
+| NL-ALGO-REG | cf_accountable_body | REJECTED | 3 |
+| NL-ALGO-REG | cf_accountable_body | SECONDARY | 1 |
+| NL-ALGO-REG | cf_data_involvement | PRIMARY | 1 |
+| NL-ALGO-REG | cf_data_involvement | REJECTED | 2 |
+| NL-ALGO-REG | cf_data_involvement | SECONDARY | 1 |
+| NL-ALGO-REG | cf_operational_status | PRIMARY | 1 |
+| NL-ALGO-REG | cf_operational_status | REJECTED | 4 |
+| NL-ALGO-REG | cf_purpose | INDIRECT | 1 |
+| NL-ALGO-REG | cf_purpose | PRIMARY | 1 |
+| NL-ALGO-REG | cf_purpose | REJECTED | 2 |
+| NL-ALGO-REG | cf_system_identity | PRIMARY | 1 |
+| NL-ALGO-REG | cf_system_identity | REJECTED | 2 |
+| NL-ALGO-REG | cf_system_identity | SECONDARY | 1 |
+| NL-ALGO-REG | om_human_oversight | PRIMARY | 1 |
+| NL-ALGO-REG | om_human_oversight | REJECTED | 2 |
+| NL-ALGO-REG | om_legal_basis | PRIMARY | 1 |
+| NL-ALGO-REG | om_legal_basis | REJECTED | 1 |
+| NL-ALGO-REG | om_legal_basis | SECONDARY | 1 |
+| NL-ALGO-REG | om_redress_pointer | REJECTED | 2 |
+| NL-ALGO-REG | om_risk_or_impact | INDIRECT | 1 |
+| NL-ALGO-REG | om_risk_or_impact | PRIMARY | 1 |
+| NL-ALGO-REG | om_risk_or_impact | REJECTED | 1 |
+| NL-ALGO-REG | om_risk_or_impact | SECONDARY | 1 |
+| NL-ALGO-REG | om_supplier | PRIMARY | 1 |
+| NL-ALGO-REG | om_supplier | REJECTED | 2 |
+| NL-ALGO-REG | om_technical_method | INDIRECT | 1 |
+| NL-ALGO-REG | om_technical_method | PRIMARY | 1 |
+| NL-ALGO-REG | om_technical_method | REJECTED | 2 |
+| UK-ATRS | cf_accountable_body | INDIRECT | 1 |
+| UK-ATRS | cf_data_involvement | REJECTED | 1 |
+| UK-ATRS | cf_operational_status | REJECTED | 1 |
+| UK-ATRS | cf_purpose | INDIRECT | 1 |
+| UK-ATRS | cf_system_identity | PRIMARY | 1 |
+| UK-ATRS | cf_system_identity | REJECTED | 2 |
+| UK-ATRS | cf_system_identity | SECONDARY | 1 |
+| UK-ATRS | om_human_oversight | REJECTED | 1 |
+| UK-ATRS | om_redress_pointer | REJECTED | 1 |
+| UK-ATRS | om_risk_or_impact | REJECTED | 1 |
+| US-OMB-2025 | cf_accountable_body | PRIMARY | 1 |
+| US-OMB-2025 | cf_accountable_body | REJECTED | 2 |
+| US-OMB-2025 | cf_accountable_body | SECONDARY | 2 |
+| US-OMB-2025 | cf_data_involvement | INDIRECT | 1 |
+| US-OMB-2025 | cf_data_involvement | PRIMARY | 1 |
+| US-OMB-2025 | cf_data_involvement | REJECTED | 2 |
+| US-OMB-2025 | cf_data_involvement | SECONDARY | 1 |
+| US-OMB-2025 | cf_operational_status | PRIMARY | 1 |
+| US-OMB-2025 | cf_operational_status | REJECTED | 1 |
+| US-OMB-2025 | cf_purpose | INDIRECT | 1 |
+| US-OMB-2025 | cf_purpose | PRIMARY | 1 |
+| US-OMB-2025 | cf_purpose | REJECTED | 1 |
+| US-OMB-2025 | cf_purpose | SECONDARY | 1 |
+| US-OMB-2025 | cf_system_identity | PRIMARY | 1 |
+| US-OMB-2025 | cf_system_identity | REJECTED | 1 |
+| US-OMB-2025 | cf_system_identity | SECONDARY | 1 |
+| US-OMB-2025 | om_human_oversight | REJECTED | 2 |
+| US-OMB-2025 | om_human_oversight | SECONDARY | 3 |
+| US-OMB-2025 | om_redress_pointer | PRIMARY | 1 |
+| US-OMB-2025 | om_redress_pointer | REJECTED | 1 |
+| US-OMB-2025 | om_risk_or_impact | PRIMARY | 1 |
+| US-OMB-2025 | om_risk_or_impact | SECONDARY | 2 |
+| US-OMB-2025 | om_supplier | PRIMARY | 1 |
+| US-OMB-2025 | om_supplier | SECONDARY | 1 |
+| US-OMB-2025 | om_technical_method | PRIMARY | 1 |
+| US-OMB-2025 | om_technical_method | REJECTED | 1 |
+| US-OMB-2025 | om_technical_method | SECONDARY | 1 |
+
+**Notes:** Candidates are specification inputs for coders, not final support decisions.
+
+**Cross references:** `docs/supplements/`; `paper_assets/paper_asset_manifest.md`

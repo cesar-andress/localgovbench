@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#f7f7f7" stroke="#333"/>
+  <text x="40" y="60" font-family="Helvetica, Arial, sans-serif" font-size="22" fill="#222">F02_inventory_field_counts: Observed schema field counts</text>
+  <text x="40" y="100" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#555">Status: AUTO — generatable from schema inventory</text>
+  <text x="40" y="140" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#555">Generate via: scripts/make_F02_inventory_field_counts.py</text>
+  <text x="40" y="200" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#777">No invented findings. Placeholder until script succeeds.</text>
+</svg>

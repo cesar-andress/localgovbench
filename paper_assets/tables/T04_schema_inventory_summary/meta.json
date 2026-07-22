@@ -1,0 +1,12 @@
+{
+  "table_id": "T04_schema_inventory_summary",
+  "title": "Observed schema inventory summary",
+  "status": "AUTO \u2014 methods (schema inventory)",
+  "caption": "Counts of distinct observed raw fields per source in the frozen schema inventory.",
+  "label": "tab:schema_inventory_summary",
+  "sources": [
+    "localgovbench_measurement_validation/affordance/outputs/schema_inventory_v1.csv"
+  ],
+  "n_rows": 6,
+  "notes": "Field counts are observational inventory statistics, not disclosure-function support codes."
+}

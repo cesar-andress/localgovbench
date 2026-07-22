@@ -1,0 +1,15 @@
+{
+  "figure_id": "F05_schema_affordance_heatmap",
+  "title": "Schema affordance heatmap",
+  "status": "PLACEHOLDER \u2014 future empirical inputs required",
+  "caption": "Heatmap of adjudicated schema disclosure affordance (support level) by source and disclosure function. Requires completed coding and Phase 3 matrix export.",
+  "expected_input": [
+    "affordance/experiments/outputs/*_schema_affordance_matrix.csv (future)"
+  ],
+  "expected_output": "paper_assets/figures/F05_schema_affordance_heatmap/F05_schema_affordance_heatmap.png",
+  "script": "paper_assets/scripts/make_F05_schema_affordance_heatmap.py",
+  "cross_refs": [
+    "Supplement F",
+    "T09_schema_affordance_matrix"
+  ]
+}

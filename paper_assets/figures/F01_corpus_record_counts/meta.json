@@ -1,0 +1,15 @@
+{
+  "figure_id": "F01_corpus_record_counts",
+  "title": "Corpus record counts by source",
+  "status": "AUTO \u2014 generatable from corpus lock",
+  "caption": "Record counts in the locked multi-source public inventory corpus (Disclosure Functions v1). Bars are descriptive corpus composition, not a ranking of jurisdictions.",
+  "expected_input": [
+    "localgovbench_measurement_validation/affordance/locks/corpus_lock_v1.json"
+  ],
+  "expected_output": "paper_assets/figures/F01_corpus_record_counts/F01_corpus_record_counts.png",
+  "script": "paper_assets/scripts/make_F01_corpus_record_counts.py",
+  "cross_refs": [
+    "Supplement A",
+    "T01_corpus_composition"
+  ]
+}

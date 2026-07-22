@@ -1,0 +1,12 @@
+{
+  "table_id": "T06_pilot_unit_selection",
+  "title": "Pilot coding unit selection",
+  "status": "AUTO \u2014 methods (pilot manifest)",
+  "caption": "Pilot subset of coding units selected for independent double-coding, with frozen selection rationales.",
+  "label": "tab:pilot_units",
+  "sources": [
+    "localgovbench_measurement_validation/affordance/coding/templates/pilot_coding_manifest_v1.csv"
+  ],
+  "n_rows": 33,
+  "notes": "n = 33 (expected 33). Selection rationales are design metadata, not coder judgments."
+}

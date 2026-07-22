@@ -1,0 +1,15 @@
+{
+  "figure_id": "F02_inventory_field_counts",
+  "title": "Observed schema field counts",
+  "status": "AUTO \u2014 generatable from schema inventory",
+  "caption": "Number of distinct observed raw fields per source in the frozen schema inventory. These are observational inventory counts, not disclosure-function support codes.",
+  "expected_input": [
+    "localgovbench_measurement_validation/affordance/outputs/schema_inventory_v1.csv"
+  ],
+  "expected_output": "paper_assets/figures/F02_inventory_field_counts/F02_inventory_field_counts.png",
+  "script": "paper_assets/scripts/make_F02_inventory_field_counts.py",
+  "cross_refs": [
+    "Supplement B",
+    "T04_schema_inventory_summary"
+  ]
+}

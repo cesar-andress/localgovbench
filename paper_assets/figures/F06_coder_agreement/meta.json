@@ -1,0 +1,16 @@
+{
+  "figure_id": "F06_coder_agreement",
+  "title": "Coder agreement overview",
+  "status": "PLACEHOLDER \u2014 future empirical inputs required",
+  "caption": "Overview of independent-coder agreement and residual disagreements for the pilot. Requires completed dual coding and disagreement export.",
+  "expected_input": [
+    "pilot completed sheets + disagreements CSV (future)"
+  ],
+  "expected_output": "paper_assets/figures/F06_coder_agreement/F06_coder_agreement.png",
+  "script": "paper_assets/scripts/make_F06_coder_agreement.py",
+  "cross_refs": [
+    "Supplement D",
+    "T10_coder_disagreements",
+    "T11_irr_summary"
+  ]
+}

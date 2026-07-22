@@ -1,0 +1,15 @@
+{
+  "figure_id": "F03_disclosure_functions_tiers",
+  "title": "Disclosure Functions v1 tier overview",
+  "status": "AUTO \u2014 generatable from function catalogue",
+  "caption": "Overview of Disclosure Functions v1 identifiers by tier (core vs module). Definitional methods figure; not an empirical result.",
+  "expected_input": [
+    "localgovbench_measurement_validation/affordance/config/disclosure_functions_v1.yaml"
+  ],
+  "expected_output": "paper_assets/figures/F03_disclosure_functions_tiers/F03_disclosure_functions_tiers.png",
+  "script": "paper_assets/scripts/make_F03_disclosure_functions_tiers.py",
+  "cross_refs": [
+    "Supplement C",
+    "T03_disclosure_functions_catalogue"
+  ]
+}

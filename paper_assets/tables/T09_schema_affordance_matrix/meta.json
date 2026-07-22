@@ -1,0 +1,12 @@
+{
+  "table_id": "T09_schema_affordance_matrix",
+  "title": "Schema affordance matrix (post-coding)",
+  "status": "PLACEHOLDER \u2014 requires future study inputs (not Results)",
+  "caption": "Schema disclosure affordance by source and disclosure function after human coding and adjudication.",
+  "label": "tab:affordance_matrix",
+  "sources": [
+    "(pending completed coding / pipeline / realization stage)"
+  ],
+  "n_rows": 0,
+  "notes": "Requires completed dual coding + adjudication + Phase 3 pipeline outputs. Do not invent cells."
+}

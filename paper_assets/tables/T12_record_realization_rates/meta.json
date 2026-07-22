@@ -1,0 +1,12 @@
+{
+  "table_id": "T12_record_realization_rates",
+  "title": "Record-level realization rates",
+  "status": "PLACEHOLDER \u2014 requires future study inputs (not Results)",
+  "caption": "Record-level realization of disclosure functions among applicable published records.",
+  "label": "tab:realization_rates",
+  "sources": [
+    "(pending completed coding / pipeline / realization stage)"
+  ],
+  "n_rows": 0,
+  "notes": "Future empirical stage. Phase 3 emits templates only; do not invent rates."
+}

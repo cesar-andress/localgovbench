@@ -1,0 +1,13 @@
+{
+  "table_id": "T01_corpus_composition",
+  "title": "Corpus composition",
+  "status": "AUTO \u2014 methods/descriptive (frozen corpus + registry)",
+  "caption": "Composition of the locked multi-source public inventory corpus used for Disclosure Functions v1 schema analysis.",
+  "label": "tab:corpus_composition",
+  "sources": [
+    "localgovbench_measurement_validation/affordance/locks/corpus_lock_v1.json",
+    "localgovbench_measurement_validation/pilot_public_satisfiability/data/source_registry_expanded.csv"
+  ],
+  "n_rows": 5,
+  "notes": "Total records = 7434. Counts from corpus lock; registry metadata from source_registry_expanded.csv. Not a ranking."
+}

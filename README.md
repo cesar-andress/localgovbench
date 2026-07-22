@@ -107,6 +107,19 @@ Publication-facing supplements **A–J** (corpus, inventory, Disclosure Function
 
 They wrap existing frozen artefacts only and do **not** invent coding results, IRR, realization rates, or gaps.
 
+## 8c. Manuscript paper assets (tables/figures scaffolds)
+
+Reproducible Methods tables/figures and Results placeholders:
+
+[`paper_assets/README.md`](paper_assets/README.md) · [`paper_assets/paper_asset_manifest.md`](paper_assets/paper_asset_manifest.md)
+
+```bash
+python3.12 paper_assets/scripts/generate_all_paper_assets.py
+python3.12 paper_assets/scripts/make_F01_corpus_record_counts.py  # … F02–F04
+```
+
+Results tables T09–T13 and figures F05–F08 remain empty until real coding/realization inputs exist.
+
 ## 9. Current limitations
 
 - Human pilot coding not executed for publication  

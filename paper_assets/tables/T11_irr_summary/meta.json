@@ -1,0 +1,12 @@
+{
+  "table_id": "T11_irr_summary",
+  "title": "Inter-rater reliability summary",
+  "status": "PLACEHOLDER \u2014 requires future study inputs (not Results)",
+  "caption": "Agreement statistics for double-coded pilot units (coefficients per analysis plan).",
+  "label": "tab:irr_summary",
+  "sources": [
+    "(pending completed coding / pipeline / realization stage)"
+  ],
+  "n_rows": 0,
+  "notes": "Requires completed coding + IRR computation per irr_analysis_plan_v1.md. Not computed in this generator."
+}

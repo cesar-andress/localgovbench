@@ -1,0 +1,12 @@
+{
+  "table_id": "T03_disclosure_functions_catalogue",
+  "title": "Disclosure Functions v1 catalogue",
+  "status": "AUTO \u2014 methods (normative catalogue)",
+  "caption": "Normative Disclosure Functions v1 catalogue (core functions and modules).",
+  "label": "tab:disclosure_functions",
+  "sources": [
+    "localgovbench_measurement_validation/affordance/config/disclosure_functions_v1.yaml"
+  ],
+  "n_rows": 11,
+  "notes": "Copied from disclosure_functions_v1.yaml. Definitions abbreviated to primary_question; full text in YAML/codebook."
+}

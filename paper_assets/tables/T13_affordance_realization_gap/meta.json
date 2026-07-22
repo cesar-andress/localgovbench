@@ -1,0 +1,12 @@
+{
+  "table_id": "T13_affordance_realization_gap",
+  "title": "Affordance\u2013realization gap",
+  "status": "PLACEHOLDER \u2014 requires future study inputs (not Results)",
+  "caption": "Gap between schema affordance and record-level realization by source and function.",
+  "label": "tab:affordance_realization_gap",
+  "sources": [
+    "(pending completed coding / pipeline / realization stage)"
+  ],
+  "n_rows": 0,
+  "notes": "Future analysis stage after affordance coding and realization measurement."
+}

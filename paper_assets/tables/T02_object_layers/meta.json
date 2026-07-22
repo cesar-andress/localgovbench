@@ -1,0 +1,12 @@
+{
+  "table_id": "T02_object_layers",
+  "title": "Schema object layers by source",
+  "status": "AUTO \u2014 methods (corpus lock)",
+  "caption": "Schema object layer assigned to each inventory source in Disclosure Functions v1.",
+  "label": "tab:object_layers",
+  "sources": [
+    "localgovbench_measurement_validation/affordance/locks/corpus_lock_v1.json"
+  ],
+  "n_rows": 5,
+  "notes": "From corpus lock object_layer_per_source. Methods table only."
+}

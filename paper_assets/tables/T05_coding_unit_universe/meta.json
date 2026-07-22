@@ -1,0 +1,12 @@
+{
+  "table_id": "T05_coding_unit_universe",
+  "title": "Full schema\u00d7function coding universe",
+  "status": "AUTO \u2014 methods (coding template)",
+  "caption": "Full blank coding universe (schema object \u00d7 disclosure function) for Disclosure Functions v1.",
+  "label": "tab:coding_universe",
+  "sources": [
+    "localgovbench_measurement_validation/affordance/coding/templates/schema_coding_template_v1.csv"
+  ],
+  "n_rows": 55,
+  "notes": "n = 55 (expected 55). Blank template only \u2014 no human judgments."
+}

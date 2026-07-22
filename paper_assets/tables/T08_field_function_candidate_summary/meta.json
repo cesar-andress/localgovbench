@@ -1,0 +1,12 @@
+{
+  "table_id": "T08_field_function_candidate_summary",
+  "title": "Field\u2013function candidate mapping summary",
+  "status": "AUTO \u2014 methods (candidate map)",
+  "caption": "Summary counts of frozen field\u2013function candidate mapping rows by source, function, and mapping label.",
+  "label": "tab:field_function_candidates",
+  "sources": [
+    "localgovbench_measurement_validation/affordance/config/field_function_candidates_v1.csv"
+  ],
+  "n_rows": 103,
+  "notes": "Candidates are specification inputs for coders, not final support decisions."
+}

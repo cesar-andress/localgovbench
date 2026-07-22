@@ -1,0 +1,12 @@
+function_id,display_name,tier,status,applicability_default,primary_question
+cf_system_identity,System or use-case identity,core,core_unscored,universal,Does the schema expose a dedicated identity or naming field?
+cf_purpose,Purpose,core,core_scored,universal,Does the schema provide a field that can host purpose or goal disclosure?
+cf_operational_status,Operational status,core,core_scored,universal,Does the schema expose a status or development-stage field?
+cf_accountable_body,Accountable body identification,core,core_scored,universal,Does the schema identify the accountable public body?
+cf_data_involvement,Data involvement,core,core_scored,universal,Does the schema expose a personal-data flag or dedicated data-sources / data-description field?
+om_human_oversight,Human oversight description,module,module,object_specific,Does the schema provide a human oversight or intervention field?
+om_risk_or_impact,Risk or impact designation,module,module,object_specific,Does the schema expose a risk/impact flag or dedicated risk field?
+om_legal_basis,Legal basis,module,module,jurisdiction_specific,Does the schema expose a lawful-basis or legal-basis field?
+om_supplier,Supplier identification,module,module,universal,Does the schema expose vendor/provider/contracting fields?
+om_technical_method,Technical method or capability,module,module,universal,"Does the schema expose method, capability, or technical classification fields?"
+om_redress_pointer,Redress pointer,module,module,conditional,Does the schema expose an appeal/contestation field (not merely a contact email)?

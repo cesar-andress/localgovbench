@@ -1,0 +1,16 @@
+{
+  "figure_id": "F08_affordance_realization_gap",
+  "title": "Affordance\u2013realization gap",
+  "status": "PLACEHOLDER \u2014 future empirical inputs required",
+  "caption": "Comparison of schema affordance and record-level realization. Future analysis stage after both layers exist.",
+  "expected_input": [
+    "affordance matrix + realization rates (future)"
+  ],
+  "expected_output": "paper_assets/figures/F08_affordance_realization_gap/F08_affordance_realization_gap.png",
+  "script": "paper_assets/scripts/make_F08_affordance_realization_gap.py",
+  "cross_refs": [
+    "T09_schema_affordance_matrix",
+    "T12_record_realization_rates",
+    "T13_affordance_realization_gap"
+  ]
+}

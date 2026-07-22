@@ -1,0 +1,15 @@
+{
+  "figure_id": "F07_realization_rates",
+  "title": "Record-level realization rates",
+  "status": "PLACEHOLDER \u2014 future empirical inputs required",
+  "caption": "Record-level realization rates by source and function among applicable records. Future empirical stage; not generated from placeholders.",
+  "expected_input": [
+    "realization analysis outputs (future)"
+  ],
+  "expected_output": "paper_assets/figures/F07_realization_rates/F07_realization_rates.png",
+  "script": "paper_assets/scripts/make_F07_realization_rates.py",
+  "cross_refs": [
+    "Supplement F",
+    "T12_record_realization_rates"
+  ]
+}

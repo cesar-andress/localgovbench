@@ -1,0 +1,22 @@
+# T01_corpus_composition: Corpus composition
+
+**Status:** AUTO — methods/descriptive (frozen corpus + registry)
+
+**Caption draft:** Composition of the locked multi-source public inventory corpus used for Disclosure Functions v1 schema analysis.
+
+**Source artefacts:**
+
+- `localgovbench_measurement_validation/affordance/locks/corpus_lock_v1.json`
+- `localgovbench_measurement_validation/pilot_public_satisfiability/data/source_registry_expanded.csv`
+
+| source_id | source_name | jurisdiction | access_method | programme_level_unit | filter_applied | object_layer | record_count | collection_date | corpus_sha256 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| CA-GC-AI-REG | Government of Canada AI Register (MVP) | Canada (federal) | direct_csv_download | federal_ai_system | none | ai_system_register | 412 | 2026-06-24 | 12ea6282efcf338d362c8eb91a9beffe8dd7eae9f70aa2805723b386c9c8d693 |
+| EU-PSTW | EU Public Sector Tech Watch (JRC) cases dataset | European Union (multi-country) | direct_csv_download | public_sector_ai_case | Primary Technology == Artificial Intelligence | case_catalogue | 1794 | 2026-06-24 | 12ea6282efcf338d362c8eb91a9beffe8dd7eae9f70aa2805723b386c9c8d693 |
+| NL-ALGO-REG | Dutch national Algorithm Register (Algoritmeregister) | Netherlands (national + local bodies) | official_api_bulk_csv | algorithm_description | none | algorithm_register | 1484 | 2026-06-24 | 12ea6282efcf338d362c8eb91a9beffe8dd7eae9f70aa2805723b386c9c8d693 |
+| UK-ATRS | UK Algorithmic Transparency Recording Standard (GOV.UK records) | United Kingdom | govuk_search_api_pagination | transparency_record | document_type=algorithmic_transparency_record | search_api_slim | 133 | 2026-06-24 | 12ea6282efcf338d362c8eb91a9beffe8dd7eae9f70aa2805723b386c9c8d693 |
+| US-OMB-2025 | 2025 U.S. Federal Agency AI Use Case Inventory (OMB) | United States (federal) | direct_csv_download | federal_ai_use_case | none | use_case_inventory | 3611 | 2026-06-24 | 12ea6282efcf338d362c8eb91a9beffe8dd7eae9f70aa2805723b386c9c8d693 |
+
+**Notes:** Total records = 7434. Counts from corpus lock; registry metadata from source_registry_expanded.csv. Not a ranking.
+
+**Cross references:** `docs/supplements/`; `paper_assets/paper_asset_manifest.md`

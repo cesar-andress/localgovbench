@@ -1,0 +1,17 @@
+{
+  "figure_id": "F04_coding_universe_grid",
+  "title": "Coding universe and pilot subset",
+  "status": "AUTO \u2014 generatable from coding templates",
+  "caption": "Grid of schema-object \u00d7 disclosure-function coding units in the full template, highlighting the pilot subset. Design/methods figure; contains no coder judgments.",
+  "expected_input": [
+    "localgovbench_measurement_validation/affordance/coding/templates/schema_coding_template_v1.csv",
+    "localgovbench_measurement_validation/affordance/coding/templates/pilot_coding_manifest_v1.csv"
+  ],
+  "expected_output": "paper_assets/figures/F04_coding_universe_grid/F04_coding_universe_grid.png",
+  "script": "paper_assets/scripts/make_F04_coding_universe_grid.py",
+  "cross_refs": [
+    "Supplement D",
+    "T05_coding_unit_universe",
+    "T06_pilot_unit_selection"
+  ]
+}

@@ -1,0 +1,6 @@
+source_id,object_layer,record_count,note
+CA-GC-AI-REG,ai_system_register,412,
+EU-PSTW,case_catalogue,1794,EU-PSTW is a case catalogue contrast stratum.
+NL-ALGO-REG,algorithm_register,1484,
+UK-ATRS,search_api_slim,133,"UK-ATRS object layer is search API slim, not full ATRS."
+US-OMB-2025,use_case_inventory,3611,
