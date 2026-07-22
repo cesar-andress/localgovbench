@@ -98,6 +98,7 @@ outputs/
 !localgovbench_measurement_validation/affordance/coding/adjudication/*.csv
 !localgovbench_measurement_validation/affordance/coding/outputs/
 !localgovbench_measurement_validation/affordance/coding/outputs/**
+!localgovbench_measurement_validation/affordance/coding/pilot_round_01/coder_packets/*.csv
 
 # Delphi expert responses (confidential; keep README only)
 validation/content_validity/delphi/responses/*.yaml
