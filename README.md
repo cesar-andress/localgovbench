@@ -8,9 +8,11 @@
 [![Version](https://img.shields.io/badge/version-0.2.0--draft-orange.svg)](CHANGELOG.md)
 [![Historical DOI v0.1.0](https://zenodo.org/badge/DOI/10.5281/zenodo.20543779.svg)](https://doi.org/10.5281/zenodo.20543779)
 
-> **Historical notice.** **v0.1.0** represented the original **Governance Readiness Benchmark** design for sovereign LLM deployments. That design is retained for provenance ([DOI 10.5281/zenodo.20543779](https://doi.org/10.5281/zenodo.20543779)) but is **not** the active analytical framework.
+> **Historical notice.** v0.1.0 represented the original Governance Readiness Benchmark design. It is retained as a historical snapshot but is not the active analytical framework. Provenance archive: [DOI 10.5281/zenodo.20543779](https://doi.org/10.5281/zenodo.20543779).
 
-## What LocalGovBench is now
+Frozen public positioning: [`docs/releases/public_positioning_v0.2.0.md`](docs/releases/public_positioning_v0.2.0.md).
+
+## 1. What LocalGovBench currently is
 
 LocalGovBench is a **reproducible research repository** for studying:
 
@@ -22,7 +24,7 @@ LocalGovBench is a **reproducible research repository** for studying:
 
 **without** jurisdiction rankings, readiness/maturity scores, shortfall scores, compliance scores, or composite indices.
 
-## What changed after v0.1.0
+## 2. What changed after v0.1.0
 
 | | v0.1.0 (historical) | v0.2.0 path (active) |
 |--|---------------------|----------------------|
@@ -30,67 +32,91 @@ LocalGovBench is a **reproducible research repository** for studying:
 | Unit | Programme dossier / maturity criteria | Schema × disclosure function (+ planned record realization) |
 | Status | Frozen on Zenodo | Specification + coding layers implemented; empirical results not claimed complete |
 
-## What Disclosure Functions v1 measures
+## 3. What Disclosure Functions v1 measures
 
 **Schema disclosure affordance:** the extent to which a published official AI inventory schema provides dedicated or indirect fields capable of hosting a policy-derived disclosure function (an upper bound on possible disclosure — not transparency achieved, governance quality, or compliance).
 
 Active catalogue: identity (descriptive), purpose, operational status, accountable body, data involvement, plus modules (oversight, risk/impact, legal basis, supplier, technical method, redress pointer).
 
-## What the repository currently contains
+## 4. Affordance vs realization
 
-### Active
+| Layer | Question | Status in this repo |
+|-------|----------|---------------------|
+| **Schema affordance** | Can the published schema host the function? | Specification + coding system ready |
+| **Record realization** | Do published records actually disclose it? | Specified; empirical tables **not** completed |
+| **Affordance–realization gap** | Where does realization fall short of affordance? | Future analysis stage |
 
-| Path | Role |
-|------|------|
-| [`localgovbench_measurement_validation/affordance/`](localgovbench_measurement_validation/affordance/) | Disclosure Functions v1 specification + schema coding layer |
-| [`scripts/build_affordance_specification.py`](scripts/build_affordance_specification.py) | Regenerate corpus lock + schema inventory |
-| [`scripts/build_affordance_coding_layer.py`](scripts/build_affordance_coding_layer.py) | Regenerate codebook, coding template, pilot manifest |
-| Frozen pilot corpus (local) | `pilot_public_satisfiability/data/pilot_programme_records.csv` (N=7,434; see corpus lock) |
+## 5. Current repository architecture
 
-### Legacy (labelled; retained for provenance)
+```
+localgovbench/                          # package (includes legacy framework/grb code)
+localgovbench_measurement_validation/
+  affordance/                           # ACTIVE: DF v1 specification + coding
+scripts/build_affordance_*.py           # ACTIVE: regenerate artefacts
+docs/releases/                          # ACTIVE: v0.2.0 release preparation
+docs/*.md, validation/, examples/       # LEGACY — v0.1.0 (labelled)
+```
 
-| Path | Role |
-|------|------|
-| `localgovbench/framework/`, `localgovbench/grb/` | v0.1 / GRB software |
-| `docs/*` (most files) | v0.1.0 instrument & GRB documentation — **LEGACY banners** |
-| `validation/`, `examples/`, `data/benchmark/` | Historical validation / GRB materials |
+## 6. Phase 1 — specification layer (complete)
 
-## How to reproduce the specification layer
+Implemented (milestone commit `aa8ea3d`):
+
+- Disclosure Functions v1 YAML catalogue  
+- Field normalization, candidates, applicability, realization rules, linkage types  
+- Corpus lock over **7,434** public inventory records + observed-field schema inventory  
+
+Reproduce:
 
 ```bash
-python3 -m venv .venv && source .venv/bin/activate
-pip install -e ".[dev]"
 python3.12 scripts/build_affordance_specification.py
 python3.12 -m pytest localgovbench_measurement_validation/affordance/tests -q
 ```
 
-See [`localgovbench_measurement_validation/affordance/README.md`](localgovbench_measurement_validation/affordance/README.md).
+Details: [`localgovbench_measurement_validation/affordance/README.md`](localgovbench_measurement_validation/affordance/README.md).
 
-## How to use the schema coding layer
+## 7. Phase 2 — schema-coding layer (complete)
+
+Implemented (milestone commit `ac2669c`):
+
+- Codebook, labels, coding template (**55** units), pilot manifest (**33** units)  
+- Validation utilities; double-coding and adjudication protocols  
+- IRR **plan** only (no calculated IRR results)
+
+Reproduce:
 
 ```bash
 python3.12 scripts/build_affordance_coding_layer.py
 python3.12 -m pytest localgovbench_measurement_validation/affordance/coding/tests -q
 ```
 
-Human coding uses:
+Do **not** treat blank templates as study results.
 
-- `affordance/coding/config/codebook_affordance_v1.md`
-- `affordance/coding/templates/schema_coding_template_v1.csv`
-- `affordance/coding/templates/pilot_coding_manifest_v1.csv`
+## 8. Reproducibility commands (active path)
 
-Do **not** treat blank templates as study results. IRR, adjudication outcomes, realization rates, and gap figures are **not** completed in this preparation.
+```bash
+python3 -m venv .venv && source .venv/bin/activate
+pip install -e ".[dev]"
+python3.12 scripts/build_affordance_specification.py
+python3.12 scripts/build_affordance_coding_layer.py
+pytest -m "not integration"
+```
 
-## What is not yet completed
+## 9. Current limitations
 
-- Full independent human schema coding and reported IRR
-- Record-level realization tables and affordance–realization gap analysis
-- Manuscript rewrite / journal submission package for the inventory study
-- Formal Git tag `v0.2.0`, GitHub Release, and Zenodo deposit for v0.2.0
+- Human pilot coding not executed for publication  
+- IRR / adjudication outcomes not reported  
+- Record realization tables and gap figures not completed  
+- Companion manuscript not claimed finished  
+- Formal Git tag `v0.2.0`, GitHub Release, and Zenodo v0.2.0 **not** published yet  
 
-Draft release materials: [`docs/releases/`](docs/releases/).
+## 10. Next research phases
 
-## Citation (before formal v0.2.0 release)
+1. Human pilot coding → adjudication → IRR  
+2. Full schema coding where planned  
+3. Record-level realization and affordance–realization gap analysis  
+4. Manuscript finalisation and formal software release publish  
+
+## 11. Citation (before formal v0.2.0 release)
 
 Until a Zenodo version DOI for v0.2.0 is minted, cite the **Git commit** of this repository and, for the historical instrument only, the v0.1.0 archive:
 
@@ -123,13 +149,21 @@ For the frozen v0.1.0 readiness instrument only:
 }
 ```
 
+## 12. Historical and legacy material
+
+| Path | Role |
+|------|------|
+| `localgovbench/framework/`, `localgovbench/grb/` | v0.1 / GRB software (retained) |
+| `docs/*` (most files) | v0.1.0 instrument & GRB documentation — **LEGACY — v0.1.0** banners |
+| `validation/`, `examples/`, `data/benchmark/` | Historical validation / GRB materials |
+
+Do not describe deprecated GRB outputs as current outputs.
+
 ## Quick install / tests
 
 ```bash
 pip install -e ".[dev]"
 pytest -m "not integration"
-python3.12 -m pytest localgovbench_measurement_validation/affordance/tests \
-  localgovbench_measurement_validation/affordance/coding/tests -q
 ```
 
 ## Ethical and legal disclaimer
@@ -143,6 +177,8 @@ python3.12 -m pytest localgovbench_measurement_validation/affordance/tests \
 
 **v0.2.0 (draft metadata)** — active framework = Disclosure Functions v1 (specification + schema coding).  
 **v0.1.0** — historical Governance Readiness Benchmark, archived at [10.5281/zenodo.20543779](https://doi.org/10.5281/zenodo.20543779).
+
+Release drafts: [`docs/releases/`](docs/releases/).
 
 ## Contributing / License
 

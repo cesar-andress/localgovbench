@@ -1,8 +1,7 @@
 > **Status: LEGACY — v0.1.0**  
-> Historical GRB / Ollama evidence-extraction benchmark materials.  
-> **Not** part of the active Disclosure Functions v1 analysis path.  
+> Retained for provenance of historical GRB / Ollama evidence-extraction materials.  
+> **Do not use this material as the current analytical specification.**  
 > **Active framework:** [`../../localgovbench_measurement_validation/affordance/README.md`](../../localgovbench_measurement_validation/affordance/README.md).
-
 
 # Evidence extraction benchmark tasks
 

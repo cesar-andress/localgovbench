@@ -9,9 +9,9 @@ Framework **transition** release preparation. Not a completed empirical-results 
 
 ### Added
 
-- Disclosure Functions v1 **specification layer** (`localgovbench_measurement_validation/affordance/`): corpus lock, schema inventory, function catalogue, candidate maps, applicability, realization rules, linkage types
-- Disclosure Functions v1 **schema coding layer**: codebook, coding template (55 units), pilot manifest, validation utilities, double-coding and adjudication protocols
-- Release preparation docs under `docs/releases/` (audit, Zenodo draft metadata, GitHub release notes draft, manifest, readiness)
+- Disclosure Functions v1 **specification layer** (`localgovbench_measurement_validation/affordance/`): corpus lock (7,434 records), schema inventory, function catalogue, candidate maps, applicability, realization rules, linkage types (milestone `aa8ea3d`)
+- Disclosure Functions v1 **schema coding layer**: codebook, coding template (55 units), pilot manifest (33 units), validation utilities, double-coding and adjudication protocols (milestone `ac2669c`)
+- Release preparation docs under `docs/releases/` (positioning, audit, Zenodo draft metadata, GitHub release notes draft, manifest, readiness)
 - Active-documentation claim checks (tests)
 
 ### Changed

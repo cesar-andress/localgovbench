@@ -1,7 +1,7 @@
 > **Status: LEGACY — v0.1.0**  
-> Historical validation guidance for the v0.1 instrument.  
-> **Active framework:** [`../../localgovbench_measurement_validation/affordance/README.md`](../../localgovbench_measurement_validation/affordance/README.md).
-
+> Retained for provenance of historical content-validity guidance.  
+> **Do not use this document as the current analytical specification.**  
+> **Active framework:** [`../../localgovbench_measurement_validation/affordance/coding/`](../../localgovbench_measurement_validation/affordance/coding/).
 
 # Content Validity Study Guide
 

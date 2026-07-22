@@ -1,7 +1,7 @@
 > **Status: LEGACY — v0.1.0**  
-> Synthetic GRB / assessment examples for the historical instrument.  
+> Retained for provenance of synthetic GRB / assessment examples.  
+> **Do not use these examples as the current analytical specification.**  
 > **Active framework:** [`../localgovbench_measurement_validation/affordance/README.md`](../localgovbench_measurement_validation/affordance/README.md).
-
 
 # Examples
 

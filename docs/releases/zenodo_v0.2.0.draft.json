@@ -1,7 +1,7 @@
 {
   "title": "LocalGovBench v0.2.0: Disclosure Affordances in Public AI and Algorithm Registers",
   "upload_type": "software",
-  "description": "<p>LocalGovBench v0.2.0 is a reproducible research software deposit for studying schema disclosure affordance in public AI and algorithm registers using Disclosure Functions v1. It includes the normative function catalogue, field-normalization and candidate-mapping artefacts, corpus-lock and schema-inventory tooling, and a human schema-coding system (codebook, templates, validation utilities, double-coding and adjudication protocols).</p><p>This version is a framework transition relative to LocalGovBench v0.1.0 (Governance Readiness Benchmark; DOI 10.5281/zenodo.20543779). Historical v0.1.0 materials remain for provenance and are not the active analytical framework.</p><p>v0.2.0 does not claim completed human coding results, IRR statistics, realization tables, affordance–realization gap figures, jurisdiction rankings, readiness/maturity scores, shortfall scores, compliance scores, or a finished journal manuscript.</p>",
+  "description": "<p>LocalGovBench v0.2.0 is a reproducible research software deposit for studying schema disclosure affordance in public AI and algorithm registers using Disclosure Functions v1.</p><p>This version is a framework transition from the historical LocalGovBench v0.1.0 design (Governance Readiness Benchmark for sovereign LLM deployments; DOI 10.5281/zenodo.20543779). The v0.1.0 materials remain available for provenance and are not the active analytical framework of v0.2.0.</p><p>The deposit includes the Disclosure Functions v1 catalogue; field-normalization, candidate-mapping, applicability, and realization specifications; a corpus lock over 7,434 public inventory records and an observed-field schema inventory; an applicability-aware human schema-coding system; double-coding and adjudication infrastructure; and a 33-unit pilot coding manifest.</p><p>v0.2.0 does not include completed human coding results, IRR statistics, record-level realization tables, affordance–realization gap figures, jurisdiction rankings, readiness/maturity scores, shortfall scores, compliance scores, or a finished journal manuscript. It is a framework-transition software release, not a completed empirical-results release.</p>",
   "creators": [
     {
       "name": "Andrés, César",
@@ -13,6 +13,7 @@
   "publication_date": "YYYY-MM-DD",
   "access_right": "open",
   "license": "mit",
+  "language": "eng",
   "keywords": [
     "artificial intelligence",
     "public sector",
@@ -35,5 +36,5 @@
       "scheme": "url"
     }
   ],
-  "notes": "DRAFT metadata for review. Do not publish until Git tag v0.2.0 exists and publication_date is set. Do not reuse the v0.1.0 DOI as the current version DOI."
+  "notes": "DRAFT metadata for review. Do not publish until Git tag v0.2.0 exists and publication_date is set. Do not reuse the v0.1.0 DOI as the current version DOI. Concept DOI not set — requires user confirmation if one exists."
 }

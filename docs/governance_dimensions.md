@@ -1,8 +1,7 @@
 > **Status: LEGACY — v0.1.0**  
-> This document describes the historical Governance Readiness Benchmark / v0.1 instrument design.  
-> It is retained for provenance and is **not** the active analytical framework.  
+> Retained for provenance of the historical Governance Readiness Benchmark / v0.1 instrument.  
+> **Do not use this document as the current analytical specification.**  
 > **Active framework:** Disclosure Functions v1 — see [`localgovbench_measurement_validation/affordance/README.md`](../localgovbench_measurement_validation/affordance/README.md) and the root [`README.md`](../README.md).
-
 
 # Governance Dimensions (v0.1)
 

@@ -46,14 +46,7 @@ identifiers:
   - type: url
     value: "https://github.com/cesar-andress/localgovbench"
     description: "Source code repository"
-related-identifiers:
-  - type: doi
-    relation: isNewVersionOf
-    value: "10.5281/zenodo.20543779"
-    description: "Previous version (v0.1.0 Governance Readiness Benchmark archive)"
-  - type: url
-    relation: isSupplementTo
-    value: "https://github.com/cesar-andress/localgovbench"
-    description: "GitHub repository"
+# Note: CFF 1.2.0 has no related-identifiers field. Zenodo isNewVersionOf /
+# isSupplementTo relations are drafted in docs/releases/zenodo_metadata_v0.2.0.md.
 # preferred-citation: update when a peer-reviewed paper DOI exists
 # USER CONFIRMATION: companion manuscript DOI / venue not set (avoid inventing)

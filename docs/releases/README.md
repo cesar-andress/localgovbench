@@ -4,6 +4,7 @@ Draft materials for the forthcoming **LocalGovBench v0.2.0** framework transitio
 
 | Document | Purpose |
 |----------|---------|
+| `public_positioning_v0.2.0.md` | Frozen public positioning statement |
 | `public_documentation_audit_v0.2.0.md` | Audit of public docs |
 | `zenodo_metadata_v0.2.0.md` | Zenodo field draft |
 | `zenodo_v0.2.0.draft.json` | Machine-readable Zenodo draft |
