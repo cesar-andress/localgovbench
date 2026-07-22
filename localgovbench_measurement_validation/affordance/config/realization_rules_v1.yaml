@@ -1,0 +1,270 @@
+# realization_rules_v1.yaml
+# Principles for future record-level realization. No empirical rates here.
+
+spec_id: realization_rules
+version: "1.0.0"
+status: normative
+
+global_principles:
+  - Non-empty does not mean substantive.
+  - Primary and fallback realization must remain separately reportable.
+  - Multi-field OR must not inflate schema support coding.
+  - Valid categorical No/N values count as populated.
+  - Invalid URL placeholders (e.g. Not available) count as populated text but
+    do not count as realized links.
+  - Affordance/support coding does not use population rates.
+
+functions:
+  cf_system_identity:
+    preferred_by_source:
+      US-OMB-2025: use_case_name
+      CA-GC-AI-REG: name_ai_system_en
+      NL-ALGO-REG: name
+      EU-PSTW: Name
+      UK-ATRS: title
+    fallback_by_source:
+      US-OMB-2025: [id]
+      CA-GC-AI-REG: [ai_register_id]
+      NL-ALGO-REG: [algorithm_id]
+      EU-PSTW: ["PSTW ID"]
+      UK-ATRS: [link]
+    or_logic: preferred_or_fallback_for_exploratory_yield_only
+    never_use:
+      - format
+      - index
+      - system_name_ato
+      - source_id
+    denominator: all_records_in_source
+    placeholder_treatment: standard_tokens_as_empty
+    generic_narrative_restriction: none
+    separate_reporting: [preferred_rate, fallback_rate]
+
+  cf_purpose:
+    preferred_by_source:
+      US-OMB-2025: problem_solved
+      CA-GC-AI-REG: description_ai_system_en
+      NL-ALGO-REG: goal
+      EU-PSTW: Description
+      UK-ATRS: null
+    fallback_by_source:
+      US-OMB-2025: [benefits]
+      CA-GC-AI-REG: []
+      NL-ALGO-REG: []
+      EU-PSTW: ["Application type", "Process type"]
+      UK-ATRS: [description]
+    or_logic: optional_exploratory_or_only_for_us_problem_or_benefits
+    never_use:
+      - topic_area
+      - proportionality
+      - classification
+      - ai_system_capabilities_en
+    denominator: all_records_in_source
+    placeholder_treatment: standard_tokens_as_empty
+    generic_narrative_restriction: >
+      UK description is INDIRECT only; CA/PSTW description may be preferred host
+      under anti-overcredit (dedicated-once for purpose).
+    separate_reporting: [preferred_rate, fallback_rate]
+
+  cf_operational_status:
+    preferred_by_source:
+      US-OMB-2025: development_stage
+      CA-GC-AI-REG: ai_system_status_en
+      NL-ALGO-REG: status
+      EU-PSTW: " Status"
+      UK-ATRS: null
+    fallback_by_source: {}
+    or_logic: none
+    never_use:
+      - operational_date
+      - status_date
+      - begin_date
+      - end_date
+      - "Start Year"
+      - "End Year"
+      - publication_dt
+      - public_timestamp
+    denominator: all_records_in_source
+    conditional_denominator: null
+    placeholder_treatment: trim_whitespace_on_categorical_labels
+    generic_narrative_restriction: dates_never_substitute_status
+    separate_reporting: [preferred_rate]
+
+  cf_accountable_body:
+    preferred_by_source:
+      US-OMB-2025: agency_name
+      CA-GC-AI-REG: government_organization
+      NL-ALGO-REG: organization
+      EU-PSTW: Responsible organisation
+      UK-ATRS: null
+    fallback_by_source:
+      US-OMB-2025: [agency, agency_bureau]
+      NL-ALGO-REG: [org_id]
+      UK-ATRS: [organisation_title]
+    or_logic: none_for_primary_reporting
+    never_use:
+      - vendor_name
+      - vendor_information
+      - provider
+      - contact_email
+      - ai_system_primary_users_en
+      - "Company name or GovTech ID"
+    denominator: all_records_in_source
+    placeholder_treatment: standard_tokens_as_empty
+    generic_narrative_restriction: >
+      UK organisation_title is never PRIMARY; fallback INDIRECT publisher only.
+    separate_reporting: [preferred_rate, indirect_publisher_rate_uk]
+
+  cf_data_involvement:
+    preferred_by_source:
+      US-OMB-2025: has_pii
+      CA-GC-AI-REG: involves_personal_information
+      NL-ALGO-REG: source_data
+      EU-PSTW: null
+      UK-ATRS: null
+    fallback_by_source:
+      US-OMB-2025: [data_description]
+      CA-GC-AI-REG: [data_sources_en]
+      NL-ALGO-REG: [source_data_grouping]
+    or_logic: >
+      Exploratory component OR allowed; primary and narrative fallback must be
+      reported as separate components and must not inflate schema support.
+    never_use:
+      - demographic_features
+      - hi_training_established
+      - notification_ai
+      - impacttoetsen
+    denominator: all_records_in_source_if_applicable
+    applicability_exclusions:
+      EU-PSTW: catalogue_inapplicable
+      UK-ATRS: absent_on_api_slim
+    placeholder_treatment: Y_N_No_count_as_populated
+    generic_narrative_restriction: description_never_primary_data_involvement
+    separate_reporting: [primary_flag_or_sources_rate, narrative_fallback_rate]
+
+  om_human_oversight:
+    preferred_by_source:
+      NL-ALGO-REG: human_intervention
+      US-OMB-2025: null
+      CA-GC-AI-REG: null
+      EU-PSTW: null
+      UK-ATRS: null
+    fallback_by_source:
+      US-OMB-2025:
+        - hi_independent_review
+        - hi_ongoing_monitoring
+        - hi_failsafe_presence
+    or_logic: us_hi_fields_or_within_conditional_denominator
+    never_use:
+      - have_ato
+      - contact_email
+      - hi_training_established
+    denominator: all_records_in_source_if_applicable
+    conditional_denominator:
+      US-OMB-2025:
+        field: is_high_impact
+        values_include_prefixes: ["High-impact", "Presumed High-Impact"]
+    placeholder_treatment: standard_tokens_as_empty
+    generic_narrative_restriction: description_indirect_only
+    separate_reporting: [preferred_rate, conditional_hi_rate]
+
+  om_risk_or_impact:
+    preferred_by_source:
+      US-OMB-2025: is_high_impact
+      NL-ALGO-REG: risks
+      CA-GC-AI-REG: null
+      EU-PSTW: null
+      UK-ATRS: null
+    fallback_by_source:
+      US-OMB-2025: [HI_justification, hi_potential_impacts]
+      NL-ALGO-REG: [publication_category]
+    or_logic: none_for_primary_reporting
+    never_use:
+      - proportionality
+      - impacttoetsen  # not PRIMARY; linkage/secondary only
+      - "Improved Administrative Efficiency"
+      - "Improved Public Service"
+      - "Enabled greater fairness, honesty, equality"
+      - "Increased transparency of public sector operations"
+      - "Reduced or eliminated the risk of corruption and abuse of the law by public servants"
+    denominator: all_records_in_source_if_applicable
+    placeholder_treatment: categorical_including_Not_High_impact_populated
+    generic_narrative_restriction: description_indirect_only
+    separate_reporting: [preferred_rate, secondary_rate]
+    notes: NL impacttoetsen is not PRIMARY risk.
+
+  om_legal_basis:
+    preferred_by_source:
+      NL-ALGO-REG: lawful_basis
+    fallback_by_source:
+      NL-ALGO-REG: [lawful_basis_grouping]
+    or_logic: none
+    never_use: []
+    denominator: NL-ALGO-REG_all_records
+    placeholder_treatment: standard_tokens_as_empty
+    generic_narrative_restriction: description_not_dedicated
+    separate_reporting: [preferred_rate]
+
+  om_supplier:
+    preferred_by_source:
+      US-OMB-2025: vendor_name
+      CA-GC-AI-REG: vendor_information
+      NL-ALGO-REG: provider
+      EU-PSTW: null
+      UK-ATRS: null
+    fallback_by_source:
+      US-OMB-2025: [contracting_usage]
+      CA-GC-AI-REG: [developed_by_en]
+      EU-PSTW: ["Company name or GovTech ID"]
+    or_logic: none_for_primary_reporting
+    never_use:
+      - agency_name
+      - organization
+      - government_organization
+      - "Responsible organisation"
+      - contact_email
+    denominator: all_records_in_source_if_applicable
+    placeholder_treatment: standard_tokens_as_empty
+    generic_narrative_restriction: none_special
+    separate_reporting: [preferred_rate, fallback_rate]
+
+  om_technical_method:
+    preferred_by_source:
+      US-OMB-2025: classification
+      CA-GC-AI-REG: ai_system_capabilities_en
+      NL-ALGO-REG: methods_and_models
+      EU-PSTW: "AI Classification (I)"
+      UK-ATRS: null
+    fallback_by_source:
+      US-OMB-2025: [topic_area]
+      EU-PSTW: ["AI Classification Subdomain (II) (main)", "Primary Technology"]
+    or_logic: none_for_primary_reporting
+    never_use:
+      - problem_solved
+      - goal
+      - description_ai_system_en
+    denominator: all_records_in_source_if_applicable
+    placeholder_treatment: standard_tokens_as_empty
+    generic_narrative_restriction: >
+      If description is dedicated for purpose, it cannot be dedicated technical.
+    separate_reporting: [preferred_rate, fallback_rate]
+
+  om_redress_pointer:
+    preferred_by_source:
+      US-OMB-2025: hi_appeal_process
+      CA-GC-AI-REG: null
+      NL-ALGO-REG: null
+      EU-PSTW: null
+      UK-ATRS: null
+    fallback_by_source: {}
+    or_logic: none
+    never_use:
+      - contact_email
+      - notification_ai
+    denominator: conditional_us_high_impact_only
+    conditional_denominator:
+      US-OMB-2025:
+        field: is_high_impact
+        values_include_prefixes: ["High-impact", "Presumed High-Impact"]
+    placeholder_treatment: Not_Applicable_counts_as_populated_categorical
+    generic_narrative_restriction: contact_email_never_counts
+    separate_reporting: [conditional_hi_rate]

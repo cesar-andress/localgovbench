@@ -1,0 +1,146 @@
+source,raw_field,normalized_field,function_id,mapping_label,rationale,applicability_context,generic_narrative_flag,conditional_subclass,version
+US-OMB-2025,use_case_name,use_case_name,cf_system_identity,PRIMARY,Public use-case title.,peer,no,,1.0.0
+US-OMB-2025,id,id,cf_system_identity,SECONDARY,Agency-side identifier; not always populated.,peer,no,,1.0.0
+US-OMB-2025,system_name_ato,system_name_ato,cf_system_identity,REJECTED,"ATO system label, not inventory identity.",peer,no,,1.0.0
+US-OMB-2025,problem_solved,problem_solved,cf_purpose,PRIMARY,Dedicated problem/purpose narrative.,peer,no,,1.0.0
+US-OMB-2025,benefits,benefits,cf_purpose,SECONDARY,Benefits narrative; report separately from primary.,peer,no,,1.0.0
+US-OMB-2025,system_outputs,system_outputs,cf_purpose,INDIRECT,Outputs related but not purpose.,peer,no,,1.0.0
+US-OMB-2025,topic_area,topic_area,cf_purpose,REJECTED,Topic label is not purpose.,peer,no,,1.0.0
+US-OMB-2025,development_stage,development_stage,cf_operational_status,PRIMARY,Lifecycle/development stage.,peer,no,,1.0.0
+US-OMB-2025,operational_date,operational_date,cf_operational_status,REJECTED,Date is not operational status.,peer,no,,1.0.0
+US-OMB-2025,agency_name,agency_name,cf_accountable_body,PRIMARY,Reporting agency name.,peer,no,,1.0.0
+US-OMB-2025,agency,agency,cf_accountable_body,SECONDARY,Agency code.,peer,no,,1.0.0
+US-OMB-2025,agency_bureau,agency_bureau,cf_accountable_body,SECONDARY,Bureau within agency.,peer,no,,1.0.0
+US-OMB-2025,contact_email,contact_email,cf_accountable_body,REJECTED,Contact email is not accountable body.,peer,no,,1.0.0
+US-OMB-2025,vendor_name,vendor_name,cf_accountable_body,REJECTED,"Vendor is supplier, not accountable body.",peer,no,,1.0.0
+US-OMB-2025,has_pii,has_pii,cf_data_involvement,PRIMARY,Frozen primary: personal-data flag.,peer,no,,1.0.0
+US-OMB-2025,data_description,data_description,cf_data_involvement,SECONDARY,Narrative fallback; report separately.,peer,no,,1.0.0
+US-OMB-2025,link_to_data,link_to_data,cf_data_involvement,INDIRECT,Pointer capability; linkage layer.,peer,no,,1.0.0
+US-OMB-2025,demographic_features,demographic_features,cf_data_involvement,REJECTED,Not primary data-involvement field.,peer,no,,1.0.0
+US-OMB-2025,hi_training_established,hi_training_established,cf_data_involvement,REJECTED,"Personnel training, not training-data provenance.",peer,no,,1.0.0
+US-OMB-2025,hi_independent_review,hi_independent_review,om_human_oversight,SECONDARY,HI oversight-related field.,conditional,no,high_impact,1.0.0
+US-OMB-2025,hi_ongoing_monitoring,hi_ongoing_monitoring,om_human_oversight,SECONDARY,HI monitoring field.,conditional,no,high_impact,1.0.0
+US-OMB-2025,hi_failsafe_presence,hi_failsafe_presence,om_human_oversight,SECONDARY,HI failsafe field.,conditional,no,high_impact,1.0.0
+US-OMB-2025,have_ato,have_ato,om_human_oversight,REJECTED,ATO flag is not human oversight description.,peer,no,,1.0.0
+US-OMB-2025,contact_email,contact_email,om_human_oversight,REJECTED,Contact email is not oversight.,peer,no,,1.0.0
+US-OMB-2025,is_high_impact,is_high_impact,om_risk_or_impact,PRIMARY,High-impact designation flag.,peer,no,,1.0.0
+US-OMB-2025,HI_justification,hi_justification,om_risk_or_impact,SECONDARY,Justification narrative.,peer,no,,1.0.0
+US-OMB-2025,hi_potential_impacts,hi_potential_impacts,om_risk_or_impact,SECONDARY,Impact narrative under HI block.,peer,no,,1.0.0
+US-OMB-2025,vendor_name,vendor_name,om_supplier,PRIMARY,Vendor name.,peer,no,,1.0.0
+US-OMB-2025,contracting_usage,contracting_usage,om_supplier,SECONDARY,Contracting/in-house usage.,peer,no,,1.0.0
+US-OMB-2025,classification,classification,om_technical_method,PRIMARY,Technical method classification.,peer,no,,1.0.0
+US-OMB-2025,topic_area,topic_area,om_technical_method,SECONDARY,Topic label; thin technical signal.,peer,no,,1.0.0
+US-OMB-2025,problem_solved,problem_solved,om_technical_method,REJECTED,Purpose field; not technical method.,peer,no,,1.0.0
+US-OMB-2025,hi_appeal_process,hi_appeal_process,om_redress_pointer,PRIMARY,Appeal process field under HI.,conditional,no,high_impact,1.0.0
+US-OMB-2025,contact_email,contact_email,om_redress_pointer,REJECTED,Generic contact email is never redress.,peer,no,,1.0.0
+CA-GC-AI-REG,name_ai_system_en,name_ai_system_en,cf_system_identity,PRIMARY,English system name (canonical).,peer,no,,1.0.0
+CA-GC-AI-REG,ai_register_id,ai_register_id,cf_system_identity,SECONDARY,Register identifier.,peer,no,,1.0.0
+CA-GC-AI-REG,name_ai_system_fr,name_ai_system_fr,cf_system_identity,INDIRECT,French alias; EN canonical for realization.,peer,no,,1.0.0
+CA-GC-AI-REG,description_ai_system_en,description_ai_system_en,cf_purpose,PRIMARY,Generic description host under anti-overcredit.,peer,yes,,1.0.0
+CA-GC-AI-REG,ai_system_results_en,ai_system_results_en,cf_purpose,INDIRECT,Results/benefits-like narrative.,peer,no,,1.0.0
+CA-GC-AI-REG,ai_system_capabilities_en,ai_system_capabilities_en,cf_purpose,REJECTED,"Maps to technical method, not purpose.",peer,no,,1.0.0
+CA-GC-AI-REG,ai_system_status_en,ai_system_status_en,cf_operational_status,PRIMARY,English status (canonical).,peer,no,,1.0.0
+CA-GC-AI-REG,status_date,status_date,cf_operational_status,REJECTED,Date is not operational status.,peer,no,,1.0.0
+CA-GC-AI-REG,ai_system_status_fr,ai_system_status_fr,cf_operational_status,INDIRECT,French alias.,peer,no,,1.0.0
+CA-GC-AI-REG,government_organization,government_organization,cf_accountable_body,PRIMARY,Responsible government organisation.,peer,no,,1.0.0
+CA-GC-AI-REG,ai_system_primary_users_en,ai_system_primary_users_en,cf_accountable_body,REJECTED,Users are not accountable body.,peer,no,,1.0.0
+CA-GC-AI-REG,vendor_information,vendor_information,cf_accountable_body,REJECTED,Supplier field.,peer,no,,1.0.0
+CA-GC-AI-REG,involves_personal_information,involves_personal_information,cf_data_involvement,PRIMARY,Frozen primary: PI flag.,peer,no,,1.0.0
+CA-GC-AI-REG,data_sources_en,data_sources_en,cf_data_involvement,SECONDARY,Narrative fallback; report separately.,peer,no,,1.0.0
+CA-GC-AI-REG,personal_information_banks_en,personal_information_banks_en,cf_data_involvement,INDIRECT,PIB codes; sparse.,peer,no,,1.0.0
+CA-GC-AI-REG,notification_ai,notification_ai,cf_data_involvement,REJECTED,"Y/N notification flag, not data involvement.",peer,no,,1.0.0
+CA-GC-AI-REG,description_ai_system_en,description_ai_system_en,om_human_oversight,INDIRECT,Generic only; not dedicated.,peer,yes,,1.0.0
+CA-GC-AI-REG,description_ai_system_en,description_ai_system_en,om_risk_or_impact,INDIRECT,Generic only; not dedicated.,peer,yes,,1.0.0
+CA-GC-AI-REG,vendor_information,vendor_information,om_supplier,PRIMARY,Vendor information.,peer,no,,1.0.0
+CA-GC-AI-REG,developed_by_en,developed_by_en,om_supplier,SECONDARY,Developer attribution categories.,peer,no,,1.0.0
+CA-GC-AI-REG,ai_system_capabilities_en,ai_system_capabilities_en,om_technical_method,PRIMARY,Capabilities narrative.,peer,no,,1.0.0
+CA-GC-AI-REG,description_ai_system_en,description_ai_system_en,om_technical_method,REJECTED,Reserved as purpose dedicated host.,peer,yes,,1.0.0
+CA-GC-AI-REG,notification_ai,notification_ai,om_redress_pointer,REJECTED,Not an appeal/contestation field.,peer,no,,1.0.0
+NL-ALGO-REG,name,name,cf_system_identity,PRIMARY,Algorithm name.,peer,no,,1.0.0
+NL-ALGO-REG,algorithm_id,algorithm_id,cf_system_identity,SECONDARY,Stable algorithm id.,peer,no,,1.0.0
+NL-ALGO-REG,source_id,source_id,cf_system_identity,REJECTED,Sparse/noisy identifier.,peer,no,,1.0.0
+NL-ALGO-REG,goal,goal,cf_purpose,PRIMARY,Dedicated goal/purpose field.,peer,no,,1.0.0
+NL-ALGO-REG,description_short,description_short,cf_purpose,INDIRECT,Short generic description.,peer,yes,,1.0.0
+NL-ALGO-REG,proportionality,proportionality,cf_purpose,REJECTED,Proportionality rejected for all DF v1.,peer,no,,1.0.0
+NL-ALGO-REG,category,category,cf_purpose,REJECTED,"Policy category, not purpose.",peer,no,,1.0.0
+NL-ALGO-REG,status,status,cf_operational_status,PRIMARY,Operational status.,peer,no,,1.0.0
+NL-ALGO-REG,begin_date,begin_date,cf_operational_status,REJECTED,Date is not operational status.,peer,no,,1.0.0
+NL-ALGO-REG,end_date,end_date,cf_operational_status,REJECTED,Date is not operational status.,peer,no,,1.0.0
+NL-ALGO-REG,publication_dt,publication_dt,cf_operational_status,REJECTED,"Publication timestamp, not status.",peer,no,,1.0.0
+NL-ALGO-REG,organization,organization,cf_accountable_body,PRIMARY,Operating organisation.,peer,no,,1.0.0
+NL-ALGO-REG,org_id,org_id,cf_accountable_body,SECONDARY,Organisation id.,peer,no,,1.0.0
+NL-ALGO-REG,contact_email,contact_email,cf_accountable_body,REJECTED,Contact email is not accountable body.,peer,no,,1.0.0
+NL-ALGO-REG,provider,provider,cf_accountable_body,REJECTED,Provider is supplier.,peer,no,,1.0.0
+NL-ALGO-REG,source_data,source_data,cf_data_involvement,PRIMARY,Frozen primary: source data narrative.,peer,no,,1.0.0
+NL-ALGO-REG,source_data_grouping,source_data_grouping,cf_data_involvement,SECONDARY,Grouped/linked data sources fallback.,peer,no,,1.0.0
+NL-ALGO-REG,impacttoetsen,impacttoetsen,cf_data_involvement,REJECTED,"Impact assessment text/links, not data involvement.",peer,no,,1.0.0
+NL-ALGO-REG,human_intervention,human_intervention,om_human_oversight,PRIMARY,Dedicated human intervention field.,peer,no,,1.0.0
+NL-ALGO-REG,contact_email,contact_email,om_human_oversight,REJECTED,Contact email is not oversight.,peer,no,,1.0.0
+NL-ALGO-REG,proportionality,proportionality,om_human_oversight,REJECTED,Proportionality rejected for all DF v1.,peer,no,,1.0.0
+NL-ALGO-REG,risks,risks,om_risk_or_impact,PRIMARY,Dedicated risks narrative.,peer,no,,1.0.0
+NL-ALGO-REG,publication_category,publication_category,om_risk_or_impact,SECONDARY,Frozen: secondary risk designation only.,peer,no,,1.0.0
+NL-ALGO-REG,impacttoetsen,impacttoetsen,om_risk_or_impact,INDIRECT,Not PRIMARY risk; impact-assessment text/links.,peer,no,,1.0.0
+NL-ALGO-REG,proportionality,proportionality,om_risk_or_impact,REJECTED,Proportionality rejected for all DF v1.,peer,no,,1.0.0
+NL-ALGO-REG,lawful_basis,lawful_basis,om_legal_basis,PRIMARY,Dedicated lawful basis.,jurisdiction_specific,no,,1.0.0
+NL-ALGO-REG,lawful_basis_grouping,lawful_basis_grouping,om_legal_basis,SECONDARY,Grouped lawful-basis material.,jurisdiction_specific,no,,1.0.0
+NL-ALGO-REG,proportionality,proportionality,om_legal_basis,REJECTED,Proportionality rejected for all DF v1.,peer,no,,1.0.0
+NL-ALGO-REG,provider,provider,om_supplier,PRIMARY,Provider/supplier field.,peer,no,,1.0.0
+NL-ALGO-REG,organization,organization,om_supplier,REJECTED,"Accountable body, not supplier.",peer,no,,1.0.0
+NL-ALGO-REG,methods_and_models,methods_and_models,om_technical_method,PRIMARY,Methods and models narrative.,peer,no,,1.0.0
+NL-ALGO-REG,tags,tags,om_technical_method,INDIRECT,Weak technical tags.,peer,no,,1.0.0
+NL-ALGO-REG,goal,goal,om_technical_method,REJECTED,Purpose field.,peer,no,,1.0.0
+NL-ALGO-REG,contact_email,contact_email,om_redress_pointer,REJECTED,Contact email is never redress.,peer,no,,1.0.0
+NL-ALGO-REG,proportionality,proportionality,om_redress_pointer,REJECTED,Proportionality rejected for all DF v1.,peer,no,,1.0.0
+NL-ALGO-REG,proportionality,proportionality,cf_data_involvement,REJECTED,Proportionality rejected for all DF v1.,peer,no,,1.0.0
+NL-ALGO-REG,proportionality,proportionality,cf_system_identity,REJECTED,Proportionality rejected for all DF v1.,peer,no,,1.0.0
+NL-ALGO-REG,proportionality,proportionality,cf_accountable_body,REJECTED,Proportionality rejected for all DF v1.,peer,no,,1.0.0
+NL-ALGO-REG,proportionality,proportionality,cf_operational_status,REJECTED,Proportionality rejected for all DF v1.,peer,no,,1.0.0
+NL-ALGO-REG,proportionality,proportionality,om_supplier,REJECTED,Proportionality rejected for all DF v1.,peer,no,,1.0.0
+NL-ALGO-REG,proportionality,proportionality,om_technical_method,REJECTED,Proportionality rejected for all DF v1.,peer,no,,1.0.0
+EU-PSTW,Name,Name,cf_system_identity,PRIMARY,Case name.,peer,no,,1.0.0
+EU-PSTW,PSTW ID,PSTW ID,cf_system_identity,SECONDARY,Case identifier.,peer,no,,1.0.0
+EU-PSTW,Description,Description,cf_purpose,PRIMARY,Catalogue description under anti-overcredit.,contrast_catalogue,yes,,1.0.0
+EU-PSTW,Application type,Application type,cf_purpose,SECONDARY,Application type classification.,contrast_catalogue,no,,1.0.0
+EU-PSTW,Process type,Process type,cf_purpose,SECONDARY,Process type classification.,contrast_catalogue,no,,1.0.0
+EU-PSTW, Status,status,cf_operational_status,PRIMARY,Raw field has leading space; normalized status.,contrast_catalogue,no,,1.0.0
+EU-PSTW,Start Year,Start Year,cf_operational_status,REJECTED,Year is not operational status.,peer,no,,1.0.0
+EU-PSTW,End Year,End Year,cf_operational_status,REJECTED,Year is not operational status.,peer,no,,1.0.0
+EU-PSTW,Responsible organisation,Responsible organisation,cf_accountable_body,PRIMARY,Responsible organisation.,contrast_catalogue,no,,1.0.0
+EU-PSTW,Company name or GovTech ID,Company name or GovTech ID,cf_accountable_body,REJECTED,"Supplier/company, not accountable body.",peer,no,,1.0.0
+EU-PSTW,Description,Description,cf_data_involvement,REJECTED,Catalogue-inapplicable; generic must not substitute.,catalogue_inapplicable,yes,,1.0.0
+EU-PSTW,Company name or GovTech ID,Company name or GovTech ID,om_supplier,INDIRECT,Weak supplier signal.,contrast_catalogue,no,,1.0.0
+EU-PSTW,AI Classification (I),AI Classification (I),om_technical_method,PRIMARY,AI classification.,contrast_catalogue,no,,1.0.0
+EU-PSTW,AI Classification Subdomain (II) (main),AI Classification Subdomain (II) (main),om_technical_method,SECONDARY,AI subdomain.,contrast_catalogue,no,,1.0.0
+EU-PSTW,Primary Technology,Primary Technology,om_technical_method,SECONDARY,Primary technology label.,contrast_catalogue,no,,1.0.0
+EU-PSTW,Description,Description,om_technical_method,REJECTED,Reserved as purpose dedicated host.,peer,yes,,1.0.0
+EU-PSTW,Description,Description,om_human_oversight,REJECTED,Catalogue-inapplicable / not dedicated oversight.,catalogue_inapplicable,yes,,1.0.0
+EU-PSTW,Description,Description,om_risk_or_impact,REJECTED,Catalogue-inapplicable; not risk designation.,catalogue_inapplicable,yes,,1.0.0
+EU-PSTW,Improved Administrative Efficiency,Improved Administrative Efficiency,om_risk_or_impact,REJECTED,PSTW outcome flag rejected as risk disclosure.,contrast_catalogue,no,,1.0.0
+EU-PSTW,Improved Public Service,Improved Public Service,om_risk_or_impact,REJECTED,PSTW outcome flag rejected as risk disclosure.,contrast_catalogue,no,,1.0.0
+EU-PSTW,Improved management of public resources,Improved management of public resources,om_risk_or_impact,REJECTED,PSTW outcome flag rejected as risk disclosure.,contrast_catalogue,no,,1.0.0
+EU-PSTW,Improved public control and influence on government actions and policies,Improved public control and influence on government actions and policies,om_risk_or_impact,REJECTED,PSTW outcome flag rejected as risk disclosure.,contrast_catalogue,no,,1.0.0
+EU-PSTW,Increase quality of PSI and services,Increase quality of PSI and services,om_risk_or_impact,REJECTED,PSTW outcome flag rejected as risk disclosure.,contrast_catalogue,no,,1.0.0
+EU-PSTW,Increased public participation in government actions and policy making,Increased public participation in government actions and policy making,om_risk_or_impact,REJECTED,PSTW outcome flag rejected as risk disclosure.,contrast_catalogue,no,,1.0.0
+EU-PSTW,Increased quality of processes and systems,Increased quality of processes and systems,om_risk_or_impact,REJECTED,PSTW outcome flag rejected as risk disclosure.,contrast_catalogue,no,,1.0.0
+EU-PSTW,Increased transparency of public sector operations,Increased transparency of public sector operations,om_risk_or_impact,REJECTED,PSTW outcome flag rejected as risk disclosure.,contrast_catalogue,no,,1.0.0
+EU-PSTW,"Enabled greater fairness, honesty, equality","Enabled greater fairness, honesty, equality",om_risk_or_impact,REJECTED,PSTW outcome flag rejected as risk disclosure.,contrast_catalogue,no,,1.0.0
+EU-PSTW,Reduced or eliminated the risk of corruption and abuse of the law by public servants,Reduced or eliminated the risk of corruption and abuse of the law by public servants,om_risk_or_impact,REJECTED,PSTW outcome flag rejected as risk disclosure.,contrast_catalogue,no,,1.0.0
+EU-PSTW,"More responsive, efficient, and cost-effective public services","More responsive, efficient, and cost-effective public services",om_risk_or_impact,REJECTED,PSTW outcome flag rejected as risk disclosure.,contrast_catalogue,no,,1.0.0
+EU-PSTW,Better collaboration and better communication,Better collaboration and better communication,om_risk_or_impact,REJECTED,PSTW outcome flag rejected as risk disclosure.,contrast_catalogue,no,,1.0.0
+EU-PSTW,Cost-reduction,Cost-reduction,om_risk_or_impact,REJECTED,PSTW outcome flag rejected as risk disclosure.,contrast_catalogue,no,,1.0.0
+EU-PSTW,New services or channels,New services or channels,om_risk_or_impact,REJECTED,PSTW outcome flag rejected as risk disclosure.,contrast_catalogue,no,,1.0.0
+EU-PSTW,Open government capabilities,Open government capabilities,om_risk_or_impact,REJECTED,PSTW outcome flag rejected as risk disclosure.,contrast_catalogue,no,,1.0.0
+EU-PSTW,Personalized Services,Personalized Services,om_risk_or_impact,REJECTED,PSTW outcome flag rejected as risk disclosure.,contrast_catalogue,no,,1.0.0
+EU-PSTW,Public (citizen)-centered services,Public (citizen)-centered services,om_risk_or_impact,REJECTED,PSTW outcome flag rejected as risk disclosure.,contrast_catalogue,no,,1.0.0
+EU-PSTW,Responsiveness of government operation,Responsiveness of government operation,om_risk_or_impact,REJECTED,PSTW outcome flag rejected as risk disclosure.,contrast_catalogue,no,,1.0.0
+UK-ATRS,title,title,cf_system_identity,PRIMARY,Record title.,search_api_slim,no,,1.0.0
+UK-ATRS,link,link,cf_system_identity,SECONDARY,Record locator path.,search_api_slim,no,,1.0.0
+UK-ATRS,format,format,cf_system_identity,REJECTED,Document type metadata.,peer,no,,1.0.0
+UK-ATRS,index,index,cf_system_identity,REJECTED,Search index metadata.,peer,no,,1.0.0
+UK-ATRS,description,description,cf_purpose,INDIRECT,Frozen: UK description is INDIRECT purpose only.,search_api_slim,yes,,1.0.0
+UK-ATRS,organisation_title,organisation_title,cf_accountable_body,INDIRECT,Frozen: never PRIMARY; publisher identity.,search_api_slim,no,,1.0.0
+UK-ATRS,public_timestamp,public_timestamp,cf_operational_status,REJECTED,Timestamp is not operational status.,peer,no,,1.0.0
+UK-ATRS,description,description,cf_data_involvement,REJECTED,No dedicated data field on API slim.,search_api_slim,yes,,1.0.0
+UK-ATRS,description,description,om_human_oversight,REJECTED,No dedicated oversight on API slim.,search_api_slim,yes,,1.0.0
+UK-ATRS,description,description,om_risk_or_impact,REJECTED,No dedicated risk on API slim.,search_api_slim,yes,,1.0.0
+UK-ATRS,contact_email,contact_email,om_redress_pointer,REJECTED,Field not in UK API slim; placeholder reject rule.,peer,no,,1.0.0

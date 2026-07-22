@@ -89,6 +89,18 @@ reports/model_benchmark.md
 # Workflow outputs (regenerate via scripts/run_assessment_workflow.py)
 outputs/
 
+# Affordance specification layer (Disclosure Functions v1) — track frozen artefacts
+!localgovbench_measurement_validation/affordance/config/*.csv
+!localgovbench_measurement_validation/affordance/outputs/
+!localgovbench_measurement_validation/affordance/outputs/**
+
+# Delphi expert responses (confidential; keep README only)
+validation/content_validity/delphi/responses/*.yaml
+!validation/content_validity/delphi/responses/README.md
+
+# Validation exports (explicit allow for generated summaries)
+!exports/validation/content_validity_round1_items.csv
+
 # Local env
 .env
 .env.*

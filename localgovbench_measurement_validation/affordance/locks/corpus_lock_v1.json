@@ -1,0 +1,53 @@
+{
+  "absolute_path": "/home/cesar/papers/localgovbench/localgovbench/localgovbench_measurement_validation/pilot_public_satisfiability/data/pilot_programme_records.csv",
+  "canonical_path": "localgovbench_measurement_validation/pilot_public_satisfiability/data/pilot_programme_records.csv",
+  "collection_date": "2026-06-24",
+  "collection_dates_observed": [
+    "2026-06-24"
+  ],
+  "columns": [
+    "record_id",
+    "jurisdiction",
+    "source_name",
+    "source_url",
+    "programme_title",
+    "programme_description",
+    "agency_or_owner",
+    "raw_fields_json",
+    "collection_date"
+  ],
+  "corpus_filename": "pilot_programme_records.csv",
+  "corpus_lock_version": "1.0.0",
+  "generation_timestamp_utc": "2026-07-22T23:11:30.807519+00:00",
+  "git_commit_hash_at_generation": "95f3de8f1a2da7da81f195dcfc1297ec8e8a2512",
+  "notes": [
+    "Observed schema fields must be derived only from raw_fields_json.",
+    "SOURCE_SCHEMAS is not evidence of field existence.",
+    "UK-ATRS object_layer is search_api_slim, not full ATRS.",
+    "EU-PSTW object_layer is case_catalogue (contrast stratum)."
+  ],
+  "object_layer_per_source": {
+    "CA-GC-AI-REG": "ai_system_register",
+    "EU-PSTW": "case_catalogue",
+    "NL-ALGO-REG": "algorithm_register",
+    "UK-ATRS": "search_api_slim",
+    "US-OMB-2025": "use_case_inventory"
+  },
+  "raw_fields_json_column_confirmed": true,
+  "record_count_per_source": {
+    "CA-GC-AI-REG": 412,
+    "EU-PSTW": 1794,
+    "NL-ALGO-REG": 1484,
+    "UK-ATRS": 133,
+    "US-OMB-2025": 3611
+  },
+  "sha256": "12ea6282efcf338d362c8eb91a9beffe8dd7eae9f70aa2805723b386c9c8d693",
+  "source_names": [
+    "CA-GC-AI-REG",
+    "EU-PSTW",
+    "NL-ALGO-REG",
+    "UK-ATRS",
+    "US-OMB-2025"
+  ],
+  "total_record_count": 7434
+}

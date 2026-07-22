@@ -1,0 +1,155 @@
+# field_normalization_rules_v1.yaml
+# Hand-authored. Explicit, auditable normalization only.
+# Raw field names are always preserved in schema inventory outputs.
+
+spec_id: field_normalization_rules
+version: "1.0.0"
+status: normative
+corpus_lock_ref_policy: must_match_generated_corpus_lock_sha256
+
+principles:
+  - Preserve every observed raw_field_name unchanged in inventory outputs.
+  - Apply only explicit rules listed here (plus whitespace trim of normalized name).
+  - Do not collapse fields merely because names appear similar.
+  - Do not infer non-observed fields.
+  - French Canadian fields remain documented as observed aliases.
+  - English Canadian fields are canonical for realization field preference.
+
+object_layer_labels:
+  US-OMB-2025: use_case_inventory
+  CA-GC-AI-REG: ai_system_register
+  NL-ALGO-REG: algorithm_register
+  EU-PSTW: case_catalogue
+  UK-ATRS: search_api_slim
+
+forbidden_as_observed:
+  - source: US-OMB-2025
+    raw_field: human_roles
+    reason: Not present in frozen raw_fields_json export.
+  - source: US-OMB-2025
+    raw_field: data_used_for_training
+    reason: Not present in frozen raw_fields_json export.
+  - source: US-OMB-2025
+    raw_field: data_used_for_inference
+    reason: Not present in frozen raw_fields_json export.
+  - source: US-OMB-2025
+    raw_field: data_used_for_evaluation
+    reason: Not present in frozen raw_fields_json export.
+  - source: NL-ALGO-REG
+    raw_field: department
+    reason: Not present in frozen raw_fields_json export.
+
+rules:
+  - id: pstw_status_leading_space
+    source: EU-PSTW
+    raw_field: " Status"
+    normalized_field: status
+    rule_type: whitespace_rename
+    rationale: >
+      PSTW CSV header contains a leading space before Status. Normalized
+      name is status; raw name remains " Status" in all outputs.
+    status: active
+    version_introduced: "1.0.0"
+
+  - id: ca_name_fr_alias
+    source: CA-GC-AI-REG
+    raw_field: name_ai_system_fr
+    normalized_field: name_ai_system_fr
+    rule_type: bilingual_alias_documented
+    canonical_realization_field: name_ai_system_en
+    rationale: >
+      French name is an observed alias of the English system name.
+      English field is canonical for realization; French is not deleted.
+    status: active
+    version_introduced: "1.0.0"
+
+  - id: ca_description_fr_alias
+    source: CA-GC-AI-REG
+    raw_field: description_ai_system_fr
+    normalized_field: description_ai_system_fr
+    rule_type: bilingual_alias_documented
+    canonical_realization_field: description_ai_system_en
+    rationale: French description alias; English is canonical for realization.
+    status: active
+    version_introduced: "1.0.0"
+
+  - id: ca_status_fr_alias
+    source: CA-GC-AI-REG
+    raw_field: ai_system_status_fr
+    normalized_field: ai_system_status_fr
+    rule_type: bilingual_alias_documented
+    canonical_realization_field: ai_system_status_en
+    rationale: French status alias; English is canonical for realization.
+    status: active
+    version_introduced: "1.0.0"
+
+  - id: ca_capabilities_fr_alias
+    source: CA-GC-AI-REG
+    raw_field: ai_system_capabilities_fr
+    normalized_field: ai_system_capabilities_fr
+    rule_type: bilingual_alias_documented
+    canonical_realization_field: ai_system_capabilities_en
+    rationale: French capabilities alias; English is canonical for realization.
+    status: active
+    version_introduced: "1.0.0"
+
+  - id: ca_data_sources_fr_alias
+    source: CA-GC-AI-REG
+    raw_field: data_sources_fr
+    normalized_field: data_sources_fr
+    rule_type: bilingual_alias_documented
+    canonical_realization_field: data_sources_en
+    rationale: French data-sources alias; English is canonical for realization.
+    status: active
+    version_introduced: "1.0.0"
+
+  - id: ca_developed_by_fr_alias
+    source: CA-GC-AI-REG
+    raw_field: developed_by_fr
+    normalized_field: developed_by_fr
+    rule_type: bilingual_alias_documented
+    canonical_realization_field: developed_by_en
+    rationale: French developed-by alias; English is canonical for realization.
+    status: active
+    version_introduced: "1.0.0"
+
+  - id: ca_users_fr_alias
+    source: CA-GC-AI-REG
+    raw_field: ai_system_primary_users_fr
+    normalized_field: ai_system_primary_users_fr
+    rule_type: bilingual_alias_documented
+    canonical_realization_field: ai_system_primary_users_en
+    rationale: French primary-users alias; English is canonical for realization.
+    status: active
+    version_introduced: "1.0.0"
+
+  - id: ca_results_fr_alias
+    source: CA-GC-AI-REG
+    raw_field: ai_system_results_fr
+    normalized_field: ai_system_results_fr
+    rule_type: bilingual_alias_documented
+    canonical_realization_field: ai_system_results_en
+    rationale: French results alias; English is canonical for realization.
+    status: active
+    version_introduced: "1.0.0"
+
+  - id: ca_pib_fr_alias
+    source: CA-GC-AI-REG
+    raw_field: personal_information_banks_fr
+    normalized_field: personal_information_banks_fr
+    rule_type: bilingual_alias_documented
+    canonical_realization_field: personal_information_banks_en
+    rationale: French PIB alias; English is canonical for realization.
+    status: active
+    version_introduced: "1.0.0"
+
+global_policies:
+  uk_object:
+    source: UK-ATRS
+    object_layer: search_api_slim
+    rationale: >
+      Corpus stores GOV.UK Search API metadata only (title, description, link,
+      organisation_title, format, index, public_timestamp). This is not the full
+      ATRS publication template.
+  do_not_infer_missing_fields: true
+  do_not_merge_similar_names: true

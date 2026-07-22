@@ -12,6 +12,16 @@ Paper 2 (*Vendor Stewardship in the Public Record*) corpus or methods.
 - No document-genre comparisons (strategies vs registers/portals)
 - No Documentary Accountability Architecture
 
+## Affordance specification layer (active paper path)
+
+Canonical Disclosure Functions v1 specification (schema disclosure affordance):
+
+See `affordance/README.md` and regenerate with:
+
+`python3.12 scripts/build_affordance_specification.py`
+
+LocalGovBench criteria YAML is **not** the analytical framework for this path.
+
 ## Day 1 outputs
 
 | Artifact | Path |

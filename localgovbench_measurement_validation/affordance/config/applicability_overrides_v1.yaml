@@ -1,0 +1,157 @@
+# applicability_overrides_v1.yaml
+# Machine-usable applicability predicates for Disclosure Functions v1.
+# Labels are categorical only — never numeric scores.
+
+spec_id: applicability_overrides
+version: "1.0.0"
+status: normative
+
+labels:
+  - universal
+  - conditional
+  - jurisdiction_specific
+  - object_specific
+  - catalogue_inapplicable
+  - unknown
+
+inventory_objects:
+  US-OMB-2025:
+    object_type: use_case_inventory
+    peer_status: peer
+  CA-GC-AI-REG:
+    object_type: ai_system_register
+    peer_status: peer
+  NL-ALGO-REG:
+    object_type: algorithm_register
+    peer_status: peer
+  EU-PSTW:
+    object_type: case_catalogue
+    peer_status: contrast
+    notes: Curated policy-learning catalogue; not a statutory AI register.
+  UK-ATRS:
+    object_type: search_api_slim
+    peer_status: limited_object
+    notes: GOV.UK Search API metadata only; not full ATRS publication schema.
+
+function_defaults:
+  cf_system_identity:
+    label: universal
+    profile_role: descriptive_only
+  cf_purpose:
+    label: universal
+  cf_operational_status:
+    label: universal
+  cf_accountable_body:
+    label: universal
+  cf_data_involvement:
+    label: universal
+  om_human_oversight:
+    label: object_specific
+  om_risk_or_impact:
+    label: object_specific
+  om_legal_basis:
+    label: jurisdiction_specific
+  om_supplier:
+    label: universal
+  om_technical_method:
+    label: universal
+  om_redress_pointer:
+    label: conditional
+
+overrides:
+  - id: pstw_contrast_catalogue
+    source: EU-PSTW
+    functions:
+      - cf_data_involvement
+      - om_human_oversight
+      - om_risk_or_impact
+      - om_legal_basis
+      - om_redress_pointer
+    label: catalogue_inapplicable
+    rationale: >
+      Case-catalogue object does not afford register-native data-involvement,
+      oversight, risk designation, legal basis, or redress fields.
+
+  - id: pstw_purpose_status_identity_accountable_ok
+    source: EU-PSTW
+    functions:
+      - cf_system_identity
+      - cf_purpose
+      - cf_operational_status
+      - cf_accountable_body
+      - om_supplier
+      - om_technical_method
+    label: object_specific
+    rationale: Evaluable on catalogue fields with object-type caveats.
+
+  - id: uk_search_api_slim
+    source: UK-ATRS
+    functions:
+      - cf_operational_status
+      - cf_data_involvement
+      - om_human_oversight
+      - om_risk_or_impact
+      - om_legal_basis
+      - om_supplier
+      - om_technical_method
+      - om_redress_pointer
+    label: object_specific
+    support_expectation: absent_on_api_slim
+    rationale: Applicable as questions against the API-slim object; dedicated fields absent.
+
+  - id: uk_accountable_publisher
+    source: UK-ATRS
+    function: cf_accountable_body
+    label: object_specific
+    mapping_cap: INDIRECT
+    rationale: >
+      organisation_title reflects publishing organisation on GOV.UK (observed as
+      Cabinet Office for all rows), not necessarily the accountable body.
+      Never PRIMARY.
+
+  - id: uk_purpose_indirect_only
+    source: UK-ATRS
+    function: cf_purpose
+    label: universal
+    mapping_cap: INDIRECT
+    rationale: description is thin search metadata; INDIRECT purpose only.
+
+  - id: uk_identity_descriptive
+    source: UK-ATRS
+    function: cf_system_identity
+    label: universal
+    profile_role: descriptive_only
+
+  - id: us_high_impact_subclass
+    source: US-OMB-2025
+    functions:
+      - om_human_oversight
+      - om_redress_pointer
+    label: conditional
+    subclass_predicate:
+      field: is_high_impact
+      values_include_prefixes:
+        - High-impact
+        - Presumed High-Impact
+    rationale: >
+      Oversight/redress-like hi_* fields are meaningfully tied to high-impact
+      reporting; realization denominators use the high-impact subclass.
+
+  - id: legal_basis_nl_only
+    source: NL-ALGO-REG
+    function: om_legal_basis
+    label: jurisdiction_specific
+    rationale: Dedicated lawful_basis field observed only in Dutch register export.
+
+  - id: legal_basis_absent_peers
+    sources: [US-OMB-2025, CA-GC-AI-REG, UK-ATRS]
+    function: om_legal_basis
+    label: jurisdiction_specific
+    support_expectation: absent
+    rationale: No dedicated legal-basis field in frozen exports.
+
+  - id: identity_descriptive_only_global
+    function: cf_system_identity
+    label: universal
+    profile_role: descriptive_only
+    rationale: Identity is a descriptive precondition; not profiled as scored affordance.

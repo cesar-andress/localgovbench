@@ -1,0 +1,19 @@
+source,raw_field,normalized_field,linkage_layer,link_type,related_function_id,rationale,version
+US-OMB-2025,pia_url,pia_url,function_specific,impact_assessment,om_risk_or_impact,PIA URL field when valid URL.,1.0.0
+US-OMB-2025,link_to_data,link_to_data,function_specific,dataset_documentation,cf_data_involvement,Data link field when valid URL.,1.0.0
+US-OMB-2025,code_url,code_url,function_specific,source_code,om_technical_method,Code URL when valid URL.,1.0.0
+US-OMB-2025,hi_appeal_process,hi_appeal_process,function_specific,appeal_process,om_redress_pointer,Appeal process categorical/pointer under HI.,1.0.0
+US-OMB-2025,contact_email,contact_email,generic_url,generic_url,,Contact/form field; never function-specific evidence.,1.0.0
+NL-ALGO-REG,url,url,record_locator,record_locator,cf_system_identity,Register/record URL.,1.0.0
+NL-ALGO-REG,website,website,generic_url,generic_url,,Organisation/project website; not function-specific without role.,1.0.0
+NL-ALGO-REG,process_index_url,process_index_url,generic_url,generic_url,,Process index URL; generic unless separately typed.,1.0.0
+NL-ALGO-REG,publiccode,publiccode,function_specific,source_code,om_technical_method,Publiccode/source pointer when URL.,1.0.0
+NL-ALGO-REG,impacttoetsen,impacttoetsen,function_specific,impact_assessment,om_risk_or_impact,May contain impact-assessment links; not PRIMARY risk content.,1.0.0
+NL-ALGO-REG,lawful_basis,lawful_basis,function_specific,legal_or_policy_document,om_legal_basis,May embed legal references/URLs.,1.0.0
+EU-PSTW,Website,Website,generic_url,generic_url,,Project website; never auto-upgraded.,1.0.0
+EU-PSTW,Source,Source,generic_url,generic_url,,Source reference; generic unless curated as specific.,1.0.0
+EU-PSTW,Stories link,Stories link,generic_url,generic_url,,Stories link; generic.,1.0.0
+EU-PSTW,Open components in input,Open components in input,function_specific,source_code,om_technical_method,Open component URLs when present.,1.0.0
+EU-PSTW,Open components in output,Open components in output,function_specific,source_code,om_technical_method,Open component URLs when present.,1.0.0
+UK-ATRS,link,link,record_locator,record_locator,cf_system_identity,GOV.UK ATRS record page locator.,1.0.0
+CA-GC-AI-REG,personal_information_banks_en,personal_information_banks_en,function_specific,dataset_documentation,cf_data_involvement,"PIB codes; documentation identifiers, not generic URLs.",1.0.0

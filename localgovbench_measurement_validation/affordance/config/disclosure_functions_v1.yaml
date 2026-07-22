@@ -1,0 +1,285 @@
+# disclosure_functions_v1.yaml
+# Normative catalogue for Schema Disclosure Affordance.
+# Version 1.0.0 — replaces the conceptual role of localgovbench_criteria_v0.yaml
+# for the inventory affordance paper. Does not score readiness, maturity,
+# shortfall, compliance, or governance quality.
+
+meta:
+  spec_id: disclosure_functions
+  version: "1.0.0"
+  status: normative
+  measurement_construct: schema_disclosure_affordance
+  primary_contribution: affordance_realization_gap
+  unit_of_analysis: schema_x_disclosure_function
+  secondary_unit: record_level_realization
+  replaces_role_of: localgovbench_criteria_v0.yaml
+  principles:
+    - Functions describe disclosure capabilities a public inventory schema may support.
+    - Functions do not describe governance quality, AI maturity, organisational readiness,
+      benchmarking, or compliance.
+    - No composite index and no jurisdiction ranking.
+  prohibited_constructs:
+    - readiness
+    - maturity
+    - shortfall
+    - composite_score
+    - jurisdiction_ranking
+    - compliance_score
+    - LocalGovBench_as_paper_framework
+    - governance_quality
+  anti_overcredit_rules:
+    - id: generic_dedicated_once
+      rule: >
+        A generic narrative field (description, Description, description_short,
+        additional information, notes, summary) may receive at most one dedicated
+        support credit, and only for the function named in generic_field_policy
+        (normally purpose).
+    - id: dedicated_exists_blocks_generic
+      rule: >
+        If a dedicated candidate field exists for a function, a generic narrative
+        field must not be coded dedicated for that function.
+    - id: uk_description_indirect_purpose
+      rule: UK-ATRS description is at most INDIRECT for purpose; never PRIMARY dedicated.
+    - id: affordance_ne_realization
+      rule: Record content richness must not retroactively upgrade schema dedicatedness.
+  extensibility_policy:
+    core_locked: true
+    modules_may_add_in_minor_versions: true
+    breaking_changes_require_major_version: true
+
+enums:
+  function_status:
+    - core_scored
+    - core_unscored
+    - module
+    - rejected
+  applicability_label:
+    - universal
+    - conditional
+    - jurisdiction_specific
+    - object_specific
+    - catalogue_inapplicable
+    - unknown
+
+core_functions:
+  - id: cf_system_identity
+    short_name: system_identity
+    display_name: System or use-case identity
+    status: core_unscored
+    scope: core
+    definition: >
+      Stable public identifier and/or name that makes the inventory entry
+      addressable as a distinct system, use case, algorithm, or case.
+    measurement_object: schema_field_capability
+    primary_question: Does the schema expose a dedicated identity or naming field?
+    expected_information:
+      - unique_id
+      - public_name_or_title
+    generic_field_policy: identity_titles_allowed
+    applicability_default: universal
+    documentary_linkage_relevance: record_locator
+    notes: Descriptive precondition only; excluded from comparative affordance profiles.
+    version_introduced: "1.0.0"
+
+  - id: cf_purpose
+    short_name: purpose
+    display_name: Purpose
+    status: core_scored
+    scope: core
+    definition: >
+      Disclosure of what problem, goal, or intended use the system or use case
+      is meant to address.
+    measurement_object: schema_field_capability
+    primary_question: Does the schema provide a field that can host purpose or goal disclosure?
+    expected_information:
+      - problem_statement
+      - goal_statement
+      - intended_use_summary
+    generic_field_policy: may_be_sole_dedicated_on_generic_description
+    applicability_default: universal
+    documentary_linkage_relevance: low
+    version_introduced: "1.0.0"
+
+  - id: cf_operational_status
+    short_name: operational_status
+    display_name: Operational status
+    status: core_scored
+    scope: core
+    definition: >
+      Disclosure of lifecycle or operational status (for example pilot, in use,
+      retired), distinct from timestamps alone.
+    measurement_object: schema_field_capability
+    primary_question: Does the schema expose a status or development-stage field?
+    expected_information:
+      - lifecycle_stage
+      - operational_status_label
+    generic_field_policy: generic_description_not_dedicated
+    applicability_default: universal
+    documentary_linkage_relevance: none
+    version_introduced: "1.0.0"
+
+  - id: cf_accountable_body
+    short_name: accountable_body
+    display_name: Accountable body identification
+    status: core_scored
+    scope: core
+    definition: >
+      Disclosure of the public organisation accountable for the system or use case,
+      distinct from vendor/supplier and from mere publishing platform identity.
+    measurement_object: schema_field_capability
+    primary_question: Does the schema identify the accountable public body?
+    expected_information:
+      - organisation_name
+      - agency_or_owner
+    generic_field_policy: generic_description_not_dedicated
+    applicability_default: universal
+    documentary_linkage_relevance: low
+    version_introduced: "1.0.0"
+
+  - id: cf_data_involvement
+    short_name: data_involvement
+    display_name: Data involvement
+    status: core_scored
+    scope: core
+    definition: >
+      Disclosure of whether and how data are involved at summary level, via a
+      personal-data/PII flag and/or a dedicated data-sources or data-description
+      field. Does not require training-data provenance.
+    measurement_object: schema_field_capability
+    primary_question: >
+      Does the schema expose a personal-data flag or dedicated data-sources /
+      data-description field?
+    expected_information:
+      - personal_data_flag
+      - data_sources_summary
+      - data_description_summary
+    generic_field_policy: generic_description_not_dedicated
+    applicability_default: universal
+    documentary_linkage_relevance: dataset_documentation
+    version_introduced: "1.0.0"
+
+modules:
+  - id: om_human_oversight
+    short_name: human_oversight
+    display_name: Human oversight description
+    status: module
+    scope: module
+    definition: >
+      Disclosure describing human roles, intervention, or oversight in system
+      operation, distinct from organisational ownership and from redress procedures.
+    measurement_object: schema_field_capability
+    primary_question: Does the schema provide a human oversight or intervention field?
+    expected_information:
+      - human_intervention_narrative
+      - oversight_role_description
+    generic_field_policy: generic_description_indirect_only
+    applicability_default: object_specific
+    documentary_linkage_relevance: medium
+    version_introduced: "1.0.0"
+
+  - id: om_risk_or_impact
+    short_name: risk_or_impact
+    display_name: Risk or impact designation
+    status: module
+    scope: module
+    definition: >
+      Disclosure of a risk/impact designation flag and/or a dedicated risk or
+      impact narrative. Distinct from outcome-benefit ticks and from DPIA content.
+    measurement_object: schema_field_capability
+    primary_question: Does the schema expose a risk/impact flag or dedicated risk field?
+    expected_information:
+      - high_impact_flag
+      - risk_narrative
+    generic_field_policy: generic_description_indirect_only
+    applicability_default: object_specific
+    documentary_linkage_relevance: impact_assessment
+    version_introduced: "1.0.0"
+
+  - id: om_legal_basis
+    short_name: legal_basis
+    display_name: Legal basis
+    status: module
+    scope: module
+    definition: >
+      Disclosure of the legal basis for processing or operating the system.
+    measurement_object: schema_field_capability
+    primary_question: Does the schema expose a lawful-basis or legal-basis field?
+    expected_information:
+      - lawful_basis_narrative
+      - legal_authority_reference
+    generic_field_policy: generic_description_indirect_only
+    applicability_default: jurisdiction_specific
+    documentary_linkage_relevance: legal_or_policy_document
+    version_introduced: "1.0.0"
+
+  - id: om_supplier
+    short_name: supplier
+    display_name: Supplier identification
+    status: module
+    scope: module
+    definition: >
+      Disclosure of vendor, provider, or contracting/supply arrangement, distinct
+      from the accountable public body.
+    measurement_object: schema_field_capability
+    primary_question: Does the schema expose vendor/provider/contracting fields?
+    expected_information:
+      - vendor_name
+      - provider_name
+      - contracting_usage
+    generic_field_policy: generic_description_indirect_only
+    applicability_default: universal
+    documentary_linkage_relevance: procurement_document
+    version_introduced: "1.0.0"
+
+  - id: om_technical_method
+    short_name: technical_method
+    display_name: Technical method or capability
+    status: module
+    scope: module
+    definition: >
+      Disclosure of technical method, model class, or system capabilities, distinct
+      from purpose.
+    measurement_object: schema_field_capability
+    primary_question: Does the schema expose method, capability, or technical classification fields?
+    expected_information:
+      - methods_and_models
+      - capabilities
+      - technical_classification
+    generic_field_policy: generic_description_indirect_only
+    applicability_default: universal
+    documentary_linkage_relevance: source_code_or_technical_report
+    version_introduced: "1.0.0"
+
+  - id: om_redress_pointer
+    short_name: redress_pointer
+    display_name: Redress pointer
+    status: module
+    scope: module
+    definition: >
+      Disclosure capability for pointing to contestation, appeal, or complaint
+      channels specific to the system. Generic contact email alone is insufficient.
+    measurement_object: schema_field_capability
+    primary_question: >
+      Does the schema expose an appeal/contestation field (not merely a contact email)?
+    expected_information:
+      - appeal_process_field
+      - contestation_pointer
+    generic_field_policy: contact_email_never_sufficient
+    applicability_default: conditional
+    documentary_linkage_relevance: appeal_process
+    notes: >
+      In the frozen corpus, dedicated redress fields are scarce (US hi_appeal_process
+      is high-impact conditional). Module retained for schema coding completeness.
+    version_introduced: "1.0.0"
+
+rejected_candidates:
+  - id: rejected_training_data_provenance
+    reason: No dedicated comparable training-provenance fields in the frozen export.
+  - id: rejected_readiness_maturity
+    reason: Violates measurement principles; not a disclosure function.
+  - id: rejected_compliance_score
+    reason: Violates measurement principles; not a disclosure function.
+  - id: rejected_shortfall_localgovbench_gate
+    reason: Legacy LocalGovBench shortfall construct; not used in this framework.
+  - id: rejected_full_atrs_on_uk_api_object
+    reason: UK corpus object is search_api_slim, not the full ATRS template.
