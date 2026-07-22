@@ -15,7 +15,8 @@ governance quality, or jurisdiction rankings.
 | Layer | Location | Status |
 |-------|----------|--------|
 | Specification (Phase 1) | `config/`, `locks/`, `outputs/` | Frozen |
-| Schema coding (Phase 2) | `coding/` | Active |
+| Schema coding (Phase 2) | `coding/` | Frozen artefacts; human coding execution separate |
+| Experiment pipeline (Phase 3) | `experiments/` | Active — dataset generation infrastructure |
 | Realization / gap analysis | — | Later |
 | Manuscript | `paper/` repo | Out of scope here |
 
@@ -98,8 +99,24 @@ Specification contradictions must not be silently “fixed” by adjudication.
 
 ```bash
 python3.12 -m pytest localgovbench_measurement_validation/affordance/tests \
-  localgovbench_measurement_validation/affordance/coding/tests -q
+  localgovbench_measurement_validation/affordance/coding/tests \
+  localgovbench_measurement_validation/affordance/experiments/tests -q
 ```
+
+## Phase 3 — experiment pipeline (`experiments/`)
+
+See [`experiments/EXPERIMENT_PIPELINE.md`](experiments/EXPERIMENT_PIPELINE.md).
+
+```bash
+python3.12 scripts/run_affordance_experiment_pipeline.py \
+  --experiment-id EXAMPLE \
+  --coder-a path/to/coder_a.csv \
+  --coder-b path/to/coder_b.csv \
+  --adjudication path/to/adjudication.csv
+```
+
+Phase 3 produces matrices, manifests, and provenance. It does **not** calculate
+realization rates, affordance–realization gaps, or IRR.
 
 ## Distinctions
 

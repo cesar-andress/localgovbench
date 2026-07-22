@@ -1,0 +1,38 @@
+experiment_pipeline:
+  id: schema_affordance_pipeline
+  version: "1.0.0"
+  status: active
+  description: >
+    Transforms completed human schema coding into reproducible analytical
+    datasets for schema disclosure affordance. Does not compute realization,
+    IRR, or affordance–realization gaps.
+
+frozen_inputs:
+  specification_version: "1.0.0"
+  coding_version: "1.0.0"
+  disclosure_functions: disclosure_functions_v1.yaml
+  schema_inventory: schema_inventory_v1.csv
+  corpus_lock: corpus_lock_v1.json
+  coding_labels: coding_labels_v1.yaml
+  coding_record_schema: schema_coding_record_v1.schema.json
+  pilot_manifest: pilot_coding_manifest_v1.csv
+  coding_template: schema_coding_template_v1.csv
+  adjudication_protocol: adjudication_protocol_v1.md
+
+supported_import_formats:
+  - csv
+  - json
+  - parquet  # optional dependency; rejected cleanly if unavailable
+
+supported_export_formats:
+  - csv
+  - json
+  - parquet  # written when pyarrow/pandas available; otherwise skipped with notice
+
+out_of_scope:
+  - realization_rates
+  - affordance_realization_gaps
+  - irr_statistics
+  - publication_tables
+  - manuscript_edits
+  - methodology_redesign

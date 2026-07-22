@@ -6,8 +6,8 @@
 - **SHA-256:** `12ea6282efcf338d362c8eb91a9beffe8dd7eae9f70aa2805723b386c9c8d693`
 - **Total records:** 7434
 - **Collection date:** `2026-06-24`
-- **Generated (UTC):** `2026-07-22T23:11:30.807519+00:00`
-- **Git commit at generation:** `95f3de8f1a2da7da81f195dcfc1297ec8e8a2512`
+- **Generated (UTC):** `2026-07-22T23:39:32.256448+00:00`
+- **Git commit at generation:** `ff85e82c05ae48e2992736dcc21eb8124b9184d5`
 - **raw_fields_json present:** `True`
 
 ## Record counts by source

@@ -45,6 +45,7 @@ testpaths = [
     "tests",
     "localgovbench_measurement_validation/affordance/tests",
     "localgovbench_measurement_validation/affordance/coding/tests",
+    "localgovbench_measurement_validation/affordance/experiments/tests",
 ]
 pythonpath = ["."]
 markers = [
