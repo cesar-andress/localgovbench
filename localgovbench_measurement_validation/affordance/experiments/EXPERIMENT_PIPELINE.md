@@ -58,7 +58,8 @@ python3.12 scripts/run_affordance_experiment_pipeline.py \
   --coder-a path/to/coder_a.csv \
   --coder-b path/to/coder_b.csv \
   --adjudication path/to/adjudication.csv \
-  --operator researcher
+  --operator researcher \
+  --output-root path/to/output_dir
 
 # Single finalized sheet
 python3.12 scripts/run_affordance_experiment_pipeline.py \
@@ -71,6 +72,8 @@ python3.12 scripts/run_affordance_experiment_pipeline.py \
   --coder-a a.csv --coder-b b.csv \
   --allow-partial
 ```
+
+Optional: `--output-root` redirects manifests/outputs/provenance away from the default experiment directories.
 
 ## Outputs
 

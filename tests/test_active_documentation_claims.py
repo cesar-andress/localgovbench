@@ -22,6 +22,8 @@ ACTIVE_FILES = [
     REPO_ROOT / "docs" / "releases" / "github_release_v0.2.0.md",
     REPO_ROOT / "docs" / "releases" / "zenodo_metadata_v0.2.0.md",
     REPO_ROOT / "docs" / "releases" / "release_readiness_v0.2.0.md",
+    REPO_ROOT / "docs" / "releases" / "NEXT_RELEASE.md",
+    REPO_ROOT / "docs" / "releases" / "README.md",
 ]
 
 LEGACY_STATUS_MARKERS = (
@@ -121,7 +123,7 @@ def test_readme_canonical_doi():
 
 def test_pyproject_version():
     text = (REPO_ROOT / "pyproject.toml").read_text(encoding="utf-8")
-    assert 'version = "0.2.0"' in text
+    assert 'version = "0.2.1"' in text
     assert "disclosure" in text.lower()
 
 
@@ -162,6 +164,20 @@ def test_root_zenodo_json_active_doi():
     data = json.loads((REPO_ROOT / ".zenodo.json").read_text(encoding="utf-8"))
     assert "21500899" in json.dumps(data)
     assert data["version"] == "0.2.0"
+
+
+def test_release_docs_distinguish_published_and_unreleased():
+    readiness = (REPO_ROOT / "docs/releases/release_readiness_v0.2.0.md").read_text(
+        encoding="utf-8"
+    )
+    nxt = (REPO_ROOT / "docs/releases/NEXT_RELEASE.md").read_text(encoding="utf-8")
+    index = (REPO_ROOT / "docs/releases/README.md").read_text(encoding="utf-8")
+    assert "Published" in readiness
+    assert "does **not** include" in readiness.lower() or "does not include" in readiness.lower()
+    assert "NEXT_DOI_TBD" in nxt
+    assert "Unreleased" in nxt or "UNRELEASED" in nxt
+    assert "0.2.1" in nxt
+    assert "forthcoming" not in index.lower() or "Published software v0.2.0" in index
 
 
 def test_github_release_notes_list_milestones():

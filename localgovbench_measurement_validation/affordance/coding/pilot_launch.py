@@ -290,14 +290,18 @@ def build_reference_manifest() -> dict[str, Any]:
 
 
 def write_sha256sums(paths: list[Path], output: Path) -> Path:
+    from localgovbench_measurement_validation.affordance.paths import REPO_ROOT
+
     lines = []
     for path in sorted(paths, key=lambda p: str(p)):
         digest = _sha256_file(path)
-        # Use path relative to pilot_round_01 when possible
         try:
             rel = path.relative_to(PILOT_ROUND_ROOT)
         except ValueError:
-            rel = path
+            try:
+                rel = path.relative_to(REPO_ROOT)
+            except ValueError:
+                rel = Path(path.name)
         lines.append(f"{digest}  {rel.as_posix()}")
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text("\n".join(lines) + "\n", encoding="utf-8")

@@ -1,5 +1,9 @@
 # Prompt templates
 
+> **LEGACY — v0.1.0 workflow instruments.**  
+> These prompts are **not Disclosure Functions v1 empirical results** and not the active schema-affordance coding path.  
+> Active path: [`localgovbench_measurement_validation/affordance/README.md`](../localgovbench_measurement_validation/affordance/README.md).
+
 Markdown prompts for structured governance assessments using LLM-assisted workflows. These are **research instruments**, not automated legal compliance tools.
 
 ## Files

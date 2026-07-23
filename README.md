@@ -1,18 +1,21 @@
 # LocalGovBench
 
-**Version v0.2.0** — Disclosure Affordance Framework for Public AI and Algorithm Registers  
-**Canonical DOI:** [10.5281/zenodo.21500899](https://doi.org/10.5281/zenodo.21500899)  
-**Historical archive (v0.1.0):** [10.5281/zenodo.20543779](https://doi.org/10.5281/zenodo.20543779)
+**Published software:** v0.2.0 — DOI [10.5281/zenodo.21500899](https://doi.org/10.5281/zenodo.21500899)  
+**Development tip (`main`):** 0.2.1 candidate (unreleased; see [`docs/releases/NEXT_RELEASE.md`](docs/releases/NEXT_RELEASE.md))  
+**Historical archive (v0.1.0):** [10.5281/zenodo.20543779](https://doi.org/10.5281/zenodo.20543779)  
+**Specification / coding / pipeline:** 1.0.0
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
-[![Version](https://img.shields.io/badge/version-v0.2.0-blue.svg)](CHANGELOG.md)
+[![Published](https://img.shields.io/badge/published-v0.2.0-blue.svg)](CHANGELOG.md)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21500899.svg)](https://doi.org/10.5281/zenodo.21500899)
 [![Historical DOI v0.1.0](https://zenodo.org/badge/DOI/10.5281/zenodo.20543779.svg)](https://doi.org/10.5281/zenodo.20543779)
 
 > **Historical notice.** v0.1.0 represented the original Governance Readiness Benchmark design. It is retained as a historical snapshot but is not the active analytical framework. Provenance archive: [DOI 10.5281/zenodo.20543779](https://doi.org/10.5281/zenodo.20543779).
 
-Public positioning: [`docs/releases/public_positioning_v0.2.0.md`](docs/releases/public_positioning_v0.2.0.md).
+> **Tip notice.** Published **v0.2.0** does **not** include the Phase 3 experiment pipeline or Pilot Round 01 launch package. Those artefacts exist on current `main` and are documented for a future **0.2.1** deposit (`NEXT_DOI_TBD`). Cite the Git commit you actually use.
+
+Public positioning: [`docs/releases/public_positioning_v0.2.0.md`](docs/releases/public_positioning_v0.2.0.md). Next candidate: [`docs/releases/NEXT_RELEASE.md`](docs/releases/NEXT_RELEASE.md).
 
 ## 1. What LocalGovBench currently is
 

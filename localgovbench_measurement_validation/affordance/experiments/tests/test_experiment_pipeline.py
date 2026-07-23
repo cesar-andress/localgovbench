@@ -156,6 +156,25 @@ def test_merge_agreement(tmp_exp: Path):
     assert all(r["adjudication_status"] == "not_required" for r in finalized)
 
 
+def test_merge_confidence_only_diff_does_not_require_adjudication(tmp_exp: Path):
+    rows_a = _pair_rows("A")
+    rows_b = _pair_rows("B")
+    for row in rows_a:
+        row["coder_confidence"] = "high"
+        row["coder_rationale"] = "A rationale"
+    for row in rows_b:
+        row["coder_confidence"] = "low"
+        row["coder_rationale"] = "B rationale"
+    a = write_coding_csv(tmp_exp / "a.csv", rows_a)
+    b = write_coding_csv(tmp_exp / "b.csv", rows_b)
+    finalized, log = merge_double_coding(
+        a, b, None, require_complete=True, expected_units=EXPECTED
+    )
+    assert log["disagreement_count"] == 0
+    assert all(r["adjudication_status"] == "not_required" for r in finalized)
+    assert all(r["coder_confidence"] == "high" for r in finalized)
+
+
 def test_merge_requires_adjudication_on_disagreement(tmp_exp: Path):
     a = write_coding_csv(tmp_exp / "a.csv", _pair_rows("A", support_a="absent"))
     b = write_coding_csv(tmp_exp / "b.csv", _pair_rows("B", support_a="indirect", support_b="absent"))

@@ -2,13 +2,15 @@
 
 - **Version:** `1.0.0`
 - **Filename:** `pilot_programme_records.csv`
-- **Canonical path:** `localgovbench_measurement_validation/pilot_public_satisfiability/data/pilot_programme_records.csv`
+- **Canonical / portable path:** `localgovbench_measurement_validation/pilot_public_satisfiability/data/pilot_programme_records.csv`
 - **SHA-256:** `12ea6282efcf338d362c8eb91a9beffe8dd7eae9f70aa2805723b386c9c8d693`
 - **Total records:** 7434
 - **Collection date:** `2026-06-24`
 - **Generated (UTC):** `2026-07-22T23:11:30.807519+00:00`
 - **Git commit at generation:** `95f3de8f1a2da7da81f195dcfc1297ec8e8a2512`
 - **raw_fields_json present:** `True`
+
+> Prefer **canonical/portable path** for verification. A historical machine-local `absolute_path` may exist in `corpus_lock_v1.json` for provenance only.
 
 ## Record counts by source
 

@@ -1,100 +1,49 @@
-# Release readiness — LocalGovBench v0.2.0
+# Release readiness — LocalGovBench v0.2.0 (published record)
 
 **Date:** 2026-07-23  
-**Tag / GitHub release / Zenodo publish:** **not performed** in this task
+**Record status:** **Published** software deposit for tag `v0.2.0`  
+**Canonical DOI:** https://doi.org/10.5281/zenodo.21500899  
 
-## Documentation audited
+This document describes the **published v0.2.0** surface. It is **not** a description of current unreleased `main`.
 
-Yes — see [`public_documentation_audit_v0.2.0.md`](public_documentation_audit_v0.2.0.md).
+## What v0.2.0 includes
 
-## Active files updated
+- Disclosure Functions v1 specification layer (Phase 1)  
+- Schema coding instruments (Phase 2 templates/protocols)  
+- Public repositioning away from GRB as the active framework  
+- Dual DOI citation (active 21500899; historical 20543779)
 
-- Root `README.md` (12-point visitor guide)
-- `CITATION.cff`, `pyproject.toml`, `CHANGELOG.md`, `CONTRIBUTING.md`
-- `docs/releases/public_positioning_v0.2.0.md` (frozen positioning)
-- Zenodo + GitHub drafts, manifest, readiness
+## What v0.2.0 does **not** include
 
-## Legacy files labelled
+- Phase 3 experiment pipeline CLI/docs (added on `main` after the tag)  
+- Pilot Round 01 launch packets  
+- Supplements A–J and `paper_assets/` scaffolds added later  
+- Completed human coding Results / IRR / realization / gaps  
 
-Yes — benchmark specification, demo walkthrough, validation package, GRB-related docs, examples, data/benchmark, citation/reproducibility guides, etc. Banners state retention reason, replacement path, and **do not use as current analytical specification**.
+For the next candidate that *would* include those artefacts, see [`NEXT_RELEASE.md`](NEXT_RELEASE.md) (unreleased; DOI `NEXT_DOI_TBD`).
 
-## Metadata updated
+## Metadata (published)
 
 | Item | Status |
 |------|--------|
-| `CITATION.cff` version 0.2.0 + DF abstract | Updated |
+| `CITATION.cff` version 0.2.0 + DF abstract | Published citation |
 | Historical DOI 10.5281/zenodo.20543779 | Preserved as v0.1.0 only |
-| Active DOI 10.5281/zenodo.21500899 | Set in CITATION.cff / README / .zenodo.json |
-| New Zenodo version DOI | **Published** |
-| `date-released` | **2026-07-23** |
+| Active DOI 10.5281/zenodo.21500899 | Published |
+| Root `.zenodo.json` | Present (v0.2.0 metadata) |
 | Concept DOI | **USER CONFIRMATION** — not verified in-repo |
-| Companion paper DOI / venue | **USER CONFIRMATION** |
-| Communities on Zenodo | **USER CONFIRMATION** |
-| Archive breadth (full tree vs DF-focused) | **USER CONFIRMATION** |
-| Root `.zenodo.json` / `codemeta.json` | Absent; drafts under `docs/releases/` |
+| Companion paper DOI | **USER CONFIRMATION** — unset by design |
+| Next software DOI | **Not minted** — see `NEXT_DOI_TBD` |
 
-## Tests executed
+## Legacy labelling
 
-See preparation run log (local):
+v0.1.0 / GRB docs remain labelled LEGACY. They are not Disclosure Functions empirical Results.
 
-- Phase 1 affordance tests  
-- Phase 2 coding tests  
-- Active-documentation claim validation  
-- Draft Zenodo JSON parse  
-- CITATION.cff YAML parse  
+## Risks (still relevant after publication)
 
-## Validators
+- Readers may confuse later `main` docs with the v0.2.0 tip  
+- Corpus aggregate CSV may be absent from clean clones  
+- Dual GRB/shortfall artefacts can be misread as current findings without notices  
 
-| Validator | Result |
-|-----------|--------|
-| `pytest -m "not integration"` | **200 passed**, 2 deselected |
-| Active-documentation claim tests | Passed |
-| `cffconvert --validate` (CFF 1.2.0) | **Valid** (after removing invalid `related-identifiers`; relations live in Zenodo draft) |
-| Zenodo draft JSON parse | Passed |
-| Online Zenodo API / DOI minting | **Skipped** — intentionally not publishing |
-| Offline Codemeta validator | **Skipped** — no root `codemeta.json` |
-| GitHub About description update | **Skipped** — remote UI; requires user |
+## Go / no-go for *this* (v0.2.0) record
 
-## Unresolved metadata / confirmations
-
-1. Publication date for v0.2.0  
-2. Whether a Zenodo **concept DOI** exists and should be listed  
-3. Companion manuscript DOI / journal (if any)  
-4. Zenodo communities  
-5. Exact Zenodo file set (full repo vs affordance-focused subset)  
-6. Confirmation that author/affiliation/ORCID/email remain as in `docs/author_identity.md` (already used; confirm no funder/grant to add)  
-7. GitHub repository About / topics text  
-
-## Concept DOI status
-
-**Unverified.** No repository evidence confirms a concept DOI distinct from `10.5281/zenodo.20543779`. Flagged for user confirmation; not invented.
-
-## Proposed archive content / exclusions
-
-See [`release_manifest_v0.2.0.md`](release_manifest_v0.2.0.md).
-
-## Risks
-
-- Remote GitHub description may still advertise readiness if not updated manually  
-- Mixing GRB outputs with DF coding if consumers ignore LEGACY banners  
-- Publishing before human coding completes (mitigated by explicit non-claims)  
-
-## GitHub tagging safe?
-
-**Not yet** — wait for user metadata confirmation and explicit tag decision.
-
-## GitHub release publication safe?
-
-**Not yet** — drafts only; no tag.
-
-## Zenodo publication safe?
-
-**Not yet** — no tag, no version DOI, draft metadata only. Do not edit the historical v0.1.0 Zenodo record.
-
----
-
-## Final status
-
-**B. Ready after user confirms metadata.**
-
-Rationale: public positioning, legacy labelling, and draft release packs are in place; formal tag / GitHub / Zenodo still require user confirmation of the metadata checklist above and an explicit publish decision.
+**Published.** Do not edit the historical v0.1.0 Zenodo record. Do not silently retag `v0.2.0`.

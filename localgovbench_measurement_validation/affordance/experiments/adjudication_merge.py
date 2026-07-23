@@ -17,6 +17,10 @@ from localgovbench_measurement_validation.affordance.experiments.import_coding i
     load_coding_records,
 )
 
+# Substantive adjudicable judgments per double_coding_protocol_v1.md §8
+# (support / applicability / encoding / linkage) and adjudication_protocol_v1.md.
+# coder_confidence / coder_rationale are coder metadata only (coder_instructions_v1.md)
+# and must NOT force adjudication when they are the sole differences.
 JUDGMENT_FIELDS = (
     "applicability_label",
     "support_level",
@@ -25,10 +29,12 @@ JUDGMENT_FIELDS = (
     "function_specific_link_type",
     "primary_supporting_fields",
     "indirect_supporting_fields",
+)
+
+CODER_METADATA_FIELDS = (
     "coder_confidence",
     "coder_rationale",
 )
-
 
 def _index_by_unit(rows: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
     out: dict[str, dict[str, Any]] = {}
@@ -86,6 +92,8 @@ def merge_double_coding(
 
     Merge rules (deterministic):
     1. If A and B agree on JUDGMENT_FIELDS → keep A values; adjudication_status=not_required.
+       Differences only in CODER_METADATA_FIELDS (confidence/rationale) do not require
+       adjudication; original coder B sheet remains archived for independent metadata.
     2. If they disagree and adjudication resolves the unit → apply adjudicator decision;
        adjudication_status=resolved; adjudicated_from=adjudication.
     3. If they disagree and adjudication missing/pending → raise CodingImportError.
@@ -195,6 +203,8 @@ def merge_double_coding(
         "disagreement_count": sum(
             1 for r in provenance_rows if r["disagreement_fields"]
         ),
+        "adjudicable_fields": list(JUDGMENT_FIELDS),
+        "coder_metadata_fields": list(CODER_METADATA_FIELDS),
         "rows": provenance_rows,
     }
     return finalized, merge_log

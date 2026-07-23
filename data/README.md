@@ -1,6 +1,10 @@
 # Data directory
 
-This folder holds datasets and instruments for LocalGovBench. **The current release contains placeholders only.**
+> **Note.** Bundled `benchmark/` materials are **LEGACY — v0.1.0**.  
+> They are **not Disclosure Functions v1 empirical results** and not current readiness/ranking findings.  
+> Active DF path: [`localgovbench_measurement_validation/affordance/README.md`](../localgovbench_measurement_validation/affordance/README.md).
+
+This folder holds datasets and instruments for LocalGovBench. **Tracked trees include synthetic/benchmark/traceability assets; `raw/` and `processed/` remain placeholders for future empirical collections.**
 
 ## Structure
 

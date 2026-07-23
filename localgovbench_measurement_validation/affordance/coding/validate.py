@@ -274,11 +274,15 @@ def export_disagreements(
 
     a_rows = load(coder_a_csv)
     b_rows = load(coder_b_csv)
+    # Align with adjudicable JUDGMENT_FIELDS (exclude coder_confidence / rationale).
     compare_fields = [
         "applicability_label",
         "support_level",
         "encoding_type",
         "documentary_linkage_layer",
+        "function_specific_link_type",
+        "primary_supporting_fields",
+        "indirect_supporting_fields",
     ]
     out_rows: list[dict[str, str]] = []
     for unit in sorted(set(a_rows) & set(b_rows)):

@@ -33,6 +33,7 @@
     "UK-ATRS": "search_api_slim",
     "US-OMB-2025": "use_case_inventory"
   },
+  "portable_path": "localgovbench_measurement_validation/pilot_public_satisfiability/data/pilot_programme_records.csv",
   "raw_fields_json_column_confirmed": true,
   "record_count_per_source": {
     "CA-GC-AI-REG": 412,

@@ -87,7 +87,7 @@ PY
 
 Operational packets and administration for the 33-unit human pilot:
 
-[`pilot_round_01/`](pilot_round_01/README.md)
+[`coding/pilot_round_01/`](coding/pilot_round_01/README.md)
 
 ```bash
 python3.12 -m localgovbench_measurement_validation.affordance.coding.pilot_launch generate
@@ -95,6 +95,7 @@ python3.12 scripts/validate_pilot_packet.py \
   localgovbench_measurement_validation/affordance/coding/pilot_round_01/coder_packets/pilot_round_01_coder_A.csv \
   --mode pre
 python3.12 scripts/dry_run_pilot_round_01.py
+# optional: python3.12 scripts/dry_run_pilot_round_01.py --keep
 ```
 
 Do **not** place synthetic completed judgments in `pilot_round_01/completed_inputs/`.

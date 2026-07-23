@@ -1,5 +1,11 @@
 # GRB experiment results
 
+> **LEGACY — v0.1.0 / GRB materials.**  
+> Files in this directory are **not Disclosure Functions v1 empirical results**.  
+> They are **not** current readiness, ranking, compliance, or performance findings.  
+> They are **not** substitutes for unfinished DF coding, realization, IRR, or gap analysis.  
+> Active path: [`localgovbench_measurement_validation/affordance/README.md`](../localgovbench_measurement_validation/affordance/README.md).
+
 | File | Produced by |
 |------|-------------|
 | `sensitivity_analysis.csv` | `scripts/run_sensitivity_analysis.py` |

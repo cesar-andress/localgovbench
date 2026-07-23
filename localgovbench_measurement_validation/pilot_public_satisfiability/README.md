@@ -1,5 +1,12 @@
 # Public satisfiability pilot (10-day)
 
+> **LEGACY / precursor — not the active Disclosure Functions v1 measurement path.**  
+> Ceiling/shortfall outputs and figures here are **not Disclosure Functions v1 empirical results**.  
+> They are **not** current readiness, ranking, compliance, or performance findings.  
+> They are **not** substitutes for unfinished DF coding, realization, IRR, or gap analysis.  
+> The corpus file under `data/` may feed DF Phase 1 locks; the **active analytical framework** is  
+> [`../affordance/README.md`](../affordance/README.md).
+
 **Framing:** quantify the public-satisfiability **ceiling** of LocalGovBench v0.1 evidence requirements.
 **Not measured:** readiness scores, municipality rankings, Paper 2 documentary observability.
 

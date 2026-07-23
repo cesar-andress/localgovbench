@@ -55,7 +55,7 @@
     {
       "name": "corpus_lock",
       "path": "localgovbench_measurement_validation/affordance/locks/corpus_lock_v1.json",
-      "sha256": "3e86e0bb7a8368102fe845d5f89f8be1a513f19f53a0126dc8cec638b77d9dc6"
+      "sha256": "e6f4c00e421fa16c19100a638c113315af517038daec72a20d1ffbf8606b6c5d"
     },
     {
       "name": "disclosure_functions",
@@ -63,9 +63,9 @@
       "sha256": "e3114ffc3a851db91d1d05ec8bb3c08d2df1a86e373d600f7bb8801327f2c850"
     }
   ],
-  "generation_timestamp_utc": "2026-07-22T23:47:17+00:00",
+  "generation_timestamp_utc": "2026-07-23T05:33:18+00:00",
   "generator_command": "python3.12 -m localgovbench_measurement_validation.affordance.coding.pilot_launch generate",
-  "git_commit": "d56b8b026426ad618932d12a9df23c2efd00676d",
+  "git_commit": "41c56155289522faeeb8929610d60185416863ed",
   "pilot_round_id": "pilot_round_01",
   "specification_version": "1.0.0"
 }

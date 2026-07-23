@@ -158,9 +158,57 @@ REQUIRED_PATHS = [
     "tests/test_assessment_workflow.py",
 ]
 
+# Active Disclosure Functions v1 stack (required for current release tip).
+DF_REQUIRED_PATHS = [
+    "localgovbench_measurement_validation/affordance/README.md",
+    "localgovbench_measurement_validation/affordance/config/disclosure_functions_v1.yaml",
+    "localgovbench_measurement_validation/affordance/config/field_function_candidates_v1.csv",
+    "localgovbench_measurement_validation/affordance/config/applicability_overrides_v1.yaml",
+    "localgovbench_measurement_validation/affordance/locks/corpus_lock_v1.json",
+    "localgovbench_measurement_validation/affordance/locks/corpus_lock_v1.md",
+    "localgovbench_measurement_validation/affordance/outputs/schema_inventory_v1.csv",
+    "localgovbench_measurement_validation/affordance/coding/config/codebook_affordance_v1.md",
+    "localgovbench_measurement_validation/affordance/coding/config/coder_instructions_v1.md",
+    "localgovbench_measurement_validation/affordance/coding/config/coding_labels_v1.yaml",
+    "localgovbench_measurement_validation/affordance/coding/config/schema_coding_record_v1.schema.json",
+    "localgovbench_measurement_validation/affordance/coding/config/double_coding_protocol_v1.md",
+    "localgovbench_measurement_validation/affordance/coding/templates/schema_coding_template_v1.csv",
+    "localgovbench_measurement_validation/affordance/coding/templates/pilot_coding_manifest_v1.csv",
+    "localgovbench_measurement_validation/affordance/coding/pilot_round_01/README.md",
+    "localgovbench_measurement_validation/affordance/coding/pilot_round_01/coder_packets/pilot_round_01_coder_A.csv",
+    "localgovbench_measurement_validation/affordance/coding/pilot_round_01/coder_packets/pilot_round_01_coder_B.csv",
+    "localgovbench_measurement_validation/affordance/experiments/EXPERIMENT_PIPELINE.md",
+    "scripts/run_affordance_experiment_pipeline.py",
+    "scripts/build_affordance_specification.py",
+    "scripts/build_affordance_coding_layer.py",
+    "docs/supplements/README.md",
+    "paper_assets/paper_asset_manifest.md",
+    "docs/releases/public_positioning_v0.2.0.md",
+    "docs/releases/NEXT_RELEASE.md",
+    "docs/reproducibility/corpus_acquisition.md",
+    "docs/reproducibility/clean_room_checklist.md",
+    ".zenodo.json",
+    ".github/workflows/ci.yml",
+]
+
+LEGACY_NOTICE_MARKERS = (
+    "Status: LEGACY — v0.1.0",
+    "LEGACY — v0.1.0",
+    "not Disclosure Functions v1 empirical results",
+    "not the active Disclosure Functions",
+)
+
+
+def _read_pyproject_version() -> str:
+    text = (ROOT / "pyproject.toml").read_text(encoding="utf-8")
+    for line in text.splitlines():
+        if line.strip().startswith("version"):
+            return line.split("=", 1)[1].strip().strip('"').strip("'")
+    raise RuntimeError("version not found in pyproject.toml")
+
 
 def main() -> int:
-    missing = [p for p in REQUIRED_PATHS if not (ROOT / p).exists()]
+    missing = [p for p in REQUIRED_PATHS + DF_REQUIRED_PATHS if not (ROOT / p).exists()]
     if missing:
         print("Missing required paths:")
         for path in missing:
@@ -207,13 +255,69 @@ def main() -> int:
         print("CITATION.cff should include ORCID 0009-0001-8968-3404.")
         return 1
 
+    # Published citation version remains 0.2.0 until next Zenodo deposit.
+    if 'version: 0.2.0' not in citation and "version: \"0.2.0\"" not in citation:
+        print("CITATION.cff must keep published software version 0.2.0 until the next deposit.")
+        return 1
+
+    py_version = _read_pyproject_version()
+    if not py_version.startswith("0.2."):
+        print(f"Unexpected pyproject version: {py_version}")
+        return 1
+
+    import localgovbench
+
+    if localgovbench.__version__ != py_version:
+        print(
+            f"Runtime __version__ ({localgovbench.__version__}) "
+            f"!= pyproject.toml ({py_version})"
+        )
+        return 1
+
+    lock = (ROOT / "localgovbench_measurement_validation/affordance/locks/corpus_lock_v1.json").read_text(
+        encoding="utf-8"
+    )
+    if "canonical_path" not in lock or "portable_path" not in lock:
+        print("corpus_lock_v1.json must include canonical_path and portable_path.")
+        return 1
+
+    for rel in (
+        "reports/README.md",
+        "results/README.md",
+        "localgovbench_measurement_validation/pilot_public_satisfiability/README.md",
+    ):
+        text = (ROOT / rel).read_text(encoding="utf-8")
+        if not any(m in text for m in LEGACY_NOTICE_MARKERS):
+            print(f"{rel} missing legacy/non-DF empirical-results notice.")
+            return 1
+
+    affordance_readme = (
+        ROOT / "localgovbench_measurement_validation/affordance/README.md"
+    ).read_text(encoding="utf-8")
+    if "](coding/pilot_round_01/README.md)" not in affordance_readme:
+        print("affordance/README.md must link to coding/pilot_round_01/README.md")
+        return 1
+
+    next_release = (ROOT / "docs/releases/NEXT_RELEASE.md").read_text(encoding="utf-8")
+    if "10.5281/zenodo.NEXT_DOI_TBD" not in next_release and "NEXT_DOI_TBD" not in next_release:
+        print("NEXT_RELEASE.md must include an explicit NEXT_DOI_TBD placeholder.")
+        return 1
+    if "v0.2.0 remains" not in next_release.lower() and "v0.2.0 remains historical" not in next_release.lower():
+        if "unchanged" not in next_release.lower() or "v0.2.0" not in next_release:
+            print("NEXT_RELEASE.md must state that published v0.2.0 remains unchanged.")
+            return 1
+
     example = (ROOT / "examples" / "example_assessment.yaml").read_text(encoding="utf-8")
     if "synthetic: true" not in example:
         print("example_assessment.yaml must declare synthetic: true")
         return 1
 
     print("Repository structure validation passed.")
-    print(f"Checked {len(REQUIRED_PATHS)} required paths under {ROOT}")
+    print(
+        f"Checked {len(REQUIRED_PATHS) + len(DF_REQUIRED_PATHS)} required paths "
+        f"(legacy + DF) under {ROOT}"
+    )
+    print(f"Runtime version={localgovbench.__version__}; published citation=0.2.0")
     return 0
 
 

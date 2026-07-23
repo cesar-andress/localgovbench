@@ -1,6 +1,6 @@
 # Exact commands — `pilot_round_01`
 
-Repository root: `~/papers/localgovbench/localgovbench`
+Repository root: clone of `cesar-andress/localgovbench` (use your local checkout path).
 
 Blank packets:
 
@@ -17,7 +17,7 @@ Completed intake (after human coding):
 ## A. Validate Coder A independently (blank / pre-coding)
 
 ```bash
-cd ~/papers/localgovbench/localgovbench
+cd /path/to/localgovbench
 python3.12 scripts/validate_pilot_packet.py \
   localgovbench_measurement_validation/affordance/coding/pilot_round_01/coder_packets/pilot_round_01_coder_A.csv \
   --mode pre

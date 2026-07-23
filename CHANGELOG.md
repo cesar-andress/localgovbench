@@ -2,6 +2,37 @@
 
 All notable changes to this project are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [Unreleased] — 0.2.1 candidate
+
+Release-engineering and tip completeness relative to published **v0.2.0**.  
+**Not published.** Future DOI placeholder: `10.5281/zenodo.NEXT_DOI_TBD`.  
+Published v0.2.0 (DOI `10.5281/zenodo.21500899`) remains unchanged.
+
+### Added
+
+- Phase 3 experiment pipeline and documentation
+- Pilot Round 01 launch package (blank independent coder packets)
+- Supplements A–J and `paper_assets/` Methods scaffolds (no fabricated Results)
+- Corpus verification script and reproducibility docs
+- GitHub Actions CI for the active Disclosure Functions stack
+- Legacy/non-DF notices on results-looking directories
+- Release candidate notes: `docs/releases/NEXT_RELEASE.md`
+
+### Fixed
+
+- Runtime package version aligned with `pyproject.toml` (0.2.1 tip)
+- Release documentation contradictions (published v0.2.0 vs unreleased main)
+- Pilot package relative link; portable checksum paths; portable corpus path field
+- PyYAML declared as a runtime dependency
+- Adjudication merge no longer treats confidence/rationale-only diffs as substantive disagreements
+- Repository validator coverage for the active DF stack
+
+### Known limitations
+
+- Aggregated corpus CSV not distributed in git by default
+- No human coding Results / IRR / realization / gaps
+- Next Zenodo deposit not minted
+
 ## [0.2.0] — 2026-07-23
 
 Framework **transition** release. Not a completed empirical-results release.  
@@ -20,7 +51,7 @@ Framework **transition** release. Not a completed empirical-results release.
 ### Changed
 
 - Root `README.md`, `CITATION.cff`, and `pyproject.toml` repositioned for Disclosure Functions v1
-- Package version provisional **0.2.0**
+- Package version **0.2.0** (published)
 - Keywords and abstracts remove readiness/maturity as the active claim
 
 ### Deprecated
