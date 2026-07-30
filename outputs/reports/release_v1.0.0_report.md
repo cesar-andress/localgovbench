@@ -121,11 +121,11 @@
 
 | Item | Value |
 |------|-------|
-| Commit | `8f2d73af35555d47caaf1f0fa9e1e0929812639d` |
+| Commit | See `git rev-parse refs/tags/v1.0.0^{}` (must equal `main` tip) |
 | Tag | `v1.0.0` (annotated; realigned to authorship tip) |
-| Tag object | `b35971ad468b82a62a72dae274486dac0d591a34` |
+| Tag object | See `git rev-parse refs/tags/v1.0.0` |
 | Tag message | Version 1.0.0 / Authors: César Andrés; David Martín-Moncunill. |
-| Branch | `v1.0.0` tip matches this commit |
+| Branch | `v1.0.0` tip matches `main` |
 | Remote | Force-updated tag `v1.0.0` and branch `v1.0.0` on `origin` |
 
 ---
