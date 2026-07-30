@@ -1,7 +1,7 @@
 {
   "title": "LocalGovBench: Public research software for AI inventory disclosure and documentary evidence availability",
   "upload_type": "software",
-  "description": "<p>LocalGovBench <strong>v1.0.0</strong> — first stable public research-software release accompanying the submitted manuscript on documentary evidence availability in public AI inventories.</p><p>Includes frozen public-satisfiability pilot outputs (freeze 2026-06-24), Disclosure Functions v1 specification/coding layers, supplements A–J, and paper_assets scaffolds. Does not provide readiness, maturity, ranking, or compliance scores.</p><p>Authors: César Andrés (corresponding); David Martín-Moncunill.</p><p>Prior versions: v0.2.0 DOI 10.5281/zenodo.21500899; v0.1.0 DOI 10.5281/zenodo.20543779.</p>",
+  "description": "<p>LocalGovBench <strong>v1.0.0</strong> — canonical public research-software release accompanying the submitted manuscript on documentary evidence availability in public AI inventories.</p><p>DOI: <a href=\"https://doi.org/10.5281/zenodo.21701861\">10.5281/zenodo.21701861</a>.</p><p>Includes frozen public-satisfiability pilot outputs (freeze 2026-06-24), Disclosure Functions v1 specification/coding layers, supplements A–J, and paper_assets scaffolds. Does not provide readiness, maturity, ranking, or compliance scores.</p><p>Authors: César Andrés (corresponding); David Martín-Moncunill.</p><p>Historical prior deposits (provenance only): v0.2.0 DOI 10.5281/zenodo.21500899; v0.1.0 DOI 10.5281/zenodo.20543779.</p>",
   "creators": [
     {
       "name": "Andrés, César",
@@ -28,6 +28,11 @@
     "reproducibility"
   ],
   "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.21701861",
+      "relation": "isIdenticalTo",
+      "scheme": "doi"
+    },
     {
       "identifier": "10.5281/zenodo.21500899",
       "relation": "isNewVersionOf",

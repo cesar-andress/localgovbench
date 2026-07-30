@@ -5,17 +5,17 @@ title: "LocalGovBench: Public research software for AI inventory disclosure and 
 version: 1.0.0
 date-released: "2026-07-30"
 license: MIT
-# Version DOI for v1.0.0 is minted by Zenodo when tag v1.0.0 is deposited.
-# Until then, cite this Git tag and retain prior version DOIs under identifiers.
+doi: "10.5281/zenodo.21701861"
 abstract: >-
-  First stable public research-software release accompanying the submitted
+  Canonical public research-software release (v1.0.0) accompanying the submitted
   manuscript on documentary evidence availability in public AI inventories.
   Includes the frozen public-satisfiability pilot artefacts (LocalGovBench v0.1
   evidence-requirement catalogue mappings; freeze 2026-06-24), Disclosure
   Functions v1 specification and coding layers, supplements A–J, and manuscript
   paper_assets scaffolds. Does not provide governance readiness or maturity
-  scores, jurisdiction rankings, or compliance scores. Historical deposits:
-  v0.2.0 DOI 10.5281/zenodo.21500899; v0.1.0 DOI 10.5281/zenodo.20543779.
+  scores, jurisdiction rankings, or compliance scores. Historical prior deposits
+  (v0.2.0 DOI 10.5281/zenodo.21500899; v0.1.0 DOI 10.5281/zenodo.20543779) are
+  retained for provenance only.
 keywords:
   - artificial intelligence
   - public sector
@@ -43,14 +43,17 @@ authors:
     orcid: "https://orcid.org/0000-0003-2422-9005"
     email: david.martinm@ucjc.edu
 repository-code: "https://github.com/cesar-andress/localgovbench"
-url: "https://github.com/cesar-andress/localgovbench/releases/tag/v1.0.0"
+url: "https://doi.org/10.5281/zenodo.21701861"
 identifiers:
+  - type: doi
+    value: "10.5281/zenodo.21701861"
+    description: "Canonical Zenodo version DOI for LocalGovBench v1.0.0"
   - type: url
     value: "https://github.com/cesar-andress/localgovbench/releases/tag/v1.0.0"
-    description: "GitHub annotated tag v1.0.0 (Zenodo version DOI assigned on deposit)"
+    description: "GitHub release tag v1.0.0"
   - type: doi
     value: "10.5281/zenodo.21500899"
-    description: "Prior Zenodo version DOI for LocalGovBench v0.2.0"
+    description: "Historical — prior Zenodo version DOI for LocalGovBench v0.2.0"
   - type: doi
     value: "10.5281/zenodo.20543779"
-    description: "Historical Zenodo version DOI for LocalGovBench v0.1.0"
+    description: "Historical — Zenodo version DOI for LocalGovBench v0.1.0"

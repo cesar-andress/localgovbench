@@ -228,13 +228,19 @@ def main() -> int:
     if "title:" not in citation or "LocalGovBench" not in citation:
         print("CITATION.cff title should include LocalGovBench.")
         return 1
+    if "10.5281/zenodo.21701861" not in citation:
+        print("CITATION.cff must declare canonical Zenodo DOI 10.5281/zenodo.21701861.")
+        return 1
+    if "doi: \"10.5281/zenodo.21701861\"" not in citation and "doi: 10.5281/zenodo.21701861" not in citation:
+        print("CITATION.cff must set top-level doi to 10.5281/zenodo.21701861.")
+        return 1
     if "10.5281/zenodo.21500899" not in citation:
-        print("CITATION.cff should retain prior Zenodo DOI 10.5281/zenodo.21500899.")
+        print("CITATION.cff should retain historical Zenodo DOI 10.5281/zenodo.21500899.")
         return 1
     if "10.5281/zenodo.20543779" not in citation:
         print("CITATION.cff should retain historical Zenodo DOI 10.5281/zenodo.20543779.")
         return 1
-    if "zenodo.TBD" in citation or "zenodo.XXXXXXX" in citation:
+    if "zenodo.TBD" in citation or "zenodo.XXXXXXX" in citation or "zenodo.PLACEHOLDER" in citation:
         print("CITATION.cff still contains a placeholder Zenodo DOI.")
         return 1
     if "family-names: Andrés" not in citation or "given-names: César" not in citation:
@@ -301,7 +307,16 @@ def main() -> int:
         print("NEXT_RELEASE.md must include an explicit NEXT_DOI_TBD placeholder.")
         return 1
     if "v0.2.0" not in next_release or "unchanged" not in next_release.lower():
-        print("NEXT_RELEASE.md must state that published v0.2.0 remains unchanged.")
+        print("NEXT_RELEASE.md must state that historical v0.2.0 remains unchanged.")
+        return 1
+    if "10.5281/zenodo.21701861" not in next_release:
+        print("NEXT_RELEASE.md must name canonical DOI 10.5281/zenodo.21701861.")
+        return 1
+    if "21701861" not in (ROOT / "README.md").read_text(encoding="utf-8"):
+        print("README.md must cite canonical DOI 10.5281/zenodo.21701861.")
+        return 1
+    if "21701861" not in (ROOT / ".zenodo.json").read_text(encoding="utf-8"):
+        print(".zenodo.json must reference canonical DOI 10.5281/zenodo.21701861.")
         return 1
 
     pilot_outputs = ROOT / "localgovbench_measurement_validation/pilot_public_satisfiability/outputs"

@@ -9,6 +9,11 @@ Use this identity consistently in Zenodo, ORCID-linked deposits, cover letters, 
 
 **Shared affiliation:** CRIA-BDHS Research Group, Higher Polytechnic School of Technology and Science, Universidad Camilo José Cela, Madrid, Spain.
 
+## Canonical software citation
+
+**LocalGovBench v1.0.0** — DOI [10.5281/zenodo.21701861](https://doi.org/10.5281/zenodo.21701861)  
+GitHub: https://github.com/cesar-andress/localgovbench/releases/tag/v1.0.0
+
 ## Forms to avoid (César Andrés)
 
 Do **not** use mixed or legacy variants in submission-facing text:
@@ -30,9 +35,9 @@ Do **not** use `Andrés Sánchez, C.` or `Sánchez, César Andrés`.
 ## Software citation (Zenodo / CITATION.cff)
 
 See [CITATION.cff](../CITATION.cff) and root [README.md](../README.md).  
-**Active release:** v1.0.0 (Git tag; Zenodo version DOI minted on deposit).  
-**Prior Zenodo DOI (v0.2.0):** https://doi.org/10.5281/zenodo.21500899  
-**Historical Zenodo DOI (v0.1.0 only):** https://doi.org/10.5281/zenodo.20543779
+**Canonical:** v1.0.0 — https://doi.org/10.5281/zenodo.21701861  
+**Historical prior (v0.2.0):** https://doi.org/10.5281/zenodo.21500899  
+**Historical prior (v0.1.0 only):** https://doi.org/10.5281/zenodo.20543779
 
 ---
 

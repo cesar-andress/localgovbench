@@ -1,19 +1,17 @@
 # LocalGovBench
 
-**Published software:** **v1.0.0** — first stable public release accompanying the submitted manuscript  
-**Prior published:** v0.2.0 — DOI [10.5281/zenodo.21500899](https://doi.org/10.5281/zenodo.21500899)  
-**Historical archive (v0.1.0):** [10.5281/zenodo.20543779](https://doi.org/10.5281/zenodo.20543779)  
+**Canonical public release:** **v1.0.0** — DOI [10.5281/zenodo.21701861](https://doi.org/10.5281/zenodo.21701861)  
+**GitHub release:** [v1.0.0 — Stable Release for Manuscript Reproducibility](https://github.com/cesar-andress/localgovbench/releases/tag/v1.0.0)  
 **Specification / coding / pipeline:** 1.0.0  
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
-[![Release](https://img.shields.io/badge/release-v1.0.0-blue.svg)](CHANGELOG.md)
-[![Prior DOI v0.2.0](https://zenodo.org/badge/DOI/10.5281/zenodo.21500899.svg)](https://doi.org/10.5281/zenodo.21500899)
-[![Historical DOI v0.1.0](https://zenodo.org/badge/DOI/10.5281/zenodo.20543779.svg)](https://doi.org/10.5281/zenodo.20543779)
+[![Release](https://img.shields.io/badge/release-v1.0.0-blue.svg)](https://doi.org/10.5281/zenodo.21701861)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21701861.svg)](https://doi.org/10.5281/zenodo.21701861)
 
-> **Historical notice.** v0.1.0 represented the original Governance Readiness Benchmark design. It is retained as a historical snapshot but is not the active analytical framework. Provenance archive: [DOI 10.5281/zenodo.20543779](https://doi.org/10.5281/zenodo.20543779).
+> **Canonical citation.** Always cite **LocalGovBench v1.0.0**, DOI [10.5281/zenodo.21701861](https://doi.org/10.5281/zenodo.21701861). Prior deposits are historical provenance only.
 
-> **v1.0.0 notice.** This tag freezes the public repository for manuscript submission and Zenodo archival. The Zenodo **version DOI for v1.0.0** is assigned automatically when the GitHub/Zenodo integration deposits this tag. Until that DOI appears on Zenodo, cite the Git tag `v1.0.0` and retain prior DOIs for earlier deposits.
+> **Historical notice.** v0.1.0 (DOI [10.5281/zenodo.20543779](https://doi.org/10.5281/zenodo.20543779)) represented the original Governance Readiness Benchmark design and is **not the active analytical framework**. v0.2.0 (DOI [10.5281/zenodo.21500899](https://doi.org/10.5281/zenodo.21500899)) is a superseded Disclosure Functions deposit. Both remain available as historical archives only.
 
 ## 1. What LocalGovBench currently is
 
@@ -29,10 +27,10 @@ LocalGovBench is a **reproducible research repository** for studying:
 
 ## 2. What changed after v0.1.0
 
-| | v0.1.0 (historical) | v0.2.0 | v1.0.0 (this release) |
-|--|---------------------|--------|------------------------|
+| | v0.1.0 (historical) | v0.2.0 (historical) | **v1.0.0 (canonical)** |
+|--|---------------------|---------------------|-------------------------|
 | Focus | Governance readiness / GRB | Disclosure affordances (DF v1) | Manuscript-stable public archive (DF + frozen pilot outputs) |
-| Zenodo | [10.5281/zenodo.20543779](https://doi.org/10.5281/zenodo.20543779) | [10.5281/zenodo.21500899](https://doi.org/10.5281/zenodo.21500899) | Minted on deposit of tag `v1.0.0` |
+| Zenodo | [10.5281/zenodo.20543779](https://doi.org/10.5281/zenodo.20543779) | [10.5281/zenodo.21500899](https://doi.org/10.5281/zenodo.21500899) | **[10.5281/zenodo.21701861](https://doi.org/10.5281/zenodo.21701861)** |
 
 ## 3. What Disclosure Functions v1 measures
 
@@ -136,39 +134,31 @@ python3.12 paper_assets/scripts/generate_all_paper_assets.py
 - Human DF pilot coding not executed for publication Results  
 - IRR / adjudication outcomes not reported for DF coding  
 - Record realization tables and gap figures not completed  
-- Zenodo version DOI for **v1.0.0** appears after deposit of this tag  
 
 ## 10. How to cite
 
-**This release (v1.0.0):** cite GitHub tag [`v1.0.0`](https://github.com/cesar-andress/localgovbench/releases/tag/v1.0.0) and, once minted, the Zenodo version DOI shown on the deposit page. Metadata: [`CITATION.cff`](CITATION.cff).
-
-**Prior software citation (v0.2.0):**
+**Canonical release (v1.0.0):**
 
 ```bibtex
-@software{localgovbench_v020,
+@software{localgovbench_v100,
   author  = {Andrés, César and Martín-Moncunill, David},
-  title   = {{LocalGovBench}: Disclosure Affordances in Public AI and Algorithm Registers},
+  title   = {{LocalGovBench}: Public research software for AI inventory disclosure and documentary evidence availability},
   year    = {2026},
-  version = {0.2.0},
-  doi     = {10.5281/zenodo.21500899},
-  url     = {https://doi.org/10.5281/zenodo.21500899},
-  note    = {Disclosure Affordance Framework; Disclosure Functions v1}
+  version = {1.0.0},
+  doi     = {10.5281/zenodo.21701861},
+  url     = {https://doi.org/10.5281/zenodo.21701861},
+  note    = {Canonical public release; GitHub tag v1.0.0}
 }
 ```
 
-**Historical v0.1.0 only** (Governance Readiness Benchmark archive — not the active analytical framework):
+**APA:** Andrés, C., & Martín-Moncunill, D. (2026). *LocalGovBench* (Version 1.0.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.21701861
 
-```bibtex
-@software{localgovbench_v010,
-  author  = {Andrés, César and Martín-Moncunill, David},
-  title   = {{LocalGovBench} v0.1.0: Governance Readiness Benchmark for Sovereign LLM Deployments},
-  year    = {2026},
-  version = {0.1.0},
-  doi     = {10.5281/zenodo.20543779},
-  url     = {https://doi.org/10.5281/zenodo.20543779},
-  note    = {Historical archive; not the active analytical framework}
-}
-```
+Also see [`CITATION.cff`](CITATION.cff) and the GitHub release [`v1.0.0`](https://github.com/cesar-andress/localgovbench/releases/tag/v1.0.0).
+
+**Historical prior deposits (provenance only — do not cite as the current release):**
+
+- v0.2.0 — DOI [10.5281/zenodo.21500899](https://doi.org/10.5281/zenodo.21500899)
+- v0.1.0 — DOI [10.5281/zenodo.20543779](https://doi.org/10.5281/zenodo.20543779)
 
 ## 11. Historical and legacy material
 
@@ -196,8 +186,8 @@ pytest -m "not integration"
 
 ## Status
 
-**v1.0.0** — first stable public release for manuscript submission / Zenodo archival.  
-**v0.2.0** — prior Disclosure Functions deposit ([DOI 10.5281/zenodo.21500899](https://doi.org/10.5281/zenodo.21500899)).  
+**v1.0.0** — **canonical** public release ([DOI 10.5281/zenodo.21701861](https://doi.org/10.5281/zenodo.21701861); GitHub tag `v1.0.0`).  
+**v0.2.0** — historical prior deposit ([DOI 10.5281/zenodo.21500899](https://doi.org/10.5281/zenodo.21500899)).  
 **v0.1.0** — historical Governance Readiness Benchmark ([DOI 10.5281/zenodo.20543779](https://doi.org/10.5281/zenodo.20543779)).
 
 ## Contributing / License

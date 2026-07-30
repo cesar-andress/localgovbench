@@ -8,8 +8,10 @@ Post-v1.0.0 development. No further items yet.
 
 ## [1.0.0] — 2026-07-30
 
-**First stable public release** accompanying the submitted manuscript on documentary evidence availability in public AI inventories.
+**Canonical public release** accompanying the submitted manuscript on documentary evidence availability in public AI inventories.
 
+**DOI:** [10.5281/zenodo.21701861](https://doi.org/10.5281/zenodo.21701861)  
+**GitHub:** [v1.0.0](https://github.com/cesar-andress/localgovbench/releases/tag/v1.0.0)  
 **Authors:** César Andrés (corresponding); David Martín-Moncunill.
 
 This is a **release-engineering / archival** freeze. Empirical pilot numbers are unchanged (freeze 2026-06-24). Disclosure Functions scientific artefacts are not redesigned.
@@ -33,10 +35,9 @@ This is a **release-engineering / archival** freeze. Empirical pilot numbers are
 ### Known limitations
 
 - Aggregate `pilot_programme_records.csv` remains outside git by default (~27 MB; reconstruct/verify via scripts)
-- Zenodo **version DOI for v1.0.0** is assigned on deposit of this tag (not invented in-repo)
 - DF human coding / IRR / realization Results remain incomplete by design
 
-### Prior versions (unchanged deposits)
+### Prior versions (historical deposits only)
 
 - v0.2.0 — DOI [10.5281/zenodo.21500899](https://doi.org/10.5281/zenodo.21500899)
 - v0.1.0 — DOI [10.5281/zenodo.20543779](https://doi.org/10.5281/zenodo.20543779)
@@ -122,6 +123,6 @@ python3.12 -m pytest localgovbench_measurement_validation/affordance/tests \
 - Bundled scores are **synthetic**; empirical field validation is **pending**
 - Zenodo DOI: [10.5281/zenodo.20543779](https://doi.org/10.5281/zenodo.20543779)
 
-[1.0.0]: https://github.com/cesar-andress/localgovbench/releases/tag/v1.0.0
+[1.0.0]: https://doi.org/10.5281/zenodo.21701861
 [0.2.0]: https://doi.org/10.5281/zenodo.21500899
-[0.1.0]: https://github.com/cesar-andress/localgovbench/releases/tag/v0.1.0
+[0.1.0]: https://doi.org/10.5281/zenodo.20543779

@@ -114,6 +114,7 @@ def test_citation_cff_version_and_historical_doi():
 
 def test_readme_canonical_doi():
     text = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
+    assert "10.5281/zenodo.21701861" in text
     assert "10.5281/zenodo.21500899" in text
     assert "Disclosure Functions" in text or "Disclosure Affordance" in text
     assert "10.5281/zenodo.20543779" in text
@@ -163,6 +164,7 @@ def test_zenodo_draft_json_parses():
 def test_root_zenodo_json_active_doi():
     data = json.loads((REPO_ROOT / ".zenodo.json").read_text(encoding="utf-8"))
     assert data["version"] == "1.0.0"
+    assert "21701861" in json.dumps(data)
     assert "21500899" in json.dumps(data)
     assert "20543779" in json.dumps(data)
 
