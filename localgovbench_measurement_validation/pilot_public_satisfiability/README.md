@@ -5,10 +5,12 @@
 > Authoritative numerics: [`../../../paper_data_policy/results_freeze.md`](../../../paper_data_policy/results_freeze.md).
 
 > **Not the active Disclosure Functions v1 measurement path.**  
-> Ceiling/shortfall outputs and figures here are **not** Disclosure Functions v1 empirical results,  
+> Ceiling/shortfall outputs and figures here are not Disclosure Functions v1 empirical results,  
 > readiness scores, rankings, compliance findings, or substitutes for unfinished DF coding / IRR / gap analysis.  
 > The **active DF analytical framework** (separate paper path) is [`../affordance/README.md`](../affordance/README.md).
-
+>
+> Relative to Disclosure Functions v1, this pilot surface is a **legacy / non-DF** empirical package:  
+> canonical for the documentary-evidence availability manuscript, but not the DF coding/realization results path.
 **Release note (v1.0.0):** frozen `outputs/` summaries and `data/source_registry_expanded.csv` are **tracked** for manuscript reproducibility. Do **not** regenerate them for archival. Aggregate `data/pilot_programme_records.csv` remains outside git by default; rebuild with `scripts/build_pilot_corpus.py` and verify with `scripts/verify_pilot_corpus.py` when needed.
 
 **Framing:** quantify the public-satisfiability **ceiling** of LocalGovBench v0.1 evidence requirements (documentary evidence availability).  
