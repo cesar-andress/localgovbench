@@ -84,10 +84,10 @@
 |----------|--------|
 | `README.md` | Updated for v1.0.0 + manuscript freeze section |
 | `LICENSE` | MIT present |
-| `CITATION.cff` | version **1.0.0**; prior DOIs under identifiers |
+| `CITATION.cff` | version **1.0.0**; authors **César Andrés** (1st), **David Martín-Moncunill** (2nd); prior DOIs under identifiers |
 | `CHANGELOG.md` | **[1.0.0] — 2026-07-30** entry |
 | `CONTRIBUTING.md` | Present |
-| `.zenodo.json` | version **1.0.0**; related_identifiers to v0.2.0 / v0.1.0 |
+| `.zenodo.json` | version **1.0.0**; creators Andrés + Martín-Moncunill; related_identifiers to v0.2.0 / v0.1.0 |
 | GitHub | `origin` configured; CI workflow retained |
 | Structure | Documented in README §5 |
 | `pyproject.toml` | **1.0.0**, Production/Stable classifier |

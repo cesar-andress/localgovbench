@@ -240,8 +240,18 @@ def main() -> int:
     if "family-names: Andrés" not in citation or "given-names: César" not in citation:
         print("CITATION.cff should list author César Andrés.")
         return 1
+    if "family-names: Martín-Moncunill" not in citation or "given-names: David" not in citation:
+        print("CITATION.cff should list author David Martín-Moncunill.")
+        return 1
     if "0009-0001-8968-3404" not in citation:
         print("CITATION.cff should include ORCID 0009-0001-8968-3404.")
+        return 1
+    if "0000-0003-2422-9005" not in citation:
+        print("CITATION.cff should include ORCID 0000-0003-2422-9005.")
+        return 1
+    zenodo = (ROOT / ".zenodo.json").read_text(encoding="utf-8")
+    if "Martín-Moncunill, David" not in zenodo and "Martin-Moncunill, David" not in zenodo:
+        print(".zenodo.json should list creator Martín-Moncunill, David.")
         return 1
 
     if "version: 1.0.0" not in citation and 'version: "1.0.0"' not in citation:

@@ -9,7 +9,10 @@ description = "Public research software for AI inventory disclosure and document
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.11"
-authors = [{ name = "César Andrés", email = "cesar.andress@ucjc.edu" }]
+authors = [
+    { name = "César Andrés", email = "cesar.andress@ucjc.edu" },
+    { name = "David Martín-Moncunill", email = "david.martinm@ucjc.edu" },
+]
 keywords = [
     "ai-governance",
     "public-sector",

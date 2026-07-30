@@ -2,14 +2,14 @@
 
 Use this identity consistently in Zenodo, ORCID-linked deposits, cover letters, declarations, and software metadata.
 
-| Field | Value |
-|-------|--------|
-| **Display name** | César Andrés |
-| **ORCID** | [0009-0001-8968-3404](https://orcid.org/0009-0001-8968-3404) |
-| **Corresponding email** | cesar.andress@ucjc.edu |
-| **Affiliation** | CRIA-BDHS Research Group, Higher Polytechnic School of Technology and Science, Universidad Camilo José Cela, Madrid, Spain |
+| Order | Display name | ORCID | Email | Role |
+|------:|--------------|-------|-------|------|
+| 1 | **César Andrés** | [0009-0001-8968-3404](https://orcid.org/0009-0001-8968-3404) | `cesar.andress@ucjc.edu` | Corresponding author |
+| 2 | **David Martín-Moncunill** | [0000-0003-2422-9005](https://orcid.org/0000-0003-2422-9005) | `david.martinm@ucjc.edu` | Co-author |
 
-## Forms to avoid
+**Shared affiliation:** CRIA-BDHS Research Group, Higher Polytechnic School of Technology and Science, Universidad Camilo José Cela, Madrid, Spain.
+
+## Forms to avoid (César Andrés)
 
 Do **not** use mixed or legacy variants in submission-facing text:
 
@@ -19,18 +19,10 @@ Do **not** use mixed or legacy variants in submission-facing text:
 - César A. Sánchez / C. Andrés Sánchez
 - César Andrés ORCID (ORCID is a field, not part of the name)
 
-## Bibliography (researcher’s own works)
-
-In BibTeX / Springer `sn-jnl` author–year style, prefer:
+## Bibliography (authors’ own works)
 
 ```bibtex
-author = {Andrés, César}
-```
-
-or, if a middle initial is required by the venue:
-
-```bibtex
-author = {Andrés, C.{A.}}
+author = {Andrés, César and Martín-Moncunill, David}
 ```
 
 Do **not** use `Andrés Sánchez, C.` or `Sánchez, César Andrés`.
@@ -38,10 +30,10 @@ Do **not** use `Andrés Sánchez, C.` or `Sánchez, César Andrés`.
 ## Software citation (Zenodo / CITATION.cff)
 
 See [CITATION.cff](../CITATION.cff) and root [README.md](../README.md).  
-**Active Zenodo DOI (v0.2.0):** https://doi.org/10.5281/zenodo.21500899  
-**Historical Zenodo DOI (v0.1.0 only):** https://doi.org/10.5281/zenodo.20543779  
-**Active release title:** LocalGovBench v0.2.0: Disclosure Affordance Framework for Public AI and Algorithm Registers.
+**Active release:** v1.0.0 (Git tag; Zenodo version DOI minted on deposit).  
+**Prior Zenodo DOI (v0.2.0):** https://doi.org/10.5281/zenodo.21500899  
+**Historical Zenodo DOI (v0.1.0 only):** https://doi.org/10.5281/zenodo.20543779
 
 ---
 
-*Internal reference for GIQ 2026 / LocalGovBench archival releases.*
+*Aligned with `~/papers/promts/author_identity_standardization.md`.*

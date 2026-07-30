@@ -146,7 +146,7 @@ python3.12 paper_assets/scripts/generate_all_paper_assets.py
 
 ```bibtex
 @software{localgovbench_v020,
-  author  = {Andrés, César},
+  author  = {Andrés, César and Martín-Moncunill, David},
   title   = {{LocalGovBench}: Disclosure Affordances in Public AI and Algorithm Registers},
   year    = {2026},
   version = {0.2.0},
@@ -160,7 +160,7 @@ python3.12 paper_assets/scripts/generate_all_paper_assets.py
 
 ```bibtex
 @software{localgovbench_v010,
-  author  = {Andrés, César},
+  author  = {Andrés, César and Martín-Moncunill, David},
   title   = {{LocalGovBench} v0.1.0: Governance Readiness Benchmark for Sovereign LLM Deployments},
   year    = {2026},
   version = {0.1.0},

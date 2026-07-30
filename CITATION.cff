@@ -35,6 +35,13 @@ authors:
       Science, Universidad Camilo José Cela, Madrid, Spain
     orcid: "https://orcid.org/0009-0001-8968-3404"
     email: cesar.andress@ucjc.edu
+  - given-names: David
+    family-names: Martín-Moncunill
+    affiliation: >-
+      CRIA-BDHS Research Group, Higher Polytechnic School of Technology and
+      Science, Universidad Camilo José Cela, Madrid, Spain
+    orcid: "https://orcid.org/0000-0003-2422-9005"
+    email: david.martinm@ucjc.edu
 repository-code: "https://github.com/cesar-andress/localgovbench"
 url: "https://github.com/cesar-andress/localgovbench/releases/tag/v1.0.0"
 identifiers:

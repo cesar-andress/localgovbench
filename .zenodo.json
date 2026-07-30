@@ -1,12 +1,17 @@
 {
   "title": "LocalGovBench: Public research software for AI inventory disclosure and documentary evidence availability",
   "upload_type": "software",
-  "description": "<p>LocalGovBench <strong>v1.0.0</strong> — first stable public research-software release accompanying the submitted manuscript on documentary evidence availability in public AI inventories.</p><p>Includes frozen public-satisfiability pilot outputs (freeze 2026-06-24), Disclosure Functions v1 specification/coding layers, supplements A–J, and paper_assets scaffolds. Does not provide readiness, maturity, ranking, or compliance scores.</p><p>Prior versions: v0.2.0 DOI 10.5281/zenodo.21500899; v0.1.0 DOI 10.5281/zenodo.20543779.</p>",
+  "description": "<p>LocalGovBench <strong>v1.0.0</strong> — first stable public research-software release accompanying the submitted manuscript on documentary evidence availability in public AI inventories.</p><p>Includes frozen public-satisfiability pilot outputs (freeze 2026-06-24), Disclosure Functions v1 specification/coding layers, supplements A–J, and paper_assets scaffolds. Does not provide readiness, maturity, ranking, or compliance scores.</p><p>Authors: César Andrés (corresponding); David Martín-Moncunill.</p><p>Prior versions: v0.2.0 DOI 10.5281/zenodo.21500899; v0.1.0 DOI 10.5281/zenodo.20543779.</p>",
   "creators": [
     {
       "name": "Andrés, César",
       "affiliation": "CRIA-BDHS Research Group, Higher Polytechnic School of Technology and Science, Universidad Camilo José Cela, Madrid, Spain",
       "orcid": "0009-0001-8968-3404"
+    },
+    {
+      "name": "Martín-Moncunill, David",
+      "affiliation": "CRIA-BDHS Research Group, Higher Polytechnic School of Technology and Science, Universidad Camilo José Cela, Madrid, Spain",
+      "orcid": "0000-0003-2422-9005"
     }
   ],
   "version": "1.0.0",

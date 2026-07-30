@@ -10,6 +10,8 @@ Post-v1.0.0 development. No further items yet.
 
 **First stable public release** accompanying the submitted manuscript on documentary evidence availability in public AI inventories.
 
+**Authors:** César Andrés (corresponding); David Martín-Moncunill.
+
 This is a **release-engineering / archival** freeze. Empirical pilot numbers are unchanged (freeze 2026-06-24). Disclosure Functions scientific artefacts are not redesigned.
 
 ### Added
