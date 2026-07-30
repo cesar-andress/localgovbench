@@ -121,11 +121,12 @@
 
 | Item | Value |
 |------|-------|
-| Commit | `97eeeb46d64e277851eede90cff4b3751b46f33f` |
-| Tag | `v1.0.0` (annotated) |
-| Tag object | `5465aea56780985fadeaeecd0cea92a2a39aea24` |
-| Tag message | Version 1.0.0 / First stable public release accompanying the submitted manuscript. |
-| Remote | Pushed `main` and `v1.0.0` to `origin` (`cesar-andress/localgovbench`) |
+| Commit | `8f2d73af35555d47caaf1f0fa9e1e0929812639d` |
+| Tag | `v1.0.0` (annotated; realigned to authorship tip) |
+| Tag object | `b35971ad468b82a62a72dae274486dac0d591a34` |
+| Tag message | Version 1.0.0 / Authors: César Andrés; David Martín-Moncunill. |
+| Branch | `v1.0.0` tip matches this commit |
+| Remote | Force-updated tag `v1.0.0` and branch `v1.0.0` on `origin` |
 
 ---
 
