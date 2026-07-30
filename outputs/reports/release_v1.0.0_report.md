@@ -119,13 +119,13 @@
 
 ## Phase 6–7 — Git / tag
 
-Filled after push:
-
 | Item | Value |
 |------|-------|
-| Commit | *(see below)* |
+| Commit | `97eeeb46d64e277851eede90cff4b3751b46f33f` |
 | Tag | `v1.0.0` (annotated) |
+| Tag object | `5465aea56780985fadeaeecd0cea92a2a39aea24` |
 | Tag message | Version 1.0.0 / First stable public release accompanying the submitted manuscript. |
+| Remote | Pushed `main` and `v1.0.0` to `origin` (`cesar-andress/localgovbench`) |
 
 ---
 
