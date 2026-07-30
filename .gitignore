@@ -106,6 +106,9 @@ outputs/*
 !localgovbench_measurement_validation/affordance/coding/outputs/
 !localgovbench_measurement_validation/affordance/coding/outputs/**
 !localgovbench_measurement_validation/affordance/coding/pilot_round_01/coder_packets/*.csv
+# Experiment pipeline datasets (regenerate; keep README only)
+localgovbench_measurement_validation/affordance/experiments/outputs/*
+!localgovbench_measurement_validation/affordance/experiments/outputs/README.md
 !paper_assets/**/*.csv
 !paper_assets/**/*.png
 
