@@ -105,10 +105,9 @@ def test_positioning_doc_exists_and_restrained():
 
 def test_citation_cff_version_and_historical_doi():
     doc = yaml.safe_load((REPO_ROOT / "CITATION.cff").read_text(encoding="utf-8"))
-    assert str(doc.get("version")).startswith("0.2")
+    assert str(doc.get("version")) == "1.0.0"
     abstract = doc["abstract"].lower()
-    assert "disclosure" in abstract
-    assert doc.get("doi") == "10.5281/zenodo.21500899"
+    assert "disclosure" in abstract or "documentary evidence" in abstract
     assert "10.5281/zenodo.20543779" in str(doc)
     assert "10.5281/zenodo.21500899" in str(doc)
 
@@ -116,15 +115,16 @@ def test_citation_cff_version_and_historical_doi():
 def test_readme_canonical_doi():
     text = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
     assert "10.5281/zenodo.21500899" in text
-    assert "Disclosure Affordance Framework" in text
+    assert "Disclosure Functions" in text or "Disclosure Affordance" in text
     assert "10.5281/zenodo.20543779" in text
     assert "Historical" in text or "historical" in text
+    assert "v1.0.0" in text
 
 
 def test_pyproject_version():
     text = (REPO_ROOT / "pyproject.toml").read_text(encoding="utf-8")
-    assert 'version = "0.2.1"' in text
-    assert "disclosure" in text.lower()
+    assert 'version = "1.0.0"' in text
+    assert "disclosure" in text.lower() or "documentary" in text.lower()
 
 
 def test_active_docs_avoid_unqualified_readiness_claims():
@@ -162,8 +162,9 @@ def test_zenodo_draft_json_parses():
 
 def test_root_zenodo_json_active_doi():
     data = json.loads((REPO_ROOT / ".zenodo.json").read_text(encoding="utf-8"))
+    assert data["version"] == "1.0.0"
     assert "21500899" in json.dumps(data)
-    assert data["version"] == "0.2.0"
+    assert "20543779" in json.dumps(data)
 
 
 def test_release_docs_distinguish_published_and_unreleased():
@@ -175,9 +176,9 @@ def test_release_docs_distinguish_published_and_unreleased():
     assert "Published" in readiness
     assert "does **not** include" in readiness.lower() or "does not include" in readiness.lower()
     assert "NEXT_DOI_TBD" in nxt
-    assert "Unreleased" in nxt or "UNRELEASED" in nxt
-    assert "0.2.1" in nxt
-    assert "forthcoming" not in index.lower() or "Published software v0.2.0" in index
+    assert "v1.0.0" in nxt
+    assert "v1.0.0" in index
+    assert "10.5281/zenodo.21500899" in index
 
 
 def test_github_release_notes_list_milestones():

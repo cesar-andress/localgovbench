@@ -1,0 +1,37 @@
+{
+  "decision": "GO",
+  "manuscript_drafting_decision": "GO",
+  "upgrade_version": "validation_upgrade_v1",
+  "checks": {
+    "at_least_300_records": true,
+    "at_least_5_jurisdictional_sources": true,
+    "partition_non_trivial": true,
+    "graded_shortfall_implemented": true,
+    "partition_robustness_gte_80pct": true,
+    "gate_unreachable_100pct_all_scenarios": true,
+    "paper2_boundary_documented": true
+  },
+  "metrics": {
+    "programme_records": 7434,
+    "source_count": 5,
+    "criteria_count": 25,
+    "pct_structurally_internal": 60.0,
+    "pct_partially_or_public_satisfiable": 40.0,
+    "pct_score_ge3_gate_unreachable": 100.0,
+    "satisfiability_class_counts": {
+      "structurally_internal": 15,
+      "partially_public_satisfiable": 9,
+      "public_satisfiable": 1
+    },
+    "partition_class_agreement_pct": 92.0,
+    "sensitivity_baseline_internal_pct": 60.0,
+    "sensitivity_conservative_internal_pct": 84.0,
+    "sensitivity_liberal_internal_pct": 28.0,
+    "max_public_shortfall_level_observed": 2
+  },
+  "target_venues": {
+    "data_and_policy": "strong_candidate",
+    "information_polity": "strong_candidate",
+    "giq": "stretch_with_delphi_dossier_validation"
+  }
+}

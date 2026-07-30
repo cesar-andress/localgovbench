@@ -1,27 +1,28 @@
 cff-version: 1.2.0
 message: "If you use LocalGovBench, please cite this research software."
 type: software
-title: "LocalGovBench: Disclosure Affordances in Public AI and Algorithm Registers"
-version: 0.2.0
-date-released: "2026-07-23"
+title: "LocalGovBench: Public research software for AI inventory disclosure and documentary evidence availability"
+version: 1.0.0
+date-released: "2026-07-30"
 license: MIT
-doi: "10.5281/zenodo.21500899"
+# Version DOI for v1.0.0 is minted by Zenodo when tag v1.0.0 is deposited.
+# Until then, cite this Git tag and retain prior version DOIs under identifiers.
 abstract: >-
-  Reproducible research repository for studying schema disclosure affordance
-  and planned record-level realization in public AI and algorithm registers,
-  using Disclosure Functions v1. Includes a frozen specification layer,
-  observed-field schema inventory tooling, and a human schema-coding system.
-  Does not provide governance readiness or maturity scores, shortfall scores,
-  compliance scores, composite indices, or jurisdiction rankings. Historical
-  LocalGovBench v0.1.0 (Governance Readiness Benchmark) remains available as a
-  provenance archive (DOI 10.5281/zenodo.20543779) and is not the active
-  analytical framework.
+  First stable public research-software release accompanying the submitted
+  manuscript on documentary evidence availability in public AI inventories.
+  Includes the frozen public-satisfiability pilot artefacts (LocalGovBench v0.1
+  evidence-requirement catalogue mappings; freeze 2026-06-24), Disclosure
+  Functions v1 specification and coding layers, supplements A–J, and manuscript
+  paper_assets scaffolds. Does not provide governance readiness or maturity
+  scores, jurisdiction rankings, or compliance scores. Historical deposits:
+  v0.2.0 DOI 10.5281/zenodo.21500899; v0.1.0 DOI 10.5281/zenodo.20543779.
 keywords:
   - artificial intelligence
   - public sector
   - algorithm registers
   - AI inventories
   - algorithmic transparency
+  - documentary evidence availability
   - disclosure affordance
   - schema coding
   - reproducibility
@@ -35,16 +36,14 @@ authors:
     orcid: "https://orcid.org/0009-0001-8968-3404"
     email: cesar.andress@ucjc.edu
 repository-code: "https://github.com/cesar-andress/localgovbench"
-url: "https://doi.org/10.5281/zenodo.21500899"
+url: "https://github.com/cesar-andress/localgovbench/releases/tag/v1.0.0"
 identifiers:
+  - type: url
+    value: "https://github.com/cesar-andress/localgovbench/releases/tag/v1.0.0"
+    description: "GitHub annotated tag v1.0.0 (Zenodo version DOI assigned on deposit)"
   - type: doi
     value: "10.5281/zenodo.21500899"
-    description: "Zenodo version DOI for LocalGovBench v0.2.0 (canonical active citation)"
+    description: "Prior Zenodo version DOI for LocalGovBench v0.2.0"
   - type: doi
     value: "10.5281/zenodo.20543779"
-    description: "Historical Zenodo version DOI for LocalGovBench v0.1.0 only"
-  - type: url
-    value: "https://github.com/cesar-andress/localgovbench"
-    description: "Source code repository"
-# preferred-citation: update when a peer-reviewed paper DOI exists
-# USER CONFIRMATION: companion manuscript DOI / venue not set (avoid inventing)
+    description: "Historical Zenodo version DOI for LocalGovBench v0.1.0"

@@ -1,41 +1,38 @@
 # LocalGovBench
 
-**Published software:** v0.2.0 — DOI [10.5281/zenodo.21500899](https://doi.org/10.5281/zenodo.21500899)  
-**Development tip (`main`):** 0.2.1 candidate (unreleased; see [`docs/releases/NEXT_RELEASE.md`](docs/releases/NEXT_RELEASE.md))  
+**Published software:** **v1.0.0** — first stable public release accompanying the submitted manuscript  
+**Prior published:** v0.2.0 — DOI [10.5281/zenodo.21500899](https://doi.org/10.5281/zenodo.21500899)  
 **Historical archive (v0.1.0):** [10.5281/zenodo.20543779](https://doi.org/10.5281/zenodo.20543779)  
-**Specification / coding / pipeline:** 1.0.0
+**Specification / coding / pipeline:** 1.0.0  
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
-[![Published](https://img.shields.io/badge/published-v0.2.0-blue.svg)](CHANGELOG.md)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21500899.svg)](https://doi.org/10.5281/zenodo.21500899)
+[![Release](https://img.shields.io/badge/release-v1.0.0-blue.svg)](CHANGELOG.md)
+[![Prior DOI v0.2.0](https://zenodo.org/badge/DOI/10.5281/zenodo.21500899.svg)](https://doi.org/10.5281/zenodo.21500899)
 [![Historical DOI v0.1.0](https://zenodo.org/badge/DOI/10.5281/zenodo.20543779.svg)](https://doi.org/10.5281/zenodo.20543779)
 
 > **Historical notice.** v0.1.0 represented the original Governance Readiness Benchmark design. It is retained as a historical snapshot but is not the active analytical framework. Provenance archive: [DOI 10.5281/zenodo.20543779](https://doi.org/10.5281/zenodo.20543779).
 
-> **Tip notice.** Published **v0.2.0** does **not** include the Phase 3 experiment pipeline or Pilot Round 01 launch package. Those artefacts exist on current `main` and are documented for a future **0.2.1** deposit (`NEXT_DOI_TBD`). Cite the Git commit you actually use.
-
-Public positioning: [`docs/releases/public_positioning_v0.2.0.md`](docs/releases/public_positioning_v0.2.0.md). Next candidate: [`docs/releases/NEXT_RELEASE.md`](docs/releases/NEXT_RELEASE.md).
+> **v1.0.0 notice.** This tag freezes the public repository for manuscript submission and Zenodo archival. The Zenodo **version DOI for v1.0.0** is assigned automatically when the GitHub/Zenodo integration deposits this tag. Until that DOI appears on Zenodo, cite the Git tag `v1.0.0` and retain prior DOIs for earlier deposits.
 
 ## 1. What LocalGovBench currently is
 
 LocalGovBench is a **reproducible research repository** for studying:
 
-- **schema disclosure affordance** in public AI / algorithm registers;
-- **Disclosure Functions v1** (what a published schema can host);
+- **documentary evidence availability** from official public AI / algorithm inventory schemas (frozen public-satisfiability pilot; see §5b);
+- **schema disclosure affordance** via **Disclosure Functions v1**;
 - structured **human schema coding**;
 - planned **record-level realization** and the **affordance–realization gap**;
 - **applicability-aware** cross-source comparison;
 
-**without** jurisdiction rankings, readiness/maturity scores, shortfall scores, compliance scores, or composite indices.
+**without** jurisdiction rankings, readiness/maturity scores, compliance scores, or composite indices.
 
 ## 2. What changed after v0.1.0
 
-| | v0.1.0 (historical) | v0.2.0 (active) |
-|--|---------------------|-----------------|
-| Focus | Governance readiness / GRB for sovereign LLM programmes | Disclosure affordances of official register schemas |
-| Unit | Programme dossier / maturity criteria | Schema × disclosure function (+ planned record realization) |
-| Zenodo | [10.5281/zenodo.20543779](https://doi.org/10.5281/zenodo.20543779) | [10.5281/zenodo.21500899](https://doi.org/10.5281/zenodo.21500899) |
+| | v0.1.0 (historical) | v0.2.0 | v1.0.0 (this release) |
+|--|---------------------|--------|------------------------|
+| Focus | Governance readiness / GRB | Disclosure affordances (DF v1) | Manuscript-stable public archive (DF + frozen pilot outputs) |
+| Zenodo | [10.5281/zenodo.20543779](https://doi.org/10.5281/zenodo.20543779) | [10.5281/zenodo.21500899](https://doi.org/10.5281/zenodo.21500899) | Minted on deposit of tag `v1.0.0` |
 
 ## 3. What Disclosure Functions v1 measures
 
@@ -57,10 +54,26 @@ Active catalogue: identity (descriptive), purpose, operational status, accountab
 localgovbench/                          # package (includes legacy framework/grb code)
 localgovbench_measurement_validation/
   affordance/                           # ACTIVE: DF v1 specification + coding
-scripts/build_affordance_*.py           # ACTIVE: regenerate artefacts
-docs/releases/                          # ACTIVE: v0.2.0 release documentation
-docs/*.md, validation/, examples/       # LEGACY — v0.1.0 (labelled)
+  pilot_public_satisfiability/          # FROZEN manuscript pilot (2026-06-24)
+scripts/build_affordance_*.py           # ACTIVE: regenerate DF artefacts
+scripts/*public_satisfiability*         # FROZEN pilot pipeline (do not re-run for release)
+docs/releases/                          # Release documentation
+docs/supplements/                       # Publication supplements A–J
+paper_assets/                           # Manuscript table/figure scaffolds
+paper_data_policy/                      # Freeze notes for the pilot package
 ```
+
+## 5b. Manuscript empirical freeze (public satisfiability pilot)
+
+Frozen analytical summaries for the documentary-evidence availability study live under:
+
+[`localgovbench_measurement_validation/pilot_public_satisfiability/`](localgovbench_measurement_validation/pilot_public_satisfiability/)
+
+- **Freeze date:** 2026-06-24 (`paper_data_policy/results_freeze.md`)
+- **Tracked:** `outputs/*.csv`, reports, figures, mapping rules, criteria YAML, source registry
+- **Not redistributed in git by default:** aggregate `data/pilot_programme_records.csv` (~27 MB; reconstruct via `scripts/build_pilot_corpus.py` when licensing/network allow; verify with `scripts/verify_pilot_corpus.py`)
+
+Do **not** regenerate pilot outputs for this release. Numbers are frozen.
 
 ## 6. Phase 1 — specification layer (complete)
 
@@ -92,7 +105,7 @@ python3.12 -m pytest localgovbench_measurement_validation/affordance/coding/test
 
 Do **not** treat blank templates as study results.
 
-## 8. Reproducibility commands (active path)
+## 8. Reproducibility commands (active DF path)
 
 ```bash
 python3 -m venv .venv && source .venv/bin/activate
@@ -100,51 +113,36 @@ pip install -e ".[dev]"
 python3.12 scripts/build_affordance_specification.py
 python3.12 scripts/build_affordance_coding_layer.py
 pytest -m "not integration"
+python3.12 scripts/validate_repository.py
 ```
 
 ## 8b. Supplementary materials (paper package)
 
-Publication-facing supplements **A–J** (corpus, inventory, Disclosure Functions v1, coding, validation, pipeline, reproducibility, structure, citation, versions) are indexed at:
+Publication-facing supplements **A–J** are indexed at:
 
 [`docs/supplements/README.md`](docs/supplements/README.md)
 
-They wrap existing frozen artefacts only and do **not** invent coding results, IRR, realization rates, or gaps.
-
 ## 8c. Manuscript paper assets (tables/figures scaffolds)
-
-Reproducible Methods tables/figures and Results placeholders:
 
 [`paper_assets/README.md`](paper_assets/README.md) · [`paper_assets/paper_asset_manifest.md`](paper_assets/paper_asset_manifest.md)
 
 ```bash
 python3.12 paper_assets/scripts/generate_all_paper_assets.py
-python3.12 paper_assets/scripts/make_F01_corpus_record_counts.py  # … F02–F04
 ```
-
-Results tables T09–T13 and figures F05–F08 remain empty until real coding/realization inputs exist.
 
 ## 9. Current limitations
 
-- Human pilot coding not executed for publication  
-- IRR / adjudication outcomes not reported  
+- Aggregate pilot corpus CSV not in git by default (size/licensing)  
+- Human DF pilot coding not executed for publication Results  
+- IRR / adjudication outcomes not reported for DF coding  
 - Record realization tables and gap figures not completed  
-- Companion manuscript not claimed finished  
+- Zenodo version DOI for **v1.0.0** appears after deposit of this tag  
 
-## 10. Next research phases
+## 10. How to cite
 
-1. Human pilot coding → adjudication → IRR  
-2. Full schema coding where planned  
-3. Record-level realization and affordance–realization gap analysis  
-4. Manuscript finalisation  
+**This release (v1.0.0):** cite GitHub tag [`v1.0.0`](https://github.com/cesar-andress/localgovbench/releases/tag/v1.0.0) and, once minted, the Zenodo version DOI shown on the deposit page. Metadata: [`CITATION.cff`](CITATION.cff).
 
-## 11. How to cite
-
-**Preferred software citation (active):**
-
-LocalGovBench v0.2.0: Disclosure Affordance Framework for Public AI and Algorithm Registers.  
-https://doi.org/10.5281/zenodo.21500899
-
-Zenodo record title: *LocalGovBench: Disclosure Affordances in Public AI and Algorithm Registers* (v0.2.0).
+**Prior software citation (v0.2.0):**
 
 ```bibtex
 @software{localgovbench_v020,
@@ -172,9 +170,7 @@ Zenodo record title: *LocalGovBench: Disclosure Affordances in Public AI and Alg
 }
 ```
 
-Metadata: [`CITATION.cff`](CITATION.cff).
-
-## 12. Historical and legacy material
+## 11. Historical and legacy material
 
 | Path | Role |
 |------|------|
@@ -200,7 +196,8 @@ pytest -m "not integration"
 
 ## Status
 
-**v0.2.0** — active framework = Disclosure Functions v1 ([DOI 10.5281/zenodo.21500899](https://doi.org/10.5281/zenodo.21500899)).  
+**v1.0.0** — first stable public release for manuscript submission / Zenodo archival.  
+**v0.2.0** — prior Disclosure Functions deposit ([DOI 10.5281/zenodo.21500899](https://doi.org/10.5281/zenodo.21500899)).  
 **v0.1.0** — historical Governance Readiness Benchmark ([DOI 10.5281/zenodo.20543779](https://doi.org/10.5281/zenodo.20543779)).
 
 ## Contributing / License

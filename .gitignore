@@ -87,7 +87,14 @@ reports/model_benchmark.md
 !reports/traceability_report.md
 
 # Workflow outputs (regenerate via scripts/run_assessment_workflow.py)
-outputs/
+outputs/*
+!outputs/reports/
+!outputs/reports/release_v1.0.0_report.md
+
+# Manuscript empirical freeze (public satisfiability pilot) — track frozen outputs only
+!localgovbench_measurement_validation/pilot_public_satisfiability/outputs/
+!localgovbench_measurement_validation/pilot_public_satisfiability/outputs/**
+!localgovbench_measurement_validation/pilot_public_satisfiability/data/source_registry_expanded.csv
 
 # Affordance specification layer (Disclosure Functions v1) — track frozen artefacts
 !localgovbench_measurement_validation/affordance/config/*.csv

@@ -229,22 +229,11 @@ def main() -> int:
         print("CITATION.cff title should include LocalGovBench.")
         return 1
     if "10.5281/zenodo.21500899" not in citation:
-        print("CITATION.cff should include active Zenodo DOI 10.5281/zenodo.21500899.")
+        print("CITATION.cff should retain prior Zenodo DOI 10.5281/zenodo.21500899.")
         return 1
     if "10.5281/zenodo.20543779" not in citation:
         print("CITATION.cff should retain historical Zenodo DOI 10.5281/zenodo.20543779.")
         return 1
-    if "doi: \"10.5281/zenodo.20543779\"" in citation or "doi: 10.5281/zenodo.20543779" in citation:
-        # Primary doi field must be the active version DOI, not the historical one.
-        # Historical DOI may appear only under identifiers.
-        primary = None
-        for line in citation.splitlines():
-            if line.startswith("doi:"):
-                primary = line
-                break
-        if primary and "20543779" in primary:
-            print("CITATION.cff primary doi must be 10.5281/zenodo.21500899 (v0.2.0), not the historical v0.1.0 DOI.")
-            return 1
     if "zenodo.TBD" in citation or "zenodo.XXXXXXX" in citation:
         print("CITATION.cff still contains a placeholder Zenodo DOI.")
         return 1
@@ -255,14 +244,13 @@ def main() -> int:
         print("CITATION.cff should include ORCID 0009-0001-8968-3404.")
         return 1
 
-    # Published citation version remains 0.2.0 until next Zenodo deposit.
-    if 'version: 0.2.0' not in citation and "version: \"0.2.0\"" not in citation:
-        print("CITATION.cff must keep published software version 0.2.0 until the next deposit.")
+    if "version: 1.0.0" not in citation and 'version: "1.0.0"' not in citation:
+        print("CITATION.cff must declare software version 1.0.0.")
         return 1
 
     py_version = _read_pyproject_version()
-    if not py_version.startswith("0.2."):
-        print(f"Unexpected pyproject version: {py_version}")
+    if py_version != "1.0.0":
+        print(f"Unexpected pyproject version: {py_version} (expected 1.0.0)")
         return 1
 
     import localgovbench
@@ -302,9 +290,20 @@ def main() -> int:
     if "10.5281/zenodo.NEXT_DOI_TBD" not in next_release and "NEXT_DOI_TBD" not in next_release:
         print("NEXT_RELEASE.md must include an explicit NEXT_DOI_TBD placeholder.")
         return 1
-    if "v0.2.0 remains" not in next_release.lower() and "v0.2.0 remains historical" not in next_release.lower():
-        if "unchanged" not in next_release.lower() or "v0.2.0" not in next_release:
-            print("NEXT_RELEASE.md must state that published v0.2.0 remains unchanged.")
+    if "v0.2.0" not in next_release or "unchanged" not in next_release.lower():
+        print("NEXT_RELEASE.md must state that published v0.2.0 remains unchanged.")
+        return 1
+
+    pilot_outputs = ROOT / "localgovbench_measurement_validation/pilot_public_satisfiability/outputs"
+    required_pilot = [
+        "field_criterion_coverage_matrix.csv",
+        "criterion_satisfiability_summary.csv",
+        "gate_reachability_summary.csv",
+        "minimum_internal_evidence_set.csv",
+    ]
+    for name in required_pilot:
+        if not (pilot_outputs / name).is_file():
+            print(f"Missing frozen pilot output: {pilot_outputs / name}")
             return 1
 
     example = (ROOT / "examples" / "example_assessment.yaml").read_text(encoding="utf-8")
@@ -317,7 +316,7 @@ def main() -> int:
         f"Checked {len(REQUIRED_PATHS) + len(DF_REQUIRED_PATHS)} required paths "
         f"(legacy + DF) under {ROOT}"
     )
-    print(f"Runtime version={localgovbench.__version__}; published citation=0.2.0")
+    print(f"Runtime version={localgovbench.__version__}; stable release=1.0.0")
     return 0
 
 

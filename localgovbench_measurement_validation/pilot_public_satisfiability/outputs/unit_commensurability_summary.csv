@@ -1,0 +1,4 @@
+scenario_id,scenario_label,records_total,records_retained_pct,pct_structurally_internal,pct_partially_or_public,pct_gate_unreachable,gate_unreachable_count,structurally_internal_count,partially_public_count,public_satisfiable_count,shortfall_level_0,shortfall_level_1,shortfall_level_2,shortfall_level_3,shortfall_level_4,mean_max_shortfall,pct_change_internal_vs_A,pct_change_partial_vs_A,pct_change_gate_unreachable_vs_A,main_finding_stable
+A_all_records,Scenario A — all records,7434,100.0,60.0,40.0,100.0,25,15,9,1,7,14,4,0,0,0.88,0.0,0.0,0.0,True
+B_min_information,Scenario B — minimum information threshold,5204,70.0,60.0,40.0,100.0,25,15,9,1,7,14,4,0,0,0.88,0.0,0.0,0.0,True
+C_exclude_high_complexity,Scenario C — exclude high-complexity proxy,6685,89.9,60.0,40.0,100.0,25,15,9,1,7,14,4,0,0,0.88,0.0,0.0,0.0,True

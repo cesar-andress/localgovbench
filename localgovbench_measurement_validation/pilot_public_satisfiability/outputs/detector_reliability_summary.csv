@@ -1,0 +1,30 @@
+source_name,field_name,recovery_mode,records_evaluated,field_coverage_pct,nonempty_count,true_positive,false_positive,false_negative,true_negative,precision,recall,f1,exact_match_rate_pct,failure_mode,notes
+US-OMB-2025,development_stage,categorical,3611,90.6,3273,77,0,3196,338,1.0,0.0235,0.046,11.5,,Lifecycle stage (direct inventory field).
+US-OMB-2025,is_high_impact,categorical,3611,88.2,3185,11,0,3174,426,1.0,0.0035,0.0069,12.1,,High-impact flag.
+US-OMB-2025,human_roles,token_set,3611,0.0,0,0,0,0,3611,,,,100.0,empty_field_high,Human roles narrative.
+US-OMB-2025,vendor_name,substring,3611,21.9,790,259,0,531,2821,1.0,0.3278,0.4938,85.3,,Vendor/supplier name.
+US-OMB-2025,agency_name,substring,3611,100.0,3611,364,0,3247,0,1.0,0.1008,0.1831,10.1,,Agency attribution.
+US-OMB-2025,use_case_name,substring,3611,100.0,3610,1139,0,2471,1,1.0,0.3155,0.4797,31.6,,Programme title in schema.
+US-OMB-2025,have_ato,boolean,3611,42.7,1542,1324,0,218,2069,1.0,0.8586,0.9239,94.0,,Authorization-to-operate flag.
+US-OMB-2025,classification,categorical,3611,81.7,2949,185,0,2764,662,1.0,0.0627,0.1181,23.5,,Technology classification.
+CA-GC-AI-REG,ai_system_status_en,categorical,412,89.8,370,11,0,359,42,1.0,0.0297,0.0577,12.9,,System lifecycle status.
+CA-GC-AI-REG,involves_personal_information,boolean,412,75.7,312,312,0,0,100,1.0,1.0,1.0,100.0,cross_field_redundancy,Personal information flag.
+CA-GC-AI-REG,government_organization,substring,412,100.0,412,42,0,370,0,1.0,0.1019,0.185,10.2,,Owning organization.
+CA-GC-AI-REG,vendor_information,substring,412,40.8,168,67,0,101,244,1.0,0.3988,0.5702,75.5,,Vendor disclosure.
+CA-GC-AI-REG,data_sources_en,token_set,412,71.4,294,51,0,243,118,1.0,0.1735,0.2957,41.0,long_narrative,Data source narrative.
+CA-GC-AI-REG,name_ai_system_en,substring,412,100.0,412,262,0,150,0,1.0,0.6359,0.7774,63.6,,System name.
+NL-ALGO-REG,status,categorical,1484,100.0,1484,87,0,1397,0,1.0,0.0586,0.1108,5.9,,Algorithm lifecycle status.
+NL-ALGO-REG,lawful_basis,token_set,1484,75.4,1119,187,0,932,365,1.0,0.1671,0.2864,37.2,long_narrative,Lawful basis field (Dutch standard).
+NL-ALGO-REG,human_intervention,token_set,1484,97.6,1449,114,0,1335,35,1.0,0.0787,0.1459,10.0,long_narrative,Human intervention description.
+NL-ALGO-REG,organization,substring,1484,100.0,1484,776,0,708,0,1.0,0.5229,0.6867,52.3,,Publishing organization.
+NL-ALGO-REG,provider,substring,1484,77.6,1151,287,0,864,333,1.0,0.2493,0.3992,41.8,,Technology provider.
+NL-ALGO-REG,risks,token_set,1484,91.2,1353,54,0,1299,131,1.0,0.0399,0.0768,12.5,long_narrative,Risk narrative.
+NL-ALGO-REG,name,substring,1484,100.0,1484,954,0,530,0,1.0,0.6429,0.7826,64.3,,Algorithm name.
+EU-PSTW,Status,categorical,1794,0.0,0,0,0,0,1794,,,,100.0,empty_field_high,Case status.
+EU-PSTW,Primary Technology,categorical,1794,100.0,1794,254,0,1540,0,1.0,0.1416,0.248,14.2,,Primary technology label.
+EU-PSTW,Responsible organisation,substring,1794,100.0,1794,891,0,903,0,1.0,0.4967,0.6637,49.7,,Responsible organisation.
+EU-PSTW,Name,substring,1794,100.0,1794,1120,0,674,0,1.0,0.6243,0.7687,62.4,,Case name.
+EU-PSTW,Application type,categorical,1794,100.0,1794,0,0,1794,0,,0.0,,0.0,,Application type.
+UK-ATRS,title,substring,133,100.0,133,131,0,2,0,1.0,0.985,0.9924,98.5,search_metadata_only,Record title.
+UK-ATRS,organisation_title,substring,133,100.0,133,4,0,129,0,1.0,0.0301,0.0584,3.0,search_metadata_only,Publishing organisation.
+UK-ATRS,description,token_set,133,100.0,133,0,0,133,0,,0.0,,0.0,long_narrative,Record summary.

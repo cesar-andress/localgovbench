@@ -21,21 +21,25 @@ def _pyproject_version() -> str:
 
 def test_runtime_matches_pyproject():
     assert localgovbench.__version__ == _pyproject_version()
-    assert localgovbench.__version__ == "0.2.1"
+    assert localgovbench.__version__ == "1.0.0"
 
 
-def test_citation_cff_tracks_published_v020():
+def test_citation_cff_tracks_v100():
     doc = yaml.safe_load((REPO / "CITATION.cff").read_text(encoding="utf-8"))
-    assert str(doc["version"]) == "0.2.0"
-    assert doc["doi"] == "10.5281/zenodo.21500899"
+    assert str(doc["version"]) == "1.0.0"
+    blob = str(doc)
+    assert "10.5281/zenodo.21500899" in blob
+    assert "10.5281/zenodo.20543779" in blob
+    assert "v1.0.0" in blob or "1.0.0" in blob
 
 
-def test_zenodo_json_tracks_published_v020():
+def test_zenodo_json_tracks_v100():
     import json
 
     data = json.loads((REPO / ".zenodo.json").read_text(encoding="utf-8"))
-    assert data["version"] == "0.2.0"
+    assert data["version"] == "1.0.0"
     assert "21500899" in json.dumps(data)
+    assert "20543779" in json.dumps(data)
 
 
 def test_next_release_has_doi_placeholder_not_invented():
@@ -43,3 +47,4 @@ def test_next_release_has_doi_placeholder_not_invented():
     assert "NEXT_DOI_TBD" in text
     assert "10.5281/zenodo.21500899" in text
     assert "unchanged" in text.lower()
+    assert "v1.0.0" in text

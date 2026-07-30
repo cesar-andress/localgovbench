@@ -7,6 +7,8 @@
 > The corpus file under `data/` may feed DF Phase 1 locks; the **active analytical framework** is  
 > [`../affordance/README.md`](../affordance/README.md).
 
+**Release note (v1.0.0):** frozen `outputs/` summaries and `data/source_registry_expanded.csv` are **tracked** for manuscript reproducibility. Do **not** regenerate them for archival. Aggregate `data/pilot_programme_records.csv` remains outside git by default.
+
 **Framing:** quantify the public-satisfiability **ceiling** of LocalGovBench v0.1 evidence requirements.
 **Not measured:** readiness scores, municipality rankings, Paper 2 documentary observability.
 

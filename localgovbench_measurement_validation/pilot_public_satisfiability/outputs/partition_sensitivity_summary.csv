@@ -1,0 +1,10 @@
+metric,value
+criteria_count,25
+class_agreement_det_vs_alt_pct,92.0
+shortfall_level_agreement_pct,100.0
+class_agreement_det_vs_prelim_pct,84.0
+disagreement_det_vs_alt_count,2
+disagreement_det_vs_prelim_count,4
+disagreement_det_vs_alt_criteria,organizational_role_definition;strategic_sovereignty_data_sovereignty
+alternative_classifier_used,heuristic_keyword_classifier
+partition_robust_if_agreement_gte_80pct,True

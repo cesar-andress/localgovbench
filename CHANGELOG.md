@@ -2,36 +2,42 @@
 
 All notable changes to this project are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
-## [Unreleased] — 0.2.1 candidate
+## [Unreleased]
 
-Release-engineering and tip completeness relative to published **v0.2.0**.  
-**Not published.** Future DOI placeholder: `10.5281/zenodo.NEXT_DOI_TBD`.  
-Published v0.2.0 (DOI `10.5281/zenodo.21500899`) remains unchanged.
+Post-v1.0.0 development. No further items yet.
+
+## [1.0.0] — 2026-07-30
+
+**First stable public release** accompanying the submitted manuscript on documentary evidence availability in public AI inventories.
+
+This is a **release-engineering / archival** freeze. Empirical pilot numbers are unchanged (freeze 2026-06-24). Disclosure Functions scientific artefacts are not redesigned.
 
 ### Added
 
-- Phase 3 experiment pipeline and documentation
-- Pilot Round 01 launch package (blank independent coder packets)
-- Supplements A–J and `paper_assets/` Methods scaffolds (no fabricated Results)
-- Corpus verification script and reproducibility docs
-- GitHub Actions CI for the active Disclosure Functions stack
-- Legacy/non-DF notices on results-looking directories
-- Release candidate notes: `docs/releases/NEXT_RELEASE.md`
+- Tracked frozen public-satisfiability pilot `outputs/` and `source_registry_expanded.csv` for manuscript reproducibility
+- Release packaging for Zenodo archival via annotated tag `v1.0.0`
+- Consolidated public README for the manuscript-stable archive
+
+### Changed
+
+- Software version **1.0.0** (`pyproject.toml`, runtime, `CITATION.cff`, `.zenodo.json`)
+- Citation and Zenodo metadata describe the manuscript-accompanying stable release
+- Release docs: `NEXT_RELEASE.md` now records post-v1.0.0 placeholder policy
 
 ### Fixed
 
-- Runtime package version aligned with `pyproject.toml` (0.2.1 tip)
-- Release documentation contradictions (published v0.2.0 vs unreleased main)
-- Pilot package relative link; portable checksum paths; portable corpus path field
-- PyYAML declared as a runtime dependency
-- Adjudication merge no longer treats confidence/rationale-only diffs as substantive disagreements
-- Repository validator coverage for the active DF stack
+- Pilot analytical summaries were previously gitignored under the global `outputs/` rule; they are now explicitly tracked without regenerating results
 
 ### Known limitations
 
-- Aggregated corpus CSV not distributed in git by default
-- No human coding Results / IRR / realization / gaps
-- Next Zenodo deposit not minted
+- Aggregate `pilot_programme_records.csv` remains outside git by default (~27 MB; reconstruct/verify via scripts)
+- Zenodo **version DOI for v1.0.0** is assigned on deposit of this tag (not invented in-repo)
+- DF human coding / IRR / realization Results remain incomplete by design
+
+### Prior versions (unchanged deposits)
+
+- v0.2.0 — DOI [10.5281/zenodo.21500899](https://doi.org/10.5281/zenodo.21500899)
+- v0.1.0 — DOI [10.5281/zenodo.20543779](https://doi.org/10.5281/zenodo.20543779)
 
 ## [0.2.0] — 2026-07-23
 
@@ -114,5 +120,6 @@ python3.12 -m pytest localgovbench_measurement_validation/affordance/tests \
 - Bundled scores are **synthetic**; empirical field validation is **pending**
 - Zenodo DOI: [10.5281/zenodo.20543779](https://doi.org/10.5281/zenodo.20543779)
 
+[1.0.0]: https://github.com/cesar-andress/localgovbench/releases/tag/v1.0.0
 [0.2.0]: https://doi.org/10.5281/zenodo.21500899
 [0.1.0]: https://github.com/cesar-andress/localgovbench/releases/tag/v0.1.0

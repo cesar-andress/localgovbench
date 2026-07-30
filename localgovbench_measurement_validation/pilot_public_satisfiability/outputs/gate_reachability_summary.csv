@@ -1,0 +1,6 @@
+dimension_id,dimension_name,criteria_count,gate_unreachable_count,gate_unreachable_pct,mean_max_shortfall_level
+legal_regulatory,Legal and Regulatory Compliance,5,5,100.0,1.2
+operational,Operational Management,5,5,100.0,1.2
+organizational,Organizational Governance,5,5,100.0,1.0
+strategic_sovereignty,Strategic Sovereignty,5,5,100.0,0.4
+technical_security,Technical and Security Readiness,5,5,100.0,0.6

@@ -10,6 +10,6 @@ except ImportError:  # pragma: no cover
 try:
     __version__ = version("localgovbench")
 except PackageNotFoundError:  # pragma: no cover - editable/source tree without install
-    __version__ = "0.2.1"
+    __version__ = "1.0.0"
 
 __all__ = ["__version__"]
