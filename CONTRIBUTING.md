@@ -38,6 +38,8 @@ python scripts/validate_repository.py
 4. Run `pytest -m "not integration"` and `python scripts/validate_repository.py` before opening a PR.
 5. Describe whether any data files are synthetic or derived from public sources.
 
+Manuscript bibliography verification (OpenAlex) lives in the **private paper repository** (`../paper`): `make bib-verify-offline` is deterministic and CI-safe there; `make bib-verify-live` is optional and requires `OPEN_ALEX_KEY`. Do **not** wire live OpenAlex calls into this software package’s default test suite.
+
 ## Versioning
 
 Follow semantic versioning for releases. Update `CITATION.cff` version and `date-released` when tagging a Zenodo release. For v0.2.0 drafts see [`docs/releases/`](docs/releases/). Historical v0.1.0 Zenodo steps remain in `docs/zenodo_release.md` (**LEGACY — v0.1.0**).
