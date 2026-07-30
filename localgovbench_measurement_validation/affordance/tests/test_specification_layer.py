@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import csv
 import json
-from pathlib import Path
 
 import pytest
 
@@ -18,11 +17,12 @@ from localgovbench_measurement_validation.affordance.nonempty import (
 )
 from localgovbench_measurement_validation.affordance.paths import (
     APPLICABILITY_OVERRIDES_YAML,
+    CORPUS_LOCK_JSON,
     CORPUS_PATH,
     DISCLOSURE_FUNCTIONS_YAML,
     FIELD_FUNCTION_CANDIDATES_CSV,
-    FIELD_NORMALIZATION_YAML,
     OBJECT_LAYER_BY_SOURCE,
+    SCHEMA_INVENTORY_CSV,
 )
 from localgovbench_measurement_validation.affordance.schema_inventory import (
     build_schema_inventory,
@@ -35,15 +35,30 @@ from localgovbench_measurement_validation.affordance.validate_specs import (
 
 import yaml
 
+# Aggregate corpus is intentionally gitignored; CI validates frozen lock/inventory.
+_CORPUS_AVAILABLE = CORPUS_PATH.is_file()
+requires_corpus = pytest.mark.skipif(
+    not _CORPUS_AVAILABLE,
+    reason="pilot_programme_records.csv absent (gitignored; rebuild locally to run)",
+)
+
 
 @pytest.fixture(scope="module")
 def corpus_lock():
-    return build_corpus_lock()
+    """Prefer live rebuild when corpus bytes exist; else use frozen lock artefact."""
+    if _CORPUS_AVAILABLE:
+        return build_corpus_lock()
+    assert CORPUS_LOCK_JSON.is_file(), f"Frozen corpus lock missing: {CORPUS_LOCK_JSON}"
+    return json.loads(CORPUS_LOCK_JSON.read_text(encoding="utf-8"))
 
 
 @pytest.fixture(scope="module")
 def inventory(corpus_lock):
-    return build_schema_inventory(corpus_lock=corpus_lock)
+    if _CORPUS_AVAILABLE:
+        return build_schema_inventory(corpus_lock=corpus_lock)
+    assert SCHEMA_INVENTORY_CSV.is_file(), f"Frozen inventory missing: {SCHEMA_INVENTORY_CSV}"
+    with SCHEMA_INVENTORY_CSV.open(encoding="utf-8", newline="") as handle:
+        return list(csv.DictReader(handle))
 
 
 def test_hand_authored_specs_validate():
@@ -62,6 +77,7 @@ def test_raw_fields_json_confirmed(corpus_lock):
     assert "raw_fields_json" in corpus_lock["columns"]
 
 
+@requires_corpus
 def test_every_observed_field_in_inventory(inventory):
     # Rebuild observed keys independently
     observed: dict[str, set[str]] = {}
@@ -212,12 +228,14 @@ def test_nonempty_treats_no_as_populated():
     assert is_nonempty_for_population("Not available") is True
 
 
+@requires_corpus
 def test_inventory_deterministic(corpus_lock, tmp_path):
     inv1 = build_schema_inventory(corpus_lock=corpus_lock)
     inv2 = build_schema_inventory(corpus_lock=corpus_lock)
     assert inv1 == inv2
 
 
+@requires_corpus
 def test_write_lock_and_inventory_roundtrip(corpus_lock, inventory, tmp_path, monkeypatch):
     """Write roundtrip must not mutate frozen on-disk lock/inventory artefacts."""
     import localgovbench_measurement_validation.affordance.corpus_lock as corpus_lock_mod
@@ -242,3 +260,17 @@ def test_write_lock_and_inventory_roundtrip(corpus_lock, inventory, tmp_path, mo
         rows = list(csv.DictReader(handle))
     assert len(rows) == len(inventory)
     assert sum(int(r["source_record_count"]) for r in rows) >= 7434
+
+
+def test_frozen_lock_and_inventory_present_for_ci():
+    """CI-safe: tracked lock/inventory artefacts exist without aggregate corpus bytes."""
+    assert CORPUS_LOCK_JSON.is_file()
+    assert SCHEMA_INVENTORY_CSV.is_file()
+    lock = json.loads(CORPUS_LOCK_JSON.read_text(encoding="utf-8"))
+    assert lock["total_record_count"] == 7434
+    assert lock["sha256"]
+    with SCHEMA_INVENTORY_CSV.open(encoding="utf-8", newline="") as handle:
+        rows = list(csv.DictReader(handle))
+    assert len(rows) > 100
+    refs = {r["corpus_lock_reference"] for r in rows}
+    assert lock["sha256"] in refs
