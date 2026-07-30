@@ -115,7 +115,7 @@ Partition changes vs A: **0 criteria**. Gate changes: **0**.
 
 ## Manuscript GO decision
 
-Validation upgrade: **GO** | Manuscript drafting: **GO** | Primary venue: **Data & Policy**
+Validation upgrade: **GO** | Manuscript drafting: **GO** | Primary venue: **Information Polity**
 
 Source: `outputs/pilot_go_decision.json`
 

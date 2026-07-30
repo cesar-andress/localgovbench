@@ -1,19 +1,35 @@
 # Supplementary materials — master index
 
-**Product:** LocalGovBench (Disclosure Functions v1 / schema disclosure affordance)  
-**Software version (active):** 0.2.0 — DOI [10.5281/zenodo.21500899](https://doi.org/10.5281/zenodo.21500899)  
-**Specification / coding / pipeline version:** 1.0.0  
-**Companion historical archive:** v0.1.0 — DOI [10.5281/zenodo.20543779](https://doi.org/10.5281/zenodo.20543779)  
-**Canonical software tree:** [https://github.com/cesar-andress/localgovbench](https://github.com/cesar-andress/localgovbench)  
+**Product:** LocalGovBench  
+**Canonical software release:** **v1.0.0** — DOI [10.5281/zenodo.21701861](https://doi.org/10.5281/zenodo.21701861)  
+**GitHub:** [https://github.com/cesar-andress/localgovbench](https://github.com/cesar-andress/localgovbench) (tag `v1.0.0`)  
 **Package path in repository:** `docs/supplements/`
 
-## Purpose of this package
+## Two packages in one archive
+
+LocalGovBench v1.0.0 ships **two** publication surfaces. Do not conflate them.
+
+| Surface | What it is | Authoritative paths |
+|---------|------------|---------------------|
+| **Documentary-evidence availability pilot (manuscript)** | Frozen public-satisfiability / shortfall measurement (freeze **2026-06-24**; $N=7{,}434$; LocalGovBench **v0.1** catalogue) | `localgovbench_measurement_validation/pilot_public_satisfiability/` · `paper_data_policy/results_freeze.md` |
+| **Disclosure Functions v1 (supplements A–J)** | Specification and schema-coding instruments for a separate DF paper path | `localgovbench_measurement_validation/affordance/` · wrappers below |
+
+Empirical claims in the documentary-evidence availability manuscript derive **only** from the pilot package. Supplements A–J do **not** invent shortfall scores, partitions, or gate reachability for that article.
+
+## Empirical pilot package (manuscript reproducibility)
+
+1. Read [`../../localgovbench_measurement_validation/pilot_public_satisfiability/README.md`](../../localgovbench_measurement_validation/pilot_public_satisfiability/README.md).  
+2. Treat [`../../paper_data_policy/results_freeze.md`](../../paper_data_policy/results_freeze.md) as the authoritative numeric freeze.  
+3. Do **not** regenerate frozen `outputs/` for archival citation.  
+4. If `data/pilot_programme_records.csv` is absent, rebuild with `scripts/build_pilot_corpus.py` and verify with `scripts/verify_pilot_corpus.py`.
+
+## Purpose of supplements A–J
 
 This package is the **publication-facing supplementary material index** for the Disclosure Functions v1 paper path. It organises existing repository artefacts into journal-style supplements (**A–J**). It does **not** invent empirical coding results, IRR statistics, realization rates, affordance–realization gaps, rankings, readiness scores, or shortfall scores.
 
 Full normative text lives in the frozen paths cited below; each supplement is a **thin, citable wrapper** (purpose, inputs, outputs, limitations, cross-references, and tables/figures only where already justified by frozen artefacts).
 
-## How to use
+## How to use (DF path)
 
 1. Read this index for scope and non-claims.  
 2. Open the relevant Supplement A–J for the methods subsection being checked.  
@@ -33,7 +49,7 @@ Full normative text lives in the frozen paths cited below; each supplement is a 
 | [G](G_reproducibility.md) | Reproducibility | build scripts, tests, locks, checksums |
 | [H](H_repository_structure.md) | Repository structure | root README architecture; active vs legacy surfaces |
 | [I](I_software_citation.md) | Software citation | `CITATION.cff`, `.zenodo.json`, dual-DOI rule |
-| [J](J_version_history.md) | Version history | `CHANGELOG.md`, tags `v0.1.0` / `v0.2.0`, layer versions |
+| [J](J_version_history.md) | Version history | `CHANGELOG.md`, tags `v0.1.0` / `v0.2.0` / `v1.0.0`, layer versions |
 
 ## Global non-claims (apply to all supplements)
 
@@ -47,19 +63,23 @@ This supplementary package does **not** provide:
 
 Where Phase 3 emits **templates** or **placeholders** for later realization analysis, those are infrastructure only (see Supplement F).
 
-## Recommended reading order (methods reviewers)
+## Recommended reading order
 
-A → B → C → D → E → F → G, then I/J for citation and provenance, H for navigation.
+**For the documentary-evidence availability manuscript:** pilot README → `results_freeze.md` → frozen `pilot_public_satisfiability/outputs/`.
+
+**For the Disclosure Functions path:** A → B → C → D → E → F → G, then I/J for citation and provenance, H for navigation.
 
 ## Path prefix convention
 
 Unless noted otherwise, paths are relative to the **software repository root**:
 
-`localgovbench_measurement_validation/affordance/` → abbreviated below as `affordance/`.
+`localgovbench_measurement_validation/affordance/` → abbreviated below as `affordance/`.  
+`localgovbench_measurement_validation/pilot_public_satisfiability/` → abbreviated as `pilot_public_satisfiability/`.
 
 ## Status note on archive tip vs development tip
 
-Tag **`v0.2.0`** (DOI `10.5281/zenodo.21500899`) archives the Disclosure Functions specification and coding-layer freeze. Later commits on `main` may add experiment-pipeline and pilot-launch operational files. When citing workflows, name the **Git commit or software version** actually used (see Supplements F, G, J).
+Tag **`v1.0.0`** (DOI `10.5281/zenodo.21701861`) is the **canonical** public release for manuscript citation.  
+Earlier tags **`v0.2.0`** / **`v0.1.0`** remain historical provenance only. When citing workflows, name the **Git tag or commit** actually used.
 
 ## Figures and tables
 
@@ -78,4 +98,4 @@ Tag **`v0.2.0`** (DOI `10.5281/zenodo.21500899`) archives the Disclosure Functio
 
 ## Maintenance
 
-Regenerate scientific artefacts only via documented builders (`scripts/build_affordance_specification.py`, `scripts/build_affordance_coding_layer.py`, pilot launch generator). Update this index when authoritative paths move; do not fork normative definitions into these wrappers.
+Keep wrappers thin. Prefer updating authoritative YAML/CSV/locks over rewriting supplement prose. After any freeze change, bump the version note at the top of this index and Supplement J.

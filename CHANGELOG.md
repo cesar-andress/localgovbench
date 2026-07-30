@@ -4,7 +4,10 @@ All notable changes to this project are documented here. The format follows [Kee
 
 ## [Unreleased]
 
-Post-v1.0.0 development. No further items yet.
+Documentation alignment with the documentary-evidence availability manuscript:
+
+- Supplements index (`docs/supplements/README.md`) now points to **v1.0.0** and separates the frozen pilot package from Disclosure Functions A–J.
+- Pilot README clarifies that frozen shortfall outputs are **canonical for the manuscript** while remaining outside the DF analytical path.
 
 ## [1.0.0] — 2026-07-30
 

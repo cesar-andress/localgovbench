@@ -1,17 +1,18 @@
-# Public satisfiability pilot (10-day)
+# Public satisfiability pilot
 
-> **LEGACY / precursor — not the active Disclosure Functions v1 measurement path.**  
-> Ceiling/shortfall outputs and figures here are **not Disclosure Functions v1 empirical results**.  
-> They are **not** current readiness, ranking, compliance, or performance findings.  
-> They are **not** substitutes for unfinished DF coding, realization, IRR, or gap analysis.  
-> The corpus file under `data/` may feed DF Phase 1 locks; the **active analytical framework** is  
-> [`../affordance/README.md`](../affordance/README.md).
+> **Canonical frozen empirical package for the documentary-evidence availability manuscript**  
+> (LocalGovBench **v1.0.0**; freeze **2026-06-24**; LocalGovBench **v0.1** requirement catalogue).  
+> Authoritative numerics: [`../../../paper_data_policy/results_freeze.md`](../../../paper_data_policy/results_freeze.md).
 
-**Release note (v1.0.0):** frozen `outputs/` summaries and `data/source_registry_expanded.csv` are **tracked** for manuscript reproducibility. Do **not** regenerate them for archival. Aggregate `data/pilot_programme_records.csv` remains outside git by default.
+> **Not the active Disclosure Functions v1 measurement path.**  
+> Ceiling/shortfall outputs and figures here are **not** Disclosure Functions v1 empirical results,  
+> readiness scores, rankings, compliance findings, or substitutes for unfinished DF coding / IRR / gap analysis.  
+> The **active DF analytical framework** (separate paper path) is [`../affordance/README.md`](../affordance/README.md).
 
-**Framing:** quantify the public-satisfiability **ceiling** of LocalGovBench v0.1 evidence requirements.
-**Not measured:** readiness scores, municipality rankings, Paper 2 documentary observability.
+**Release note (v1.0.0):** frozen `outputs/` summaries and `data/source_registry_expanded.csv` are **tracked** for manuscript reproducibility. Do **not** regenerate them for archival. Aggregate `data/pilot_programme_records.csv` remains outside git by default; rebuild with `scripts/build_pilot_corpus.py` and verify with `scripts/verify_pilot_corpus.py` when needed.
 
+**Framing:** quantify the public-satisfiability **ceiling** of LocalGovBench v0.1 evidence requirements (documentary evidence availability).  
+**Not measured:** readiness scores, municipality rankings, Paper 2 documentary observability, DF realization rates.
 ## Reproduce
 
 ### Pilot (US + Canada)

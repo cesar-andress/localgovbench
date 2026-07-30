@@ -116,9 +116,11 @@ python3.12 scripts/validate_repository.py
 
 ## 8b. Supplementary materials (paper package)
 
-Publication-facing supplements **A–J** are indexed at:
+Publication-facing materials are indexed at:
 
 [`docs/supplements/README.md`](docs/supplements/README.md)
+
+That index separates (i) the **frozen documentary-evidence availability pilot** used by the present manuscript from (ii) Disclosure Functions supplements **A–J** (separate paper path).
 
 ## 8c. Manuscript paper assets (tables/figures scaffolds)
 
